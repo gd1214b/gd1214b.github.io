@@ -1,0 +1,1597 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://blog.gd1214b.icu</id>
+    <title>gd1214b&apos;s blog</title>
+    <updated>2021-06-09T07:20:10.002Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://blog.gd1214b.icu"/>
+    <link rel="self" href="https://blog.gd1214b.icu/atom.xml"/>
+    <logo>https://blog.gd1214b.icu/images/avatar.png</logo>
+    <icon>https://blog.gd1214b.icu/favicon.ico</icon>
+    <rights>All rights reserved 2021, gd1214b&apos;s blog</rights>
+    <entry>
+        <title type="html"><![CDATA[搞瘫全球大半个互联网，Fastly是何方神圣？]]></title>
+        <id>https://blog.gd1214b.icu/post/YdM16VZBI/</id>
+        <link href="https://blog.gd1214b.icu/post/YdM16VZBI/">
+        </link>
+        <updated>2021-06-09T06:59:40.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>本文转自:<a href="https://new.qq.com/omn/20210609/20210609A01G7M00.html">https://new.qq.com/omn/20210609/20210609A01G7M00.html</a></p>
+</blockquote>
+<p><img src="https://blog.gd1214b.icu/post-images/1623222085018.webp" alt="" loading="lazy"><br>
+人们习以为常的互联网服务，已经成为现代生活必备的基础设施，但在背后网络云服务商集中度不断提升的情况下，其脆弱性也愈发突出。8日全球互联网世界碰到的一次不大不小的“断网”事件，就是这一脆弱性的最新例证。</p>
+<p>全世界数以亿计互联网用户在当天发现自己无法打开日常访问的网站，在经过约1小时后才逐渐恢复。最终，一家名为Fastly的CDN（content delivery network）服务提供商浮出水面，这家公司表示，由于进行了一项“服务配置”的修改，引发了大规模故障。</p>
+<p>有意思的是，当人们得知问题出自Fastly这家公司后，其股价在当天出现大涨，因为通过这起事件，投资者意识到，这家总部位于旧金山，员工数不到1000人的“边缘计算云服务”公司，对互联网世界有着举足轻重的影响力。</p>
+<p>宣称在互联网终端用户和服务器之间架设“中继站”，为用户提供更快捷、便利的互联网内容体验的同时，由于这一类服务商集中度过高，导致了类似当天大范围用户无法打开网页这样的风险隐患。</p>
+<h1 id="服务配置修改搞瘫大半个互联网">“服务配置”修改搞瘫大半个互联网</h1>
+<p>本周二，当全球各地数以亿计的互联网用户登陆自己平日经常登陆的网站时，发现页面无法打开，并出现了“503 Errors”的错误提示，包括亚马逊、Reddit、Twitch、Pinterest以及包括纽约时报、CNN等在内的多数新闻网站均悉数中招。</p>
+<p>这一问题大约持续了一个小时，初步的调查结果显示，互联网内容传递服务公司Fastly是引起这一场互联网大规模掉线的主要原因。</p>
+<p>从Fastly发布的状态更新报告可以追踪事件的整个进展过程，大约在美国太平洋时间8日凌晨2:58分，Fastly称，“我们目前正在调查对我们的内容传递网络服务（Content Delivery Network）带来潜在影响的冲击。”</p>
+<p>在这则报告发布后不久，推特上便出现了许多用户声称无法打开BBC、CNN、纽约时报等新闻网站的推文。社交平台推特本身也受到了一定程度的影响，其负责表情包的服务器无法接入，导致在出问题的时段内，许多推文的表情无法正常显示。</p>
+<p>随后问题变得愈发严重，全球各个地区均不同程度出现网站无法打开的问题，甚至连英国政府官方网站都一度受到影响。</p>
+<p>在大约一个小时后，Fastly再度更新状态报告，称已经找到问题并实施了修复措施，在美国太平洋时间8日凌晨4点10分，Fastly通过其官方推特称，“我们发现一个服务配置的更改引发了全球服务的短暂中断，目前已将这一配置关闭，我们全球服务网络已恢复正常。”</p>
+<h1 id="fastly是何方神圣">Fastly是何方神圣？</h1>
+<p>对于许多普通互联网用户来说，Fastly的名字或许十分陌生，这家公司创办于2011年，总部位于旧金山，从事的主要业务是互联网云服务。2017年，该公司发布了边缘云计算平台，提供将终端服务器的内容更近、更快地给到终端用户的服务。简而言之，Fastly为服务器和终端用户之间搭建了一个中继站，让用户无需再从终端服务器上下载网络内容，而由Fastly事先预载一部分内容，当用户访问相应网站时，就无需再从远端的终端服务器上下载，而从Fastly处获得，提高终端用户获得互联网内容的效率。</p>
+<p>Fastly的这一互联网内容传递服务，能够让网页的加载速度更快、优化图片、视频和其他大尺寸的内容能够更快的在用户终端上出现。在Fastly官方网站的介绍中，该公司列举了几个例子，例如新闻网站Buzzfeed在使用了Fastly的服务后，加载速度提高了50%，纽约时报在美国大选夜能够承载200万用户登陆等。</p>
+<p>此外，边缘云计算的另一个好处是作为一道额外的防范黑客攻击的防火墙，例如最常见的DDoS攻击等，保障终端服务器不受攻击的影响。</p>
+<p>但同时带来的一个问题是，由于Fastly作为连接终端服务器和终端用户的桥梁，一旦这座“桥梁”发生问题，双方之间的连接也就断了，这正是8日所短暂发生的情况。</p>
+<p>目前对于这起故障到底如何发生的有关细节还不得而知，Fastly方面也仅给出了是因为进行一项“服务配置”的调试而引发的简单解释。</p>
+<p>一个有意思的现象是，在外界已经得知此次不得不小的“断网”事件主要责任方是Fastly的情况下，Fastly的股价在8日盘中大涨超过10%，这背后的逻辑是：通过这次事件，许多投资者发现Fastly居然服务如此多的互联网内容提供方，对互联网有着超过之前预期的影响力，尽管是一桩负面事件，但却对公司本身是一次利好。</p>
+<p>根据Fastly 2021年第一季度财报显示，截至3月31日，服务全球58个市场，第一季度总收入8485万美元，其中6273万美元来自于美国市场，占绝大部分比例，来自亚太和欧洲市场的收入则分别为915万和964万美元。Fastly在美国以外的用户在截至3月31日为1208，约占全部用户量的53%。</p>
+<p>从财报业绩表现来看，Fastly仍处在业务快速扩张阶段，第一季度收入同比增长34.8%，同时研发投入同比增长超过100%，导致当季净亏损5051万美元。去年全年，Fastly收入同比增速为45%，净亏损9593万美元。</p>
+<p>Fastly在2020年同样是一支疫情受益股，股价在当年从年初的每股约20美元一路涨至年末的每股100美元以上翻了4倍多。但在进入2021年后，股价又一路从高位回落，目前距离历史高位已经腰斩。</p>
+<p>Fastly断网事件再次提醒我们互联网服务的脆弱性，当提供互联网底层服务的单个公司出现短时故障时，将导致大规模用户的互联网服务受到影响，因为越来越多的互联网内容提供方正在依赖越来越少的类似Fastly这样的中间云服务提供商，这样的事件在近期时有发生，包括去年7月Cloudflare因故障中断服务以及亚马逊旗下AWS在去年11月碰到的短期故障等，云服务市场集中度的不断提高，正在不断加剧这样的潜在风险。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[在Heroku上部署v2ray]]></title>
+        <id>https://blog.gd1214b.icu/post/NbdQntVCG/</id>
+        <link href="https://blog.gd1214b.icu/post/NbdQntVCG/">
+        </link>
+        <updated>2021-06-08T07:47:14.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="简介">简介</h1>
+<h2 id="heroku">Heroku</h2>
+<p>Heroku是 Salesforce 旗下云服务商，提供方便便捷的各种云服务，如服务器，数据库，监控，计算等等。并且他提供了免费版本，这使得我们这些平时想搞一些小东西的人提供了莫大的便捷，虽然他有时长和宕机的限制，但是对于个人小程序来说已经足够了。</p>
+<h2 id="v2ray">V2Ray</h2>
+<p>V2Ray（Project V）是一个优秀的开源网络代理工具，目前已经全平台支持Windows、Mac、Android、IOS、Linux等操作系统的使用。相对起Shadowsocks来说属于后起之秀，在混淆能力、兼容性、速度上有着独到的优点，V2Ray是一个不错的选择。</p>
+<h1 id="服务端部署">服务端部署</h1>
+<h2 id="注册heroku">注册Heroku</h2>
+<p>很简单，根据官网的提示操作就行:<a href="https://signup.heroku.com/">https://signup.heroku.com/</a></p>
+<h2 id="部署">部署</h2>
+<p>点击下面的紫色按钮将v2ray部署到Heroku上：<br>
+<a href="https://heroku.com/deploy?template=https://github.com/libsgh/v2ray-heroku.git"><img src="https://www.herokucdn.com/deploy/button.png" alt="" loading="lazy"></a></p>
+<h2 id="app-name">App name</h2>
+<p><img src="https://blog.gd1214b.icu/post-images/1623138897097.png" alt="" loading="lazy"><br>
+应用名称，可随意填写。</p>
+<h2 id="choose-a-region">Choose a region</h2>
+<p><img src="https://blog.gd1214b.icu/post-images/1623139055193.png" alt="" loading="lazy"><br>
+服务器所在位置，有美国和欧洲两个选择。</p>
+<h2 id="protocol">PROTOCOL</h2>
+<p><img src="https://blog.gd1214b.icu/post-images/1623139144487.png" alt="" loading="lazy"><br>
+v2ray所使用的协议，可以不用改动。</p>
+<h2 id="uuid">UUID</h2>
+<p>用户的连接ID，必须填写，可在这里随机生成一个：<a href="https://1024tools.com/uuid">https://1024tools.com/uuid</a><br>
+(只需复制一个即可，千万要注意保存)。<br>
+<img src="https://blog.gd1214b.icu/post-images/1623139189773.png" alt="" loading="lazy"></p>
+<h2 id="ws_path">WS_PATH</h2>
+<p><img src="https://blog.gd1214b.icu/post-images/1623139413528.png" alt="" loading="lazy"><br>
+websocket路径,可以不用改动。</p>
+<h2 id="进行部署">进行部署</h2>
+<p>点击最后的“Deploy app”即可。<br>
+<img src="https://blog.gd1214b.icu/post-images/1623139548540.png" alt="" loading="lazy"><br>
+这里可能会需要一点时间，看到下面的界面就说明部署成功了：<br>
+<img src="https://blog.gd1214b.icu/post-images/1623139649895.png" alt="" loading="lazy"><br>
+打开网页：https://app-name.herokuapp.com/ray (<strong>将app name替换为你在第一部中填写的名称</strong>)如果显示Bad Request 则说明v2ray服务端部署就绪。</p>
+<h1 id="客户端配置">客户端配置</h1>
+<p>这里以windows端的v2rayN为例，其他客户端配置方法类似。<br>
+<img src="https://blog.gd1214b.icu/post-images/1623140960527.png" alt="" loading="lazy"><br>
+请严格按照以上信息填写，否则可能无法连接。</p>
+<p>到这一步你的v2ray应该已经部署好了，如果还是无法连接的话可以在下方的评论区中提出问题。</p>
+<h1 id="其他说明">其他说明</h1>
+<h2 id="伪装首页3d元素周期表">伪装首页（3D元素周期表）</h2>
+<p>请求/，返回3D元素周期表<br>
+<img src="https://blog.gd1214b.icu/post-images/1623156776166.png" alt="" loading="lazy"></p>
+<h2 id="html5测速">HTML5测速</h2>
+<p>请求/speedtest/，返回html5-speedtest测速页面<br>
+<img src="https://blog.gd1214b.icu/post-images/1623156810883.png" alt="" loading="lazy"></p>
+<h2 id="文件下载速度测试">文件下载速度测试</h2>
+<p>请求/test/，返回文件列表,可用于文件下载速度测试<br>
+<img src="https://blog.gd1214b.icu/post-images/1623156875631.png" alt="" loading="lazy"></p>
+<h1 id="致谢">致谢</h1>
+<ul>
+<li><a href="https://github.com/libsgh/v2ray-heroku">v2ray-heroku</a>是github上的一个开源项目，本文部署时用到了其中的源代码。</li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[使用Cloudflare Worker搭建反向代理]]></title>
+        <id>https://blog.gd1214b.icu/post/h7Wc7SF8X/</id>
+        <link href="https://blog.gd1214b.icu/post/h7Wc7SF8X/">
+        </link>
+        <updated>2021-06-08T02:32:10.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="前言">前言</h1>
+<p>Cloudflare 推出了 Workers 服务，在国内一般叫它边缘计算。<a href="https://github.com/EtherDream/jsproxy">jsproxy</a> 是个 Github 开源项目，可以通过 Cloudflare Workers 服务搭建一个反向代理服务器，这个反向代理服务器不需要安装在我们自己的 VPS 主机上，而是直接部署在 Cloudflare 节点上，这可以极大的降低我们自身 VPS 主机的性能损耗。</p>
+<h1 id="教程">教程</h1>
+<h2 id="1">1</h2>
+<p>打开<a href="https://dash.cloudflare.com/">Cloudflare</a>，登录CLoudflare账户。（Cloudflare支持中文界面，操作前可先将界面语言调换只中文）；<br>
+<img src="https://blog.gd1214b.icu/post-images/1623119946925.png" alt="" loading="lazy"></p>
+<h2 id="2">2</h2>
+<p>创建Worker实例（创建前还要配置一下，这里就不多说了，可以根据自己的需求进行选择，免费的一天可以处理十万请求，正常来说很够用）；<br>
+<img src="https://blog.gd1214b.icu/post-images/1623119975841.png" alt="" loading="lazy"></p>
+<h2 id="3">3</h2>
+<p>将以下代码复制到左侧脚本框中；</p>
+<pre><code class="language-javascript">'use strict'
+
+/**
+ * static files (404.html, sw.js, conf.js)
+ */
+const ASSET_URL = 'https://etherdream.github.io/jsproxy'
+
+const JS_VER = 10
+const MAX_RETRY = 1
+
+/** @type {RequestInit} */
+const PREFLIGHT_INIT = {
+  status: 204,
+  headers: new Headers({
+    'access-control-allow-origin': '*',
+    'access-control-allow-methods': 'GET,POST,PUT,PATCH,TRACE,DELETE,HEAD,OPTIONS',
+    'access-control-max-age': '1728000',
+  }),
+}
+
+/**
+ * @param {any} body
+ * @param {number} status
+ * @param {Object&lt;string, string&gt;} headers
+ */
+function makeRes(body, status = 200, headers = {}) {
+  headers['--ver'] = JS_VER
+  headers['access-control-allow-origin'] = '*'
+  return new Response(body, {status, headers})
+}
+
+
+/**
+ * @param {string} urlStr 
+ */
+function newUrl(urlStr) {
+  try {
+    return new URL(urlStr)
+  } catch (err) {
+    return null
+  }
+}
+
+
+addEventListener('fetch', e =&gt; {
+  const ret = fetchHandler(e)
+    .catch(err =&gt; makeRes('cfworker error:\n' + err.stack, 502))
+  e.respondWith(ret)
+})
+
+
+/**
+ * @param {FetchEvent} e 
+ */
+async function fetchHandler(e) {
+  const req = e.request
+  const urlStr = req.url
+  const urlObj = new URL(urlStr)
+  const path = urlObj.href.substr(urlObj.origin.length)
+
+  if (urlObj.protocol === 'http:') {
+    urlObj.protocol = 'https:'
+    return makeRes('', 301, {
+      'strict-transport-security': 'max-age=99999999; includeSubDomains; preload',
+      'location': urlObj.href,
+    })
+  }
+
+  if (path.startsWith('/http/')) {
+    return httpHandler(req, path.substr(6))
+  }
+
+  switch (path) {
+  case '/http':
+    return makeRes('请更新 cfworker 到最新版本!')
+  case '/ws':
+    return makeRes('not support', 400)
+  case '/works':
+    return makeRes('it works')
+  default:
+    // static files
+    return fetch(ASSET_URL + path)
+  }
+}
+
+
+/**
+ * @param {Request} req
+ * @param {string} pathname
+ */
+function httpHandler(req, pathname) {
+  const reqHdrRaw = req.headers
+  if (reqHdrRaw.has('x-jsproxy')) {
+    return Response.error()
+  }
+
+  // preflight
+  if (req.method === 'OPTIONS' &amp;&amp;
+      reqHdrRaw.has('access-control-request-headers')
+  ) {
+    return new Response(null, PREFLIGHT_INIT)
+  }
+
+  let acehOld = false
+  let rawSvr = ''
+  let rawLen = ''
+  let rawEtag = ''
+
+  const reqHdrNew = new Headers(reqHdrRaw)
+  reqHdrNew.set('x-jsproxy', '1')
+
+  // 此处逻辑和 http-dec-req-hdr.lua 大致相同
+  // https://github.com/EtherDream/jsproxy/blob/master/lua/http-dec-req-hdr.lua
+  const refer = reqHdrNew.get('referer')
+  const query = refer.substr(refer.indexOf('?') + 1)
+  if (!query) {
+    return makeRes('missing params', 403)
+  }
+  const param = new URLSearchParams(query)
+
+  for (const [k, v] of Object.entries(param)) {
+    if (k.substr(0, 2) === '--') {
+      // 系统信息
+      switch (k.substr(2)) {
+      case 'aceh':
+        acehOld = true
+        break
+      case 'raw-info':
+        [rawSvr, rawLen, rawEtag] = v.split('|')
+        break
+      }
+    } else {
+      // 还原 HTTP 请求头
+      if (v) {
+        reqHdrNew.set(k, v)
+      } else {
+        reqHdrNew.delete(k)
+      }
+    }
+  }
+  if (!param.has('referer')) {
+    reqHdrNew.delete('referer')
+  }
+
+  // cfworker 会把路径中的 `//` 合并成 `/`
+  const urlStr = pathname.replace(/^(https?):\/+/, '$1://')
+  const urlObj = newUrl(urlStr)
+  if (!urlObj) {
+    return makeRes('invalid proxy url: ' + urlStr, 403)
+  }
+
+  /** @type {RequestInit} */
+  const reqInit = {
+    method: req.method,
+    headers: reqHdrNew,
+    redirect: 'manual',
+  }
+  if (req.method === 'POST') {
+    reqInit.body = req.body
+  }
+  return proxy(urlObj, reqInit, acehOld, rawLen, 0)
+}
+
+
+/**
+ * 
+ * @param {URL} urlObj 
+ * @param {RequestInit} reqInit 
+ * @param {number} retryTimes 
+ */
+async function proxy(urlObj, reqInit, acehOld, rawLen, retryTimes) {
+  const res = await fetch(urlObj.href, reqInit)
+  const resHdrOld = res.headers
+  const resHdrNew = new Headers(resHdrOld)
+
+  let expose = '*'
+  
+  for (const [k, v] of resHdrOld.entries()) {
+    if (k === 'access-control-allow-origin' ||
+        k === 'access-control-expose-headers' ||
+        k === 'location' ||
+        k === 'set-cookie'
+    ) {
+      const x = '--' + k
+      resHdrNew.set(x, v)
+      if (acehOld) {
+        expose = expose + ',' + x
+      }
+      resHdrNew.delete(k)
+    }
+    else if (acehOld &amp;&amp;
+      k !== 'cache-control' &amp;&amp;
+      k !== 'content-language' &amp;&amp;
+      k !== 'content-type' &amp;&amp;
+      k !== 'expires' &amp;&amp;
+      k !== 'last-modified' &amp;&amp;
+      k !== 'pragma'
+    ) {
+      expose = expose + ',' + k
+    }
+  }
+
+  if (acehOld) {
+    expose = expose + ',--s'
+    resHdrNew.set('--t', '1')
+  }
+
+  // verify
+  if (rawLen) {
+    const newLen = resHdrOld.get('content-length') || ''
+    const badLen = (rawLen !== newLen)
+
+    if (badLen) {
+      if (retryTimes &lt; MAX_RETRY) {
+        urlObj = await parseYtVideoRedir(urlObj, newLen, res)
+        if (urlObj) {
+          return proxy(urlObj, reqInit, acehOld, rawLen, retryTimes + 1)
+        }
+      }
+      return makeRes(res.body, 400, {
+        '--error': `bad len: ${newLen}, except: ${rawLen}`,
+        'access-control-expose-headers': '--error',
+      })
+    }
+
+    if (retryTimes &gt; 1) {
+      resHdrNew.set('--retry', retryTimes)
+    }
+  }
+
+  let status = res.status
+
+  resHdrNew.set('access-control-expose-headers', expose)
+  resHdrNew.set('access-control-allow-origin', '*')
+  resHdrNew.set('--s', status)
+  resHdrNew.set('--ver', JS_VER)
+
+  resHdrNew.delete('content-security-policy')
+  resHdrNew.delete('content-security-policy-report-only')
+  resHdrNew.delete('clear-site-data')
+
+  if (status === 301 ||
+      status === 302 ||
+      status === 303 ||
+      status === 307 ||
+      status === 308
+  ) {
+    status = status + 10
+  }
+
+  return new Response(res.body, {
+    status,
+    headers: resHdrNew,
+  })
+}
+
+
+/**
+ * @param {URL} urlObj 
+ */
+function isYtUrl(urlObj) {
+  return (
+    urlObj.host.endsWith('.googlevideo.com') &amp;&amp;
+    urlObj.pathname.startsWith('/videoplayback')
+  )
+}
+
+/**
+ * @param {URL} urlObj 
+ * @param {number} newLen 
+ * @param {Response} res 
+ */
+async function parseYtVideoRedir(urlObj, newLen, res) {
+  if (newLen &gt; 2000) {
+    return null
+  }
+  if (!isYtUrl(urlObj)) {
+    return null
+  }
+  try {
+    const data = await res.text()
+    urlObj = new URL(data)
+  } catch (err) {
+    return null
+  }
+  if (!isYtUrl(urlObj)) {
+    return null
+  }
+  return urlObj
+}
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="https://blog.gd1214b.icu/post-images/1623120092067.png" alt="" loading="lazy"></figure>
+<h2 id="4">4</h2>
+<p>点击保存并部署即可。<br>
+<img src="https://blog.gd1214b.icu/post-images/1623120198254.png" alt="" loading="lazy"></p>
+<h2 id="5">5</h2>
+<p>点击这里即可访问你搭建的反向代理网站:<br>
+<img src="https://blog.gd1214b.icu/post-images/1623120299391.png" alt="" loading="lazy"><br>
+博主搭建的反向代理网站在这里:<a href="https://proxy.gd1214b.workers.dev/">https://proxy.gd1214b.workers.dev/</a><br>
+如果你在搭建过程中遇到任何问题, 欢迎在下方的评论区里留言.</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[如何评价某媒体文章《「躺平」可耻，哪来的正义感？》？躺平真的可耻吗？]]></title>
+        <id>https://blog.gd1214b.icu/post/BS6mLI2Ud/</id>
+        <link href="https://blog.gd1214b.icu/post/BS6mLI2Ud/">
+        </link>
+        <updated>2021-06-07T01:51:19.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>本文转自:<a href="https://www.zhihu.com/question/460776718/answer/1911149556">https://www.zhihu.com/question/460776718/answer/1911149556</a></p>
+</blockquote>
+<p>什么是当前社会语境下的“躺平”，我个人的理解就是日趋觉醒的（狭义范围内的）打工人和（广义范围内的）被压榨阶级，开始用摸鱼划水“反杀”资本群体、用佛系工作态度“反向剥削”剥削阶级、用放弃理想“回怼”满身爹味的既得利益集团。</p>
+<p>正如一个很自嘲的段子：“只要我在工作时间偷懒，这种既不干活又能拿工钱的行为，不也是对老板的剥削吗？”</p>
+<p>形势倒逼至此，已是矛盾迫近临界之态。</p>
+<h1 id=""></h1>
+<p>很多油头粉面的食肉者忍不住指责或阴阳怪气的内涵当代年轻人：“不热爱劳动、不热爱奋斗！”<br>
+<img src="https://blog.gd1214b.icu/post-images/1623030779063.jpg" alt="" loading="lazy"><br>
+这真的是对青年群体最恶毒的污蔑了，必须首先讨论清楚劳动的问题。</p>
+<p>马克思认为，“劳动本身是一种自由自觉的实践活动，人之所以为人，而非动物，很重要的一点就在于有自觉性的劳动，这是人的本质属性之一。”</p>
+<p>劳动是无罪的，乃至是光荣的，我们无产阶级甚至还有自己专门的节日：五一劳动节。</p>
+<p>在过去的苏联和改开之前的中国，劳动节的重要性不亚于国庆节，庆贺游行的规模盛大异常，因为这是属于国家的主人——工农阶级的政治节日。</p>
+<p>曾经的五一劳动节，天安门除了城楼正中悬挂毛主席画像，广场的东侧还会摆放马克思和恩格斯的画像，广场的西侧会摆放列宁和斯大林的画像。</p>
+<p>这彰示着国家的政权属性与人民主体的地位。</p>
+<p>劳动人民是光荣的，劳动人民也是最受到各领域尊重和爱护的。</p>
+<p>劳动，就是工农阶级的本色，也是新中国“权力为谁服务”的导向。</p>
+<p>幻想不劳而获、拒绝劳动的人或心理，不仅会被社会性的群体生产所排斥，同时压根也会被自我所排斥。</p>
+<p>因为任何一个心智健全的人都必须在劳动中寻找自我价值，除非他不是个正常人，比如初生的婴儿或神志不清的智力障碍人士等等，没有自我价值意识，也就没有劳动欲望。</p>
+<p>一些民间俚话，所谓的“闲不住”“待不住”“操不完的心”“一辈子都是累命”……就是这个道理。</p>
+<p>所以，指责“不爱劳动、不爱奋斗”，肯定首先从人的社会属性层面就说不通。</p>
+<p>遁身于群体之中的个体，其贡献生产力一定是自发自觉的，这不以人的意志为转移。</p>
+<h1 id="-2"></h1>
+<p>那么问题就来了：明明人人爱劳动、人人需要劳动，怎么今天的打工人们却自发地要躺平了呢？</p>
+<p>这在于一个本质是关乎于集体价值判断的问题：资本主义价值观的事实到来和统治，已经大大地破坏并扫除了一切单纯欲望的本源。</p>
+<p>资本，会使劳动发生「异化」，它会将“追求自我价值的实现”变为“贡献剩余价值的聚集”。</p>
+<p>如马克思所言：“劳动的异化性质明显的表现是：只要肉体的强制或其他强制一旦停止，人们就会像逃避鼠疫那样逃避劳动。异化的劳动，仅仅是为了生存的牺牲与折磨。”</p>
+<p>这就是资本家“996是福报”、“奋斗理所应当”洗脑恶论的来源。</p>
+<p>昨夜，共青团中央官博迫于某些压力，不得不亲自下场就“躺平”发声。它的意图很明显：想爹味十足地教育一番年轻人，扭转一下舆论被动局面。<br>
+<img src="https://blog.gd1214b.icu/post-images/1623030826024.jpg" alt="" loading="lazy"><br>
+然而，不出意料地评论区翻了车：<br>
+<img src="https://blog.gd1214b.icu/post-images/1623030838006.jpg" alt="" loading="lazy"><br>
+可以看看共青团的这幅海报，它列举的都是什么人：救灾救难的人民子弟兵，风雨无阻的边防戍边战士，舍生忘死的一线抗疫英雄——这些人都有什么共同点？</p>
+<p>他们是为集体而拼搏、为人民大众而献身、为最广泛的国家利益而奋斗！</p>
+<p>这就牵扯出了一个讨论、也是年轻人纷纷躺平的根源性缘由：我们是在为谁奋斗？是为包括自己在内的国家集体，还是为了某一个两个的资本家？</p>
+<p>前者，叫做“劳动人民身先士卒当家作主”；后者，叫做“被剥削阶层甘为奴役甘为仆狗”。</p>
+<p>所谓“宁当国家一颗螺丝钉，不做资本家的一株韭”。</p>
+<p>观察者网马前卒曾有鼓吹：“拒绝加班，无产阶级就和先进生产力分离了”、“无产阶级如果不对自己狠一点，是没有未来的！”<br>
+<img src="https://blog.gd1214b.icu/post-images/1623030868215.jpg" alt="" loading="lazy"><br>
+这种论调的错误在于，它偷换乃至隐藏了“剥削剩余价值”的概念。</p>
+<p>说白了就是：无产阶级所谓的“对自己狠一点”，这种“狠一点”所额外创造的利润，归了谁？</p>
+<p>是归了身心俱疲（某些肝病肾病现在在996白领阶层中越来越低龄化）的自己，还是归了端坐塔尖、每天只靠着剪息票就能每秒钟净入百万的资本持有人？</p>
+<p>那些财阀大佬，在今天已有一个挥之不去的特征：早已不需要参与劳动，仅仅依靠资本增殖（吃利息、投资分红）就能保持巨额财富的时时增长。</p>
+<p>也就是卢梭说的：“一个巨人与一个矮子在同一条道路上行走，他们每走一步都会使巨人拉大他与矮子之间的距离”。</p>
+<p>你被人勒令“拼命奋斗”，可是你在为谁奋斗？</p>
+<p>年轻人自我标榜“躺平”，这实为一种无奈。</p>
+<p>正如如果没有“骑手质疑饿了么变相降加班奖励”、“饿了么被曝为留骑手过春节而画大饼”、“外卖员吐槽1000元订单配送费仅5元”、“饿了么猝死员工被爆每天被扣3元”…诸如此类种种的极端压缩成本、拔高强榨剩余价值的行为，会有今年2月份饿了么骑手们的全国性大罢工吗？他们会去停止劳动、停止生产吗？<br>
+<img src="https://blog.gd1214b.icu/post-images/1623030886334.jpg" alt="" loading="lazy"><br>
+你若问饿了么为什么不多招点人、不停止众包模式而完善劳资关系（匹配所有的险金社保）？</p>
+<p>人家资本家面对这种问题，估计能翻你一天一夜的白眼。</p>
+<p>过去不久的货拉拉事件同理，你质问货拉拉平台为何不安装摄像头、不提高安全维护成本，货拉拉大boss估计要被逗乐：“还不如等到死了人，我届时再赔个钱划算呢！”</p>
+<p>此前的滴滴顺风车莫不如此。</p>
+<p>包括汽车巨头福特公司，曾经有过内部计算，没有投入安全设备的话，公司因为赔偿事故遇难的损失为49.5 million，而投入安全设备、修复安全隐患的总成本则为$137 million——资本果断选择了前者。</p>
+<p>同理，饿了么同样不会“傻了吧唧”地多招骑手、多发奖金、多缴社保，它必须把骑手数量控制在一个“合理”的区间，既能让骑手不得不疯狂闯红灯，又能让闯红灯带来的死人风险被降到一个资本可接受的赔偿范围，最终实现GMV和利润的最大化。</p>
+<p>大不了，还可以发明一个“请消费者宽容骑手”的戏码，发动无产阶级斗无产阶级，而资本则立于不败之地、两头坐收渔利。<br>
+<img src="https://blog.gd1214b.icu/post-images/1623030925914.jpg" alt="" loading="lazy"><br>
+如此局面下，被逼到悬崖边走投无路的骑手们，凭什么不能罢工？凭什么不能“躺平”？</p>
+<p>躺平，有错乎？</p>
+<h1 id="-3"></h1>
+<p>昨夜共青团“教育无果”并被迫关闭评论区之后，今天又弄了个“补救措施”，继续想运用偷换概念的招数为“镇压躺平”站台：<br>
+<img src="https://blog.gd1214b.icu/post-images/1623030946319.jpg" alt="" loading="lazy"><br>
+我看到这一幕倒是内心毫无波澜，因为这一招率先玩出来的是谁？是他共青团中央等官媒吗？当然不。</p>
+<p>不是别人，正是996福报论的发明者，马云。</p>
+<p>早在2018年时，马云先生就创物垂范地为社会贡献了“996是福报”的伟大理论，从此辩论激荡绵延至今不止。<br>
+<img src="https://blog.gd1214b.icu/post-images/1623030964909.jpg" alt="" loading="lazy"><br>
+甚至马云先生自己都已经在人生滑铁卢中思考过往，某些人士依旧拿这位“马粑粑”的言论当做真理，乐此不疲地洗脑青年一代。</p>
+<p>昨天共青团中央把钱学森等共和国国士大家搬出来的行为，和三年前的马云别无二致：直接把“国家”摆上辩论台，意图用政治正确来打压打工人：“两弹一星、核潜艇都是科学家们用996干出来的，你们这些年轻人还有不努力的理由？”</p>
+<p>这叫杀人不见血。</p>
+<p>用资本主义的剥削伦理去解构和解释毛主席时代的建设，这体现了一种无与伦比的统治高位的优越感，以及曲解、利用、无害化毛主席的极端卑劣。</p>
+<p>两弹一星、核潜艇、大寨、杂交水稻，这些确实是无产阶级科学家和最广大工农与劳动人民群众用貌似996模式干出来的成就——但是！这些成就，造福的是谁？</p>
+<p>是全体中华民族的国运福祉，它永葆了中国的边境安宁和外交地位的抬升。</p>
+<p>毛主席时代的“打工人”们，所创造的“剩余价值”都交给了国家，以“全民所有制”的形式储存下来，这是同今天的互联网财阀们最大之区别所在。</p>
+<p>只不过到了90年代末期，一夜之间的私有化又使得众多公立的矿山、煤田、汽车厂被以白菜价卖给民企和外资，连祖辈们的养老金都要现在的工作者来支付。</p>
+<p>推荐阅读：鸡架席卷沈阳的暗面：一九九八，工人下岗</p>
+<p>今时今日，抱着一堆资本主义的理儿到处灌输鸡汤的资本家们所提倡的996，利润收纳的方向仅仅是私家的公司与身价而已。</p>
+<p>这是私有制语境里的付出收益论。</p>
+<p>用私有制逻辑，去套述毛泽东那一代领导人、带领全国人民勒紧裤腰带的奋斗岁月，这是对社会主义公有制、对艰苦年代里那些奉献青春不求回报的无产阶级革命家的乐观主义精神最卑鄙的侮辱。</p>
+<p>侮辱一个制度的目的，是为了美化和粉饰另一个制度；正如消除自己对一个制度的恐惧，是为了助长自己对鼓吹另一个制度的勇气。</p>
+<h1 id="-4"></h1>
+<p>躺平的表象是一种自暴自弃，但深源则是困于阶级固化的无力感。</p>
+<p>我微博有粉丝的这样一条评论：<br>
+<img src="https://blog.gd1214b.icu/post-images/1623030993658.jpg" alt="" loading="lazy"><br>
+这种想法，实质与前文提到的马前卒的论调是极为相似的，都是理想主义的想当然所思。</p>
+<p>现今，「垄断」的作用，难道看不见吗？</p>
+<p>现在真要聚集一伙人，也开发一个外卖app（这不是什么难事），那结果只能是：你还没占领1/5你所在小城市的市场、日活量还没达到百人，现有的巨头财阀就会闻着味儿一手胡萝卜一手狼牙棒得来找你谈判了——“兄弟，要么我收购你，要么我大量发行代金券玩死你，你选一个吧！”</p>
+<p>无产阶级拿什么和巨头斗？人家打价格战，人家打得起，你打得起吗？菜农们是怎么被社区团购那帮财阀给玩死的，还不清楚吗？</p>
+<p>现在有多少小公司创业者的人生目标已经极为简单，就是被阿里腾讯收购、成为阿里腾讯附庸。</p>
+<p>你还让无产阶级自己去开发生产力，怎么开发？</p>
+<p>不准人家抱怨“蛋糕分不到手里”，还命令人家“有本事自己去做蛋糕啊”，可是做蛋糕的奶油、模具全都已掌握在巨头手里，你要么放弃，要么归降。</p>
+<p>一没罢工权，二没扩张权，拿什么斗？</p>
+<p>正因如此，某些「奋斗B」乐于跪在资本家膝下鼓吹的“你讨厌996你可以辞职啊”，这种言论完全是无解的，连初中的教科书都给出过答案：</p>
+<p>“工人看似有签订契约的自由，但是他们不受雇于这个资本家，就得受雇于那个资本家，饥饿的威胁使他们无法摆脱被资本家雇佣、受资本家剥削和压榨的命运。在资本家占有生产资料的条件下，所谓雇佣双方的契约自由，对于工人来说，是徒有虚名的。”</p>
+<p>“打工人”为什么会在2020年爆梗？疫情的空前打击不可忽视，中国从去年春季迎来了近年最庞大的一波企业倒闭潮和工人失业潮，更有“最苦应届毕业生”的段子流传。</p>
+<p>这正应了马克思的话：“以前的中间等级的下层，即小工业家、小商人和小食利者，手工业者和农民——所有这些阶级，都降落到无产阶级的队伍里来了。”</p>
+<p>僧多粥少，挤压了打工者群体就业空间的同时，也给予了资本加大剥削和“择怂录用”的底气。</p>
+<p>至于这帮肆意兼并的垄断巨头是怎么产生的，这我就不多说了，说了估计炸号……就如同讨论罢工权和游行权是怎么、又是为什么在80年代被取消的一样……</p>
+<p>五年前，外卖app是科技前卒；五年后，外卖功能竟然还是它的主业——用来为其金融信贷聚集用户的主业，这已经说明其科技性在下降了。</p>
+<p>布雷弗曼说过：“技术的进步非但没有改变无产阶级的命运，反而成为了限制无产阶级的新枷锁。”</p>
+<p>所以即便不说阶级情感，就是从生产力角度，「垄断」这种巨头形态应该被抛弃和消灭。<br>
+<img src="https://blog.gd1214b.icu/post-images/1623031009807.jpg" alt="" loading="lazy"><br>
+否则，就永远会造成“打工人必须匍匐在资本家胯下奋斗”、“不奋斗就没有未来”这种看似挺有道理、实际完全是颠倒社会主义分配原则的就业生态。</p>
+<h1 id="-5"></h1>
+<p>曾在微博见有一著名油腻食肉者的“镇压躺平”言论：<br>
+<img src="https://blog.gd1214b.icu/post-images/1623031035589.jpg" alt="" loading="lazy"><br>
+年轻时好好忍着被剥削，这样待到年老油腻时就可以去剥削别人了？</p>
+<p>即：安心做一个被剥削者的目的，是为了有朝一日可以去当一个剥削者？</p>
+<p>老老实实地“躺平”，就可以自然而然地“躺赢”吗？</p>
+<p>这种思维，其实就是“吃得苦中苦，方为人上人”这句改开之后极其政治正确的话。</p>
+<p>“人上人”，人身之上亦有他人，这便构筑了一个阶级分明的压迫体系：</p>
+<p><img src="https://blog.gd1214b.icu/post-images/1623031049993.jpg" alt="" loading="lazy"><br>
+在这样的油腻小脑中，这种阶级分明的社会状态是非常光伟正的。</p>
+<p>正如所言“20来岁有个屁的剩余价值”这种直接把“价值”与“剩余价值”偷换概念的蛮语，用意自然是为了叫嚷“加班无罪”、“跪舔有理”，进而对“躺平”进行镇压和肃反。</p>
+<p>恐怕1886年芝加哥大罢工之前，工人每天劳作15个小时以上这种情况，在食肉者眼里皆是“正确”的、“合理”的。</p>
+<p>且不说这种观点完全是反人道，也是反社会主义、反我国宪法精神、反共和国性质的——就说其具有之相当程度的欺骗性和阴谋性：它直接隐藏了一个事实：你今天苦忍着被剥削、苦忍着打在身上的皮鞭，真的有朝一日你就可以成为手拿皮鞭的持鞭人吗？你今天点头哈腰得“吃得苦中苦”，真的有一天你就可以成为獠牙翻覆的“人上人”吗？</p>
+<p>列宁导师在20世纪初就提出了一个概念：“食利阶层”：“资本主义的腐朽表现在以‘剪息票’为生的资本家这一庞大食利者阶层的形成。英、美、法、德四个先进帝国主义国家各拥有1000—1500亿法郎的有价证券资本，就是说，各国每年的收入都不少于50—80亿法郎。”</p>
+<p>而迈克尔·桑德尔在公开课《公正》中则表达的更具象：“当今社会是一场高级经理人和食利者之间的赛跑，最终受损者则是在旁观赛的普通大众。”</p>
+<p>那么什么是“高级经理人”？</p>
+<p>列宁指出：食利阶层往往会拿出一部分利润收买无产阶级中的精英分子，使他们“资产阶级化”，成为资产阶级在无产阶级中的“代理人”。</p>
+<p>这就是我们所说的“工贼”：<br>
+<img src="https://blog.gd1214b.icu/post-images/1623031068063.jpg" alt="" loading="lazy"><br>
+常见于今天体制内的中层油腻小老头，和体制外市场中的财阀中层领导、中小企业老板，以及一大堆精神资本家。</p>
+<p>这些人往往会在既得利益的体系中由于异常会舔（今天的话术叫做情商高、眼头活、会来事；本质则是比较擅于抛弃自己原本的阶级属性）而得到一丝丝高于底层工农的甜头。</p>
+<p>于是他们便会摇身一变、为身处的既得利益体系以及这份体系事实上真正的顶层吸益人，大肆摇旗呐喊、奔走鼓吹——仿佛自己也是这个体系的顶端话事人一般，而忽略了自己其实也是一个被剥削者、也有太多需要去点头哈腰的时刻的事实——不论是体制内的权力程序，还是体制外的市场程序。</p>
+<p>正如许多小企业主，平时对员工颐指气使、鼓吹966奋斗论，却忘了自己完全也是市场语境下的被剥削者、在公司背后的投资人面前也得装孙子的现实。</p>
+<p>还是鲁迅先生警示被压榨的年轻人警示得好哇：“做奴隶虽然不幸，但并不可怕，因为知道挣扎，毕竟还有挣脱的希望；若是从奴隶生活中寻出美来，赞叹、陶醉，就是万劫不复的奴才了！”</p>
+<figure data-type="image" tabindex="1"><img src="https://blog.gd1214b.icu/post-images/1623031090165.jpg" alt="" loading="lazy"></figure>
+<h1 id="-6"></h1>
+<p>附一段【毛泽东警卫员李银桥 回忆录片段】</p>
+<p>毛主席转身，终于望住我：“你是哪里人呢？”</p>
+<p>“河北省安平县。”</p>
+<p>“父母干什么呢？”</p>
+<p>“我父亲种地拉脚，农闲倒腾点粮食买卖；母亲操持家务，农忙时节也下地。”</p>
+<p>“我们的家庭很相像嘛。你喜欢父亲还是喜欢母亲?”</p>
+<p>“喜欢母亲。我父亲脑子好，多少账也算不糊涂。可是脾气大，爱喝酒，吃饭他单独吃，他吃饼子我们啃窝头，稍不如意就打人。我母亲心善，对人好，我喜欢母亲。”</p>
+<p>“越说越一致了嘛。你母亲一定信佛。”</p>
+<p>“主席您怎么知道？”</p>
+<p>“你说她心善，出家人慈悲为怀。”</p>
+<p>我目瞪口呆。听惯了政治课，我没想到毛主席会说出这样的话。同时，我又感到与主席突然近了，紧张和拘束消失许多。我小声问:“主席，您母亲也信佛吗？”</p>
+<p>“我也喜欢母亲。她也信佛，心地善良。小时候我还跟她一起去庙里烧过香呢。后来我不信了。你磕多少头，中国也强不起来，人民还是受苦。”</p>
+<p>主席顿一顿，“磕头不如造反！”</p>
+<p>……………<br>
+<img src="https://blog.gd1214b.icu/post-images/1623031110876.jpg" alt="" loading="lazy"><br>
+“人人生而平等”这句话有没有问题？没问题，但它必须还有一个配套的下半句，叫做“造反有理”。</p>
+<p>也就是毛泽东1939年在延安说的：“马克思主义的道理千条万绪，归根结底就是一句话：‘造反有理’。几千年来总是说压迫有理、剥削有理，而造反无理。自从马克思主义出来，就把这个旧案翻过来了，这是个大功劳，这个道理是无产阶级从斗争中得来的，而马克思作了结论。根据这个道理，于是就反抗，就斗争，就干社会主义。”</p>
+<p>没有了“造反有理”这个配套的后缀，“人人生而平等”就成了一句扯淡的空谈，且反而会成为统治阶层洗脑下层的利器，割草都是割得润物无声。<br>
+<img src="https://blog.gd1214b.icu/post-images/1623031128736.jpg" alt="" loading="lazy"><br>
+<img src="https://blog.gd1214b.icu/post-images/1623031138198.jpg" alt="" loading="lazy"><br>
+刘建宏曾直言不讳地说过这样一段话：“你说我们是利益既得者吗？我想我们是。我们之前的人相对来说好动摇，他虽然挡在你面前，你稍微动一动，他就让位了。但是后面的人要想让我去让位，不是很容易。这个事我跟（白）岩松探讨过很长时间，我说你看到你后面的威胁了吗？他说真没看到，我说，我也没看到。”</p>
+<p>那么此时，羸弱的“草”们所能做的，也就是“躺平”了。</p>
+<h1 id="跋">跋</h1>
+<p>从“丧文化”到“佛系”，从“沙雕”到“打工人”，下游的被压榨群体们在互联网上不断地寻找着共鸣、创造着新词。</p>
+<p>或是集体颓唐，或是集体装疯卖傻……总之，他们心里都是很清楚的：活着很苦，苦中作乐得了。</p>
+<p>5月初，已然颇具政治危机、社会维稳要务之势的七普数据，在官方此前连续用韩国、日本、美国等国的人口形势来给民众“做足思想准备”之后，终于出炉。</p>
+<p>数据显示：年轻人不愿意生孩子了，连带着的还包括婚姻抵触、恋爱抵触、社交抵触。</p>
+<p>这又何尝不也是一种“躺平”？</p>
+<p>教育成本、购房成本、996剥削、延迟退休……试问拿什么来遏制“躺平”？又有什么理由去指责“躺平”？</p>
+<p>很多时候不禁想问：拼多多还要再跳楼几人？马云外滩宣战演讲还要再来几场？十八大之前那帮在舆论场舞动话筒的高校公知教授和直到今天都老而不死的HS一代，以及贾浅浅炫耀权力一般的“屎尿屁文学”，还嫌不够？</p>
+<p>底层愈发内卷，高层愈发稳固。</p>
+<p>90后们今天无可奈何的“躺平”，难道不是对一百年前同是一群“90后”的革命先辈们用2000万牺牲规模才换来一个社会主义新中国的血泪革命史的一种讽刺吗？</p>
+<p>“建立新中国死了多少人，有谁想过这个问题？我是想过的！” ——毛泽东。</p>
+<p>“只有群众的革命斗争，才能使工人生活和国家管理真正有所改善。无论有教养的人怎样‘同情’工人，无论单个恐怖分子怎样英勇斗争，都不能摧毁沙皇专制制度和资本家专横势力。只有工人自己起来斗争只有千百万群众共同斗争才能做到这一点——而当这种斗争减弱下去的时候，工人所争得的成果立刻就开始被夺回去。俄国的革命证实了国际歌中的一段歌词：‘从来就没有什么救世主，也不靠神仙皇帝。要创造人类的幸福，全靠我们自己！’” ——列宁。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[数字证书及 CA 的扫盲介绍]]></title>
+        <id>https://blog.gd1214b.icu/post/SbNCYJUBm/</id>
+        <link href="https://blog.gd1214b.icu/post/SbNCYJUBm/">
+        </link>
+        <updated>2021-05-28T10:26:54.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>本文转自:<a href="https://program-think.blogspot.com/2010/02/introduce-digital-certificate-and-ca.html">https://program-think.blogspot.com/2010/02/introduce-digital-certificate-and-ca.html</a></p>
+</blockquote>
+<h1 id="先说一个通俗的例子">先说一个通俗的例子</h1>
+<h2 id="普通的介绍信">普通的介绍信</h2>
+<p>想必大伙儿都听说过介绍信的例子吧？假设 A 公司的张三先生要到 B 公司去拜访，但是 B 公司的所有人都不认识他，他咋办捏？常用的办法是带公司开的一张介绍信，在信中说：兹有张三先生前往贵公司办理业务，请给予接洽......云云。然后在信上敲上A公司的公章。<br>
+　　张三先生到了 B 公司后，把介绍信递给 B 公司的前台李四小姐。李小姐一看介绍信上有 A 公司的公章，而且A公司是经常和 B 公司有业务往来的，这位李小姐就相信张先生不是歹人了。<br>
+　　说到这，爱抬杠的同学会问了：万一公章是伪造的，咋办捏？在此，俺要先声明，在本例子中，先假设公章是难以伪造滴，否则俺的故事没法说下去鸟。</p>
+<h2 id="引入中介机构的介绍信">引入中介机构的介绍信</h2>
+<p>好，回到刚才的话题。如果和 B 公司有业务往来的公司很多，每个公司的公章都不同，那前台就要懂得分辨各种公章，非常滴麻烦。所以，有某个中介公司 C，发现了这个商机。C公司专门开设了一项“代理公章”的业务。<br>
+　　今后，A 公司的业务员去B公司，需要带2个介绍信：<br>
+　　介绍信1<br>
+　　含有 C 公司的公章及 A 公司的公章。并且特地注明：C 公司信任A公司。<br>
+　　介绍信2<br>
+　　仅含有 A 公司的公章，然后写上：兹有张三先生前往贵公司办理业务，请给予接洽......云云。</p>
+<p>某些不开窍的同学会问了，这样不是增加麻烦了吗？有啥好处捏？<br>
+　　主要的好处在于，对于接待公司的前台，就不需要记住各个公司的公章分别是啥样子的；他/她只要记住中介公司 C 的公章即可。当他/她拿到两份介绍信之后，先对“介绍信1”的 C 公章，验明正身；确认无误之后，再比对“介绍信1”和“介绍信2”的两个 A 公章是否一致。如果是一样的，那就可以证明“介绍信2”是可以信任的了。</p>
+<h1 id="相关专业术语的解释">相关【专业术语】的解释</h1>
+<p>费了不少口水，终于说完了一个俺自认为比较通俗的例子。如果你听到到这儿，还是想不明白这个例子在说啥，那后续的内容，就不必浪费时间听了 😦<br>
+　　下面，俺就着上述的例子，把相关的名词，作一些解释。</p>
+<h2 id="证书是啥">“证书”是啥？</h2>
+<p>“证书”洋文也叫“digital certificate”或“public key certificate”<br>
+　　它是用来证明某某东西确实是某某东西的东西（是不是像绕口令？）。通俗地说，证书就好比例子里面的公章。通过公章，可以证明该介绍信确实是对应的公司发出的。<br>
+　　理论上，人人都可以找个证书工具，自己做一个证书。那如何防止坏人自己制作证书出来骗人捏？请看后续 CA 的介绍。</p>
+<h2 id="ca是啥">“CA”是啥？</h2>
+<p>CA 是“Certificate Authority”的缩写，也叫“证书授权中心”。<br>
+　　它是负责管理和签发证书的第三方机构，就好比例子里面的中介——C 公司。一般来说，CA 必须是所有行业和所有公众都信任的、认可的。因此它必须具有足够的权威性。就好比A、B两公司都必须信任 C 公司，才会找 C 公司作为公章的中介。</p>
+<h2 id="ca-证书是啥">“CA 证书”是啥？</h2>
+<p>CA 证书，顾名思义，就是CA颁发的证书。<br>
+　　前面已经说了，人人都可以找工具制作证书。但是你一个小破孩制作出来的证书是没啥用处的。因为你【不是】权威的 CA 机关，你自己搞的证书不具有权威性。<br>
+　　这就好比上述的例子里，某个坏人自己刻了一个公章，盖到介绍信上。但是别人一看，不是【受信任】的中介公司的公章，就不予理睬。坏蛋的阴谋就不能得逞啦。<br>
+　　文本后续提及的证书，若无特殊说明，均指 CA 证书。</p>
+<h2 id="啥是证书之间的信任关系">啥是证书之间的【信任关系】？</h2>
+<p>在俺的例子里谈到，引入中介后，业务员要同时带两个介绍信。第一个介绍信包含了两个公章，并注明，公章C信任公章A。证书间的信任关系，就和这个类似。就是用一个证书来证明另一个证书是真实可信滴。</p>
+<h2 id="啥是证书的信任链">啥是证书的【信任链】？</h2>
+<p>实际上，证书之间的信任关系，是可以嵌套的。比如，C 信任 A1，A1 信任 A2，A2 信任 A3......这个叫做证书的信任链。只要你信任链上的头一个证书，那后续的证书，都是可以信任滴。</p>
+<h2 id="啥是根证书">啥是【根证书】？</h2>
+<p>“根证书”的洋文叫“root certificate”。为了说清楚根证书是咋回事，再来看个稍微复杂点的例子。<br>
+　　假设 C 证书信任 A 和 B；然后 A 信任 A1 和 A2；B 信任 B1 和 B2。则它们之间，构成如下的一个树形关系（一个倒立的树）。<br>
+<img src="https://blog.gd1214b.icu/post-images/1622197859502.png" alt="" loading="lazy"></p>
+<p>处于最顶上的树根位置的那个证书，就是“根证书”。除了根证书，其它证书都要依靠上一级的证书，来证明自己。那谁来证明“根证书”可靠捏？实际上，根证书自己证明自己是可靠滴（或者换句话说，根证书是不需要被证明滴）。<br>
+　　聪明的同学此刻应该意识到了：根证书是整个证书体系安全的根本。所以，如果某个证书体系中，根证书出了问题（不再可信了），那么所有被根证书所信任的其它证书，也就不再可信了。这个后果是相当相当滴严重（简直可以说是灾难性的）。</p>
+<h1 id="证书有啥用">证书有啥用？</h1>
+<p>CA 证书的作用有很多，俺为了节省口水，只列出常用的几个。</p>
+<h2 id="验证网站是否可信针对-https">验证网站是否可信（针对 HTTPS）</h2>
+<p>通常，我们如果访问某些敏感的网页（比如用户登录的页面），其协议都会使用 HTTPS 而不是 HTTP。因为 HTTP 协议是明文的，一旦有坏人在偷窥你的网络通讯，他/她就可以看到网络通讯的内容（比如你的密码、银行帐号、等）；而 HTTPS 是加密的协议，可以保证你的传输过程中，坏蛋无法偷窥。<br>
+　　但是，千万【不要】以为，HTTPS 协议有了加密，就可高枕无忧了。俺再举一个例子来说明，光有加密是不够滴。假设有一个坏人，搞了一个假的网银的站点，然后诱骗你上这个站点。假设你又比较单纯，一不留神，就把你的帐号，口令都输入进去了。那这个坏蛋的阴谋就得逞鸟。<br>
+　　为了防止坏人这么干，HTTPS 协议除了有加密的机制，还有一套证书的机制。通过证书来确保，某个站点确实就是某个站点。<br>
+　　有了证书之后，当你的浏览器在访问某个 HTTPS 网站时，会验证该站点上的 CA 证书（类似于验证介绍信的公章）。如果浏览器发现该证书没有问题（证书被某个根证书信任、证书上绑定的域名和该网站的域名一致、证书没有过期），那么页面就直接打开；否则的话，浏览器会给出一个警告，告诉你该网站的证书存在某某问题，是否继续访问该站点？为了形象起见，下面给出 IE 和 Firefox 的抓图：<br>
+<img src="https://blog.gd1214b.icu/post-images/1622197913198.png" alt="" loading="lazy"><br>
+<img src="https://blog.gd1214b.icu/post-images/1622197930063.png" alt="" loading="lazy"></p>
+<p>大多数知名的网站，如果用了 HTTPS 协议，其证书都是可信的（也就不会出现上述警告）。所以，今后你如果上某个知名网站，发现浏览器跳出上述警告，你就要小心啦！</p>
+<h2 id="验证某文件是否可信是否被篡改">验证某文件是否可信（是否被篡改）</h2>
+<p>证书除了可以用来验证某个网站，还可以用来验证某个文件是否被篡改。具体是通过证书来制作文件的数字签名。制作数字签名的过程太专业，咱就不说了。后面专门告诉大家如何验证文件的数字签名。考虑到大多数人用 Windows 系统，俺就拿 Windows 的例子来说事儿。<br>
+　　比如，俺手头有一个 Firefox 的安装文件（带有数字签名）。当俺查看该文件的属性，会看到如下的界面。眼神好的同学，会注意到到上面有个“数字签名”的标签页。如果没有出现这个标签页，就说明该文件没有附带数字签名。<br>
+<img src="https://blog.gd1214b.icu/post-images/1622197973986.png" alt="" loading="lazy"></p>
+<p>选择该标签页，看到如下界面。<br>
+　　顺便说一下，某些数字签名中没有包含“邮件地址”，那么这一项会显示“不可用”；同样的，某些数字签名没有包含“时间戳”，也会显示“不可用”。不要紧张，这里显示的“不可用”跟数字签名的有效性【没关系】。<br>
+<img src="https://blog.gd1214b.icu/post-images/1622197996715.png" alt="" loading="lazy"></p>
+<p>一般来说，签名列表中，有且仅有一个签名。选中它，点“详细信息”按钮。跳出如下界面：<br>
+　　通常这个界面会显示一行字：“该数字签名正常”（图中红圈标出）。如果有这行字，就说明该文件从出厂到你手里，中途没有被篡改过（是原装滴、是纯洁滴）。<br>
+<img src="https://blog.gd1214b.icu/post-images/1622198010703.png" alt="" loading="lazy"></p>
+<p>如果该文件被篡改过了（比如，感染了病毒、被注入木马），那么对话框会出现一个警告提示“该数字签名无效”（图中红圈标出）。界面如下：<br>
+<img src="https://blog.gd1214b.icu/post-images/1622198028435.png" alt="" loading="lazy"><br>
+　　不论签名是否正常，你都可以点“查看证书”按钮。这时候，会跳出证书的对话框。如下：<br>
+<img src="https://blog.gd1214b.icu/post-images/1622198041625.png" alt="" loading="lazy"><br>
+<img src="https://blog.gd1214b.icu/post-images/1622198052027.png" alt="" loading="lazy"></p>
+<p>从后一个界面，可以看到俺刚才说的证书信任链。图中的信任链有3层：<br>
+第1层是根证书（Thawte Premium Server CA）<br>
+第2层是 Thawte 专门用来签名的证书<br>
+第3层是 Mozilla 自己的证书</p>
+<p>目前大多数知名的公司（或组织机构），其发布的可执行文件（比如软件安装包、驱动程序、安全补丁），都带有数字签名。你可以自己去看一下。<br>
+　　建议大伙儿在安装软件之前，都先看看是否有数字签名？如果有，就按照上述步骤验证一把。一旦数字签名是坏的，那可千万别装。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[对比4种强化域名安全的协议——DNSSEC，DNSCrypt，DNS over TLS，DNS over HTTPS]]></title>
+        <id>https://blog.gd1214b.icu/post/ee3pG-Qog/</id>
+        <link href="https://blog.gd1214b.icu/post/ee3pG-Qog/">
+        </link>
+        <updated>2021-05-21T13:19:46.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>本文转自:<a href="https://program-think.blogspot.com/2018/10/Comparison-of-DNS-Protocols.html">https://program-think.blogspot.com/2018/10/Comparison-of-DNS-Protocols.html</a></p>
+</blockquote>
+<h1 id="引子">引子</h1>
+<p>俺在写前一篇博文（也就是 <a href="https://program-think.blogspot.com/2018/09/Why-You-Should-Switch-from-Chrome-to-Firefox.html">Firefox PK Chrome</a> 那篇）的时候，碰巧看到 Mozilla 官方博客提到说：目前最新的 Firefox 62 版本开始支持【DNS over HTTPS】这一特性（链接在“<a href="https://blog.nightly.mozilla.org/2018/06/01/improving-dns-privacy-in-firefox/">这里</a>”）。<br>
+　　本来想顺便聊一下“DNS over HTTPS”这个玩意儿。但是查了一下，发现它的 RFC 目前还只是【草案】，尚未正式发布。<br>
+　　所以俺就把本文的主题改成：对比4种强化 DNS 安全的网络协议。然后借此机会普及一些信息安全知识。</p>
+<h1 id="dns-是啥玩意儿">DNS 是啥玩意儿？</h1>
+<p>简而言之，DNS 是用来查询域名的协议。关于它的原理（工作机制），俺已经写过一篇教程（在“<a href="https://program-think.blogspot.com/2014/01/dns.html">这里</a>”），所以今天就不重复浪费口水啦。<br>
+　　另外，如果你是技术菜鸟，在看这篇博文之前，确保你已经【看完】如下这篇：<br>
+<a href="https://program-think.blogspot.com/2021/03/Computer-Networks-Overview.html">《计算机网络通讯的【系统性】扫盲——从“基本概念”到“OSI 模型”》</a></p>
+<h1 id="传统的-dns-有啥问题">传统的 DNS 有啥问题？</h1>
+<p>传统的 DNS 是一个【比较古老】的协议。最早的草案可以追溯到1983年。1987年定稿之后，基本上没啥变化。算起来，它的年龄比俺博客的很多读者都要大。<br>
+　　设计 DNS 的时候，互联网基本上还是个玩具。那年头的互联网协议，压根儿都没考虑安全性，DNS 当然也不例外。所以 DNS 的交互过程全都是【明文】滴，既无法做到“保密性”，也无法实现“完整性”。<br>
+　　缺乏“保密性”就意味着——任何一个能【监视】你上网流量的人，都可以【看到】你查询了哪些域名。直接引发的问题就是隐私风险。<br>
+　　缺乏“完整性”就意味着——任何一个能【修改】你上网流量的人，都可以【篡改】你的查询结果。直接引发的问题就是“DNS 欺骗”（也叫“DNS 污染”或“DNS 缓存投毒”）<br>
+　　<br>
+　　为了解决传统 DNS 的这些弊端，后来诞生了好几个网络协议，以强化域名系统的安全性。俺挑选其中4个来介绍。除了这4个，其它一些协议的名气和影响力太小，不值一提。<br>
+　　下面俺以出场时间的先后，分别介绍这4个协议。</p>
+<h1 id="dnssec">DNSSEC</h1>
+<h2 id="历史">历史</h2>
+<p>这玩意儿是“Domain Name System Security Extensions”的缩写。在今天介绍的4个协议中，DNSSEC 是最早诞生的（1997）。从最先的 RFC 2065 进化为 RFC 2535，再到 RFC 4033、RFC 4034、RFC 4035。<br>
+　　在今天介绍的4个协议中，DNSSEC 也是最早大规模部署的。在2010年的时候，所有根域名服务器都已经部署了 DNSSEC。到了2011年，若干顶级域名（.org 和 .com 和 .net 和 .edu）也部署了 DNSSEC。</p>
+<h2 id="协议栈">协议栈</h2>
+<pre><code>--------
+DNSSEC
+--------
+UDP
+--------
+IP
+--------
+</code></pre>
+<h2 id="安全性的原理">安全性的原理</h2>
+<p>当初设计 DNSSEC 的一个考虑是“尽可能兼容 DNS 协议”。所以 DNSSEC 只是在 DNS 协议的基础上增加了一个【数字签名机制】。<br>
+　　有了数字签名，如果域名查询的结果被人篡改了，DNSSEC 客户端就可以通过【校验签名】，判断查询结果是假的。套用信息安全的行话——DNSSEC 实现了【完整性】（也叫“不可篡改性”）。<br>
+　　由于 DNSSEC 引入了【数字签名】，就需要有【公私钥对】。私钥是保密的，用来生成签名；公钥是公开的，用来验证签名。DNSSEC 客户端可以向 DNSSEC 服务器发出请求，获得一个 DNSKEY 记录，里面含公钥；然后用这个公钥校验每次的查询结果。</p>
+<h2 id="信任链的实现">信任链的实现</h2>
+<p>有些聪明的读者会问了：DESSEC 客户端在向服务器请求公钥的过程中，如果被攻击者篡改了，得到一个假的公钥，那该如何是好？<br>
+　　为了解决此问题，DNSSEC 体系要求【上级域】来担保。比如想要证明 program-think.blogspot.com 这个域名的公钥是否可信，就依靠 blogspot.com 这个域名的公钥来验证。通过层层追溯，最后达到【根域名服务器】。而“根域名服务器的公钥”是事先就部署在客户端的——这玩意儿就是整个信任链的根源，称之为“信任锚”（洋文叫“Trust Anchor”）。</p>
+<h2 id="优点">优点</h2>
+<p>在今天聊的4个协议中，DNSSEC 应该是最成熟的。除了前面提到的广泛部署，大多数公共的域名服务器也都支持它。维基百科上有一个对照表（链接在“<a href="https://en.wikipedia.org/wiki/Public_recursive_name_server">这里</a>”），对比了有名气的几个公共域名服务系统。在今天聊的4个协议中，支持 DNSSEC 的最多。</p>
+<h2 id="缺点">缺点</h2>
+<p>虽然 DNSSEC 最成熟，但它有个天生的缺陷——【没有】考虑到【保密性】。<br>
+　　DNSSEC 虽然对传输的数据做了数字签名，但是【没有】进行加密。这就意味着——任何能监视你网络流量的人，也可以看到你通过 DNSSEC 查询了哪些域名。隐私风险大大滴！<br>
+　　Chrome 曾经在 14 版本支持过 DNSSEC，后来又【移除】了；而 Firefox 官方从未支持过 DNSSEC 协议。俺猜测：大概就是这个缺点给闹的。</p>
+<h1 id="dnscrypt">DNSCrypt</h1>
+<h2 id="历史-2">历史</h2>
+<p>第2个出场的是 DNSCrypt。这个协议是由 Frank Denis 和 Yecheng Fu（付业成）两人设计的。<br>
+　　这个协议从来【没有】提交过 RFC（征求意见稿），要想看它的协议实现，只能去它的官网（链接在“<a href="https://dnscrypt.info/protocol/">这里</a>”）。<br>
+　　历史上有过两个版本，分别称：Version 1 和 Version 2。如今主要使用“版本2”</p>
+<h2 id="协议栈-2">协议栈</h2>
+<pre><code>----------------
+DNSCrypt
+----------------
+TCP or UDP
+----------------
+IP
+----------------
+</code></pre>
+<h2 id="安全性的原理-2">安全性的原理</h2>
+<p>前面俺提到 DNSSEC 协议强调兼容性。而 DNSCrypt 则完全是另起炉灶搞出来的协议。在这个协议中，域名的“查询请求”与“响应结果”都是加密的。这就是它比 DNSSEC 高级的地方。<br>
+　　换句话说，DNSCrypt 既能做到【完整性】，也能做到【保密性】；相比之下，DNSSEC 只能做到【完整性】。</p>
+<h2 id="信任链的实现-2">信任链的实现</h2>
+<p>DNSCrypt 的信任链比较简单——客户端要想使用哪个 DNSCrypt 服务器，就需要预先部署该服务器的公钥。<br>
+　　另外，DNSCrypt 还支持客户端认证（作为可选项）。如果需要的话，可以在服务器上部署客户端的公钥。此时，服务器只接受可信的客户端的查询请求。</p>
+<h2 id="优点-2">优点</h2>
+<p>如前所述，DNSCrypt 同时支持【完整性】与【保密性】。在隐私方面完胜 DNSSEC。<br>
+　　在下层协议方面，DNSCrypt 同时支持 TCP 和 UDP，显然比 DNSSEC 灵活（DNSSEC 只支持 UDP）。<br>
+　　顺便提醒一下：虽然 DNSCrypt 协议默认使用 443 这个端口号，但该协议与 HTTPS 毫无关系。</p>
+<h2 id="缺点-2">缺点</h2>
+<p>（俺个人认为）DNSCrypt 最大的缺点就是前面提到的：【从未】提交过 RFC。没有 RFC 也就无法通过 IETF（互联网工程任务组）进行标准化。一个无法标准化的协议，其生命力要打很大的折扣。<br>
+　　另一个比较小的缺点是——虽然 DNSCrypt 协议是加密的，但可以被识别出来。换句话说：如果有人监控你的流量，可以识别出哪些流量属于 DNSCrypt 协议。为啥说这是个缺点捏？在本文末尾讨论 “DNSCrypt 与 TLS 的安全性对比” 的时候，会详细加以说明。<br>
+　　再来说说【公共 DNS 系统】。截至俺写本文时，Google 和 Cloudflare 的公共域名系统【尚未】支持 DNSCrypt（参见<a href="https://en.wikipedia.org/wiki/Public_recursive_name_server">这个页面</a>的对照表）。这也是一个缺点。</p>
+<h1 id="dns-over-tls">DNS over TLS</h1>
+<p>“DNS over TLS”有时也被简称为【DoT】。为了打字省力，本文以下部分用 DoT 来称呼之。</p>
+<h2 id="历史-3">历史</h2>
+<p>DoT 已经正式发布了 RFC（参见 RFC 7858 和 RFC 8310）。<br>
+　　从时间上看，RFC7858 是2016年发布的，RFC8310 是今年（2018）发布的；显然，这个协议出现得比较晚（相比前面提到的 DNSSEC 和 DNSCrypt）。</p>
+<h2 id="协议栈-3">协议栈</h2>
+<pre><code>--------
+DoT
+--------
+TLS
+--------
+TCP
+--------
+IP
+--------
+</code></pre>
+<h2 id="安全性的原理-3">安全性的原理</h2>
+<p>顾名思义，DNS over TLS 就是基于 TLS 隧道之上的域名协议。由于 TLS 本身已经实现了【保密性】与【完整性】，因此 DoT 自然也就具有这两项特性。<br>
+　　至于 TLS 协议是如何实现完整性与保密性滴？可以参见俺的系列博文：<a href="https://program-think.blogspot.com/2014/11/https-ssl-tls-0.html">《扫盲 HTTPS 和 SSL/TLS 协议》</a></p>
+<h2 id="信任链的实现-3">信任链的实现</h2>
+<p>DoT 的信任链依赖于 TLS，而 TLS 的信任链靠的是 CA 证书体系。<br>
+　　关于 CA 证书体系，可以参见8年前的博文：<a href="https://program-think.blogspot.com/2010/02/introduce-digital-certificate-and-ca.html">《数字证书及 CA 的扫盲介绍》</a></p>
+<h2 id="优点-3">优点</h2>
+<p>相比 DNSSEC，DoT 具备了【保密性】；相比 DNSCrypt，DoT 已经标准化。<br>
+　　另外，由于 DoT 协议是完全包裹在 TLS 里面，即使有人监视你的上网流量，也无法判断——哪些 TLS 流量是用于域名查询，哪些 TLS 用于网页传输。换句话说，DoT 协议的流量无法被【单独识别】出来。</p>
+<h2 id="缺点-3">缺点</h2>
+<p>支持 DoT 的客户端还不够多。尤其是主流的浏览器还没有计划增加 DoT 的支持。</p>
+<h1 id="dns-over-https">DNS over HTTPS</h1>
+<p>“DNS over HTTPS”有时也被简称为【DoH】。为了打字省力，本文以下部分用 DoH 来称呼之。</p>
+<h2 id="历史-4">历史</h2>
+<p>在今天介绍的4个协议中，DoH 是最新的（最晚出现的）。RFC 方面，它已经有了相应的草案，但还【没有】正式发布。截至俺写本文时，DoH 的草案已经发了 15 个版本（从 00 到 14），最新版的链接在“<a href="https://tools.ietf.org/html/draft-ietf-doh-dns-over-https-14">这里</a>”。<br>
+　　很多人把 DoH 与 DoT 混为一谈，实际上这是两种不同的协议。你可以对比这两者的协议栈，（只要你眼睛不瞎）就可看出其中的差别。</p>
+<h2 id="协议栈-4">协议栈</h2>
+<pre><code>--------
+DoH
+--------
+HTTP
+--------
+TLS
+--------
+TCP
+--------
+IP
+--------
+</code></pre>
+<h2 id="安全性的原理-4">安全性的原理</h2>
+<p>顾名思义，DNS over HTTPS 就是基于 HTTPS 隧道之上的域名协议。而 HTTPS 又是“HTTP over TLS”。所以 DoH 相当于是【双重隧道】的协议。<br>
+　　与 DoT 类似，DoH 最终也是依靠 TLS 来实现了【保密性】与【完整性】。<br>
+　　至于 TLS 协议是如何实现完整性与保密性滴？可以参见俺的系列博文：<a href="https://program-think.blogspot.com/2014/11/https-ssl-tls-0.html">《扫盲 HTTPS 和 SSL/TLS 协议》</a></p>
+<h2 id="信任链的实现-4">【信任链】的实现</h2>
+<p>DoH 类似于 DoT，最终是靠 TLS 所使用的“CA 证书体系”来实现信任链。<br>
+　　关于 CA 证书体系，可以参见8年前的博文：<a href="https://program-think.blogspot.com/2010/02/introduce-digital-certificate-and-ca.html">《数字证书及 CA 的扫盲介绍》</a></p>
+<h2 id="优点-4">优点</h2>
+<p>基本上，DoT 具备的优点，DoH 也具备。<br>
+　　相比 DoT，DoH 还多了一个优点：<br>
+　　由于 DoH 是基于 HTTP 之上。而主流的编程语言都有成熟的 HTTP 协议封装库；再加上 HTTP 协议的使用本身很简单。因此，要想用各种主流编程语言开发一个 DoH 的客户端，是非常容易滴。</p>
+<h2 id="缺点-4">缺点</h2>
+<p>如前所述，DoH 目前还只有 RFC 的草案，尚未正式发布。这算是一个缺点。<br>
+　　相比 DoT，DoH 还有一个小缺点——由于 DoH 比 DoT 多了一层（请对比两者的协议栈），所以在性能方面，DoH 会比 DoT 略差。为啥说这是个【小】缺点捏？因为域名的查询并【不】频繁，而且客户端软件可以很容易地对域名的查询结果进行【缓存】（以降低查询次数）。所以 DoH 比 DoT 性能略差，无伤大雅。</p>
+<h1 id="4种协议的综合对照表">4种协议的综合对照表</h1>
+<p>为了给列位看官一个直观的印象，放一个综合的对照表。<br>
+<img src="https://blog.gd1214b.icu/post-images/1621680391731.png" alt="" loading="lazy"></p>
+<h1 id="为啥-dns-over-https-更有前途谈谈俺个人观点">为啥 DNS over HTTPS 更有前途？——谈谈俺个人观点</h1>
+<p>接着来聊一下：4个协议中，谁的前景最看好？（以下是俺个人观点，仅供参考）</p>
+<h2 id="首先排除dnssec">首先【排除】DNSSEC</h2>
+<p>如果要讨论这4种协议的优劣，首先【出局】的是 DNSSEC。因为这玩意儿连【保密性】都不具备，无法保护网民的隐私。相比之下，另外三种协议都具备了“保密性”。<br>
+　　（注：DNSSEC 具备“完整性”，不具备“保密性”）</p>
+<h2 id="dnscrypt-与-tls-的对比">DNSCrypt 与 TLS 的对比</h2>
+<p>DoT 与 DoH 这两个协议，本质上都是依赖 TLS 来保证安全性（完整性＆保密性）。所以剩下三种协议的对比，首先是 DNSCrypt 与 TLS 之间的 PK。<br>
+　　俺认为 TLS 具有如下几个优势：<br>
+　　优势1——关于“标准化”<br>
+　　SSL/TLS 老早就已经标准化了，距今已超过20年。（关于 SSL/TLS 版本的演变历史，可以参见这篇博文）<br>
+　　而 DNSCrypt 发布这么多年，连 RFC 都没有提交过——这玩意儿看来【没希望】成为互联网标准了。</p>
+<p>优势2——关于“客户端部署”<br>
+　　TLS 的公钥体系（CA 证书体系）早就已经普及。所有主流的操作系统都内置了一系列 CA 根证书。<br>
+　　相比之下，DNSCrypt 另起炉灶搞了一套公钥机制，只有它自己在用。<br>
+　　所以，在【部署客户端】的时候，DNSCrypt 会比 TLS 麻烦。虽然某些 DNSCrypt 的客户端已经内置了一些知名的公共服务器的公钥，但如果你要切换到另一个 DNSCrypt 服务器，并且该服务器的公钥没有内置在客户端里面，那你就需要手动部署。</p>
+<p>优势3——关于“协议识别”<br>
+　　这个话题前面已经谈过了。此处再重复唠叨一下。<br>
+　　如果网络流量被监控，监控者可以根据协议特征，把 DNSCrypt 识别出来；而 DoT 与 DoH，在流量外观上，与其它的 TLS 流量【毫无差异】。也就是说，监控流量的人，无法判断某个 TLS 流量是否属于 DoT 或 DoH。<br>
+　　综上所述，TLS 完胜 DNSCrypt。所以，剩下的协议就只有 DoT 与 DoH。</p>
+<h2 id="dot-vs-doh">DoT VS DoH</h2>
+<p>前面谈 DoH 优缺点的时候，其实已经可以看出这两者谁更有前途了。<br>
+　　DoT 因为协议栈少了一层，性能会比 DoH 更好。但是俺前面也说了，域名查询的频度是比较低的，而且还可以利用客户端软件的【DNS 缓存】，进一步减少域名查询的频度。所以 DoT 虽然性能更好，但优势不明显。</p>
+<p>DoH 的强项体现在如下几方面：<br>
+　　1. 编程接口更简单<br>
+　　（关于这点，前面提到过）这是个很重要的优势——有助于让更多软件切换到 DoH 之上。</p>
+<p>2. 可以利用 HTTP 协议已有的特性<br>
+　　由于 DoH 是基于 HTTPS 之上，可以无缝地支持 Proxy；<br>
+　　DoH 可以充分利用 HTTP 2.0 的特性（HTTP/2 在 HTTP/1.1 基础上加了很多功能）。</p>
+<p>正是因为 DoH 的这些优势，浏览器厂商对 DoH 的支持更积极。对比一下就可以看出来——DoT 在两年前（2016）正式发布 RFC，主流的浏览器没一个支持；而 DoH 目前才仅仅是 RFC 草案，Firefox 与 Chrome/Chromium 都开始支持了。</p>
+<h2 id="小结">小结</h2>
+<p>经过层层淘汰，目前看下来最有前途的应该 DoH（DNS over HTTPS）。<br>
+　　DoH 未来的发展势头取决于如下几点：</p>
+<ol>
+<li>标准化的时间进度（看目前的架势，正式发布应该快到了）</li>
+<li>其它浏览器跟进的速度</li>
+</ol>
+<h1 id="对-doh-的进一步讨论">对 DoH 的进一步讨论</h1>
+<h2 id="引申阅读">引申阅读</h2>
+<p>分享几篇 DoH 相关的文章：</p>
+<p><a href="https://hacks.mozilla.org/2018/05/a-cartoon-intro-to-dns-over-https/">《A cartoon intro to DNS over HTTPS》</a><br>
+（注：这是 Mozilla 官方博客的一篇文章，深入浅出地扫盲了 DNS 和 DoH 的原理）</p>
+<p><a href="https://bitsup.blogspot.com/2018/05/the-benefits-of-https-for-dns.html">《The Benefits of HTTPS for DNS》</a><br>
+（注：这是某个老外写的技术文章，讨论 DoH 可以借助 HTTP 协议的哪些好处）</p>
+<h2 id="关于浏览器的说明">关于浏览器的说明</h2>
+<p>Firefox<br>
+　　Firefox 从 62 版本开始支持 DoH，具体参见 Mozilla 官方博客（链接在“<a href="https://blog.nightly.mozilla.org/2018/06/01/improving-dns-privacy-in-firefox/">这里</a>”）。<br>
+　　由于 DoH 功能刚刚加入，还没有提供相应的配置界面。如果你想体验该功能，需要定制 Firefox 的配置选项（Preferences）以初始化 DoH 的相关参数。定制 Firefox 的方法参见博文：<a href="https://program-think.blogspot.com/2019/07/Customize-Firefox.html">《扫盲 Firefox 定制——从“user.js”到“omni.ja”》</a></p>
+<p>Chrome/Chromium<br>
+　　Chrome/Chromium 从 66 版本开始支持 DoH。具体参见 Chromium 官网的 issue（链接在“<a href="https://bugs.chromium.org/p/chromium/issues/detail?id=799753">这里</a>”）。</p>
+<p>虽然 Firefox 和 Chrome/Chromium 都已经开始支持 DoH，但大伙儿别急着用。<br>
+　　按照历史经验，刚加入的新功能，可能还不够稳定，没准儿还存在未曝光的安全漏洞。多等几个版本之后再说。</p>
+<h2 id="相关的客户端工具">相关的客户端工具</h2>
+<p>在 curl 官方的代码仓库，有一个<a href="https://github.com/curl/curl/wiki/DNS-over-HTTPS#doh-tools">关于 DoH 的 wiki 页面</a>，里面列出了一些 DoH 的客户端小工具。<br>
+　　喜欢折腾技术的同学，可以先去玩一玩。</p>
+<p>因为 DoH 的标准还没有正式发布，关于它的讨论就到此为止。等到啥时候发布了，俺再专门发一篇 DoH 如何使用的博文。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[当我谈 HTTP 时，我谈些什么?]]></title>
+        <id>https://blog.gd1214b.icu/post/UN4IHs4TZ/</id>
+        <link href="https://blog.gd1214b.icu/post/UN4IHs4TZ/">
+        </link>
+        <updated>2021-05-16T07:13:54.000Z</updated>
+        <content type="html"><![CDATA[<p><img src="https://blog.gd1214b.icu/post-images/1621149248887.webp" alt="" loading="lazy"><br>
+当我们打开网站时也许不会去留意网站前面的HTTP是怎么来的。但是它毫无疑问在网络中有着举足轻重的地位。本文从起源到发展，详说HTTP从1到3的演变。</p>
+<h1 id="说在前面">说在前面</h1>
+<p>本文不致力于讲完 HTTP 的全部内容，事实上短短的篇幅也不可能讲完。本文也无意于深挖 HTTP 中的某一点，这是像 《HTTP 权威指南》或者是 RFC 协议做的事。</p>
+<p>本文目标是帮助读者理清 HTTP 的演化过程，说说 HTTP 变化的那些事。</p>
+<h1 id="http-的起源">HTTP 的起源</h1>
+<p>HTTP 最初是 Tim BernersLee 1989 年在欧洲核子研究组织（CERN）所发起的。Tim BernersLee 提出了一种能让远隔两地的研究者们共享知识的设想。这个设想的基本理念是：借助多文档之间相互关联形成的超文本（HyperText），连成可相互参阅的 WWW（World Wide Web，万维网）。用于传输的超文本传输协议（HyperText Transfer Protocol），即 HTTP 由此诞生。</p>
+<p>WWW 这一名称，是 Web 浏览器当年用来浏览超文本的客户端应用程序时的名称。现在则用来表示这一系列的集合，也可简称为 Web。</p>
+<p>HTTP 本身是一个简单的请求-响应协议，它通常运行在 TCP 之上。从整个网络模型来看，HTTP 是应用层的一个协议。在 OSI 七层模型中，HTTP 位于最上层。它并不涉及数据包的传输，只是规定了客户端和服务器之间的通信格式。定了客户端可能发送给服务器什么样的消息以及得到什么样的响应。请求和响应消息的头以 ASCII 码形式给出。</p>
+<p>HTTP 采用 BS 架构，也就是浏览器到服务器的架构，客户端通过浏览器发送 HTTP 请求给服务器，服务器经过解析响应客户端的请求。就是这个简单实用的模型，使得 HTTP 这个基于 TCP/IP 的协议迅速推广。</p>
+<h2 id="http09-到-http11">HTTP/0.9 到 HTTP/1.1</h2>
+<p>HTTP 的演化并不是一蹴而就的。当年 HTTP 的出现主要是为了解决文本传输的难题。由于协议本身非常简单，于是在此基础上设想了很多应用方法并投入了实际使用。现在 HTTP 已经超出了 Web 这个框架的局限，被运用到了各种场景里。</p>
+<h3 id="http09">HTTP/0.9</h3>
+<p>HTTP 协议最早的一个版本是 1990 年发布的 HTTP/0.9。</p>
+<p>前面说到，HTTP 于 1989 年问世。那时的 HTTP 并没有作为正式的标准被建立。这时的 HTTP 其实含有 HTTP/1.0 之前版本的意思，因此被称为 HTTP/0.9。这个版本只有一个命令：GET。通过 GET 可以获取服务器的资源，比如请求服务器根目录下的 index.html 文件。这个版本的协议规定，服务器只能回应 HTML 格式的字符串，不能回应其它格式，也就是说图像、视频等多媒体资源，在 HTTP/0.9 这个版本上是无法进行传输的。</p>
+<h3 id="http10">HTTP/1.0</h3>
+<p>HTTP 正式作为标准被公布是在 1996 年的 5 月，版本被命名为 HTTP/1.0，并记载于 <a href="https://www.ietf.org/rfc/rfc1945.txt">RFC1945 </a>。虽说是初期标准，但该协议标准至今仍被广泛使用在服务器端。</p>
+<p>HTTP/1.0 版本发布，增加了 POST 命令和 HEAD 命令，丰富了浏览器与服务器的互动手段。这个版本的 HTTP 协议可以发送任何格式的内容，包括传输文字、图像、视频、文件等，这为互联网的大发展奠定了基础。</p>
+<p>HTTP/1.0 除了增加了请求方法以及对发送文件的支持之外，还增加了格式的改变。除了数据部分，每次通信都必须包括头信息（HTTP header），用来描述一些元数据。另外还增加了状态码、多字符集支持、多部分发送（multi-part type）、权限（authorization）、缓存（cache）、内容编码（content encoding）等等。</p>
+<h3 id="http11">HTTP/1.1</h3>
+<p>HTTP/1.0 版也并不是完美的，它的主要缺点是，每一次建立 TCP 连接只能发送一个请求。发送数据完毕，连接就关闭，如果还要请求其他资源，就必须再新建一个连接。如果多次请求，势必就会对服务器产生较大的资源性能损耗。</p>
+<p>1997 年 1 月公布的 HTTP/1.1 是目前主流的 HTTP 协议版本。当初的标准是 RFC2068，之后发布的修订版 RFC2616 就是当前的最新版本。</p>
+<p>其中最著名的是 1999 年 6 月公布的 <a href="https://tools.ietf.org/html/rfc2616">RFC 2616</a>，定义了 HTTP 协议中现今广泛使用的一个版本——HTTP/1.1。</p>
+<p>这个版本最大的变化就是将持久化连接加入了 HTTP 标准，即 TCP 连接默认不关闭，可以被多个请求复用。此外，HTTP/1.1 版还新增了许多方法，例如：PUT、PATCH、HEAD、OPTIONS、DELETE。得到进一步完善的HTTP/1.1 版本，一直沿用至今。</p>
+<h1 id="http-协议简单介绍">HTTP 协议简单介绍</h1>
+<h2 id="请求">请求</h2>
+<p>客户端发送一个 HTTP 请求到服务器，请求消息包括以下格式：</p>
+<p>请求行（request line）、请求头部（header）、空行和请求数据四个部分组成。</p>
+<p>Get 请求例子<br>
+&gt; GET / HTTP/1.1<br>
+&gt; Host: www.baidu.com<br>
+&gt; User-Agent: curl/7.52.1<br>
+&gt; Accept: <em>/</em><br>
+第一部分：请求行，用来说明请求类型，要访问的资源以及所使用的 HTTP 版本。</p>
+<p>第二部分：请求头部，紧接着请求行（即第一行）之后的部分，用来说明服务器要使用的附加信息</p>
+<p>从第二行起为请求头部，HOST 将指出请求的目的地。User-Agent，服务器端和客户端脚本都能访问它,它是浏览器类型检测逻辑的重要基础。该信息由你的浏览器来定义，并且在每个请求中自动发送等等。</p>
+<p>第三部分：空行，请求头部后面的空行是必须的</p>
+<p>即使第四部分的请求数据为空，也必须有空行。</p>
+<p>第四部分：请求数据也叫主体，可以添加任意的其他数据。</p>
+<p>这个例子的请求数据为空。</p>
+<h2 id="响应消息">响应消息</h2>
+<p>一般情况下，服务器接收并处理客户端发过来的请求后，会返回一个 HTTP 的响应消息。</p>
+<p>HTTP 响应也由四个部分组成，分别是：状态行、消息报头、空行和响应正文。</p>
+<p>例子：<br>
+&lt; HTTP/1.1 200 OK<br>
+&lt; Accept-Ranges: bytes<br>
+&lt; Cache-Control: private, no-cache, no-store, proxy-revalidate, no-transform<br>
+&lt; Connection: keep-alive<br>
+&lt; Content-Length: 2381<br>
+&lt; Content-Type: text/html<br>
+&lt; Date: Thu, 11 Jun 2020 16:04:33 GMT<br>
+&lt; Etag: &quot;588604c8-94d&quot;<br>
+&lt; Last-Modified: Mon, 23 Jan 2017 13:27:36 GMT<br>
+&lt; Pragma: no-cache<br>
+&lt; Server: bfe/1.0.8.18<br>
+&lt; Set-Cookie: BDORZ=27315; max-age=86400; domain=.baidu.com; path=/<br>
+&lt;<br>
+<!DOCTYPE html><br>
+<!--STATUS OK--><html> <head>&lt;meta HTTP-equiv=content-type content=text/html;charset=utf-8&gt;&lt;meta HTTP-equiv=X-UA-Compatible content=IE=Edge&gt;<meta content=always name=referrer>... </html></p>
+<p>第一部分：状态行，由 HTTP 协议版本号、状态码、状态消息三部分组成。</p>
+<p>第一行为状态行，（HTTP/1.1）表明 HTTP 版本为 1.1 版本，状态码为 200，状态消息为（ok）</p>
+<p>第二部分：消息报头，用来说明客户端要使用的一些附加信息</p>
+<p>第二行和第三行为消息报头。</p>
+<p>Date：生成响应的日期和时间；Content-Type：指定了 MIME 类型的 HTML(text/html)，编码类型是 UTF-8</p>
+<p>第三部分：空行，消息报头后面的空行是必须的</p>
+<p>第四部分：响应正文，服务器返回给客户端的文本信息。</p>
+<p>空行后面的 HTML 部分为响应正文。</p>
+<h2 id="状态码">状态码</h2>
+<p>状态代码有三位数字组成，第一个数字定义了响应的类别，共分五种类别:</p>
+<ul>
+<li>1xx：指示信息–表示请求已接收，继续处理</li>
+<li>2xx：成功–表示请求已被成功接收、理解、接受</li>
+<li>3xx：重定向–要完成请求必须进行更进一步的操作</li>
+<li>4xx：客户端错误–请求有语法错误或请求无法实现</li>
+<li>5xx：服务器端错误–服务器未能实现合法的请求</li>
+</ul>
+<h1 id="安全性与-https">安全性与 HTTPS</h1>
+<p>HTTP 的诞生是为了解决信息传递和共享的问题，并没有考虑到互联网高速发展后面临的安全问题。</p>
+<p>一般来说 HTTP 从 TCP 三次握手后，便开始了数据传输。由于 HTTP 本身以明文形式来传输数据，并不具备任何数据加密、身份校验的机制。同时下层协议并不对数据安全性、保密性提供保证。所以在网络传输的过程中，任意节点的第三方都可以随意劫持流量、篡改数据或窃取信息。</p>
+<p>HTTP 无法确保数据的保密性、完整性和真实性，已经不能适应现代互联网应用的安全需求。</p>
+<p>随着 Web 的日益壮大，HTTP 的使用呈巨额增长趋势，对信息安全的需求也愈来愈迫切，SSL（Secure SocketsLayer ，安全套接层）应运而生。</p>
+<p>当对于安全需求，首先想到的就是对信息进行加密。SSL ，安全套接层，顾名思义是在 TCP 上提供的安全套接字层。其位于应用层和传输层之间，应用层数据不再直接传递给传输层而是传递给 SSL 层，SSL 层对从应用层收到的数据进行加密，利用数据加密、身份验证和消息完整性验证机制，为网络上数据的传输提供安全性保证。HTTPS 便是指 Hyper Text Transfer Protocol over SecureSocket Layer。</p>
+<p>谈到具体实施上，业内通常采用的一般有对称加密和非对称加密。采用何种方式进行加密？如何判断服务器未被篡改？如何传递加密密钥？带着这样的问题，我们来看看 HTTPS 的工作流程。</p>
+<h2 id="https-的工作流程">HTTPS 的工作流程</h2>
+<h3 id="1-客户端发起-https-请求">1、客户端发起 HTTPS 请求</h3>
+<p>这个没什么好说的，就是用户在浏览器里输入一个 HTTPS 网址，然后连接到 server 的 443 端口。</p>
+<h3 id="2-服务端的配置">2、服务端的配置</h3>
+<p>采用 HTTPS 协议的服务器必须要有一套数字证书，可以自己制作，也可以向组织申请，区别就是自己颁发的证书需要客户端验证通过，才可以继续访问，而使用受信任的公司申请的证书则不会弹出提示页面（Let‘s Encrypt 就是个不错的选择，免费的 SSL 证书）。</p>
+<p>这套证书其实就是一对公钥和私钥，如果对公钥和私钥不太理解，可以想象成一把钥匙和一个锁头，只是全世界只有你一个人有这把钥匙，你可以把锁头给别人，别人可以用这个锁把重要的东西锁起来，然后发给你，因为只有你一个人有这把钥匙，所以只有你才能看到被这把锁锁起来的东西。</p>
+<h3 id="3-传送证书">3、传送证书</h3>
+<p>这个证书其实就是公钥，只是包含了很多信息，如证书的颁发机构，过期时间等等。</p>
+<h3 id="4-客户端解析证书">4、客户端解析证书</h3>
+<p>这部分工作是有客户端的 TLS 来完成的，首先会验证公钥是否有效，比如颁发机构，过期时间等等，如果发现异常，则会弹出一个警告框，提示证书存在问题。</p>
+<p>如果证书没有问题，那么就生成一个随机值，然后用证书对该随机值进行加密，就好像上面说的，把随机值用锁头锁起来，这样除非有钥匙，不然看不到被锁住的内容。</p>
+<h3 id="5-传送加密信息">5、传送加密信息</h3>
+<p>这部分传送的是用证书加密后的随机值，目的就是让服务端得到这个随机值，以后客户端和服务端的通信就可以通过这个随机值来进行加密解密了。</p>
+<h3 id="6-服务段解密信息">6、服务段解密信息</h3>
+<p>服务端用私钥解密后，得到了客户端传过来的随机值(私钥)，然后把内容通过该值进行对称加密，所谓对称加密就是，将信息和私钥通过某种算法混合在一起，这样除非知道私钥，不然无法获取内容，而正好客户端和服务端都知道这个私钥，所以只要加密算法够彪悍，私钥够复杂，数据就够安全。</p>
+<h3 id="7-传输加密后的信息">7、传输加密后的信息</h3>
+<p>这部分信息是服务段用私钥加密后的信息，可以在客户端被还原。</p>
+<h3 id="8-客户端解密信息">8、客户端解密信息</h3>
+<p>客户端用之前生成的私钥解密服务段传过来的信息，于是获取了解密后的内容，整个过程第三方即使监听到了数据，也束手无策。</p>
+<h2 id="ssl-的演化">SSL 的演化</h2>
+<p>简单说完了 HTTPS 的工作流程。让我们再将注意力放在 SSL 的演化上。</p>
+<p>1994年，Netscape 创建了 SSL 协议的原始规范并逐步发布协议改进版本。1995 年发布 SSL 2.0。1996年，Netscape 和 Paul Kocher 共同设计发布 SSL 3.0 协议，获得互联网广泛认可和支持。因特网工程任务组（IETF）接手负责该协议，并将其重命名为 TLS（传输层安全）协议。</p>
+<p>我们看到，SSL 2.0 规范是在 1995 年左右发布的，而 SSL 3.0 是在 1996 年 11 月发布的。有趣的是，SSL 3.0 是在 RFC 6101 中描述的，该 RFC 于 2011 年 8 月发布。它位于历史类别中，该类别通常是被考虑和被丢弃的文档想法，或者是在决定记录它们时已经具有历史意义的协议（根据 IETF  说明）。在这种情况下，有一个描述 SSL 3.0 的 IETF 文档是很有必要的，因为在其可以被用作规范参考。</p>
+<p>再来看看，SSL 是如何激发 TLS 的发展的。后者在 1996 年 11 月以 draft-ietf-tls-protocol-00 宣告开始。它经历了六个草案版本，并于 1999 年初作为 RFC 2246 - TLS 1.0 正式发布。</p>
+<p>在 1995 和 1999 年间，SSL 和 TLS 协议用于保护互联网上的 HTTP 通信。这作为事实上的标准运行良好。直到 1998 年 1 月，随着 I-D draft-ietf-tls-HTTPs-00 的发布，HTTPS 的正式标准化过程才开始。该工作于 2000 年 5 月以 RFC 2616 - HTTP 上的 TLS 的发布结束。</p>
+<p>TLS 在 2000 到 2007 年间继续发展，标准化为 TLS 1.1 和 1.2。直至七年后，TLS 的下一个版本开始进行，该版本在 2014 年四月被采纳为 draft-ietf-tls-tls13-00 ，并在 28 份草稿后，于 2018 年八月出了完成版本 RFC 8446- TLS 1.3。</p>
+<h1 id="改进与-http2">改进与 HTTP2</h1>
+<p>回到 HTTP 本身。在很长一段时间里，HTTP/1.1 已经足够好了（确实是，现在仍应用最为广泛），但是，Web 不断变化的需求使得我们需要一个更好更合适的协议。</p>
+<p>HTTP/1.1 自从 1997 年发布以来，我们已经使用 HTTP/1.x 相当长一段时间了。但随着互联网近十年爆炸式的发展，从当初网页内容以文本为主，到现在以富媒体（如图片、声音、视频）为主，而且对页面内容实时性高要求的应用越来越多（比如聊天、视频直播），所以当时协议规定的某些特性，已经逐渐无法满足现代网络的需求了。<br>
+<img src="https://blog.gd1214b.icu/post-images/1621149840419.png" alt="" loading="lazy"><br>
+如果你有仔细观察，那些最流行的网站首页所需要下载资源的话，会发现一个非常明显的趋势。近年来加载网站首页需要下载的数据量在逐渐增加，并已经超过了 2100K。但在这里我们更关心的是：平均每个页面为了完成显示与渲染所需要下载的资源数也已经超过了 100 个。</p>
+<p>基于此，在 2010 年到 2015 年，谷歌通过实践一个实验性的 SPDY 协议，证明了一个在客户端和服务器端交换数据的另类方式。其收集了浏览器和服务器端的开发者的焦点问题，明确了响应数量的增加和解决复杂的数据传输。在启动 SPDY 这个项目时预设的目标是：</p>
+<ul>
+<li>页面加载时间 （PLT） 减少 50%。</li>
+<li>无需网站作者修改任何内容。</li>
+<li>将部署复杂性降至最低，无需变更网络基础设施。</li>
+<li>与开源社区合作开发这个新协议。</li>
+<li>收集真实性能数据，验证这个实验性协议是否有效。为了达到降低目标，减少页面加载时间的目标，SPDY 引入了一个新的二进制分帧数据层，以实现多向请求和响应、优先次序、最小化及消除不必要的网络延迟，目的是更有效地利用底层 TCP 连接。</li>
+</ul>
+<p>HTTP/1.1 有两个主要的缺点：安全不足和性能不高，由于背负着 HTTP/1.x 庞大的历史包袱，所以协议的修改，兼容性是首要考虑的目标，否则就会破坏互联网上无数现有的资产。<br>
+<img src="https://blog.gd1214b.icu/post-images/1621149904461.png" alt="" loading="lazy"><br>
+而如上图所示，SPDY 位于 HTTP 之下，TCP 和 SSL 之上，这样可以轻松兼容老版本的 HTTP 协议同时可以使用已有的 SSL 功能。</p>
+<p>SPDY 协议在 Chrome 浏览器上证明可行以后，就被当作 HTTP/2 的基础，主要特性都在 HTTP/2 之中得到继承。</p>
+<p>于是时间来到 2015 年，HTTP/2.0 问世。</p>
+<p>HTTP/2 相比 HTTP/1.1 的修改并不会破坏现有程序的工作，但是新的程序可以借由新特性得到更好的速度。</p>
+<p>HTTP/2 保留了 HTTP/1.1 的大部分语义，例如请求方法、状态码、乃至 URI 和绝大多数 HTTP 头部字段一致。而 HTTP/2 采用了新的方法来编码、传输客户端和服务器间的数据。</p>
+<p>来看看 HTTP/2 的具体特点：</p>
+<ul>
+<li>二进制分帧层：在应用层与传输层之间增加一个二进制分帧层，以此达到在不改动 HTTP 的语义，HTTP 方法、状态码、URI 及首部字段的情况下，突破 HTTP/1.1 的性能限制，改进传输性能，实现低延迟和高吞吐量。在二进制分帧层上，HTTP/2.0 会将所有传输的信息分割为更小的消息和帧，并对它们采用二进制格式的编码，其中 HTTP1.x 的首部信息会被封装到 Headers 帧，而我们的 request body 则封装到 Data 帧里面。</li>
+<li>多路复用：对于 HTTP/1.x，即使开启了长连接，请求的发送也是串行发送的，在带宽足够的情况下，对带宽的利用率不够，HTTP/2.0 采用了多路复用的方式，可以并行发送多个请求，提高对带宽的利用率。</li>
+<li>数据流优先级：由于请求可以并发发送了，那么如果出现了浏览器在等待关键的 CSS 或者 JS 文件完成对页面的渲染时，服务器却在专注的发送图片资源的情况怎么办呢？HTTP/2.0 对数据流可以设置优先值，这个优先值决定了客户端和服务端处理不同的流采用不同的优先级策略。</li>
+<li>服务端推送：在 HTTP/2.0 中，服务器可以向客户发送请求之外的内容，比如正在请求一个页面时，服务器会把页面相关的 logo，CSS 等文件直接推送到客户端，而不会等到请求来的时候再发送，因为服务器认为客户端会用到这些东西。这相当于在一个 HTML 文档内集合了所有的资源。</li>
+<li>头部压缩：使用首部表来跟踪和存储之前发送的键值对，对于相同的内容，不会再每次请求和响应时发送。</li>
+<li>HTTP/2.0 支持明文 HTTP 传输，而 SPDY 强制使用 HTTPS。</li>
+<li>HTTP/2.0 消息头的压缩算法采用 HPACK，而非 SPDY 采用的 DEFLATE。</li>
+</ul>
+<h1 id="quic-和-http3">QUIC 和 HTTP3</h1>
+<p>虽然 HTTP/2 提高了网页的性能，但是并不代表它已经是完美的了，HTTP/3 就是为了解决 HTTP/2 所存在的一些问题而被推出来的。随着时间的演进，越来越多的流量都往手机端移动，手机的网络环境会遇到的问题像是封包丢失机率较高、较长的 Round Trip Time (RTT)和连接迁移等问题，都让主要是为了有线网路设计的HTTP/TCP协议遇到贫颈。</p>
+<p>我们可以看两个典型的问题。</p>
+<p>第一握手带来的消耗。HTTP/2 使用 TCP 协议来传输的，而如果使用 HTTPS 的话，还需要使用 TLS 协议进行安全传输，而使用 TLS 也需要一个握手过程，这样就需要有两个握手延迟过程：</p>
+<ul>
+<li>在建立 TCP 连接的时候，需要和服务器进行三次握手来确认连接成功，也就是说需要在消耗完 1.5 个 RTT 之后才能进行数据传输。</li>
+<li>进行 TLS 连接，TLS 有两个版本——TLS 1.2 和 TLS 1.3，每个版本建立连接所花的时间不同，大致是需要1~2个 RTT。</li>
+</ul>
+<p>总之，在传输数据之前，我们需要花掉 3～4 个 RTT。</p>
+<p>第二，TCP 的队头阻塞并没有得到彻底解决。我们知道，为了实现多路复用，在 HTTP/2 中多个请求是跑在一个 TCP 管道中的。但当出现了丢包时，HTTP/2 的表现反倒不如 HTTP/1.X 了。因为 TCP 为了保证可靠传输，有个特别的丢包重传机制，丢失的包必须要等待重新传输确认，HTTP/2 出现丢包时，整个 TCP 都要开始等待重传，那么就会阻塞该 TCP 连接中的所有请求。而对于 HTTP/1.1 来说，可以开启多个 TCP 连接，出现这种情况反到只会影响其中一个连接，剩余的 TCP 连接还可以正常传输数据。</p>
+<p>至此，我们很容易就会想到，为什么不直接去修改 TCP 协议？其实这已经是一件不可能完成的任务了。因为 TCP 存在的时间实在太长，已经充斥在各种设备中，并且这个协议是由操作系统实现的，更新起来非常麻烦，不具备显示操作性。</p>
+<p>HTTP/3 乘着 QUIC 来了。<br>
+<img src="https://blog.gd1214b.icu/post-images/1621150022490.jpg" alt="" loading="lazy"><br>
+HTTP3 是基于 QUIC 的协议，如上图。先说 QUIC，QUIC 协议是 Google 提出的一套开源协议，它基于 UDP 来实现，直接竞争对手是 TCP 协议。QUIC 协议的性能非常好，甚至在某些场景下可以实现 0-RTT 的加密通信。</p>
+<p>在 Google 关于 QUIC <a href="https://docs.google.com/document/d/1gY9-YNDNAB1eip-RTPbqphgySwSNSDHLq9D5Bty4FSU/edit">https://docs.google.com/document/d/1gY9-YNDNAB1eip-RTPbqphgySwSNSDHLq9D5Bty4FSU/edit</a> 的文件中提到，与 HTTP/2 相比，QUIC 主要具有下列优势：</p>
+<ul>
+<li>Reduce connection establishment latency （减少连接建立时间）</li>
+<li>Improved congestion control （改进拥塞控制）</li>
+<li>Multiplexing without head-of-line blocking （没有队头阻塞的多路复用）</li>
+<li>Forward error correction （修复之前的错误）</li>
+<li>Connection migration（支持网络迁移）</li>
+</ul>
+<h2 id="多路复用避免队头阻塞">多路复用，避免队头阻塞</h2>
+<p>这句话说起来很容易，但理解起来并不那么显然，要想理解 QUIC 协议到底做了什么以及这么做的必要性，我想还是从最基础的 HTTP/1.0 聊起比较合适。</p>
+<h3 id="pipiline">Pipiline</h3>
+<p>根据谷歌的调查， 现在请求一个网页，平均涉及到 80 个资源，30 多个域名。考虑最原始的情况，每请求一个资源都需要建立一次 TCP 请求，显然不可接受。HTTP 协议规定了一个字段 Connection，不过默认的值是 close，也就是不开启。</p>
+<p>早在 1999 年提出的 HTTP 1.1协议 中就把 Connection 的默认值改成了Keep-Alive，这样同一个域名下的多个 HTTP 请求就可以复用同一个 TCP 连接。这种做法被称为 HTTP Pipeline，优点是显著的减少了建立连接的次数，也就是大幅度减少了 RTT。</p>
+<p>以上面的数据为例，如果 80 个资源都要走一次 HTTP 1.0，那么需要建立 80 个 TCP 连接，握手 80 次，也就是 80 个 RTT。如果采用了 HTTP 1.1 的 Pipeline，只需要建立 30 个 TCP 连接，也就是 30 个 RTT，提高了 62.5% 的效率。</p>
+<p>Pipeline 解决了 TCP 连接浪费的问题，但它自己还存在一些不足之处，也就是所有管道模型都难以避免的队头阻塞问题。</p>
+<h3 id="队头阻塞">队头阻塞</h3>
+<p>我们再举个简单而且直观的例子，假设加载一个 HTML 一共要请求 10 个资源，那么请求的总时间是每一个资源请求时间的总和。最直观的体验就是，网速越快请求时间越短。然而如果某一个资源的请求被阻塞了（比如 SQL 语句执行非常慢）。但对于客户端来说所有后续的请求都会因此而被阻塞。<br>
+<img src="https://blog.gd1214b.icu/post-images/1621150146278.png" alt="" loading="lazy"><br>
+队头阻塞（Head of line blocking，下文简称 HOC）说的是当有多个串行请求执行时，如果第一个请求不执行完，后续的请求也无法执行。比如上图中，如果第四个资源的传输花了很久，后面的资源都得等着，平白浪费了很多时间，带宽资源没有得到充分利用。</p>
+<p>因此，HTTP 协议允许客户端发起多个并行请求，比如在笔者的机器上最多支持六个并发请求。并发请求主要是用于解决 HOC 问题，当有三个并发请求时，情况会变成这样：<br>
+<img src="https://blog.gd1214b.icu/post-images/1621150164326.jpg" alt="" loading="lazy"><br>
+可见虽然第四个资源的请求被阻塞了，但是其他的资源请求并不一定会被阻塞，这样总的来说网络的平均利用率得到了提升。</p>
+<p>支持并发请求是解决 HOC 问题的一种方案，这句话没有错。但是我们要理解到：“并发请求并非是直接解决了 HOC 的问题，而是尽可能减少 HOC 造成的影响“，以上图为例，HOC 的问题依然存在，只是不会太浪费带宽而已。</p>
+<p>有读者可能会好奇，为什么不多搞几个并发的 HTTP 请求呢？刚刚说过笔者的电脑最多支持 6 个并发请求，谷歌曾经做过实验，把 6 改成 10，然后尝试访问了三千多个网页，发现平均访问时间竟然还增加了 5% 左右。这是因为一次请求涉及的域名有限，再多的并发 HTTP 请求并不能显著提高带宽利用率，反而会消耗性能。</p>
+<h3 id="spdy-的做法">SPDY 的做法</h3>
+<p>有没有办法解决队头阻塞呢？</p>
+<p>答案是肯定的。SPDY 协议的做法很值得借鉴，它采用了多路复用（Multiplexing）技术，允许多个 HTTP 请求共享同一个 TCP 连接。我们假设每个资源被分为多个包传递，在 HTTP 1.1 中只有前面一个资源的所有数据包传输完毕后，后面资源的包才能开始传递（HOC 问题），而 SPDY 并不这么要求，大家可以一起传输。</p>
+<p>这么做的代价是数据会略微有一些冗余，每一个资源的数据包都要带上标记，用来指明自己属于哪个资源，这样客户端最后才能把他们正确的拼接起来。不同的标记可以理解为图中不同的颜色，每一个小方格可以理解为资源的某一个包。</p>
+<h3 id="tcp-窗口">TCP 窗口</h3>
+<p>是不是觉得 SPDY 的多路复用已经够厉害了，解决了队头阻塞问题？很遗憾的是，并没有，而且我可以很肯定的说，只要你还在用 TCP 链接，HOC 就是逃不掉的噩梦，不信我们来看看 TCP 的实现细节。</p>
+<p>我们知道 TCP 协议会保证数据的可达性，如果发生了丢包或者错包，数据就会被重传。于是问题来了，如果一个包丢了，那么后面的包就得停下来等这个包重新传输，也就是发生了队头阻塞。当然 TCP 协议的设计者们也不傻，他们发明了滑动窗口的概念：<br>
+<img src="https://blog.gd1214b.icu/post-images/1621150247344.jpg" alt="" loading="lazy"><br>
+这样的好处是在第一个数据包（1-1000） 发出后，不必等到 ACK 返回就可以立刻发送第二个数据包。可以看出图中的 TCP 窗口大小是 4，所以第四个包发送后就会开始等待，直到第一个包的 ACK 返回。这样窗口可以向后滑动一位，第五个包被发送。</p>
+<p>如果第一、二、三个的包都丢失了也没有关系，当发送方收到第四个包时，它可以确信一定是前三个 ACK 丢了而不是数据包丢了，否则不会收到 4001 的 ACK，所以发送方可以大胆的把窗口向后滑动四位。</p>
+<p>滑动窗口的概念大幅度提高了 TCP 传输数据时抗干扰的能力，一般丢失一两个 ACK 根本没关系。但如果是发送的包丢失，或者出错，窗口就无法向前滑动，出现了队头阻塞的现象。</p>
+<h2 id="quic-是如何做的">QUIC 是如何做的</h2>
+<p>所以说 HOC 不仅仅在 HTTP 层存在，在 TCP 层也存在，这也正是 QUIC 协议要解决的问题。回顾 SPDY 是如何解决 HOC 的，没错，多路复用（Multiplex）。QUIC 协议也采用了多路复用技术。<br>
+<img src="https://blog.gd1214b.icu/post-images/1621150282852.jpg" alt="" loading="lazy"><br>
+UIC 协议基于 UDP 实现，我们知道 UDP 协议只负责发送数据，并不保证数据可达性。这一方面为 QUIC 的多路复用提供了基础，另一方面也要求 QUIC 协议自己保证数据可达性。</p>
+<p>SPDY 为各个数据包做好标记，指明他们属于哪个 HTTP 请求，至于这些包能不能到达客户端，SPDY 并不关心，因为数据可达性由 TCP 协议保证。既然客户端一定能收到包，那就只要排序、拼接就行了。QUIC 协议采用了多路复用的思想，但同时还得自己保证数据的可达性。</p>
+<p>TCP 协议的丢包重传并不是一个好想法，因为一旦有了前后顺序，队头阻塞问题将不可避免。而无序的数据发送给接受者以后，如何保证不丢包，不错包呢？这看起来是个不可能完成的任务，不过如果把要求降低成：最多丢一个包，或者错一个包。事情就简单多了，操作系统中有一种存储方式叫 RAID 5，采用的是异或运算加上数据冗余的方式来保证前向纠错（FEC: Forward Error Correcting）。QUIC 协议也是采用这样的思想，这里不再赘述。</p>
+<p>利用冗余数据的思想，QUIC 协议基本上避免了重发数据的情况。当然 QUIC 协议还是支持重传的，比如某些非常重要的数据或者丢失两个包的情况。</p>
+<h3 id="少-rtt请求更快速">少 RTT，请求更快速</h3>
+<p>前面说到，一次 HTTPS 请求，它的基本流程是三次 TCP 握手外加四次 SSL/TLS 握手。也就是需要三个 RTT。但是 QUIC 在某些场景下，甚至能够做到 0RTT。</p>
+<p>首先介绍下什么是 0RTT。所谓的 0RTT 就是通信双方发起通信连接时，第一个数据包便可以携带有效的业务数据。而我们知道，这个使用传统的TCP是完全不可能的，除非你使能了 TCP 快速打开特性，而这个很难，因为几乎没人愿意为了这个收益去对操作系统的网络协议栈大动手脚。未使能 TCP 快速打开特性的TCP传输第一笔数据前，至少要等1个RTT。</p>
+<p>我们这里再说说 HTTP2。对于 HTTP2 来说，本来需要一个额外的 RTT 来进行协商，判断客户端与服务器是不是都支持 HTTP2，不过好在它可以和 SSL 握手的请求合并。这也导致了一个现象，就是大多数主流浏览器仅支持 HTTPS2 而不单独支持 HTTP2。因为 HTTP2 需要一个额外的 RTT，HTTPS2 需要两个额外的 RTT，仅仅是增加一个 RTT 就能获得数据安全性，还是很划算的。</p>
+<h3 id="tcp-快速打开">TCP 快速打开</h3>
+<p>何谓 TCP 快速打开，即客户端可以在发送第一个 SYN 握手包时携带数据，但是 TCP 协议的实现者不允许将把这个数据包上传给应用层。这主要是为了防止 TCP 泛洪攻击 [。</p>
+<p>因为如果 SYN 握手的包能被传输到应用层，那么现有的防护措施都无法防御泛洪攻击，而且服务端也会因为这些攻击而耗尽内存和 CPU。</p>
+<p>当然 TCP 快速打开并不是完全不可行的。人们设计了 TFO (TCP Fast Open)，这是对 TCP 的拓展，不仅可以在发送 SYN 时携带数据，还可以保证安全性。</p>
+<p>TFO 设计了一个 Cookie，它在第一次握手时由 server 生成，Cookie 主要是用来标识客户端的身份，以及保存上次会话的配置信息。因此在后续重新建立 TCP 连接时，客户端会携带 SYN + Cookie + 请求数据，然后不等 ACK 返回就直接开始发送数据。<br>
+<img src="https://blog.gd1214b.icu/post-images/1621150338682.jpg" alt="" loading="lazy"><br>
+服务端收到 SYN 后会验证 Cookie 是否有效，如果无效则会退回到三次握手的步骤，如下图所示：<br>
+<img src="https://blog.gd1214b.icu/post-images/1621150351416.jpg" alt="" loading="lazy"><br>
+同时，为了安全起见，服务端为每个端口记录了一个值 PendingFastOpenRequests，用来表示有多少请求利用了 TFO，如果超过预设上限就不再接受。</p>
+<p>关于 TFO 的优化，可以总结出三点内容:</p>
+<ul>
+<li>TFO 设计的 Cookie 思想和 SSL 恢复握手时的 Session Ticket 很像，都是由服务端生成一段 Cookie 交给客户端保存，从而避免后续的握手，有利于快速恢复。</li>
+<li>第一次请求绝对不会触发 TFO，因为服务器会在接收到 SYN 请求后把 Cookie 和 ACK 一起返回。后续客户端如果要重新连接，才有可能使用这个 Cookie 进行 TFO.</li>
+<li>TFO 并不考虑在 TCP 层过滤重复请求，以前也有类似的提案想要做过滤，但因为无法保证安全性而被拒绝。所以 TFO 仅仅是避免了泛洪攻击（类似于 backlog），但客户端接收到的，和 SYN 包一起发来的数据，依然有可能重复。不过也只有可能是 SYN 数据重复，所以 TFO 并不处理这种情况，要求服务端程序自行解决。这也就是说，不仅仅要操作系统的支持，更要求应用程序（比如 MySQL）也支持 TFO。</li>
+</ul>
+<p>TFO 使得 TCP 协议有可能变成 0-RTT，核心思想和 Session Ticket 的概念类似: 将当前会话的上下文缓存在客户端。如果以后需要恢复对话，只需要将缓存发给服务器校验，而不必花费一个 RTT 去等待。</p>
+<p>结合 TFO 和 Session Ticket 技术，一个本来需要花费 3 个 RTT 才能完成的请求可以被优化到一个 RTT。如果使用 QUIC 协议，我们甚至可以更进一步，将 Session Ticket 也放到 TFO 中一起发送，这样就实现了 0-RTT 的对话恢复。</p>
+<h2 id="quic-是怎么做的">QUIC 是怎么做的</h2>
+<p>让我们看看 QUIC 是怎么做的。</p>
+<p>首先声明一点，如果一对使用 QUIC 进行加密通信的双方此前从来没有通信过，那么 0-RTT 是不可能的，即便是 QUIC 也是不可能的。</p>
+<p>QUIC 握手的过程需要一次数据交互，0-RTT 时延即可完成握手过程中的密钥协商，比 TLS 相比效率提高了 5 倍，且具有更高的安全性。在握手过程中使用 Diffie-Hellman 算法协商初始密钥，初始密钥依赖于服务器存储的一组配置参数，该参数会周期性的更新。初始密钥协商成功后，服务器会提供一个临时随机数，双方根据这个数再生成会话密钥。</p>
+<p>具体握手过程如下：</p>
+<p>(1) 客户端判断本地是否已有服务器的全部配置参数，如果有则直接跳转到(5)，否则继续</p>
+<p>(2) 客户端向服务器发送 inchoate client hello(CHLO) 消息，请求服务器传输配置参数</p>
+<p>(3) 服务器收到 CHLO，回复 rejection(REJ) 消息，其中包含服务器的部分配置参数</p>
+<p>(4) 客户端收到 REJ，提取并存储服务器配置参数，跳回到(1)</p>
+<p>(5) 客户端向服务器发送 full client hello 消息，开始正式握手，消息中包括客户端选择的公开数。此时客户端根据获取的服务器配置参数和自己选择的公开数，可以计算出初始密钥。</p>
+<p>(6) 服务器收到 full client hello，如果不同意连接就回复 REJ，同(3)；如果同意连接，根据客户端的公开数计算出初始密钥，回复 server hello(SHLO)消息，SHLO 用初始密钥加密，并且其中包含服务器选择的一个临时公开数。</p>
+<p>(7) 客户端收到服务器的回复，如果是 REJ 则情况同(4)；如果是 SHLO，则尝试用初始密钥解密，提取出临时公开数</p>
+<p>(8) 客户端和服务器根据临时公开数和初始密钥，各自基于 SHA-256 算法推导出会话密钥</p>
+<p>(9) 双方更换为使用会话密钥通信，初始密钥此时已无用，QUIC 握手过程完毕。之后会话密钥更新的流程与以上过程类似，只是数据包中的某些字段略有不同。</p>
+<h1 id="写在最后">写在最后</h1>
+<p>想起有一个名言：计算机领域没有什么问题是加一层解决不了的，如果有，就再加一层。网络模型本来就是层层累加，到了 Web 得以快速生动的展现给人们以丰富的内容。从 HTTP 的演变过程中，我们可以看到中间又累加了若干层。不知道以后，又会是怎么样呢？</p>
+<p>大家会发现，笔者在文中不止一次提到了演变这个词。是的，这是来自达尔文进化论中的理论。在笔者看来，“物竞天择，适者生存”的演变理论和计算机领域的技术变化是很类似的，只不过在这里，不是天择，而是人择。由市场，由用户来选择。不知道接下来，作为选择者的我们，又将怎样主导技术的走向？</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[HTTP/3 来了，你了解它么？]]></title>
+        <id>https://blog.gd1214b.icu/post/G2KB6-qOq/</id>
+        <link href="https://blog.gd1214b.icu/post/G2KB6-qOq/">
+        </link>
+        <updated>2021-05-15T13:31:36.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>本文转自:<a href="https://www.upyun.com/tech/article/577/HTTP%2F3%20%E6%9D%A5%E4%BA%86%EF%BC%8C%E4%BD%A0%E4%BA%86%E8%A7%A3%E5%AE%83%E4%B9%88%EF%BC%9F.html">https://www.upyun.com/tech/article/577/HTTP%2F3 来了，你了解它么？.html</a></p>
+</blockquote>
+<p>作为我们网上冲浪最为常见，也经常被人忽视的 HTTP 已经更新换代到了 HTTP/3。本文简单明了的带你认识 HTTP/3 的作用。</p>
+<h1 id="http3-是什么">HTTP/3 是什么？</h1>
+<p>要深入了解 HTTP/3，那首先要知道什么是 HTTP/3。<br>
+<img src="https://blog.gd1214b.icu/post-images/1621086450147.png" alt="" loading="lazy"><br>
+如上图所示，HTTP/3 是基于 QUIC 的协议。而 QUIC 协议是 Google 提出的一套开源协议，它基于 UDP 来实现，直接竞争对手是 TCP 协议。</p>
+<p>另外，要聊 HTTP/3，HTTP 的发展历程是怎么也绕不过去的，而且可以讲很久。</p>
+<h1 id="http3-的优点及不足">HTTP/3 的优点及不足</h1>
+<p>今天我们在这里简单说一下 HTTP/3 相比较 HTTP/2 进步的那些点。</p>
+<p>回归正题，相比 HTTP/2 而言 HTTP/3 有以下几点提升：</p>
+<ul>
+<li>
+<p>HTTP/3 使用 stream 进一步扩展了 HTTP/2 的多路复用。在 HTTP/3 模式下，一般传输多少个文件就会产生对应数量的 stream。当这些文件中的其中一个发生丢包时，你只需要重传丢包文件的对应 stream 即可。</p>
+</li>
+<li>
+<p>HTTP/3 不再是基于 TCP 建立的，而是通过 UDP 建立，在用户空间保证传输的可靠性，相比 TCP，UDP 之上的 QUIC 协议提高了连接建立的速度，降低了延迟。</p>
+</li>
+<li>
+<p>通过引入 Connection ID，使得 HTTP/3 支持连接迁移以及 NAT 的重绑定。</p>
+</li>
+<li>
+<p>HTTP/3 含有一个包括验证、加密、数据及负载的 built-in 的 TLS 安全机制。</p>
+</li>
+<li>
+<p>拥塞控制。TCP 是在内核区实现的，而 HTTP/3 将拥塞控制移出了内核，通过用户空间来实现。这样做的好处就是不再需要等待内核更新可以实现很方便的进行快速迭代。</p>
+</li>
+<li>
+<p>头部压缩。HTTP/2 使用的 HPACK，HTTP/3 更换成了兼容 HPACK 的 QPACK 压缩方案。QPACK 优化了对乱序发送的支持，也优化了压缩率。</p>
+</li>
+</ul>
+<p>没有哪项技术是完美无缺的，更不用说是还在发展中的 HTTP/3 了。</p>
+<p>HTTP/3 建立传输用的是 UDP 协议，而在 HTTP/3 出现前 UDP 的通常出现地点是类似《计算机网络》这样的书面理论，即便是实际应用也大多和网络攻击一起出现，这就导致 UDP 的名声不太好。名声差了自然在硬件上的支持也捉襟见肘，大部分互联网服务也就理所当然的对 UDP 的访问进行限制。</p>
+<h1 id="准备好迎接-http3-了吗">准备好迎接 HTTP/3 了吗？</h1>
+<p>但是毫无疑问的，HTTP/3 是目前最前沿的互联网标准，它的缺点可以通过不断的改进来完善。相比与 HTTP/3 本身的缺陷问题，作为一项新技术最致命的问题是能否获得足够多的有效支持，从而进行大范围推广。</p>
+<p>那么当前的环境已经有迎接 HTTP/3 的能力了么？</p>
+<p>HTTP/3 作为互联网的标准革新之一，在支持方面无非两点，一个是服务端，一个是客户端。</p>
+<p>先来看一下客户端，大家所熟悉的浏览器 Chrome 以及常用 Curl 命令行工具都已经支持 HTTP/3 特性。在 Chrome 的开发者工具一栏里你可以看到一项显示为“HTTP/2+quic/99”，这就是 Chrome 已经支持 HTTP/3 的证据。毕竟 HTTP/3 的组成离不开 QUIC 协议。</p>
+<p>而在 Curl 命令行工具(<a href="https://github.com/curl/curl">https://github.com/curl/curl</a>) 的最新版本， 你只需在常规的命令末尾添加“--HTTP/3”即可使用 HTTP/3，如果目标服务器支持，它会自然的返回“HTTP/3 200”。</p>
+<p>确认了客户端的支持，我们接下来看一下服务端。</p>
+<p>自 2013 年 QUIC 被正式公开以来，到 2020 年已经发展了差不多7年，目前网上已经有了不少热门开源的项目，除去带头大哥 Google 在完成了对自身搜索引擎的支持，还同时拉上了 Gmail 、YouTube 等站点。但对于国内的绝大部分站点来说，HTTP/3 之路，似乎还停留在东土大唐，即使 Nginx 已经公开声明：“我们已经支持 QUIC 协议“。</p>
+<p>我们可以看到，虽然目前环境还没有全面迭代到 HTTP/3 ，但是 HTTP/3 的发展是不可阻拦的。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[国内主流网络运营商国际连接线路简谈]]></title>
+        <id>https://blog.gd1214b.icu/post/EbWtYgMvU/</id>
+        <link href="https://blog.gd1214b.icu/post/EbWtYgMvU/">
+        </link>
+        <updated>2021-05-12T09:12:26.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>本文转自:<a href="https://zhuanlan.zhihu.com/p/64467370">https://zhuanlan.zhihu.com/p/64467370</a></p>
+</blockquote>
+<h1 id="中国大陆目前国际网络的建设状况">中国大陆目前国际网络的建设状况</h1>
+<p>根据新华网<a href="http://www.xinhuanet.com/info/2019-04/03/c_137945444.htm">最新的报道</a>指出，截至 2019 年 4 月，全国三大运营商——电信、联通、移动保有宽带用户数如下：</p>
+<blockquote>
+<p>中国电信：1.46 亿户；<br>
+中国联通：0.8088 亿户<br>
+中国移动：1.57 亿户。</p>
+</blockquote>
+<p>根据公布在 中华人民共和国国家互联网信息办公室&amp;中共中央网络安全和信息化委员会办公室 页面的，由 中国互联网络信息中心 于 2019 年 2 月公布的<a href="http://www.cac.gov.cn/2019-02/28/c_1124175677.htm">“第43次《中国互联网络发展状况统计报告》”</a>指出，国内主要骨干网络国际出口带宽共有 8,946,570 Mbps，国内主流三大运营商所拥有的国际出口带宽数据如下：</p>
+<blockquote>
+<p>中国电信：4,537,680 Mbps；<br>
+中国联通：2,234,738 Mbps；<br>
+中国移动：1,997,000 Mbps；</p>
+</blockquote>
+<p>由此可得，各家出口带宽的总量比较如下：</p>
+<blockquote>
+<p>中国电信 ＞ 中国联通 ＞ 中国移动</p>
+</blockquote>
+<p>结合上述宽带用户数，可得各家人均用户出口带宽量比较如下：</p>
+<blockquote>
+<p>中国联通 ＞ 中国电信 ＞ 中国移动</p>
+</blockquote>
+<p>国际出口带宽量的增长，与海缆建设周期息息相关：<br>
+<img src="https://blog.gd1214b.icu/post-images/1620810934625.jpg" alt="" loading="lazy"><br>
+根据中国信息通信研究院公布的中国国际光缆互联互通白皮书指出：</p>
+<blockquote>
+<p>2009-2012 年,数据中心成为驱动国际海底光缆建设的最大驱动力，国际海底光缆又迎了一个建设小高潮。目前，全球海缆建设正在进入第三次建设高潮，全球 40%的海缆是 2000 年之前建设的，已经逐步进入了海缆使用生命 周期的尾期，未来几年，数据中心互联及互联网带宽需求将持续增长， 全球海缆将进入一个新旧更替的时期，形成海缆布局的时间窗口， 2016 年跨太平洋、跨大西洋、亚欧间海缆系统已经开始升级换代。</p>
+</blockquote>
+<p>2013 年国际出口带宽的猛增，和云计算的普及息息相关。</p>
+<p>另外，随着老旧的中美光缆（CUCN）于 2016 年底退役，目前中美之间的连接，主要由太平洋直达高速光缆（TPE）和正在建设的新跨太平洋国际海底光缆（NCP）承载，NCP 建成后，将极大缓解中美之间网络拥堵的状况。</p>
+<p>“人均”问题不解决，晚高峰拥堵的状况是注定无解的：</p>
+<blockquote>
+<p>与未来国际流量发展预期和世界主要国家相对，中国的国际海缆发展仍显不足,美国的海缆数量是中国的 8 倍，人均带宽是中国近 20 倍；日本的海缆数量是中国 2 倍多，人均带宽是中国近 10 倍；英国海缆数量是中国的 5 倍多，人均带宽是中国 72 倍；新加坡海缆数量是中国 2 倍多，人均带宽是中国 262 倍。</p>
+</blockquote>
+<p>前途是光明的，道路是曲折的，海缆建设是一个投资大的、长期的、系统化的、复杂的工程，既然正在规划中的海缆，并不能直接享受到，所以我们就只能就目前的情况，做一个分析。</p>
+<h1 id="目前国内三大主流运营商的国际出口路由现状">目前国内三大主流运营商的国际出口路由现状</h1>
+<p>看过上述分析的同学应该晓得了，如果有经常访问外网的需求，使用中国联通的固网是最明智的选择，那么，这三大运营商的国际出口路由具体是什么情况呢？我们来逐一分析。</p>
+<h2 id="1-中国电信">1. 中国电信</h2>
+<figure data-type="image" tabindex="1"><img src="https://blog.gd1214b.icu/post-images/1620814000707.jpg" alt="" loading="lazy"></figure>
+<ul>
+<li>
+<p>中国电信目前拥有两条线路，一条是 163 骨干网（ChinaNet），另一条就是 CN2 网络；</p>
+</li>
+<li>
+<p>相对 CN2 而言，有的人又习惯称 163 骨干网为 CN1，163 网是中国电信建设的最早的一个网络，它为超过 1 亿的中国电信用户承载包括连往境外的，普通质量的互联网业务。身为电信用户，如果在晚上连接境外网络总是感觉卡顿，丢包高，99.99%的原因都是因为走的这张网，大家一起挤，线路就 boom 了；</p>
+</li>
+<li>
+<p>CN2，即“ChinaNet Next Carrying Network（ChinaNet 的下一代承载网络）”，在 2005 年投入使用，最初架设的目标，是提供一个拓扑合理，架构先进，建设科学，用于满足未来 10-20 年替代 163 网成为未来新骨干网的网络（这个 flag 还未实现），CN2 网络能够同时承载语音、数据、视频、全球互联等业务，尤其是全球互联方面，相对于 163 网而言，CN2 网络的低丢包、低延时、轻负载，让众多用户趋之若鹜；</p>
+</li>
+<li>
+<p>据统计，在中国电信的总网络连接中，163 网络承担了 85% 的网络流量，其余的 15% 流量，由 CN2 网络承担；</p>
+</li>
+<li>
+<p>除了上篇文章我们提到的，外网走专线的中国电信政企网，中国电信还针对普通宽带用户，推出过氮气瓶，或称为“电信精品网”的服务，但不知道何种原因（疑似超售），这种服务现在不提供了。简单来讲，就是不管境外网络节点是普通线路，还是专门推出的CN2 网络优化版（仅针对中国大陆的通信），让在境内用户访问境外网络时，统一直接并入到 CN2 网络；</p>
+</li>
+<li>
+<p>回国或出国，必定经过北京/上海/广州；</p>
+</li>
+<li>
+<p>进出口路由路径，分为三个品级：</p>
+<ol>
+<li>163 网（CN1）；</li>
+<li>CN2 GT（Global Transfer 又称半程 CN2 ）；</li>
+<li>CN2 GIA（Global Internet Access 又称纯 CN2/全程 CN2）；</li>
+</ol>
+</li>
+<li>
+<p>网络路由路径遵守固定路径/边界网关协议（BGP）；</p>
+</li>
+<li>
+<p>在高峰期会有策略性丢包减少对骨干网的负载；</p>
+</li>
+<li>
+<p>虽然出口宽带总量最大，且人均出口带宽排行第二，但电信 163 网连接国际网络，会在高峰时段，在路由出海前的最后一跳，根据优先级，策略性地人为丢包，以减轻对主网的负担(QOS)，这让普通电信用户糟糕的外网访问质量雪上加霜；</p>
+</li>
+<li>
+<p>中国电信的服务主旨：用户能用钱解决的问题，都不是问题，剩余的问题，统统都是因为“钱没给够”而导致的问题。</p>
+</li>
+</ul>
+<p>中国电信 163 网络 AS4134 路由拓扑图，图示来源：<a href="https://bgp.he.net/AS4134">https://bgp.he.net/AS4134</a><br>
+IPv4:<br>
+<img src="https://blog.gd1214b.icu/post-images/1620811329916.jpg" alt="" loading="lazy"><br>
+IPv6:<br>
+<img src="https://blog.gd1214b.icu/post-images/1620811358657.jpg" alt="" loading="lazy"><br>
+说明：</p>
+<ul>
+<li>
+<p>中国电信的 163 网络，一般会经过市级 → 省级 → 国际出口 → 境外接入点 AS（自治路由协议） 号为 4134 的路由节点，这些路由节点的 IP 地址开头一律是 “202.97.<em>.</em>”，全程不会经过 CN2 网络节点；</p>
+</li>
+<li>
+<p>163 网络国内之间互相访问基本上不存在性能瓶颈，只有在国际出口才会发生拥堵；</p>
+</li>
+<li>
+<p>仅统计国际网络的访问质量，163 网络全天的丢包率在 5% ~ 10%左右，如果在夜晚间高峰期（UTC+8 18:00 至 23:00 时），丢包率可达到 15% 以上；</p>
+</li>
+<li>
+<p>会经过更多的路由数量；</p>
+</li>
+<li>
+<p>163 网(民用电信宽带都属于这种)，是全中国用户数量最大，访问国际网络体验最差的线路，国外网站用浏览器打开需要转圈等上个十来分钟，PC、PS、Xbox 连接外服下载极慢(十几 kb / 秒)，玩游戏卡顿(丢包)等现象屡见不鲜；</p>
+</li>
+<li>
+<p>除了例如自“云上贵州”落地中国后，iOS / Mac 用户连接 app store、iCloud 速度迟缓的情况大有改观这样的案例，所有 163 网用户在访问没有在中国大陆境内(不包含港澳台)布设本地服务器或 CDN 加速服务的境外网站或网络服务，被迫忍受极其缓慢的速度等现象，在未来 10 - 20 年之内无法缓解；</p>
+</li>
+<li>
+<p>某国家级别大型网关，利用机器学习和人工干预等手段，会实时对境内和境外通信的互联网流量，做深度包检测、数据请求头分析、带高危协议特征流量的干扰和阻断等工作，从而保障中华人民共和国互联网通信的安全，代价是损耗一部分外网通信的性能(存疑)；</p>
+</li>
+<li>
+<p>不要想当然地以为，某 VPS 距离接入网络的地域蛮近的（上海 → 日本 / 广州 → 新加坡等），延迟和掉包情况一定不大，在该 VPS 商家有大量用户访问和绕路以及晚高峰情况下，163 网络的劣化程度比你想象的要严重得多：如从中国 → 新加坡（godaddy 新加坡虚拟主机），实际上是从中国 → 美国 → 新加坡），单程环两次北太平洋，看你怕不怕。</p>
+</li>
+</ul>
+<p>一个典型的 163 网络的国际访问路由，注意出海前经过路由的 AS 号和对应的 IP 地址<br>
+<img src="https://blog.gd1214b.icu/post-images/1620811543895.jpg" alt="" loading="lazy"><br>
+16 ~ 17 年时，连接亚太地区的路径普遍较差，绕美是家常便饭.</p>
+<p>从 18 年末，渐渐有了好转，电信一般都是绕日 NTT 过去，不过访问质量依旧很糟糕，线路无优化商家的劣势就是通信不稳定:<br>
+<img src="https://blog.gd1214b.icu/post-images/1620813559023.jpg" alt="" loading="lazy"><br>
+中国电信 CN2 网络 AS4809 路由拓扑图，图示来源：<a href="https://bgp.he.net/AS4809">https://bgp.he.net/AS4809</a><br>
+IPv4:<br>
+<img src="https://blog.gd1214b.icu/post-images/1620813617487.jpg" alt="" loading="lazy"><br>
+IPv6:<br>
+<img src="https://blog.gd1214b.icu/post-images/1620813644223.jpg" alt="" loading="lazy"><br>
+说明：</p>
+<ul>
+<li>
+<p>CN2 网络的拓扑图远比 163 网复杂许多，整个网络的建设充分利用了各个节点之间的互联性，而不像 163 网那样简单粗暴地采用从上到下、从一到多的布设逻辑，从而充分使每一个节点在遭遇重负载时，可以迅速由周围节点来缓解负载；</p>
+</li>
+<li>
+<p>CN2 GT 产品在从市级 → 省级 → 国际出口这一段走的是 163 网络，国际出口 → 境外接入点这一段汇入 CN2 网络，返程同理，偶尔可能会走联通的国际网络；</p>
+</li>
+<li>
+<p>作为典型的半程 CN2 产品，CN2 GT 网络的数据包即使在国际间传送几乎不会出现丢包的情况，但依然非常容易在国内这一段拥堵时，出现被中国电信舍弃数据包的情况，CN2 GT 网络全天的丢包率在 4% ~ 6%左右，如果在夜晚间高峰期（UTC+8 18:00 至 23:00 时），丢包率可达到 8% 以上；</p>
+</li>
+<li>
+<p>CN2 GIA 产品在从市级 → 省级 → 国际出口 → 境外接入点的过程中，全程走 AS 号为 4809 的路由节点，这些路由节点的 IP 地址开头一律是 “59.43.<em>.</em>”，全程不会经过 163 网络节点；</p>
+</li>
+<li>
+<p>在没有购买昂贵的政企专线网络或氮气瓶加速服务的情况下，中国电信普通宽带用户连接海外节点具体走何种线路，取决于对方节点采用了何种路由自治协议，当然，决定它并不是靠心情，而是要和接入的电信运营商签署协议，一旦签署了走何种协议，如纯 CN2 网络，势必要向中国电信缴纳一笔高昂的 CN2 网络使用费用（最后这笔钱还得由用户承担），这就导致支持 CN2 GIA 网络的 VPS 产品价格最昂贵，CN2 GT 价格其次，163 网最为低廉（不用向中国电信缴纳一笔专门优化中国线路的银子）；</p>
+</li>
+<li>
+<p>作为中国电信的旗舰产品，CN2 GIA 产品的表现绝不会令任何人失望，无论是白天，还是晚高峰时期，纯 CN2 线路的掉包率均在 0.1% 以下，用户在访问过程中，行云流水，畅快丝滑。</p>
+</li>
+<li>
+<p>其实如果更严格地划分，CN2 GIA 产品还分为单网、双网、三网三种，顾名思义，单网 CN2 GIA 一般指的是仅中国电信用户访问去回，走 CN2 GIA 网络，联通/移动/教育网等用户访问过去，均走各自运营商的国际出口（典型产品为阿里云国际香港节点）；双网 CN2 GIA 一般指的是中国电信/中国联通用户访问过去，走 CN2 GIA 网络（特别地，该产品允许中国联通线路在省级跨网并入到中国电信的 CN2 网络，典型产品为标准互联的圣何塞 CN2 GIA 产品）；三网 CN2 GIA 一般指的是中国电信/中国联通/中国移动三网用户的去回访问，均会在省级并入到 CN2 网络，适用性最强（典型产品为搬瓦工的 DC9、DC6 机房）。</p>
+</li>
+<li>
+<p>部分偏远地区的电信用户（比如在县级、村级、非重点市级）访问境外 CN2 GIA 线路的服务器时，会经过 IP 地址为 202.97.<em>.</em> 的 AS4314 路由一跳，并入到已布设 CN2 网络的重点市级节点，随后再全程走 CN2 网络。</p>
+</li>
+<li>
+<p>由于担负的网络流量并不高，冗余量不够，CN2 网络的防御力比较脆弱。比如说，VPS 商之间同行攻击的情况屡见不鲜，所以很容易发现某家 CN2 GIA 网络的 VPS 一旦被打（DDoS攻击），毫无还手之力，整个网络会陷入瘫痪，只有等硬扛过去，该家的 CN2 GIA 网络才能重新恢复使用。</p>
+</li>
+</ul>
+<p>一个非常典型的 CN2 GIA 网络，注意跳了一下 202.97 打头的路由，其余全程 59.43:<br>
+<img src="https://blog.gd1214b.icu/post-images/1620813794863.jpg" alt="" loading="lazy"><br>
+一个非常典型的 CN2 GT 网络，注意在国内走的时候，一定是 202.97 路由，出海后再走 59.43 路由:<br>
+<img src="https://blog.gd1214b.icu/post-images/1620813817069.jpg" alt="" loading="lazy"></p>
+<h2 id="2-中国联通这部分会加入一些-vps-线路购置经验谈">2. 中国联通(这部分会加入一些 VPS 线路购置经验谈)</h2>
+<figure data-type="image" tabindex="2"><img src="https://blog.gd1214b.icu/post-images/1620814048408.jpg" alt="" loading="lazy"></figure>
+<ul>
+<li>
+<p>中国联通宽带用户增长率不高，拥有的总用户数最近竟被移动赶超，目前市场份额处于垫底，但对用户来说无疑是极其利好的消息。因为其拥有全国仅次于电信用户的国际总出口带宽，这就意味着中国联通用户访问外网遭遇的烦心事儿比电信和/移动用户要少很多，如果不想在 CN2 GIA 上花一笔大洋，一个普通中国联通宽带用户的国际访问“人权”是最有保障的；</p>
+</li>
+<li>
+<p>出海和归来均走北上广；</p>
+</li>
+<li>
+<p>出/回走 AS4837（联通 169 网络）/AS9929（A网）路由，暂无类似中国电信那样的国际精品网络产品；</p>
+</li>
+<li>
+<p>网络路由路径遵守固定路径/边界网关协议（BGP）；</p>
+</li>
+<li>
+<p>晚高峰时期骨干网选择性丢包的力度比中国电信低很多；</p>
+</li>
+<li>
+<p>美日线路绝赞性价比。</p>
+</li>
+</ul>
+<p>中国联通 169 网络 AS4837 路由拓扑图，图示来源：https://bgp.he.net/AS4837<br>
+IPv4:<br>
+<img src="https://blog.gd1214b.icu/post-images/1620814223987.jpg" alt="" loading="lazy"><br>
+IPv6:<br>
+<img src="https://blog.gd1214b.icu/post-images/1620814238200.jpg" alt="" loading="lazy"><br>
+说明：</p>
+<ul>
+<li>
+<p>中国联通普通用户从市级 → 省级 → 国际出口 → 境外接入点的过程中，全程走 AS 号为 4837 的路由节点，这些路由节点的 IP 地址开头一律是 “219.158.<em>.</em>”，全程不会经过 A网（AS9929）；</p>
+</li>
+<li>
+<p>经过的路由数较多，导致延迟普遍比 CN2 GIA 网络要高；</p>
+</li>
+<li>
+<p>169 网络全天的丢包率在 1% ~ 3%左右，如果在夜晚间高峰期（UTC+8 18:00 至 23:00 时），丢包率可达到 4% 以上；</p>
+</li>
+<li>
+<p>如果用户生活在中国联通的国际出口城市（北/上/广），或离这三座城市的距离很近，那么可以获得非常不错的延迟。</p>
+</li>
+<li>
+<p>美国地区：直连，不错。</p>
+</li>
+<li>
+<p>新加坡地区，比较依赖对方 VPS 商的线路优化，很多情况下联通去程统一绕日本 NTT（一家我很讨厌的日本线路，不谈国际声誉，只要从中国连接到日本走得是这条线，不爆炸我送你一包辣条）过去；回程直连广州联通或是依旧绕日返回。除了阿里云国际新加坡这样对三网不错的，联通用户慎选新加坡机房。</p>
+</li>
+<li>
+<p>香港地区，也得看商家和线路，最普通的，如 Softlayer 等，依旧绕日 NTT，垃圾的一批；部分线路不错的机房，如安畅机房、沙田、香港阿里云、PCCW 等，一般直接从广州联通过去，到港走香港联通或香港 PCCW，但这种机房一般都是针对三网一起优化的，联通当然跑的也不差，除非兼顾其他运营商的访问者，否则联通用户没必要花大价钱选择三网优化的香港地区机房。</p>
+</li>
+<li>
+<p>日本地区，表现之好，花费之低，超乎想象，尤其是众多日本本土 VPS 商（如 Cloudgarage、IDCF、Kagoya、Conoha、Sakura、ABLENET、GMOCloud等），联通用户去/回程统一经过上海联通的 IIJ 线路，质量非常理想，且上述日本本土商家的月付价格普遍不高，非常值得联通用户的选择，诸如 Linode 东京区二（Linode 东京区一走纯 KDDI 线路，联通表现也不错，可惜早已绝版）/ Vultr 东京等机房，走的是 NTT 线路，线路质量奇差，虽然它们购买门槛低，但非常不值得选择，买之前一定要测一下。</p>
+</li>
+<li>
+<p>不少研究日本 VPS 的同学，都知道中日之间有一条品级最高的线路，名曰 bbtec ，我有必要单独拿出来说一下，它是日本软银(Soft Bank)的定制线路，神壕专属，价格昂贵。日本阿里云有在用这条线路，但一个是接入该线路的 VPS 商家本来就不多，产品难寻，还有就是阿里云日本的账号注册限制太严，非日本本土手机号＋无日本国内住所无法收到纸质注册确认信并寄回就不能买，这就挡住几乎所有国内人了。我印象里能勉强买到，且提供 bbtec 的只还有 Ucloudbiz，他家机房实际在韩国首尔，IP 地址映射到的日本福冈，XEN 虚拟架构，不如主流的 KVM 先进，价格也不便宜。另一方面就是感觉 bbtec 这款线路高不成低不就的：对电信用户，bbtec 国内部分并未接入 CN2，走得依旧是 163，该卡还是卡，且日本地区根本就没有 CN2 GIA 产品，所以中国电信用户在任何时候都绝不应该选择任何一家日本地区的 VPS，加多少钱都没有更好的效果；对联通用户而言，有物美价廉的 IIJ 为何要选它；对移动用户而言，没有任何特殊加成，还得从广州过去，舍近求远，你高攀不起，它爱搭不理，bbtec 线路我觉得没有任何入手价值。</p>
+</li>
+<li>
+<p>韩国地区，韩国地区的 VPS 市场竞争不充分，可以购买的本地商家不多，大多由国人代理运营，印象减分，再加上韩国地区比较严厉的互联网成人内容管制政策，韩国 VPS 有一条 porn 墙，不值得选择。<br>
+俄罗斯地区，毛熊的不少线路对联通用户是比较友好的，与中国临近，地理位置不吃亏，价格比较实惠。联通统一从北京出发，经过 Rostelecom (<a href="https://rt.ru">https://rt.ru</a>) 线路过去，来回新西伯利亚机房的质量普遍比莫斯科的要好。但还有以下这些无法克服的问题：1. 用俄语难以跟客服沟通；2. 不支持支付宝，paypal，付款困难；3. 别想着用来给美服、港服吃鸡，游戏加速，俄罗斯地区连接香港和美国的延迟极高；4. 同理，移动固网用户会先去香港，再去俄罗斯，延迟很高；5. 如果是建站，只有中国联通、欧洲用户访问过去的速度不错，全世界其他地区连接俄罗斯的速度都不理想，随着国力衰弱，俄罗斯网络设施的可利用价值不太高；</p>
+</li>
+<li>
+<p>海外国人运营，支持支付宝付款，价格奇低，非一线大厂，NTT 线路，犄角旮旯地区，符合上述六条规则中的三条，打死都别碰，碰就是交学费。</p>
+</li>
+</ul>
+<p>一个典型的中国联通 169 网络连接外网路径图:<br>
+<img src="https://blog.gd1214b.icu/post-images/1620814616245.jpg" alt="" loading="lazy"><br>
+169 网络的中美回程也不绕路:<br>
+<img src="https://blog.gd1214b.icu/post-images/1620814639192.jpg" alt="" loading="lazy"><br>
+169 网络也比较看中对方 VPS 商的线路优化:<br>
+<img src="https://blog.gd1214b.icu/post-images/1620814663128.jpg" alt="" loading="lazy"><br>
+御三家：Linode/Vultr/DigitalOcean 新加坡节点电信/联通去程绕日，费拉不堪:<br>
+<img src="https://blog.gd1214b.icu/post-images/1620814684882.jpg" alt="" loading="lazy"><br>
+普通新加坡线路回程部分从广州直连回来，部分依旧绕日:<br>
+<img src="https://blog.gd1214b.icu/post-images/1620814701735.jpg" alt="" loading="lazy"><br>
+IIJ 线路对联通十分友好，非常适合中国华东、华南地区的联通用户选择:<br>
+<img src="https://blog.gd1214b.icu/post-images/1620814731516.jpg" alt="" loading="lazy"><br>
+珍爱生命，远离 NTT:<br>
+<img src="https://blog.gd1214b.icu/post-images/1620814818435.jpg" alt="" loading="lazy"><br>
+<img src="https://blog.gd1214b.icu/post-images/1620814827514.jpg" alt="" loading="lazy"><br>
+生活在中国东北、华北地区，且预算有限的联通用户，可以试试俄罗斯 VPS:<br>
+<img src="https://blog.gd1214b.icu/post-images/1620814850856.jpg" alt="" loading="lazy"><br>
+中国联通 A 网 AS9929 路由拓扑图，图示来源：<a href="https://bgp.he.net/AS9929">https://bgp.he.net/AS9929</a><br>
+IPv4：<br>
+<img src="https://blog.gd1214b.icu/post-images/1620814896917.jpg" alt="" loading="lazy"><br>
+IPv6：<br>
+<img src="https://blog.gd1214b.icu/post-images/1620815052636.jpg" alt="" loading="lazy"><br>
+说明：</p>
+<ul>
+<li>
+<p>169 网络和 A 网之间的区别，与 163 网络和 CN2 之间的区别并不是一个概念，A 网早在中国网通时代就已存在，属于中国网通的骨干网。在网通和联通合并后，联通仍继续建设当年从电信 163 网分出来的那一部分，即现如今的 169 网(分出来的原因是应当年政企分离的要求，不是电信自己分的)，而这张 A 网就闲置了。虽然该产品的定位，名义上和中国电信的 CN2 网络对标，但这张“吃老本”的 A 网所具备的优势仅仅是用户少，网络负荷小，所以表现也还不错，一般给政企、高端用户使用。但由于这张网络多年没有再发展，所以跟持续扩容的 CN2 比，质量方面的差距只会越来越大。</p>
+</li>
+<li>
+<p>从市级 → 省级 → 国际出口 → 境外接入点的过程中，全程走 AS 号为 9929 的路由节点，这些路由节点的 IP 地址开头一律是 “218.105.<em>.</em>/210.<em>.</em>.*”，部分偏远地区，会经过 169 网络汇入到 A 网；</p>
+</li>
+<li>
+<p>由于该网的建设初衷就是为国内的网络服务，A 网仅会出现在国内，去程出海后一律并入到 169 网络上；回程必须要经过 169 网络，走到国内部分才转入到 A 网，这是所谓“精品 A 网”与 CN2 网络之间最大的差别；</p>
+</li>
+<li>
+<p>通过 A 网络访问外网全天的丢包率在 1% ~ 2%左右，如果在夜晚间高峰期（UTC+8 18:00 至 23:00 时），丢包率可达到 3% 以上；</p>
+</li>
+<li>
+<p>这个网的技术并不先进，用的人只要变多，或是负责出海数据去回的 169 网炸了，就顿露马脚。</p>
+</li>
+</ul>
+<p>一个典型的中国联通 A 网回程路由:<br>
+<img src="https://blog.gd1214b.icu/post-images/1620815189058.jpg" alt="" loading="lazy"><br>
+对方网络没做优化的情况下，A 网回程也不会绕路:<br>
+<img src="https://blog.gd1214b.icu/post-images/1620815212029.jpg" alt="" loading="lazy"><br>
+红框圈起来的就是传说中的 A 网，出海后果然便汇入到 169 网络上:<br>
+<img src="https://blog.gd1214b.icu/post-images/1620815235791.jpg" alt="" loading="lazy"></p>
+<h2 id="3-中国移动">3. 中国移动</h2>
+<figure data-type="image" tabindex="3"><img src="https://blog.gd1214b.icu/post-images/1620986355803.jpg" alt="" loading="lazy"></figure>
+<ul>
+<li>
+<p>中国移动进出国际网络，在国内经过的绝大部分流量，均由 AS9808 网络承载，旧铁通的 AS9314 网络几乎已被放弃；</p>
+</li>
+<li>
+<p>暂未发现中国移动有“精品出口网络”产品；</p>
+</li>
+<li>
+<p>AS9808 网络在北京/上海/广州均有进出海光缆，距多方 Traceroute 观察，广州移动承担了大部分中国移动网络进出口的流量，如中美、中国东南亚等地区；</p>
+</li>
+<li>
+<p>PCCW 与中国移动有着说不清道不明的屁眼交易关系；</p>
+</li>
+<li>
+<p>上海移动仅提供分散广州移动出口流量的职能，且流经上海移动的流量，会转交给国内其他运营商（如联通）进行国际通信；</p>
+</li>
+<li>
+<p>北京移动主要承担与欧洲地区进出口流量的通信（直连，非绕美）；</p>
+</li>
+<li>
+<p>网络路由路径遵守固定路径/边界网关协议（BGP）；</p>
+</li>
+<li>
+<p>暂未确定在高峰期是否会有策略性丢包，以减少对骨干网的负载；</p>
+</li>
+<li>
+<p>通过手机用户赠宽带等方式，中国移动迅速积累了一大批固网宽带用户，在总出口量排行老三、总用户量跃居国内第一的情况下，如果不大幅拓展国际总出口量，未来普通移动网络用户的国际互联网访问质量着实堪忧。</p>
+</li>
+</ul>
+<p>中国移动 AS9808 路由拓扑图，图示来源：<a href="https://bgp.he.net/AS9808">https://bgp.he.net/AS9808</a></p>
+<p>IPv4：<br>
+<img src="https://blog.gd1214b.icu/post-images/1620986458854.jpg" alt="" loading="lazy"><br>
+IPv6：<br>
+<img src="https://blog.gd1214b.icu/post-images/1620986474614.jpg" alt="" loading="lazy"><br>
+说明：</p>
+<ul>
+<li>
+<p>中国移动的进出口跳跃性很大，国内部分必走 AS9808 路由（221.176.<em>.</em>/221.183.<em>.</em>），在部分地区访问部分 VPS，会并入到铁通 AS9314/电信 163 网络/联通 169 网络的路由节点；</p>
+</li>
+<li>
+<p>目前来看，中国移动网络的国际访问质量中规中矩，尤其是电信用户谈之色变的东南亚未优化 VPS 线路（一般要从日本 NTT 过去或是绕美），在移动用户看来真是小 Case，如果不能通过广州移动直接过去，那就呆在广州移动绕一圈再过去；</p>
+</li>
+<li>
+<p>PCCW（电讯盈科） 线路目前是中港之间或是从中国到东南亚其他地区前且必须从香港中转线路的中，国内除纯 CN2 GIA 以外质量最好的线路；</p>
+</li>
+<li>
+<p>以前移动就有“国内墙中墙，国外直接上”的优良传统，通过 AS9808 网络访问外网全天的丢包率在 1% ~ 3%左右，如果在夜晚间高峰期（UTC+8 18:00 至 23:00 时），丢包率可达到 3% 以上；</p>
+</li>
+<li>
+<p>国内部分需经过的路由节点较多；</p>
+</li>
+<li>
+<p>回程和去程的路径很少恶意绕路。</p>
+</li>
+</ul>
+<p>绕道联通<br>
+<img src="https://blog.gd1214b.icu/post-images/1620986612456.jpg" alt="" loading="lazy"><br>
+直连且有独立的中美线路<br>
+<img src="https://blog.gd1214b.icu/post-images/1620986630514.jpg" alt="" loading="lazy"><br>
+访问 Vultr 新加坡的线路质量很不错，三网最佳<br>
+<img src="https://blog.gd1214b.icu/post-images/1620986642741.jpg" alt="" loading="lazy"><br>
+对于位于香港的服务器，VPS 商如果和移动有合作，则全程走中国移动线路，否则走 PCCW<br>
+<img src="https://blog.gd1214b.icu/post-images/1620986666405.jpg" alt="" loading="lazy"><br>
+北京移动主要负责处理欧洲地区的外网通信<br>
+<img src="https://blog.gd1214b.icu/post-images/1620986679287.jpg" alt="" loading="lazy"></p>
+<h1 id="谨记木桶理论">谨记木桶理论</h1>
+<p>即使有“全程 CN2”、“A 网”等“精品网络”光环加持，一定不要忘了，网络速度、延迟、丢包等关键指标，还与 VPS 商的销售行为息息相关，就比如说，商家标称“共享 1Gbps”，如果平均分给 8 个人用，每个人能享受到的速度就是 128Mbps，但如果商家贪心，把 VPS 超售 10 倍（无论是 OpenVZ/KVM/HyperV 等架构，网络端口都可以为所欲为地超售），那么每个人在高峰期只能享用 12.8 Mbps 的带宽，如果你的邻居们各个都是“一键脚本”大神，什么锐速、暴力魔改 BBR、KCPTun 多倍狂发包 等争抢网络资源的奇技淫巧一股脑儿使劲怼，而你什么优化也不做时，自然就更吃亏，源头速度被卡死了，国家给你单独铺一条海缆也没用。</p>
+<p>#牢记品质三原色<br>
+<img src="https://blog.gd1214b.icu/post-images/1620986742742.jpg" alt="" loading="lazy"></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[DDoS科普系列：什么是 DDoS 攻击？]]></title>
+        <id>https://blog.gd1214b.icu/post/gfV9Uqj8F/</id>
+        <link href="https://blog.gd1214b.icu/post/gfV9Uqj8F/">
+        </link>
+        <updated>2021-05-11T10:14:31.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>本文转自：<a href="https://www.cloudflare.com/zh-cn/learning/ddos/what-is-a-ddos-attack/">https://www.cloudflare.com/zh-cn/learning/ddos/what-is-a-ddos-attack/</a></p>
+</blockquote>
+<h1 id="什么是-ddos-攻击">什么是 DDoS 攻击？</h1>
+<p>分布式拒绝服务（DDoS）攻击是通过大规模互联网流量淹没目标服务器或其周边基础设施，以破坏目标服务器、服务或网络正常流量的恶意行为。</p>
+<p>DDoS 攻击利用多台受损计算机系统作为攻击流量来源以达到攻击效果。利用的机器可以包括计算机，也可以包括其他联网资源（如 IoT 设备）。</p>
+<p>总体而言，DDoS 攻击好比高速公路发生交通堵塞，妨碍常规车辆抵达预定目的地。<br>
+<img src="https://blog.gd1214b.icu/post-images/1620728184860.jpg" alt="" loading="lazy"></p>
+<h1 id="ddos-攻击的工作原理">DDoS 攻击的工作原理</h1>
+<p>DDoS 攻击是通过连接互联网的计算机网络进行的。</p>
+<p>这些网络由计算机和其他设备（例如 IoT 设备）组成，它们感染了恶意软件，从而被攻击者远程控制。这些个体设备称为机器人（或僵尸），一组机器人则称为僵尸网络。</p>
+<p>一旦建立了僵尸网络，攻击者就可通过向每个机器人发送远程指令来发动攻击。</p>
+<p>当僵尸网络将受害者的服务器或网络作为目标时，每个机器人会将请求发送到目标的 IP 地址，这可能导致服务器或网络不堪重负，从而造成对正常流量的拒绝服务。</p>
+<p>由于每个机器人都是合法的 Internet 设备，因而可能很难区分攻击流量与正常流量。</p>
+<h1 id="如何识别-ddos-攻击">如何识别 DDoS 攻击</h1>
+<p>DDoS 攻击最明显的症状是网站或服务突然变慢或不可用。但是，造成类似性能问题的原因有多种（如合法流量激增），因此通常需要进一步调查。流量分析工具可以帮助您发现 DDoS 攻击的一些明显迹象：<br>
+* 来自单个 IP 地址或 IP 范围的可疑流量<br>
+* 来自共享单个行为特征（例如设备类型、地理位置或 Web 浏览器版本）的用户的大量流量<br>
+* 对单个页面或端点的请求数量出现不明原因的激增<br>
+* 奇怪的流量模式，例如一天中零碎时间上的激增或看似不自然的模式（例如，每 10 分钟出现一次激增）</p>
+<p>DDoS 攻击还有其他更具体的迹象，具体取决于攻击的类型。</p>
+<h1 id="常见的-ddos-攻击有哪几类">常见的 DDoS 攻击有哪几类</h1>
+<p>不同类型的 DDoS 攻击针对不同的网络连接组件。为了解不同的 DDoS 攻击如何运作，有必要知道网络连接是如何建立的。</p>
+<p>互联网上的网络连接由许多不同的组件或“层”构成。就像打地基盖房子一样，模型中的每一步都有不同的用途。</p>
+<p>OSI 模型（如下图所示）是一个概念框架，用于描述 7 个不同层级的网络连接。<br>
+<img src="https://blog.gd1214b.icu/post-images/1620728353166.jpg" alt="" loading="lazy"><br>
+虽然几乎所有 DDoS 攻击都涉及用流量淹没目标设备或网络，但攻击可以分为三类。攻击者可能利用一种或多种不同的攻击手段，也可能根据目标采取的防范措施循环使用多种攻击手段。</p>
+<h2 id="应用程序层攻击">应用程序层攻击</h2>
+<h3 id="攻击目标">攻击目标：</h3>
+<p>此类攻击有时称为第 7 层 DDoS 攻击（指 OSI 模型第 7 层），其目标是耗尽目标资源。</p>
+<p>攻击目标是生成网页并传输网页响应 HTTP 请求的服务器层。在客户端执行一项 HTTP 请求的计算成本比较低，但目标服务器做出响应却可能非常昂贵，因为服务器通常必须加载多个文件并运行数据库查询才能创建网页。</p>
+<p>第 7 层攻击很难防御，因为难以区分恶意流量和合法流量。</p>
+<h3 id="应用程序层攻击示例">应用程序层攻击示例：</h3>
+<figure data-type="image" tabindex="1"><img src="https://blog.gd1214b.icu/post-images/1620728401946.jpg" alt="" loading="lazy"></figure>
+<h3 id="http-洪水">HTTP 洪水</h3>
+<p>HTTP 洪水攻击类似于同时在大量不同计算机的 Web 浏览器中一次又一次地按下刷新 – 大量 HTTP 请求涌向服务器，导致拒绝服务。</p>
+<p>这种类型的攻击有简单的，也有复杂的。</p>
+<p>较简单的实现可以使用相同范围的攻击 IP 地址、referrer 和用户代理访问一个 URL。复杂版本可能使用大量攻击性 IP 地址，并使用随机 referrer 和用户代理来针对随机网址。</p>
+<h2 id="协议攻击">协议攻击</h2>
+<h3 id="攻击目标-2">攻击目标：</h3>
+<p>协议攻击也称为状态耗尽攻击，这类攻击会过度消耗服务器资源和/或防火墙和负载平衡器之类的网络设备资源，从而导致服务中断。</p>
+<p>协议攻击利用协议堆栈第 3 层和第 4 层的弱点致使目标无法访问。</p>
+<h3 id="协议攻击示例">协议攻击示例：</h3>
+<figure data-type="image" tabindex="2"><img src="https://blog.gd1214b.icu/post-images/1620728449707.jpg" alt="" loading="lazy"></figure>
+<h3 id="syn-洪水">SYN 洪水</h3>
+<p>SYN 洪水就好比补给室中的工作人员从商店的柜台接收请求。</p>
+<p>工作人员收到请求，前去取包裹，再等待确认，然后将包裹送到柜台。一时之间，工作人员收到太多包裹请求，来不及确认，直到无法处理更多包裹，实在不堪重负，致使无人能对请求做出回应。</p>
+<p>此类攻击利用 TCP 握手（两台计算机发起网络连接时要经过的一系列通信），通过向目标发送大量带有伪造源 IP 地址的 TCP“初始连接请求”SYN 数据包来实现。</p>
+<p>目标计算机响应每个连接请求，然后等待握手中的最后一步，但这一步确永远不会发生，因此在此过程中耗尽目标的资源。</p>
+<h2 id="容量耗尽攻击">容量耗尽攻击</h2>
+<h3 id="攻击目标-3">攻击目标：</h3>
+<p>此类攻击试图通过消耗目标与较大的 Internet 之间的所有可用带宽来造成拥塞。攻击运用某种放大攻击或其他生成大量流量的手段（如僵尸网络请求），向目标发送大量数据。</p>
+<h3 id="放大示例">放大示例：</h3>
+<figure data-type="image" tabindex="3"><img src="https://blog.gd1214b.icu/post-images/1620728541749.jpg" alt="" loading="lazy"></figure>
+<h1 id="如何防护-ddos-攻击">如何防护 DDoS 攻击？</h1>
+<p>若要缓解 DDoS 攻击，关键在于区分攻击流量与正常流量。</p>
+<p>例如，如果因发布某款产品导致公司网站涌现大批热情客户，那么全面切断流量是错误之举。如果公司从已知恶意用户处收到的流量突然激增，或许需要努力缓解攻击。</p>
+<p>难点在于区分真实客户流量与攻击流量。</p>
+<p>在现代互联网中，DDoS 流量以多种形式出现。流量设计可能有所不同，从非欺骗性单源攻击到复杂的自适应多方位攻击无所不有。</p>
+<p>多方位 DDoS 攻击采用多种攻击手段，以期通过不同的方式击垮目标，很可能分散各个层级的缓解工作注意力。</p>
+<p>同时针对协议堆栈的多个层级（如 DNS 放大（针对第 3/4 层）外加 HTTP 洪水（针对第 7 层））发动攻击就是多方位 DDoS 攻击的一个典型例子。</p>
+<p>为防护多方位 DDoS 攻击，需要部署多项不同策略，从而缓解不同层级的攻击。</p>
+<p>一般而言，攻击越复杂，越难以区分攻击流量与正常流量 —— 攻击者的目标是尽可能混入正常流量，从而尽量减弱缓解成效。</p>
+<p>如果缓解措施不加选择地丢弃或限制流量，很可能将正常流量与攻击流量一起丢弃，同时攻击还可能进行修改调整以规避缓解措施。为克服复杂的破坏手段，采用分层解决方案效果最理想。</p>
+<h2 id="黑洞路由">黑洞路由</h2>
+<p>有一种解决方案几乎适用于所有网络管理员：创建黑洞路由，并将流量汇入该路由。在最简单的形式下，当在没有特定限制条件的情况下实施黑洞过滤时，合法网络流量和恶意网络流量都将路由到空路由或黑洞，并从网络中丢弃。</p>
+<p>如果互联网设备遭受 DDoS 攻击，则该设备的互联网服务提供商（ISP）可能会将站点的所有流量发送到黑洞中作为防御。这不是理想的解决方案，因为它相当于让攻击者达成预期的目标：使网络无法访问。</p>
+<h2 id="速率限制">速率限制</h2>
+<p>限制服务器在某个时间段接收的请求数量也是防护拒绝服务攻击的一种方法。</p>
+<p>虽然速率限制对于减缓 Web 爬虫窃取内容及防护暴力破解攻击很有帮助，但仅靠速率限制可能不足以有效应对复杂的 DDoS 攻击。</p>
+<p>然而，在高效 DDoS 防护策略中，速率限制不失为一种有效手段。</p>
+<h2 id="web-应用程序防火墙">Web 应用程序防火墙</h2>
+<p>Web 应用程序防火墙（WAF） 是一种有效工具，有助于缓解第 7 层 DDoS 攻击。在互联网和源站之间部署 WAF 后，WAF 可以充当反向代理，保护目标服务器，防止其遭受特定类型的恶意流量入侵。</p>
+<p>通过基于一系列用于识别 DDoS 工具的规则筛选请求，可以阻止第 7 层攻击。有效的 WAF 的一个关键价值是能够快速实施自定义规则以应对攻击。</p>
+<h2 id="anycast-网络扩散">Anycast 网络扩散</h2>
+<p>此类缓解方法使用 Anycast 网络，将攻击流量分散至分布式服务器网络，直到网络吸收流量为止。</p>
+<p>这种方法就好比将湍急的河流引入若干独立的小水渠，将分布式攻击流量的影响分散到可以管理的程度，从而分散破坏力。</p>
+<p>Anycast 网络在缓解 DDoS 攻击方面的可靠性取决于攻击规模及网络规模和效率。</p>
+]]></content>
+    </entry>
+</feed>
