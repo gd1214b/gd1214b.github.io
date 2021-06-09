@@ -9,7 +9,7 @@
 <meta name="description" content="">
 <meta name="theme-color" content="#f8f9fa">
 <title>在Heroku上部署v2ray | gd1214b&#39;s blog</title>
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/gd1214b/gd1214b.github.io@latest/favicon.ico?v=1623223196119">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/gd1214b/gd1214b.github.io@latest/favicon.ico?v=1623240405051">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gd1214b/gd1214b.github.io@latest/media/css/gemini.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gd1214b/gd1214b.github.io@latest/media/fonts/font-awesome.css">
 <link
@@ -242,19 +242,19 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">14</span>
+        <span class="site-item-stat-count">15</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
     <div class="sidebar-item-box">
       <a href="">
-        <span class="site-item-stat-count">12</span>
+        <span class="site-item-stat-count">13</span>
         <span class="site-item-stat-name language" data-lan="category">分类</span>
       </a>
     </div>
     <div class="sidebar-item-box">
       <a href="/tags/">
-        <span class="site-item-stat-count">12</span>
+        <span class="site-item-stat-count">13</span>
         <span class="site-item-stat-name language" data-lan="tag">标签</span>
       </a>
     </div>
@@ -649,7 +649,7 @@
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>576<span class="pc-show language" data-lan="words">字数</span></span>
+      <span>622<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
     
@@ -663,7 +663,11 @@
   </div>
 </section>
             <div class="post-body next-md-body" id="post_body">
-              <h1 id="简介">简介</h1>
+              <blockquote>
+<p>** 请先阅读本站的免责声明:<a href="https://blog.gd1214b.icu/post/disclaimers/">https://blog.gd1214b.icu/post/disclaimers/</a> **<br>
+** 请遵循当地法律使用，如您有违反当地法律造成的责任，本站拒不承担. **</p>
+</blockquote>
+<h1 id="简介">简介</h1>
 <h2 id="heroku">Heroku</h2>
 <p>Heroku是 Salesforce 旗下云服务商，提供方便便捷的各种云服务，如服务器，数据库，监控，计算等等。并且他提供了免费版本，这使得我们这些平时想搞一些小东西的人提供了莫大的便捷，虽然他有时长和宕机的限制，但是对于个人小程序来说已经足够了。</p>
 <h2 id="v2ray">V2Ray</h2>
@@ -1806,6 +1810,59 @@ websocket路径,可以不用改动。</p>
     <div class="result" id="result">
       
       <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://blog.gd1214b.icu/post/P9MODAcdP/"" data-c="
+          &lt;blockquote&gt;
+&lt;p&gt;** 请先阅读本站的免责声明:&lt;a href=&#34;https://blog.gd1214b.icu/post/disclaimers/&#34;&gt;https://blog.gd1214b.icu/post/disclaimers/&lt;/a&gt; **&lt;br&gt;
+** 请遵循当地法律使用，如您有违反当地法律造成的责任，本站拒不承担. **&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
+&lt;p&gt;在&lt;a href=&#34;https://blog.gd1214b.icu/post/NbdQntVCG/&#34;&gt;上一篇文章&lt;/a&gt;中,我们介绍了在Heroku上部署v2ray的方法。但在中国大陆直连Heroku服务器的速度不是很快，因此我们使用Cloudflare的自选IP来加速连接。&lt;/p&gt;
+&lt;h1 id=&#34;配置cloudflare反向代理&#34;&gt;配置CloudFlare反向代理&lt;/h1&gt;
+&lt;h2 id=&#34;1&#34;&gt;1.&lt;/h2&gt;
+&lt;p&gt;首先登陆&lt;a href=&#34;https://dash.cloudflare.com/&#34;&gt;CloudFlare官网&lt;/a&gt;，然后点击 右侧的 Workers.&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623238734720.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;2&#34;&gt;2.&lt;/h2&gt;
+&lt;p&gt;接着点击创建Workers&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623238793121.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;3&#34;&gt;3.&lt;/h2&gt;
+&lt;p&gt;接着复制下方代码，并添加进去.注意把下面的中文替换成你的Heroku应用名称&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;addEventListener(
+  &amp;quot;fetch&amp;quot;,event =&amp;gt; {
+     let url=new URL(event.request.url);
+     url.hostname=&amp;quot;你的heroku应用名称.herokuapp.com&amp;quot;;
+     let request=new Request(url,event.request);
+     event. respondWith(
+       fetch(request)
+     )
+  }
+)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623239005214.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;h1 id=&#34;使用cloudflare自选ip&#34;&gt;使用Cloudflare自选IP&lt;/h1&gt;
+&lt;p&gt;下载&lt;a href=&#34;https://cdn.jsdelivr.net/gh/gd1214b/files@main/CloudflareST_windows_amd64.zip&#34;&gt;这个&lt;/a&gt;文件,解压之后打开这个程序:&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623239272158.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+这个程序会对Cloudflare的所有IP进行测速，这可能会需要几分钟的时间。&lt;/p&gt;
+&lt;p&gt;测速结果会保存在应用程序目录下的result.csv文件中&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623239511772.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+在里面找到延迟最低的IP地址（一般在第一行），把它复制下来，等会会用到。&lt;/p&gt;
+&lt;h1 id=&#34;配置v2ray&#34;&gt;配置V2Ray&lt;/h1&gt;
+&lt;p&gt;打开你的v2ray客户端，添加vmess服务器，按照下面的图填写&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623239829821.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+除了中文部分以外严格按照图上内容填写。&lt;/p&gt;
+&lt;p&gt;然后保存，就可以愉快地使用v2ray了&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;如果你遇到了任何问题 欢迎在下方的评论区中提出。&lt;/p&gt;
+&lt;h1 id=&#34;其他说明&#34;&gt;其他说明&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Heroku 为我们提供了免费的容器服务，我们不应该滥用它，所以本项目不宜长期使用.&lt;/li&gt;
+&lt;li&gt;Heroku 的网络并不稳定，部署前请三思。&lt;/li&gt;
+&lt;li&gt;Heroku每个月有550小时的时长限制，只适合轻度使用用户.&lt;/li&gt;
+&lt;li&gt;Heroku的实例半小时没有访问就会自动休眠,你可以使用Uptimebot定时访问来解决这个问题。&lt;/li&gt;
+&lt;/ul&gt;
+">使用Cloudflare自选IP加速Heroku-v2ray</a>
+      </div>
+      
+      <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://blog.gd1214b.icu/post/YdM16VZBI/"" data-c="
           &lt;blockquote&gt;
 &lt;p&gt;本文转自:&lt;a href=&#34;https://new.qq.com/omn/20210609/20210609A01G7M00.html&#34;&gt;https://new.qq.com/omn/20210609/20210609A01G7M00.html&lt;/a&gt;&lt;/p&gt;
@@ -1888,7 +1945,11 @@ websocket路径,可以不用改动。</p>
       
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://blog.gd1214b.icu/post/NbdQntVCG/"" data-c="
-          &lt;h1 id=&#34;简介&#34;&gt;简介&lt;/h1&gt;
+          &lt;blockquote&gt;
+&lt;p&gt;** 请先阅读本站的免责声明:&lt;a href=&#34;https://blog.gd1214b.icu/post/disclaimers/&#34;&gt;https://blog.gd1214b.icu/post/disclaimers/&lt;/a&gt; **&lt;br&gt;
+** 请遵循当地法律使用，如您有违反当地法律造成的责任，本站拒不承担. **&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;简介&#34;&gt;简介&lt;/h1&gt;
 &lt;h2 id=&#34;heroku&#34;&gt;Heroku&lt;/h2&gt;
 &lt;p&gt;Heroku是 Salesforce 旗下云服务商，提供方便便捷的各种云服务，如服务器，数据库，监控，计算等等。并且他提供了免费版本，这使得我们这些平时想搞一些小东西的人提供了莫大的便捷，虽然他有时长和宕机的限制，但是对于个人小程序来说已经足够了。&lt;/p&gt;
 &lt;h2 id=&#34;v2ray&#34;&gt;V2Ray&lt;/h2&gt;

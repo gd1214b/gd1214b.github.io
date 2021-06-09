@@ -2,13 +2,69 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.gd1214b.icu</id>
     <title>gd1214b&apos;s blog</title>
-    <updated>2021-06-09T07:20:10.002Z</updated>
+    <updated>2021-06-09T12:06:59.110Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.gd1214b.icu"/>
     <link rel="self" href="https://blog.gd1214b.icu/atom.xml"/>
     <logo>https://blog.gd1214b.icu/images/avatar.png</logo>
     <icon>https://blog.gd1214b.icu/favicon.ico</icon>
     <rights>All rights reserved 2021, gd1214b&apos;s blog</rights>
+    <entry>
+        <title type="html"><![CDATA[使用Cloudflare自选IP加速Heroku-v2ray]]></title>
+        <id>https://blog.gd1214b.icu/post/P9MODAcdP/</id>
+        <link href="https://blog.gd1214b.icu/post/P9MODAcdP/">
+        </link>
+        <updated>2021-06-09T11:27:43.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>** 请先阅读本站的免责声明:<a href="https://blog.gd1214b.icu/post/disclaimers/">https://blog.gd1214b.icu/post/disclaimers/</a> **<br>
+** 请遵循当地法律使用，如您有违反当地法律造成的责任，本站拒不承担. **</p>
+</blockquote>
+<h1 id="前言">前言</h1>
+<p>在<a href="https://blog.gd1214b.icu/post/NbdQntVCG/">上一篇文章</a>中,我们介绍了在Heroku上部署v2ray的方法。但在中国大陆直连Heroku服务器的速度不是很快，因此我们使用Cloudflare的自选IP来加速连接。</p>
+<h1 id="配置cloudflare反向代理">配置CloudFlare反向代理</h1>
+<h2 id="1">1.</h2>
+<p>首先登陆<a href="https://dash.cloudflare.com/">CloudFlare官网</a>，然后点击 右侧的 Workers.<br>
+<img src="https://blog.gd1214b.icu/post-images/1623238734720.webp" alt="" loading="lazy"></p>
+<h2 id="2">2.</h2>
+<p>接着点击创建Workers<br>
+<img src="https://blog.gd1214b.icu/post-images/1623238793121.webp" alt="" loading="lazy"></p>
+<h2 id="3">3.</h2>
+<p>接着复制下方代码，并添加进去.注意把下面的中文替换成你的Heroku应用名称</p>
+<pre><code class="language-javascript">addEventListener(
+  &quot;fetch&quot;,event =&gt; {
+     let url=new URL(event.request.url);
+     url.hostname=&quot;你的heroku应用名称.herokuapp.com&quot;;
+     let request=new Request(url,event.request);
+     event. respondWith(
+       fetch(request)
+     )
+  }
+)
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="https://blog.gd1214b.icu/post-images/1623239005214.png" alt="" loading="lazy"></figure>
+<h1 id="使用cloudflare自选ip">使用Cloudflare自选IP</h1>
+<p>下载<a href="https://cdn.jsdelivr.net/gh/gd1214b/files@main/CloudflareST_windows_amd64.zip">这个</a>文件,解压之后打开这个程序:<br>
+<img src="https://blog.gd1214b.icu/post-images/1623239272158.png" alt="" loading="lazy"><br>
+这个程序会对Cloudflare的所有IP进行测速，这可能会需要几分钟的时间。</p>
+<p>测速结果会保存在应用程序目录下的result.csv文件中<br>
+<img src="https://blog.gd1214b.icu/post-images/1623239511772.png" alt="" loading="lazy"><br>
+在里面找到延迟最低的IP地址（一般在第一行），把它复制下来，等会会用到。</p>
+<h1 id="配置v2ray">配置V2Ray</h1>
+<p>打开你的v2ray客户端，添加vmess服务器，按照下面的图填写<br>
+<img src="https://blog.gd1214b.icu/post-images/1623239829821.png" alt="" loading="lazy"><br>
+除了中文部分以外严格按照图上内容填写。</p>
+<p>然后保存，就可以愉快地使用v2ray了</p>
+<hr>
+<p>如果你遇到了任何问题 欢迎在下方的评论区中提出。</p>
+<h1 id="其他说明">其他说明</h1>
+<ul>
+<li>Heroku 为我们提供了免费的容器服务，我们不应该滥用它，所以本项目不宜长期使用.</li>
+<li>Heroku 的网络并不稳定，部署前请三思。</li>
+<li>Heroku每个月有550小时的时长限制，只适合轻度使用用户.</li>
+<li>Heroku的实例半小时没有访问就会自动休眠,你可以使用Uptimebot定时访问来解决这个问题。</li>
+</ul>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[搞瘫全球大半个互联网，Fastly是何方神圣？]]></title>
         <id>https://blog.gd1214b.icu/post/YdM16VZBI/</id>
@@ -49,7 +105,11 @@
         <link href="https://blog.gd1214b.icu/post/NbdQntVCG/">
         </link>
         <updated>2021-06-08T07:47:14.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="简介">简介</h1>
+        <content type="html"><![CDATA[<blockquote>
+<p>** 请先阅读本站的免责声明:<a href="https://blog.gd1214b.icu/post/disclaimers/">https://blog.gd1214b.icu/post/disclaimers/</a> **<br>
+** 请遵循当地法律使用，如您有违反当地法律造成的责任，本站拒不承担. **</p>
+</blockquote>
+<h1 id="简介">简介</h1>
 <h2 id="heroku">Heroku</h2>
 <p>Heroku是 Salesforce 旗下云服务商，提供方便便捷的各种云服务，如服务器，数据库，监控，计算等等。并且他提供了免费版本，这使得我们这些平时想搞一些小东西的人提供了莫大的便捷，虽然他有时长和宕机的限制，但是对于个人小程序来说已经足够了。</p>
 <h2 id="v2ray">V2Ray</h2>
@@ -1506,92 +1566,6 @@ IPv6：<br>
 <p>即使有“全程 CN2”、“A 网”等“精品网络”光环加持，一定不要忘了，网络速度、延迟、丢包等关键指标，还与 VPS 商的销售行为息息相关，就比如说，商家标称“共享 1Gbps”，如果平均分给 8 个人用，每个人能享受到的速度就是 128Mbps，但如果商家贪心，把 VPS 超售 10 倍（无论是 OpenVZ/KVM/HyperV 等架构，网络端口都可以为所欲为地超售），那么每个人在高峰期只能享用 12.8 Mbps 的带宽，如果你的邻居们各个都是“一键脚本”大神，什么锐速、暴力魔改 BBR、KCPTun 多倍狂发包 等争抢网络资源的奇技淫巧一股脑儿使劲怼，而你什么优化也不做时，自然就更吃亏，源头速度被卡死了，国家给你单独铺一条海缆也没用。</p>
 <p>#牢记品质三原色<br>
 <img src="https://blog.gd1214b.icu/post-images/1620986742742.jpg" alt="" loading="lazy"></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[DDoS科普系列：什么是 DDoS 攻击？]]></title>
-        <id>https://blog.gd1214b.icu/post/gfV9Uqj8F/</id>
-        <link href="https://blog.gd1214b.icu/post/gfV9Uqj8F/">
-        </link>
-        <updated>2021-05-11T10:14:31.000Z</updated>
-        <content type="html"><![CDATA[<blockquote>
-<p>本文转自：<a href="https://www.cloudflare.com/zh-cn/learning/ddos/what-is-a-ddos-attack/">https://www.cloudflare.com/zh-cn/learning/ddos/what-is-a-ddos-attack/</a></p>
-</blockquote>
-<h1 id="什么是-ddos-攻击">什么是 DDoS 攻击？</h1>
-<p>分布式拒绝服务（DDoS）攻击是通过大规模互联网流量淹没目标服务器或其周边基础设施，以破坏目标服务器、服务或网络正常流量的恶意行为。</p>
-<p>DDoS 攻击利用多台受损计算机系统作为攻击流量来源以达到攻击效果。利用的机器可以包括计算机，也可以包括其他联网资源（如 IoT 设备）。</p>
-<p>总体而言，DDoS 攻击好比高速公路发生交通堵塞，妨碍常规车辆抵达预定目的地。<br>
-<img src="https://blog.gd1214b.icu/post-images/1620728184860.jpg" alt="" loading="lazy"></p>
-<h1 id="ddos-攻击的工作原理">DDoS 攻击的工作原理</h1>
-<p>DDoS 攻击是通过连接互联网的计算机网络进行的。</p>
-<p>这些网络由计算机和其他设备（例如 IoT 设备）组成，它们感染了恶意软件，从而被攻击者远程控制。这些个体设备称为机器人（或僵尸），一组机器人则称为僵尸网络。</p>
-<p>一旦建立了僵尸网络，攻击者就可通过向每个机器人发送远程指令来发动攻击。</p>
-<p>当僵尸网络将受害者的服务器或网络作为目标时，每个机器人会将请求发送到目标的 IP 地址，这可能导致服务器或网络不堪重负，从而造成对正常流量的拒绝服务。</p>
-<p>由于每个机器人都是合法的 Internet 设备，因而可能很难区分攻击流量与正常流量。</p>
-<h1 id="如何识别-ddos-攻击">如何识别 DDoS 攻击</h1>
-<p>DDoS 攻击最明显的症状是网站或服务突然变慢或不可用。但是，造成类似性能问题的原因有多种（如合法流量激增），因此通常需要进一步调查。流量分析工具可以帮助您发现 DDoS 攻击的一些明显迹象：<br>
-* 来自单个 IP 地址或 IP 范围的可疑流量<br>
-* 来自共享单个行为特征（例如设备类型、地理位置或 Web 浏览器版本）的用户的大量流量<br>
-* 对单个页面或端点的请求数量出现不明原因的激增<br>
-* 奇怪的流量模式，例如一天中零碎时间上的激增或看似不自然的模式（例如，每 10 分钟出现一次激增）</p>
-<p>DDoS 攻击还有其他更具体的迹象，具体取决于攻击的类型。</p>
-<h1 id="常见的-ddos-攻击有哪几类">常见的 DDoS 攻击有哪几类</h1>
-<p>不同类型的 DDoS 攻击针对不同的网络连接组件。为了解不同的 DDoS 攻击如何运作，有必要知道网络连接是如何建立的。</p>
-<p>互联网上的网络连接由许多不同的组件或“层”构成。就像打地基盖房子一样，模型中的每一步都有不同的用途。</p>
-<p>OSI 模型（如下图所示）是一个概念框架，用于描述 7 个不同层级的网络连接。<br>
-<img src="https://blog.gd1214b.icu/post-images/1620728353166.jpg" alt="" loading="lazy"><br>
-虽然几乎所有 DDoS 攻击都涉及用流量淹没目标设备或网络，但攻击可以分为三类。攻击者可能利用一种或多种不同的攻击手段，也可能根据目标采取的防范措施循环使用多种攻击手段。</p>
-<h2 id="应用程序层攻击">应用程序层攻击</h2>
-<h3 id="攻击目标">攻击目标：</h3>
-<p>此类攻击有时称为第 7 层 DDoS 攻击（指 OSI 模型第 7 层），其目标是耗尽目标资源。</p>
-<p>攻击目标是生成网页并传输网页响应 HTTP 请求的服务器层。在客户端执行一项 HTTP 请求的计算成本比较低，但目标服务器做出响应却可能非常昂贵，因为服务器通常必须加载多个文件并运行数据库查询才能创建网页。</p>
-<p>第 7 层攻击很难防御，因为难以区分恶意流量和合法流量。</p>
-<h3 id="应用程序层攻击示例">应用程序层攻击示例：</h3>
-<figure data-type="image" tabindex="1"><img src="https://blog.gd1214b.icu/post-images/1620728401946.jpg" alt="" loading="lazy"></figure>
-<h3 id="http-洪水">HTTP 洪水</h3>
-<p>HTTP 洪水攻击类似于同时在大量不同计算机的 Web 浏览器中一次又一次地按下刷新 – 大量 HTTP 请求涌向服务器，导致拒绝服务。</p>
-<p>这种类型的攻击有简单的，也有复杂的。</p>
-<p>较简单的实现可以使用相同范围的攻击 IP 地址、referrer 和用户代理访问一个 URL。复杂版本可能使用大量攻击性 IP 地址，并使用随机 referrer 和用户代理来针对随机网址。</p>
-<h2 id="协议攻击">协议攻击</h2>
-<h3 id="攻击目标-2">攻击目标：</h3>
-<p>协议攻击也称为状态耗尽攻击，这类攻击会过度消耗服务器资源和/或防火墙和负载平衡器之类的网络设备资源，从而导致服务中断。</p>
-<p>协议攻击利用协议堆栈第 3 层和第 4 层的弱点致使目标无法访问。</p>
-<h3 id="协议攻击示例">协议攻击示例：</h3>
-<figure data-type="image" tabindex="2"><img src="https://blog.gd1214b.icu/post-images/1620728449707.jpg" alt="" loading="lazy"></figure>
-<h3 id="syn-洪水">SYN 洪水</h3>
-<p>SYN 洪水就好比补给室中的工作人员从商店的柜台接收请求。</p>
-<p>工作人员收到请求，前去取包裹，再等待确认，然后将包裹送到柜台。一时之间，工作人员收到太多包裹请求，来不及确认，直到无法处理更多包裹，实在不堪重负，致使无人能对请求做出回应。</p>
-<p>此类攻击利用 TCP 握手（两台计算机发起网络连接时要经过的一系列通信），通过向目标发送大量带有伪造源 IP 地址的 TCP“初始连接请求”SYN 数据包来实现。</p>
-<p>目标计算机响应每个连接请求，然后等待握手中的最后一步，但这一步确永远不会发生，因此在此过程中耗尽目标的资源。</p>
-<h2 id="容量耗尽攻击">容量耗尽攻击</h2>
-<h3 id="攻击目标-3">攻击目标：</h3>
-<p>此类攻击试图通过消耗目标与较大的 Internet 之间的所有可用带宽来造成拥塞。攻击运用某种放大攻击或其他生成大量流量的手段（如僵尸网络请求），向目标发送大量数据。</p>
-<h3 id="放大示例">放大示例：</h3>
-<figure data-type="image" tabindex="3"><img src="https://blog.gd1214b.icu/post-images/1620728541749.jpg" alt="" loading="lazy"></figure>
-<h1 id="如何防护-ddos-攻击">如何防护 DDoS 攻击？</h1>
-<p>若要缓解 DDoS 攻击，关键在于区分攻击流量与正常流量。</p>
-<p>例如，如果因发布某款产品导致公司网站涌现大批热情客户，那么全面切断流量是错误之举。如果公司从已知恶意用户处收到的流量突然激增，或许需要努力缓解攻击。</p>
-<p>难点在于区分真实客户流量与攻击流量。</p>
-<p>在现代互联网中，DDoS 流量以多种形式出现。流量设计可能有所不同，从非欺骗性单源攻击到复杂的自适应多方位攻击无所不有。</p>
-<p>多方位 DDoS 攻击采用多种攻击手段，以期通过不同的方式击垮目标，很可能分散各个层级的缓解工作注意力。</p>
-<p>同时针对协议堆栈的多个层级（如 DNS 放大（针对第 3/4 层）外加 HTTP 洪水（针对第 7 层））发动攻击就是多方位 DDoS 攻击的一个典型例子。</p>
-<p>为防护多方位 DDoS 攻击，需要部署多项不同策略，从而缓解不同层级的攻击。</p>
-<p>一般而言，攻击越复杂，越难以区分攻击流量与正常流量 —— 攻击者的目标是尽可能混入正常流量，从而尽量减弱缓解成效。</p>
-<p>如果缓解措施不加选择地丢弃或限制流量，很可能将正常流量与攻击流量一起丢弃，同时攻击还可能进行修改调整以规避缓解措施。为克服复杂的破坏手段，采用分层解决方案效果最理想。</p>
-<h2 id="黑洞路由">黑洞路由</h2>
-<p>有一种解决方案几乎适用于所有网络管理员：创建黑洞路由，并将流量汇入该路由。在最简单的形式下，当在没有特定限制条件的情况下实施黑洞过滤时，合法网络流量和恶意网络流量都将路由到空路由或黑洞，并从网络中丢弃。</p>
-<p>如果互联网设备遭受 DDoS 攻击，则该设备的互联网服务提供商（ISP）可能会将站点的所有流量发送到黑洞中作为防御。这不是理想的解决方案，因为它相当于让攻击者达成预期的目标：使网络无法访问。</p>
-<h2 id="速率限制">速率限制</h2>
-<p>限制服务器在某个时间段接收的请求数量也是防护拒绝服务攻击的一种方法。</p>
-<p>虽然速率限制对于减缓 Web 爬虫窃取内容及防护暴力破解攻击很有帮助，但仅靠速率限制可能不足以有效应对复杂的 DDoS 攻击。</p>
-<p>然而，在高效 DDoS 防护策略中，速率限制不失为一种有效手段。</p>
-<h2 id="web-应用程序防火墙">Web 应用程序防火墙</h2>
-<p>Web 应用程序防火墙（WAF） 是一种有效工具，有助于缓解第 7 层 DDoS 攻击。在互联网和源站之间部署 WAF 后，WAF 可以充当反向代理，保护目标服务器，防止其遭受特定类型的恶意流量入侵。</p>
-<p>通过基于一系列用于识别 DDoS 工具的规则筛选请求，可以阻止第 7 层攻击。有效的 WAF 的一个关键价值是能够快速实施自定义规则以应对攻击。</p>
-<h2 id="anycast-网络扩散">Anycast 网络扩散</h2>
-<p>此类缓解方法使用 Anycast 网络，将攻击流量分散至分布式服务器网络，直到网络吸收流量为止。</p>
-<p>这种方法就好比将湍急的河流引入若干独立的小水渠，将分布式攻击流量的影响分散到可以管理的程度，从而分散破坏力。</p>
-<p>Anycast 网络在缓解 DDoS 攻击方面的可靠性取决于攻击规模及网络规模和效率。</p>
 ]]></content>
     </entry>
 </feed>
