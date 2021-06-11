@@ -2,10 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.gd1214b.icu</id>
     <title>gd1214b&apos;s blog</title>
-    <updated>2021-06-11T07:25:01.954Z</updated>
+    <updated>2021-06-11T12:34:02.862Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.gd1214b.icu"/>
     <link rel="self" href="https://blog.gd1214b.icu/atom.xml"/>
+    <subtitle>念念不忘，必有回响</subtitle>
     <logo>https://blog.gd1214b.icu/images/avatar.png</logo>
     <icon>https://blog.gd1214b.icu/favicon.ico</icon>
     <rights>All rights reserved 2021, gd1214b&apos;s blog</rights>
@@ -34,7 +35,7 @@
 <p>点击 设置 &gt; 驱动 &gt; Pcap驱动<br>
 <img src="https://blog.gd1214b.icu/post-images/1623395744003.png" alt="" loading="lazy"><br>
 按照说明安装即可。</p>
-<h2 id="第四步-修改代理模式">第四步 修改代理模式</h2>
+<h2 id="第五步-修改代理模式">第五步 修改代理模式</h2>
 <p>点击 代理 &gt; 打开增强模式 &gt;增强模式选择 Pcap &gt; 打开系统代理.</p>
 <h1 id="其他说明">其他说明</h1>
 <p>此时你的Gridea应该已经通过代理服务器连接上github了，如果还是无法连接，欢迎在下方的评论区中提出。</p>
@@ -200,7 +201,11 @@ websocket路径,可以不用改动。</p>
         <link href="https://blog.gd1214b.icu/post/h7Wc7SF8X/">
         </link>
         <updated>2021-06-08T02:32:10.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="前言">前言</h1>
+        <content type="html"><![CDATA[<blockquote>
+<p><strong>请先阅读本站的免责声明:<a href="https://blog.gd1214b.icu/post/disclaimers/">https://blog.gd1214b.icu/post/disclaimers/</a></strong><br>
+<strong>请遵循当地法律使用，如您有违反当地法律造成的责任，本站拒不承担.</strong></p>
+</blockquote>
+<h1 id="前言">前言</h1>
 <p>Cloudflare 推出了 Workers 服务，在国内一般叫它边缘计算。<a href="https://github.com/EtherDream/jsproxy">jsproxy</a> 是个 Github 开源项目，可以通过 Cloudflare Workers 服务搭建一个反向代理服务器，这个反向代理服务器不需要安装在我们自己的 VPS 主机上，而是直接部署在 Cloudflare 节点上，这可以极大的降低我们自身 VPS 主机的性能损耗。</p>
 <h1 id="教程">教程</h1>
 <h2 id="1">1</h2>
@@ -509,7 +514,6 @@ async function parseYtVideoRedir(urlObj, newLen, res) {
 <h2 id="5">5</h2>
 <p>点击这里即可访问你搭建的反向代理网站:<br>
 <img src="https://blog.gd1214b.icu/post-images/1623120299391.png" alt="" loading="lazy"><br>
-博主搭建的反向代理网站在这里:<a href="https://proxy.gd1214b.workers.dev/">https://proxy.gd1214b.workers.dev/</a><br>
 如果你在搭建过程中遇到任何问题, 欢迎在下方的评论区里留言.</p>
 ]]></content>
     </entry>

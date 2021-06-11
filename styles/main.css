@@ -2065,60 +2065,60 @@ p > code {
         margin: 0 auto;
       }
     body {
-      color: #555;
+      color: #212529;
     }
     .next-md-body {
-      color: #555;
+      color: #212529;
     }
     .next-md-body h1, .next-md-body h2 {
-      border-bottom-color: #555;
+      border-bottom-color: #212529;
     }
     .archive-timeline-box::after, .tag-timeline-wrapper::after {
       background: #eeeeeee5;
     }h1, h2, h3, h4, h5, h6 {
-      color: #555;
+      color: #212529;
     }
     
     .archive-timeline-title::before {
-      background-color: #555;
+      background-color: #212529;
     }
     
     .post-title-link::before {
-      background-color: #555;
+      background-color: #212529;
     }
     
     .node-title::before {
-      background-color: #555;
+      background-color: #212529;
     }a {
-      color: #555;
+      color: #22b8cf;
     }
     
     .next-md-body a, .friends-box a  {
-      color: #555;
-      border-bottom: 1px solid #555;
+      color: #22b8cf;
+      border-bottom: 1px solid #22b8cf;
     }a:hover {
-      color: #222;
+      color: #22b8cf;
     }
     
     .archive-timeline-box .tag-node:hover::before {
-      background-color: #222;
+      background-color: #22b8cf;
     }
     
     .markdownIt-TOC a:hover {
-      color: #222;
-      border-bottom-color: #222;
+      color: #22b8cf;
+      border-bottom-color: #22b8cf;
     }
 
     .next-md-body a:hover, .friends-box a:hover {
-      color: #222;
-      border-bottom-color: #222;
+      color: #22b8cf;
+      border-bottom-color: #22b8cf;
     }.nav-toggle .line {
       background-color: #212529 !important;
     }
       .nav-item a {
-        color:  #555;
+        color:  #212529;
       }.nav-item a:hover {
-        color: #222;
+        color: #212529;
       }.nav-item-active {
       background: #f9f9f9e5;
     }
@@ -2176,13 +2176,13 @@ p > code {
       border-radius: 15px;
     }
     .site-meta {
-      background: #f8f9fa !important;
+      background: #15aabf !important;
     }
     .head-top-line {
-      background: #f8f9fa;
+      background: #15aabf;
     }
     .brand {
-      background: #f8f9fae5;
+      background: #15aabfe5;
     }
     .main-title, .brand {
       color: #212529 !important;
