@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.gd1214b.icu</id>
     <title>gd1214b&apos;s blog</title>
-    <updated>2021-06-12T07:26:44.096Z</updated>
+    <updated>2021-06-12T07:29:46.428Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.gd1214b.icu"/>
     <link rel="self" href="https://blog.gd1214b.icu/atom.xml"/>
@@ -44,8 +44,11 @@
 这一步无所谓是否同步成功.<br>
 <img src="https://blog.gd1214b.icu/post-images/1623482746893.jpg" alt="" loading="lazy"></p>
 <h2 id="第七步-同步到github上">第七步 同步到GitHub上</h2>
+<p>在GitHub Desktop 中点击 Pushu origin<br>
+<img src="https://blog.gd1214b.icu/post-images/1623482930640.jpg" alt="" loading="lazy"><br>
+等候完成即可。</p>
 <h1 id="其他说明">其他说明</h1>
-<p>如果有任何问题，欢迎在下方的评论区中提出。</p>
+<p>此时你的博客应该已经同步到GitHub上了，如果有任何问题，欢迎在下方的评论区中提出。</p>
 ]]></content>
     </entry>
     <entry>
