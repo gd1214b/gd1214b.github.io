@@ -9,7 +9,7 @@
 <meta name="description" content="念念不忘，必有回响">
 <meta name="theme-color" content="#15aabf">
 <title>解决Gridea同步失败的问题 | gd1214b&#39;s blog</title>
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/gd1214b/gd1214b.github.io@latest/favicon.ico?v=1623480851953">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/gd1214b/gd1214b.github.io@latest/favicon.ico?v=1623482789909">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gd1214b/gd1214b.github.io@latest/media/css/gemini.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gd1214b/gd1214b.github.io@latest/media/fonts/font-awesome.css">
 <link
@@ -327,11 +327,18 @@
 <li><a href="#%E5%89%8D%E8%A8%80">前言</a></li>
 <li><a href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88">解决方案</a>
 <ul>
-<li><a href="#%E7%AC%AC%E4%B8%80%E6%AD%A5">第一步</a></li>
-<li><a href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5-%E6%9B%B4%E6%94%B9%E6%98%BE%E7%A4%BA%E8%AF%AD%E8%A8%80%E5%8F%AF%E9%80%89">第二步 更改显示语言(可选)</a></li>
-<li><a href="#%E7%AC%AC%E4%B8%89%E6%AD%A5-%E5%AF%BC%E5%85%A5clash%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">第三步 导入Clash配置文件</a></li>
-<li><a href="#%E7%AC%AC%E5%9B%9B%E6%AD%A5-%E5%AE%89%E8%A3%85pcap%E9%A9%B1%E5%8A%A8">第四步 安装Pcap驱动</a></li>
-<li><a href="#%E7%AC%AC%E4%BA%94%E6%AD%A5-%E4%BF%AE%E6%94%B9%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F">第五步 修改代理模式</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E6%AD%A5-%E8%BF%9E%E6%8E%A5%E4%B8%8A%E4%BB%A3%E7%90%86">第一步 连接上代理</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5-%E4%B8%8B%E8%BD%BD%E5%B9%B6%E5%AE%89%E8%A3%85github-desktop">第二步 下载并安装GitHub Desktop</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E6%AD%A5-%E7%99%BB%E9%99%86github%E8%B4%A6%E5%8F%B7">第三步 登陆GitHub账号</a>
+<ul>
+<li><a href="#1%E7%82%B9%E5%87%BB-sign-into-githubcom">1.点击 Sign into GitHub.com</a></li>
+<li><a href="#2%E5%9C%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E9%87%8C%E7%99%BB%E9%99%86%E4%BD%A0%E7%9A%84github%E8%B4%A6%E5%8F%B7">2.在浏览器里登陆你的GitHub账号</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E6%AD%A5-%E6%B8%85%E7%A9%BAgridea-%E9%85%8D%E7%BD%AE%E7%9B%AE%E5%BD%95%E4%B8%8Bouput%E6%96%87%E4%BB%B6%E5%A4%B9%E9%87%8C%E7%9A%84%E6%89%80%E6%9C%89%E5%86%85%E5%AE%B9">第四步 清空Gridea 配置目录下ouput文件夹里的所有内容</a></li>
+<li><a href="#%E7%AC%AC%E4%BA%94%E6%AD%A5-%E5%9C%A8github-desktop%E4%B8%AD%E5%85%8B%E9%9A%86%E4%BD%A0%E7%9A%84%E5%8D%9A%E5%AE%A2%E4%BB%93%E5%BA%93">第五步 在GitHub Desktop中克隆你的博客仓库</a></li>
+<li><a href="#%E7%AC%AC%E5%85%AD%E6%AD%A5-%E5%90%8C%E6%AD%A5gridea">第六步 同步Gridea</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%83%E6%AD%A5-%E5%90%8C%E6%AD%A5%E5%88%B0github%E4%B8%8A">第七步 同步到GitHub上</a></li>
 </ul>
 </li>
 <li><a href="#%E5%85%B6%E4%BB%96%E8%AF%B4%E6%98%8E">其他说明</a></li>
@@ -633,7 +640,7 @@
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>369<span class="pc-show language" data-lan="words">字数</span></span>
+      <span>351<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
     
@@ -648,28 +655,35 @@
 </section>
             <div class="post-body next-md-body" id="post_body">
               <h1 id="前言">前言</h1>
-<p>由于众所周知的原因，github在中国大陆地区收到的干扰严重，大部分情况下根本无法连接，这也导致Gridea的同步失败问题。<br>
+<p>由于众所周知的原因，GitHub在中国大陆地区收到的干扰严重，大部分情况下根本无法连接，这也导致Gridea的同步失败问题。<br>
 <img src="https://blog.gd1214b.icu/post-images/1623391923562.png" alt="" loading="lazy"></p>
 <h1 id="解决方案">解决方案</h1>
 <p>通常的解决方案是通过代理服务器连接，但由于大部分的代理软件（如v2rayN等），只能更改系统的代理设置，，像Gridea这些不遵守系统代理设置的软件，无法通过代理服务器连接。</p>
 <p>下面介绍一种本人亲测有效的方法。</p>
-<h2 id="第一步">第一步</h2>
-<p>下载并安装 Clash .NET<br>
-下载地址:<a href="https://github.com/ClashDotNetFramework/ClashDotNetFramework/releases">https://github.com/ClashDotNetFramework/ClashDotNetFramework/releases</a>(中国大陆地区的用户可能需要通过代理服务器下载)<br>
-如果安装失败的话,请先安装.Net5框架: <a href="https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-desktop-5.0.7-windows-x64-installer">https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-desktop-5.0.7-windows-x64-installer</a></p>
-<h2 id="第二步-更改显示语言可选">第二步 更改显示语言(可选)</h2>
-<p>点击Settings &gt; Display &gt; Language &gt;简体中文<br>
-<img src="https://blog.gd1214b.icu/post-images/1623395510756.png" alt="" loading="lazy"></p>
-<h2 id="第三步-导入clash配置文件">第三步 导入Clash配置文件</h2>
-<p>这一步不细讲，网上已有诸多教程，可自行搜索。</p>
-<h2 id="第四步-安装pcap驱动">第四步 安装Pcap驱动</h2>
-<p>点击 设置 &gt; 驱动 &gt; Pcap驱动<br>
-<img src="https://blog.gd1214b.icu/post-images/1623395744003.png" alt="" loading="lazy"><br>
-按照说明安装即可。</p>
-<h2 id="第五步-修改代理模式">第五步 修改代理模式</h2>
-<p>点击 代理 &gt; 打开增强模式 &gt;增强模式选择 Pcap &gt; 打开系统代理.</p>
+<h2 id="第一步-连接上代理">第一步 连接上代理</h2>
+<p>这一步不做过多讲解。</p>
+<h2 id="第二步-下载并安装github-desktop">第二步 下载并安装GitHub Desktop</h2>
+<p>下载地址：<a href="https://central.GitHub.com/deployments/desktop/desktop/latest/win32">https://central.GitHub.com/deployments/desktop/desktop/latest/win32</a><br>
+打开安装程序即可自动完成安装。</p>
+<h2 id="第三步-登陆github账号">第三步 登陆GitHub账号</h2>
+<h3 id="1点击-sign-into-githubcom">1.点击 Sign into GitHub.com</h3>
+<figure data-type="image" tabindex="1"><img src="https://blog.gd1214b.icu/post-images/1623481745688.jpg" alt="" loading="lazy"></figure>
+<h3 id="2在浏览器里登陆你的github账号">2.在浏览器里登陆你的GitHub账号</h3>
+<figure data-type="image" tabindex="2"><img src="https://blog.gd1214b.icu/post-images/1623481982934.jpg" alt="" loading="lazy"></figure>
+<h2 id="第四步-清空gridea-配置目录下ouput文件夹里的所有内容">第四步 清空Gridea 配置目录下ouput文件夹里的所有内容</h2>
+<p>注意output文件夹不要删除<br>
+<img src="https://blog.gd1214b.icu/post-images/1623482115749.jpg" alt="" loading="lazy"></p>
+<h2 id="第五步-在github-desktop中克隆你的博客仓库">第五步 在GitHub Desktop中克隆你的博客仓库</h2>
+<p><img src="https://blog.gd1214b.icu/post-images/1623482247255.jpg" alt="" loading="lazy"><br>
+注意目录要选择Gridea 配置目录下ouput文件夹<br>
+<img src="https://blog.gd1214b.icu/post-images/1623482322654.jpg" alt="" loading="lazy"></p>
+<h2 id="第六步-同步gridea">第六步 同步Gridea</h2>
+<p>在Gridea中依次点击 远程 &gt; 检测远程连接 &gt; 同步<br>
+这一步无所谓是否同步成功.<br>
+<img src="https://blog.gd1214b.icu/post-images/1623482746893.jpg" alt="" loading="lazy"></p>
+<h2 id="第七步-同步到github上">第七步 同步到GitHub上</h2>
 <h1 id="其他说明">其他说明</h1>
-<p>此时你的Gridea应该已经通过代理服务器连接上github了，如果还是无法连接，欢迎在下方的评论区中提出。</p>
+<p>如果有任何问题，欢迎在下方的评论区中提出。</p>
 
             </div>
             
@@ -1761,28 +1775,35 @@
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://blog.gd1214b.icu/post/F2_C5EVQh/"" data-c="
           &lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
-&lt;p&gt;由于众所周知的原因，github在中国大陆地区收到的干扰严重，大部分情况下根本无法连接，这也导致Gridea的同步失败问题。&lt;br&gt;
+&lt;p&gt;由于众所周知的原因，GitHub在中国大陆地区收到的干扰严重，大部分情况下根本无法连接，这也导致Gridea的同步失败问题。&lt;br&gt;
 &lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623391923562.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;h1 id=&#34;解决方案&#34;&gt;解决方案&lt;/h1&gt;
 &lt;p&gt;通常的解决方案是通过代理服务器连接，但由于大部分的代理软件（如v2rayN等），只能更改系统的代理设置，，像Gridea这些不遵守系统代理设置的软件，无法通过代理服务器连接。&lt;/p&gt;
 &lt;p&gt;下面介绍一种本人亲测有效的方法。&lt;/p&gt;
-&lt;h2 id=&#34;第一步&#34;&gt;第一步&lt;/h2&gt;
-&lt;p&gt;下载并安装 Clash .NET&lt;br&gt;
-下载地址:&lt;a href=&#34;https://github.com/ClashDotNetFramework/ClashDotNetFramework/releases&#34;&gt;https://github.com/ClashDotNetFramework/ClashDotNetFramework/releases&lt;/a&gt;(中国大陆地区的用户可能需要通过代理服务器下载)&lt;br&gt;
-如果安装失败的话,请先安装.Net5框架: &lt;a href=&#34;https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-desktop-5.0.7-windows-x64-installer&#34;&gt;https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-desktop-5.0.7-windows-x64-installer&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;第二步-更改显示语言可选&#34;&gt;第二步 更改显示语言(可选)&lt;/h2&gt;
-&lt;p&gt;点击Settings &amp;gt; Display &amp;gt; Language &amp;gt;简体中文&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623395510756.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;第三步-导入clash配置文件&#34;&gt;第三步 导入Clash配置文件&lt;/h2&gt;
-&lt;p&gt;这一步不细讲，网上已有诸多教程，可自行搜索。&lt;/p&gt;
-&lt;h2 id=&#34;第四步-安装pcap驱动&#34;&gt;第四步 安装Pcap驱动&lt;/h2&gt;
-&lt;p&gt;点击 设置 &amp;gt; 驱动 &amp;gt; Pcap驱动&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623395744003.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
-按照说明安装即可。&lt;/p&gt;
-&lt;h2 id=&#34;第五步-修改代理模式&#34;&gt;第五步 修改代理模式&lt;/h2&gt;
-&lt;p&gt;点击 代理 &amp;gt; 打开增强模式 &amp;gt;增强模式选择 Pcap &amp;gt; 打开系统代理.&lt;/p&gt;
+&lt;h2 id=&#34;第一步-连接上代理&#34;&gt;第一步 连接上代理&lt;/h2&gt;
+&lt;p&gt;这一步不做过多讲解。&lt;/p&gt;
+&lt;h2 id=&#34;第二步-下载并安装github-desktop&#34;&gt;第二步 下载并安装GitHub Desktop&lt;/h2&gt;
+&lt;p&gt;下载地址：&lt;a href=&#34;https://central.GitHub.com/deployments/desktop/desktop/latest/win32&#34;&gt;https://central.GitHub.com/deployments/desktop/desktop/latest/win32&lt;/a&gt;&lt;br&gt;
+打开安装程序即可自动完成安装。&lt;/p&gt;
+&lt;h2 id=&#34;第三步-登陆github账号&#34;&gt;第三步 登陆GitHub账号&lt;/h2&gt;
+&lt;h3 id=&#34;1点击-sign-into-githubcom&#34;&gt;1.点击 Sign into GitHub.com&lt;/h3&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623481745688.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;h3 id=&#34;2在浏览器里登陆你的github账号&#34;&gt;2.在浏览器里登陆你的GitHub账号&lt;/h3&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;2&#34;&gt;&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623481982934.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;第四步-清空gridea-配置目录下ouput文件夹里的所有内容&#34;&gt;第四步 清空Gridea 配置目录下ouput文件夹里的所有内容&lt;/h2&gt;
+&lt;p&gt;注意output文件夹不要删除&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623482115749.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;第五步-在github-desktop中克隆你的博客仓库&#34;&gt;第五步 在GitHub Desktop中克隆你的博客仓库&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623482247255.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+注意目录要选择Gridea 配置目录下ouput文件夹&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623482322654.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;第六步-同步gridea&#34;&gt;第六步 同步Gridea&lt;/h2&gt;
+&lt;p&gt;在Gridea中依次点击 远程 &amp;gt; 检测远程连接 &amp;gt; 同步&lt;br&gt;
+这一步无所谓是否同步成功.&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623482746893.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;第七步-同步到github上&#34;&gt;第七步 同步到GitHub上&lt;/h2&gt;
 &lt;h1 id=&#34;其他说明&#34;&gt;其他说明&lt;/h1&gt;
-&lt;p&gt;此时你的Gridea应该已经通过代理服务器连接上github了，如果还是无法连接，欢迎在下方的评论区中提出。&lt;/p&gt;
+&lt;p&gt;如果有任何问题，欢迎在下方的评论区中提出。&lt;/p&gt;
 ">解决Gridea同步失败的问题</a>
       </div>
       
