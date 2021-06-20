@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.gd1214b.icu</id>
     <title>gd1214b&apos;s blog</title>
-    <updated>2021-06-20T07:31:41.846Z</updated>
+    <updated>2021-06-20T07:43:50.920Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.gd1214b.icu"/>
     <link rel="self" href="https://blog.gd1214b.icu/atom.xml"/>
@@ -166,9 +166,6 @@ navbar:
   averageResponseTimeTitle: 平均响应时间
   sevelDayResponseTime: 7 天响应时间
   responseTimeMs: 响应时间（毫秒）
-  up: 正常运行
-  down: 停机
-  degraded: 运行缓慢
   ms: 毫秒
   loading: 加载中
   navGitHub: GitHub
@@ -198,6 +195,27 @@ navbar:
   durationMin: $DURATION 分钟
   incidentCompleted: 已完成
   incidentScheduled: 已预定
+  url: &quot;链接&quot;
+  status: &quot;状态&quot;
+  history: &quot;历史&quot;
+  responseTime: &quot;响应时间&quot;
+  uptime: &quot;正常运行时间&quot;
+  up: &quot;🟩 正常运行&quot;
+  degraded: &quot;🟨 运行缓慢&quot;
+  down: &quot;🟥 停机&quot;
+  responseTimeGraphAlt: &quot;响应时间图像&quot;
+  responseTimeDay: &quot;24 小时响应时间&quot;
+  responseTimeWeek: &quot;7 天正常运行时间&quot;
+  responseTimeMonth: &quot;30天的正常运行时间&quot;
+  responseTimeYear: &quot;1年的正常运行时间&quot;
+  uptimeDay: &quot;24 小时正常运行时间&quot;
+  uptimeWeek: &quot;7 天正常运行时间&quot;
+  uptimeMonth: &quot;30天的正常运行时间&quot;
+  uptimeYear: &quot;1年的正常运行时间&quot;
+  liveStatusHtmlComment: &quot;&lt;！ -实时状态- &gt;&quot;
+  degradedPerformance: &quot;🟨 性能降低&quot;
+  completeOutage: &quot;🟥 全部停机&quot;
+  partialOutage: &quot;🟧 部分停机&quot;
 </code></pre>
 <h1 id="参考资料">参考资料</h1>
 <ul>
