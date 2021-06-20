@@ -9,7 +9,7 @@
 <meta name="description" content="念念不忘，必有回响">
 <meta name="theme-color" content="#f8f9fa">
 <title>测试博客 | gd1214b&#39;s blog</title>
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/gd1214b/gd1214b.github.io@latest/favicon.ico?v=1624168141668">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/gd1214b/gd1214b.github.io@latest/favicon.ico?v=1624174295704">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gd1214b/gd1214b.github.io@latest/media/css/gemini.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gd1214b/gd1214b.github.io@latest/media/fonts/font-awesome.css">
 <link
@@ -248,7 +248,7 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">17</span>
+        <span class="site-item-stat-count">18</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
@@ -1923,6 +1923,199 @@ int main()
       <hr>
     </div>
     <div class="result" id="result">
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://blog.gd1214b.icu/post/G9dquz6bG/"" data-c="
+          &lt;blockquote&gt;
+&lt;p&gt;本文转自：&lt;a href=&#34;https://annkuoq.github.io/blog/2021-01-09-uptime-monitor-and-status-website-service-with-upptime/&#34;&gt;https://annkuoq.github.io/blog/2021-01-09-uptime-monitor-and-status-website-service-with-upptime/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;前阵子在网络上看到一个很酷的开源项目： &lt;a href=&#34;https://github.com/upptime/upptime&#34;&gt;Upptime&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;每隔一段时间用GitHub Actions 看网站有没有挂掉,若挂掉就用GitHub Issues 回报异常事件,使用GitHub Pages 产生服务状态的页面.&lt;/p&gt;
+&lt;h1 id=&#34;github-actions-简介&#34;&gt;GitHub Actions 简介&lt;/h1&gt;
+&lt;p&gt;GitHub Actions是GitHub上的一个自动化服务，你可以把脚本放到上面，当特定事件发生时，自动执行你的脚本。&lt;/p&gt;
+&lt;p&gt;以Upptime来说，预设是每隔五分钟访问你的网站一次（实际上由于GitHub的限制，间隔可能会更长），同时也会记录每次的response time，让你在页面上看历史纪录等等。&lt;/p&gt;
+&lt;p&gt;这些动作都写在Actions的脚本中，机器都会自己执行，完全不用动到一根指头。&lt;/p&gt;
+&lt;p&gt;目前Actions支援Windows, macOS, Linux三种环境，然后额度的话，如果是免费个人帐户&lt;/p&gt;
+&lt;p&gt;在Linux 上，一个月有2000 分钟的执行时间&lt;br&gt;
+在Windows 上，用1 分钟会消耗2 分钟的额度(Linux 的两倍)&lt;br&gt;
+在macOS 上，用1 分钟会消耗10 分钟的额度(Linux 的十倍)&lt;br&gt;
+当然你也可以用自己的机器运行&lt;/p&gt;
+&lt;p&gt;不过！&lt;br&gt;
+&lt;strong&gt;如果你的Repo设为公开的话，就可以免费使用Actions，既然用免费的，就要有某天要付钱的觉悟。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;大概介绍完之后，就来开始装Upptime吧。&lt;/p&gt;
+&lt;h1 id=&#34;创建github-repo&#34;&gt;创建GitHub Repo&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;进入Upptime的&lt;a href=&#34;https://github.com/upptime/upptime&#34;&gt;repo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;点击 &lt;strong&gt;Use this template&lt;/strong&gt;&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1624168642287.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;li&gt;创建repo&lt;br&gt;
+* 输入repo name&lt;br&gt;
+* 勾选 &lt;strong&gt;Include all branches&lt;/strong&gt;&lt;br&gt;
+* 点击 &lt;strong&gt;Create repository from temple&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1624168745412.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+等一阵子后,就会复制一样的repo到你的帐号下&lt;/p&gt;
+&lt;h1 id=&#34;设置github-pages&#34;&gt;设置GitHub Pages&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;到你的repo，点击 &lt;strong&gt;Settings&lt;/strong&gt;&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1624168798869.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;li&gt;往下找到GitHub Pages 的&lt;strong&gt;Source&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Branch 设为 &lt;strong&gt;gh-pages&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;点击 &lt;strong&gt;Save&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1624168860771.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;h1 id=&#34;设置repository-secret&#34;&gt;设置Repository Secret&lt;/h1&gt;
+&lt;p&gt;为了让Upptime有commit和publish网页的权限，需要设定Personal Access Token&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;点击自己的&lt;strong&gt;Profile picture&lt;/strong&gt; &amp;gt; &lt;strong&gt;Settings&lt;/strong&gt;&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1624168921775.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;li&gt;点击左侧的&lt;strong&gt;Developer settings&lt;/strong&gt; &amp;gt; &lt;strong&gt;Personal access tokens&lt;/strong&gt; &amp;gt; &lt;strong&gt;Generate new token&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1624168964700.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+3. 新增token&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Note: &lt;strong&gt;upptime&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Select scopes:勾选&lt;strong&gt;repo&lt;/strong&gt;和&lt;strong&gt;workflow&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;点击 &lt;strong&gt;Generate token&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1624169013442.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+4. 复制这段很长的token&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1624169029896.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+5. 返回&lt;strong&gt;repo&lt;/strong&gt; &amp;gt;&lt;strong&gt;Settings&lt;/strong&gt;&lt;br&gt;
+点击左侧&lt;strong&gt;Secrets&lt;/strong&gt;&amp;gt; &lt;strong&gt;Add a new secret&lt;/strong&gt; &amp;gt; &lt;strong&gt;New repository secret&lt;/strong&gt;&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1624169066911.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+6. 设定repo 的token&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Name: &lt;strong&gt;GH_PAT&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Value: 贴上刚刚复制的 &lt;strong&gt;token&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;点击 &lt;strong&gt;Add secret&lt;/strong&gt;&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1624169109524.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;更新yaml文件&#34;&gt;更新YAML文件&lt;/h1&gt;
+&lt;p&gt;Upptime使用.yml来做“集中式设置”，只要更改这个文件的设置，所有相关代码就会一起修改。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;到你的repo，点击&lt;strong&gt;Code&lt;/strong&gt; &amp;gt; &lt;strong&gt;.upptimerc.yml&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1624169199844.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+2. 点击铅笔按钮编辑文件&lt;br&gt;
+3. 按照以下模版修改此文件：(方括号内是需要修改的内容，修改完之后请删除方括号)&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;#你的GitHub username 
+owner: 【GitHub username】
+
+#你的GitHub repo name 
+repo: 【repo name】
+
+#加入要监控的网站名称与URL ,可以添加多个网站
+sites: 
+  - name: 【网站名称】
+    url: 【URL】
+
+#没有域名的按照以下模版填写
+status-website: 
+    #cname: demo.upptime.js.org (移除) 
+    baseUrl: /upptime
+
+#有域名的按照以下模版填写
+status-website: 
+    cname: 【你的域名】
+    
+#自定义状态页面的navbar名称与链接
+navbar: 
+    - title: 【名称】
+      href: 【链接】
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;查看github-actions&#34;&gt;查看GitHub Actions&lt;/h1&gt;
+&lt;p&gt;设定好.yml后，Actions就会自动开始运行(黄圈在转)。运行成功会显示绿色的勾，运行失败会显示红色的叉。&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1624169705043.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+如果发现Actions没运行，或是想要让它马上执行，就点击左侧的&lt;strong&gt;Setup CI&lt;/strong&gt;&amp;gt; &lt;strong&gt;Run workflow&lt;/strong&gt; &amp;gt; &lt;strong&gt;Run workflow&lt;/strong&gt;&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1624169731129.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;查看status-website&#34;&gt;查看Status Website&lt;/h1&gt;
+&lt;p&gt;你的状态页面URL是:https://【user_name】.github.io/【repo_name】/&lt;br&gt;
+或是可以到&lt;strong&gt;repo&lt;/strong&gt; &amp;gt; &lt;strong&gt;Settings&lt;/strong&gt; &amp;gt; &lt;strong&gt;GitHub Pages&lt;/strong&gt;查看URL&lt;/p&gt;
+&lt;p&gt;点击URL后，我们来到了状态页面，页面分成三个区块。&lt;/p&gt;
+&lt;p&gt;Active Incidents 显示目前的异常事件，Past Incidents 显示过去的异常事件，Live Status 可以切换五种response time 图形。&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;2&#34;&gt;&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1624170045428.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;h1 id=&#34;进阶操作&#34;&gt;进阶操作&lt;/h1&gt;
+&lt;h2 id=&#34;自定义运行时间&#34;&gt;自定义运行时间&lt;/h2&gt;
+&lt;p&gt;Upptime有七个Workflows，只要把下面这段粘贴贴到.upptimerc.yml，就可以自定义Workflow的时间点&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;workflowSchedule: 
+  graphs: &amp;quot;0 0 * * *&amp;quot; 
+  responseTime: &amp;quot;0 23 * * *&amp;quot; 
+  staticSite: &amp;quot;0 1 * * *&amp;quot; 
+  summary: &amp;quot;0 0 * * *&amp;quot; 
+  updateTemplate: &amp;quot;0 0 * * *&amp;quot; 
+  updates: &amp;quot; 0 3 * * *&amp;quot; 
+  uptime: &amp;quot;*/5 * * * *&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;自定义状态页面&#34;&gt;自定义状态页面&lt;/h2&gt;
+&lt;p&gt;Status Website预设是英文的，如果你想要改成其他语言，可以把要修改的部分张贴到.upptimerc.yml&lt;/p&gt;
+&lt;p&gt;例如：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;i18n:
+  activeIncidents: 活动事件
+  allSystemsOperational: 所有系统都可以运行
+  incidentReport: &amp;quot;事件 #$NUMBER 报告 →&amp;quot;
+  activeIncidentSummary: 在 $DATE 打开，有 $POSTS 个帖子
+  incidentTitle: 事件 $NUMBER 的详细信息
+  incidentDetails: 事件详细信息
+  incidentFixed: 已修复
+  incidentOngoing: 正在进行
+  incidentOpenedAt: 打开于
+  incidentClosedAt: 关闭于
+  incidentSubscribe: 订阅更新
+  incidentViewOnGitHub: 在 GitHub 上查看
+  incidentCommentSummary: 由 $AUTHOR 在 $DATE 发布
+  incidentBack: ← 返回所有事件
+  pastIncidents: 过去的事件
+  pastIncidentsResolved: 在 $MINUTES 分钟内解决了 $POSTS 个帖子
+  liveStatus: 实时状态
+  overallUptime: &amp;quot;总体正常运行时间： $UPTIME&amp;quot;
+  overallUptimeTitle: 总体正常运行时间
+  averageResponseTime: &amp;quot;平均响应时间: $TIMEms&amp;quot;
+  averageResponseTimeTitle: 平均响应时间
+  sevelDayResponseTime: 7 天响应时间
+  responseTimeMs: 响应时间（毫秒）
+  up: 正常运行
+  down: 停机
+  degraded: 运行缓慢
+  ms: 毫秒
+  loading: 加载中
+  navGitHub: GitHub
+  footer: gd1214b保留所有权利。 Copyright © 2021 gd1214b. All Rights Reserved.
+  rateLimitExceededTitle: 超出速率限制
+  rateLimitExceededIntro: 您已超过一小时内可以执行的请求数，因此您必须等待才能再次访问此网站。或者，您可以添加 GitHub 个人访问令牌以继续使用本网站。
+  rateLimitExceededWhatDoesErrorMean: 这个错误是什么意思？本网站使用 GitHub API 访问有关我们网站状态的实时数据。默认情况下，GitHub 允许每个 IP 地址每小时 60 个请求，您已经消耗了这些请求。
+  rateLimitExceededErrorHowCanFix: 我该如何解决？
+  rateLimitExceededErrorFix: 您可以再等一个小时，您的 IP 地址限制将恢复。或者，您可以添加您的 GitHub 个人访问令牌，这将为您提供每小时额外 5,000 个请求。
+  rateLimitExceededGeneratePAT: 了解如何生成个人访问令牌
+  rateLimitExceededHasSet: 您有一个个人访问令牌集。
+  rateLimitExceededRemoveToken: 删除令牌
+  rateLimitExceededGitHubPAT: GitHub 个人访问令牌
+  rateLimitExceededCopyPastePAT: 复制并粘贴您的令牌
+  rateLimitExceededSaveToken: 保存令牌
+  errorTitle: 发生错误
+  errorIntro: 尝试获取最新状态详细信息时出错。
+  errorText: 您可以稍后再试。
+  errorHome: 转到主页
+  pastScheduledMaintenance: 过去的预定维护
+  scheduledMaintenance: 定期维护
+  scheduledMaintenanceSummaryStarted: 从 $DATE 开始，持续 $DURATION 分钟
+  scheduledMaintenanceSummaryStarts: 从 $DATE 开始，持续 $DURATION 分钟
+  startedAt: 开始在
+  startsAt: 开始于
+  duration: 持续时间
+  durationMin: $DURATION 分钟
+  incidentCompleted: 已完成
+  incidentScheduled: 已预定
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;参考资料&#34;&gt;参考资料&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://upptime.js.org/docs/get-started&#34;&gt;Getting started | Upptime&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/upptime/upptime&#34;&gt;upptime - GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+">利用GitHub Actions 监控网站- Upptime</a>
+      </div>
       
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://blog.gd1214b.icu/post/yZTkyJpRj/"" data-c="
