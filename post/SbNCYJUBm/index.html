@@ -9,7 +9,7 @@
 <meta name="description" content="念念不忘，必有回响">
 <meta name="theme-color" content="#f8f9fa">
 <title>数字证书及 CA 的扫盲介绍 | gd1214b&#39;s blog</title>
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/gd1214b/gd1214b.github.io@latest/favicon.ico?v=1624630250166">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/gd1214b/gd1214b.github.io@latest/favicon.ico?v=1624632659346">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gd1214b/gd1214b.github.io@latest/media/css/gemini.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gd1214b/gd1214b.github.io@latest/media/fonts/font-awesome.css">
 <link
@@ -1891,22 +1891,12 @@
       
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://blog.gd1214b.icu/post/G9dquz6bG/"" data-c="
-          &lt;blockquote&gt;
-&lt;p&gt;本文转自：&lt;a href=&#34;https://annkuoq.github.io/blog/2021-01-09-uptime-monitor-and-status-website-service-with-upptime/&#34;&gt;https://annkuoq.github.io/blog/2021-01-09-uptime-monitor-and-status-website-service-with-upptime/&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;前阵子在网络上看到一个很酷的开源项目： &lt;a href=&#34;https://github.com/upptime/upptime&#34;&gt;Upptime&lt;/a&gt;&lt;/p&gt;
+          &lt;p&gt;前阵子在网络上看到一个很酷的开源项目： &lt;a href=&#34;https://github.com/upptime/upptime&#34;&gt;Upptime&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;每隔一段时间用GitHub Actions 看网站有没有挂掉,若挂掉就用GitHub Issues 回报异常事件,使用GitHub Pages 产生服务状态的页面.&lt;/p&gt;
 &lt;h1 id=&#34;github-actions-简介&#34;&gt;GitHub Actions 简介&lt;/h1&gt;
 &lt;p&gt;GitHub Actions是GitHub上的一个自动化服务，你可以把脚本放到上面，当特定事件发生时，自动执行你的脚本。&lt;/p&gt;
 &lt;p&gt;以Upptime来说，预设是每隔五分钟访问你的网站一次（实际上由于GitHub的限制，间隔可能会更长），同时也会记录每次的response time，让你在页面上看历史纪录等等。&lt;/p&gt;
 &lt;p&gt;这些动作都写在Actions的脚本中，机器都会自己执行，完全不用动到一根指头。&lt;/p&gt;
-&lt;p&gt;目前Actions支援Windows, macOS, Linux三种环境，然后额度的话，如果是免费个人帐户&lt;/p&gt;
-&lt;p&gt;在Linux 上，一个月有2000 分钟的执行时间&lt;br&gt;
-在Windows 上，用1 分钟会消耗2 分钟的额度(Linux 的两倍)&lt;br&gt;
-在macOS 上，用1 分钟会消耗10 分钟的额度(Linux 的十倍)&lt;br&gt;
-当然你也可以用自己的机器运行&lt;/p&gt;
-&lt;p&gt;不过！&lt;br&gt;
-&lt;strong&gt;如果你的Repo设为公开的话，就可以免费使用Actions，既然用免费的，就要有某天要付钱的觉悟。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;介绍完之后，就来开始部署Upptime吧。&lt;/p&gt;
 &lt;h1 id=&#34;创建github-repo&#34;&gt;创建GitHub Repo&lt;/h1&gt;
 &lt;ol&gt;
@@ -1916,10 +1906,10 @@
 &lt;li&gt;创建repo&lt;br&gt;
 * 输入repo name&lt;br&gt;
 * 勾选 &lt;strong&gt;Include all branches&lt;/strong&gt;&lt;br&gt;
-* 点击 &lt;strong&gt;Create repository from temple&lt;/strong&gt;&lt;/li&gt;
+* 点击 &lt;strong&gt;Create repository from temple&lt;/strong&gt;&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1624168745412.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+等一阵子后,就会复制一样的repo到你的帐号下&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1624168745412.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
-等一阵子后,就会复制一样的repo到你的帐号下&lt;/p&gt;
 &lt;h1 id=&#34;设置github-pages&#34;&gt;设置GitHub Pages&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;到你的repo，点击 &lt;strong&gt;Settings&lt;/strong&gt;&lt;br&gt;
@@ -1928,30 +1918,31 @@
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;Branch 设为 &lt;strong&gt;gh-pages&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;点击 &lt;strong&gt;Save&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;点击 &lt;strong&gt;Save&lt;/strong&gt;&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1624168860771.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1624168860771.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
 &lt;h1 id=&#34;设置repository-secret&#34;&gt;设置Repository Secret&lt;/h1&gt;
 &lt;p&gt;为了让Upptime有commit和publish网页的权限，需要设定Personal Access Token&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;点击自己的&lt;strong&gt;Profile picture&lt;/strong&gt; &amp;gt; &lt;strong&gt;Settings&lt;/strong&gt;&lt;br&gt;
 &lt;img src=&#34;https://blog.gd1214b.icu/post-images/1624168921775.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
-&lt;li&gt;点击左侧的&lt;strong&gt;Developer settings&lt;/strong&gt; &amp;gt; &lt;strong&gt;Personal access tokens&lt;/strong&gt; &amp;gt; &lt;strong&gt;Generate new token&lt;/strong&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1624168964700.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
-3. 新增token&lt;/p&gt;
+&lt;li&gt;点击左侧的&lt;strong&gt;Developer settings&lt;/strong&gt; &amp;gt; &lt;strong&gt;Personal access tokens&lt;/strong&gt; &amp;gt; &lt;strong&gt;Generate new token&lt;/strong&gt;&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1624168964700.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;li&gt;新增token
 &lt;ul&gt;
 &lt;li&gt;Note: &lt;strong&gt;upptime&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;Select scopes:勾选&lt;strong&gt;repo&lt;/strong&gt;和&lt;strong&gt;workflow&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;点击 &lt;strong&gt;Generate token&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;点击 &lt;strong&gt;Generate token&lt;/strong&gt;&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1624169013442.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1624169013442.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
-4. 复制这段很长的token&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1624169029896.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
-5. 返回&lt;strong&gt;repo&lt;/strong&gt; &amp;gt;&lt;strong&gt;Settings&lt;/strong&gt;&lt;br&gt;
+&lt;/li&gt;
+&lt;li&gt;复制token&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1624169029896.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;li&gt;返回&lt;strong&gt;repo&lt;/strong&gt; &amp;gt;&lt;strong&gt;Settings&lt;/strong&gt;&lt;br&gt;
 点击左侧&lt;strong&gt;Secrets&lt;/strong&gt;&amp;gt; &lt;strong&gt;Add a new secret&lt;/strong&gt; &amp;gt; &lt;strong&gt;New repository secret&lt;/strong&gt;&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1624169066911.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
-6. 设定repo 的token&lt;/p&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1624169066911.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;li&gt;设定repo 的token&lt;/li&gt;
+&lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;Name: &lt;strong&gt;GH_PAT&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;Value: 贴上刚刚复制的 &lt;strong&gt;token&lt;/strong&gt;&lt;/li&gt;
@@ -1961,11 +1952,11 @@
 &lt;h1 id=&#34;更新yaml文件&#34;&gt;更新YAML文件&lt;/h1&gt;
 &lt;p&gt;Upptime使用.yml来做“集中式设置”，只要更改这个文件的设置，所有相关代码就会一起修改。&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;到你的repo，点击&lt;strong&gt;Code&lt;/strong&gt; &amp;gt; &lt;strong&gt;.upptimerc.yml&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;到你的repo，点击&lt;strong&gt;Code&lt;/strong&gt; &amp;gt; &lt;strong&gt;.upptimerc.yml&lt;/strong&gt;&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1624169199844.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;li&gt;点击铅笔按钮编辑文件&lt;/li&gt;
+&lt;li&gt;按照以下模版修改此文件：(方括号内是需要修改的内容，修改完之后请删除方括号)&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1624169199844.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
-2. 点击铅笔按钮编辑文件&lt;br&gt;
-3. 按照以下模版修改此文件：(方括号内是需要修改的内容，修改完之后请删除方括号)&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;#你的GitHub username 
 owner: 【GitHub username】
 
@@ -1992,7 +1983,7 @@ navbar:
       href: 【链接】
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h1 id=&#34;查看github-actions&#34;&gt;查看GitHub Actions&lt;/h1&gt;
-&lt;p&gt;设定好.yml后，Actions就会自动开始运行(黄圈在转)。运行成功会显示绿色的勾，运行失败会显示红色的叉。&lt;br&gt;
+&lt;p&gt;设定好.upptimerc.yml后，Actions就会自动开始运行(黄圈在转)。运行成功会显示绿色的勾，运行失败会显示红色的叉。&lt;br&gt;
 &lt;img src=&#34;https://blog.gd1214b.icu/post-images/1624169705043.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 如果发现Actions没运行，或是想要让它马上执行，就点击左侧的&lt;strong&gt;Setup CI&lt;/strong&gt;&amp;gt; &lt;strong&gt;Run workflow&lt;/strong&gt; &amp;gt; &lt;strong&gt;Run workflow&lt;/strong&gt;&lt;br&gt;
 &lt;img src=&#34;https://blog.gd1214b.icu/post-images/1624169731129.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
@@ -2000,11 +1991,11 @@ navbar:
 &lt;p&gt;你的状态页面URL是:https://【user_name】.github.io/【repo_name】/&lt;br&gt;
 或是可以到&lt;strong&gt;repo&lt;/strong&gt; &amp;gt; &lt;strong&gt;Settings&lt;/strong&gt; &amp;gt; &lt;strong&gt;GitHub Pages&lt;/strong&gt;查看URL&lt;/p&gt;
 &lt;p&gt;点击URL后，我们来到了状态页面，页面分成三个区块。&lt;/p&gt;
-&lt;p&gt;Active Incidents 显示目前的异常事件，Past Incidents 显示过去的异常事件，Live Status 可以切换五种response time 图形。&lt;/p&gt;
-&lt;figure data-type=&#34;image&#34; tabindex=&#34;2&#34;&gt;&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1624170045428.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;Active Incidents 显示目前的异常事件，Past Incidents 显示过去的异常事件，Live Status 可以切换五种response time 图形。&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1624170045428.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;h1 id=&#34;进阶操作&#34;&gt;进阶操作&lt;/h1&gt;
 &lt;h2 id=&#34;自定义运行时间&#34;&gt;自定义运行时间&lt;/h2&gt;
-&lt;p&gt;Upptime有七个Workflows，只要把下面这段粘贴贴到.upptimerc.yml，就可以自定义Workflow的时间点&lt;/p&gt;
+&lt;p&gt;Upptime有七个Workflows，只要把下面这段粘贴到.upptimerc.yml，就可以自定义Workflow的时间点&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;workflowSchedule: 
   graphs: &amp;quot;0 0 * * *&amp;quot; 
   responseTime: &amp;quot;0 23 * * *&amp;quot; 
@@ -2015,25 +2006,25 @@ navbar:
   uptime: &amp;quot;*/5 * * * *&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;自定义状态页面&#34;&gt;自定义状态页面&lt;/h2&gt;
-&lt;p&gt;Status Website预设是英文的，如果你想要改成其他语言，可以把要修改的部分张贴到.upptimerc.yml&lt;/p&gt;
+&lt;p&gt;Status Website预设是英文的，如果你想要改成其他语言，可以把要修改的部分粘贴到.upptimerc.yml&lt;/p&gt;
 &lt;p&gt;例如：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;i18n:
   activeIncidents: 活动事件
-  allSystemsOperational: 所有系统都可以运行
+  allSystemsOperational: 所有系统都可以正常运行
   incidentReport: &amp;quot;事件 #$NUMBER 报告 →&amp;quot;
   activeIncidentSummary: 在 $DATE 打开，有 $POSTS 个帖子
   incidentTitle: 事件 $NUMBER 的详细信息
   incidentDetails: 事件详细信息
   incidentFixed: 已修复
   incidentOngoing: 正在进行
-  incidentOpenedAt: 打开于
-  incidentClosedAt: 关闭于
+  incidentOpenedAt: 开始于
+  incidentClosedAt: 结束于
   incidentSubscribe: 订阅更新
   incidentViewOnGitHub: 在 GitHub 上查看
   incidentCommentSummary: 由 $AUTHOR 在 $DATE 发布
   incidentBack: ← 返回所有事件
   pastIncidents: 过去的事件
-  pastIncidentsResolved: 在 $MINUTES 分钟内解决了 $POSTS 个帖子
+  pastIncidentsResolved: $POSTS 个问题在 $MINUTES 分钟内得到解决
   liveStatus: 实时状态
   overallUptime: &amp;quot;总体正常运行时间： $UPTIME&amp;quot;
   overallUptimeTitle: 总体正常运行时间
@@ -2094,6 +2085,7 @@ navbar:
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h1 id=&#34;参考资料&#34;&gt;参考资料&lt;/h1&gt;
 &lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://annkuoq.github.io/blog/2021-01-09-uptime-monitor-and-status-website-service-with-upptime/&#34;&gt;AnnKuoQ Blog&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://upptime.js.org/docs/get-started&#34;&gt;Getting started | Upptime&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/upptime/upptime&#34;&gt;upptime - GitHub&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -2262,8 +2254,8 @@ navbar:
 &lt;p&gt;由于众所周知的原因，GitHub在中国大陆地区收到的干扰严重，大部分情况下根本无法连接，这也导致Gridea的同步失败问题。&lt;br&gt;
 &lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623391923562.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;h1 id=&#34;解决方案&#34;&gt;解决方案&lt;/h1&gt;
-&lt;p&gt;通常的解决方案是通过代理服务器连接，但由于大部分的代理软件（如v2rayN等），只能更改系统的代理设置，，像Gridea这些不遵守系统代理设置的软件，无法通过代理服务器连接。&lt;/p&gt;
-&lt;p&gt;下面介绍一种本人亲测有效的方法。&lt;/p&gt;
+&lt;p&gt;通常的解决方案是通过代理服务器连接，但由于大部分的代理软件（如v2rayN等），只能更改系统的代理设置，，像Gridea这些不遵守系统代理设置的软件，无法通过代理服务器连接。&lt;br&gt;
+下面介绍一种本人亲测有效的方法。&lt;/p&gt;
 &lt;h2 id=&#34;第一步-连接上代理&#34;&gt;第一步 连接上代理&lt;/h2&gt;
 &lt;p&gt;这一步不做过多讲解。&lt;/p&gt;
 &lt;h2 id=&#34;第二步-下载并安装github-desktop&#34;&gt;第二步 下载并安装GitHub Desktop&lt;/h2&gt;
@@ -2271,10 +2263,16 @@ navbar:
 &lt;a href=&#34;https://central.GitHub.com/deployments/desktop/desktop/latest/win32&#34;&gt;https://central.GitHub.com/deployments/desktop/desktop/latest/win32&lt;/a&gt;&lt;br&gt;
 打开安装程序即可自动完成安装。&lt;/p&gt;
 &lt;h2 id=&#34;第三步-登陆github账号&#34;&gt;第三步 登陆GitHub账号&lt;/h2&gt;
-&lt;h3 id=&#34;1点击-sign-into-githubcom&#34;&gt;1.点击 Sign into GitHub.com&lt;/h3&gt;
-&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623481745688.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
-&lt;h3 id=&#34;2在浏览器里登陆你的github账号&#34;&gt;2.在浏览器里登陆你的GitHub账号&lt;/h3&gt;
-&lt;figure data-type=&#34;image&#34; tabindex=&#34;2&#34;&gt;&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623481982934.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;点击 Sign into GitHub.com&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623481745688.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在浏览器里登陆你的GitHub账号&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623481982934.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h2 id=&#34;第四步-清空gridea-配置目录下ouput文件夹里的所有内容&#34;&gt;第四步 清空Gridea 配置目录下ouput文件夹里的所有内容&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;需要清空ouput文件夹里的所有内容的原因是GitHub Desktop无法克隆仓库到非空文件夹中，这一步不会影响你的博客数据。&lt;br&gt;
@@ -4872,11 +4870,11 @@ IP 协议（含 &lt;a href=&#34;https://en.wikipedia.org/wiki/IPv4&#34;&gt;IPv4&
       
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://blog.gd1214b.icu/post/about/"" data-c="
-          &lt;p align=&#34;center&#34;&gt;
+          &lt;h1 id=&#34;关于gd1214b&#34;&gt;关于gd1214b&lt;/h1&gt;
+&lt;p align=&#34;center&#34;&gt;
  &lt;img width=&#34;200px&#34; src=&#34;https://blog.gd1214b.icu/images/avatar.png&#34; align=&#34;center&#34; alt=&#34;gd1214b&#34; /&gt;
  &lt;h2 align=&#34;center&#34;&gt;gd1214b&lt;/h2&gt;
 &lt;/p&gt;
-&lt;h1 id=&#34;关于gd1214b&#34;&gt;关于gd1214b&lt;/h1&gt;
 &lt;h2 id=&#34;联系方式&#34;&gt;联系方式&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -4917,7 +4915,7 @@ IP 协议（含 &lt;a href=&#34;https://en.wikipedia.org/wiki/IPv4&#34;&gt;IPv4&
 &lt;a href=&#34;https://github.com/gd1214b&#34;&gt;&lt;img src=&#34;https://github-stats.gd1214b.tk/api/top-langs/?username=gd1214b&amp;amp;layout=compact&amp;amp;theme=radical&#34; alt=&#34;Top Langs&#34; loading=&#34;lazy&#34;&gt;&lt;/a&gt;&lt;br&gt;
 &lt;img src=&#34;https://cdn.jsdelivr.net/gh/gd1214b/gd1214b@latest/github-metrics.svg&#34; alt=&#34;Metrics&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;h1 id=&#34;关于本站&#34;&gt;关于本站&lt;/h1&gt;
-&lt;h2 id=&#34;gd1214b服务状态监控&#34;&gt;gd1214b服务状态监控&lt;/h2&gt;
+&lt;h2 id=&#34;服务状态监控&#34;&gt;服务状态监控&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Vercel: &lt;a href=&#34;https://status.gd1214b.tk/&#34;&gt;https://status.gd1214b.tk/&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Cloudflare Pages: &lt;a href=&#34;https://gd1214b-uptime.pages.dev/&#34;&gt;https://gd1214b-uptime.pages.dev/&lt;/a&gt;&lt;/li&gt;
@@ -4943,7 +4941,7 @@ IP 协议（含 &lt;a href=&#34;https://en.wikipedia.org/wiki/IPv4&#34;&gt;IPv4&
 &lt;p&gt;&lt;a href=&#34;https://pages.github.com/&#34;&gt;GitHub Pages&lt;/a&gt;: &lt;a href=&#34;https://gd1214b.github.io/&#34;&gt;https://gd1214b.github.io/&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://pages.cloudflare.com/&#34;&gt;Cloudflare Pages&lt;/a&gt;: &lt;a href=&#34;https://gd1214b.pages.dev/&#34;&gt;https://gd1214b.pages.dev/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://pages.cloudflare.com/&#34;&gt;Cloudflare Pages&lt;/a&gt;: &lt;a href=&#34;https://gd1214b-96n.pages.dev/&#34;&gt;https://gd1214b-96n.pages.dev/&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.netlify.com/&#34;&gt;Netlify&lt;/a&gt;: &lt;a href=&#34;https://gd1214b.netlify.app/&#34;&gt;https://gd1214b.netlify.app/&lt;/a&gt;&lt;/p&gt;
