@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.gd1214b.icu</id>
     <title>gd1214b&apos;s blog</title>
-    <updated>2021-06-27T07:02:39.927Z</updated>
+    <updated>2021-06-27T07:12:15.221Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.gd1214b.icu"/>
     <link rel="self" href="https://blog.gd1214b.icu/atom.xml"/>
@@ -17,9 +17,9 @@
         </link>
         <updated>2021-06-26T07:50:08.000Z</updated>
         <content type="html"><![CDATA[<blockquote>
-<p>本文转自：<a href="https://tingtalk.me/telegram/">https://tingtalk.me/telegram/</a></p>
+<p>本文转自：<a href="https://tingtalk.me/telegram/">https://tingtalk.me/telegram/</a><br>
+<img src="https://blog.gd1214b.icu/post-images/1624777352841.png" alt="" loading="lazy"></p>
 </blockquote>
-<figure data-type="image" tabindex="1"><img src="https://blog.gd1214b.icu/post-images/1624777352841.png" alt="" loading="lazy"></figure>
 <p>电报是迄今为止最棒的即时聊天软件，在这个自由新世界，不必自我审查（Freedom of speech）。</p>
 <p>🧱 TG 在中国大陆必须 <a href="https://tingtalk.me/fq/">翻墙</a> 后才能使用。不过，学会科学上网，难道不是当代数字公民的必备技能吗？</p>
 <p>📁 tingtalk.me 在 2020-04-04 被墙了，如需在墙内传阅，请下载本文的 <a href="https://wwa.lanzoux.com/b00twozof">PDF</a> 或前往 <a href="https://raw.githubusercontent.com/ting-talk/blog/master/source/_posts/digital-life/telegram.md">GitHub</a> 阅读（也是可编辑的 Markdown 源文档）。</p>
@@ -110,7 +110,7 @@
 </blockquote>
 <p>既然说不动认识我的人，但世界那么大，人口那么多，网络世界上一定有一群人，Ta 们和我一样，反感「温室园丁」不透明的做法，不愿做一只数字农场里的电子绵羊，相信「自由价更高」。</p>
 <p>我要当一个 <a href="https://kenengba.com/post/3393.html">踹车轮</a> 的人，为我心中的理想世界投票。因此我熬了几个月，把 Telegram 官网的 <a href="https://telegram.org/faq">FAQ</a> 和 <a href="https://telegram.org/blog">Blog</a> 全部看完了（从 2013 年创立电报至今），结合 Google 搜索引擎旁征博引，整理出这篇<s>可能是</s>中文互联网内容最翔实，排版最精美的《电报指南》，目的就是尽可能地为读者呈现 Telegram 的强大、私密以及友好的用户体验。</p>
-<figure data-type="image" tabindex="2"><img src="https://blog.gd1214b.icu/post-images/1624777229880.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="1"><img src="https://blog.gd1214b.icu/post-images/1624777229880.png" alt="" loading="lazy"></figure>
 <blockquote>
 <p>在 <a href="https://t.me/durovschat">Durov's Chat</a> 用蹩脚的中式英语给教程做推广，受到 <a href="https://t.me/durovschat/283">Pavel 的肯定</a>。</p>
 </blockquote>
