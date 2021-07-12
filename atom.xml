@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.gd1214b.icu</id>
     <title>gd1214b&apos;s blog</title>
-    <updated>2021-07-12T14:06:47.149Z</updated>
+    <updated>2021-07-12T14:08:58.982Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.gd1214b.icu"/>
     <link rel="self" href="https://blog.gd1214b.icu/atom.xml"/>
@@ -10,73 +10,6 @@
     <logo>https://blog.gd1214b.icu/images/avatar.png</logo>
     <icon>https://blog.gd1214b.icu/favicon.ico</icon>
     <rights>All rights reserved 2021, gd1214b&apos;s blog</rights>
-    <entry>
-        <title type="html"><![CDATA[隐私政策]]></title>
-        <id>https://blog.gd1214b.icu/post/privacy-policy/</id>
-        <link href="https://blog.gd1214b.icu/post/privacy-policy/">
-        </link>
-        <updated>2021-07-12T13:42:55.000Z</updated>
-        <content type="html"><![CDATA[<blockquote>
-<p>本条款生效于:2021年7月12日</p>
-</blockquote>
-<figure data-type="image" tabindex="1"><img src="https://blog.gd1214b.icu/post-images/1626098524913.png" alt="" loading="lazy"></figure>
-<h1 id="1-总则">1. 总则</h1>
-<p>尽管我们可能会收集信息以改善应用程序和服务质量，但是我们非常重视您的隐私。为了更好的保护您的隐私，我们提供了本隐私政策声明，描述我们收集、处理、存储和使用您的个人信息的方式。</p>
-<h1 id="2-修订策略">2. 修订策略</h1>
-<p>我们保留在任何时间修改，修订或更新本政策的权利。</p>
-<p>您应该定期访问此网页，使用浏览器上的「刷新」按钮，检查本政策的任何修改。</p>
-<p>「最后更新」日期的变化表示该政策已被更新或编辑，更新或编辑的版本在发布后立即取代先前任何版本。</p>
-<p>浏览器、运营商、CDN、和其他组织或个人可能出于节省带宽或其他因素缓存我们的页面，在这种情况下导致您看到的页面内容和实际不符，应当以我们提供的为准。</p>
-<h1 id="3-正文">3. 正文</h1>
-<p>我们不会在自己的服务器上存储您的个人隐私数据，所有的个人隐私数据均由第三方存储，包括但不限于：</p>
-<ul>
-<li>BaiduTongji -百度</li>
-<li>GoogleAdsence - 谷歌</li>
-<li>LeanCloud(国际版）</li>
-<li>CloudflareCDN -Cloudflare</li>
-<li>cdn.jsdeliver.net - JSDeliver</li>
-</ul>
-<p><strong>所有第三方隐私政策内容优先级均大于本篇隐私政策。</strong></p>
-<p>以下网站的隐私政策：<a href="http://privacy.baidu.com/detail?id=288">百度</a>|<a href="https://policies.google.com/technologies/product-privacy">Google</a>|<a href="https://leancloud.app/privacy/">LeanCloud</a>|<a href="https://www.cloudflare.com/zh-cn/privacypolicy/">Cloudflare</a>|<a href="https://www.jsdelivr.com/privacy-policy">JSDeliver</a></p>
-<p>以下是详细介绍</p>
-<h2 id="cookie-浏览器元数据">Cookie 浏览器元数据</h2>
-<h3 id="简介">简介</h3>
-<p>Cookies 是服务器发送到用户浏览器并保存在本地的一小块数据，可能包含匿名的唯一标识符，它会在浏览器下次向同一服务器再发起请求时被携带并发送到服务器上。通常，它用于告知服务端两个请求是否来自同一浏览器或用户，如用于保持用户的登录状态。</p>
-<h3 id="目前已知收集cookies的是">目前已知收集Cookies的是：</h3>
-<p><strong>百度|Google|LeanCloud</strong></p>
-<h3 id="用途">用途：</h3>
-<p>Cookie往往用于暂时缓存当前您的位置和身份，欧盟强制要求告知用户Cookie使用情况,但我们立足于中国大陆,服务器部署于美利坚共和国,面向中国提供服务,<strong>无需</strong>进行特殊标识.</p>
-<p>我们将通过 Cookie 和其他技术收集的信息视为非个人信息，因为他人无法使用这些信息还原出您的任何个人相关数据。</p>
-<p>我们<strong>不会</strong>使用 Cookie 技术向任何第三方披露、或辅助第三方收集任何您的个人信息。</p>
-<h2 id="电子邮件">电子邮件</h2>
-<h3 id="目前已知收集的是">目前已知收集的是</h3>
-<p><strong>LeanCloud</strong></p>
-<h3 id="用途-2">用途：</h3>
-<p>作为评论系统中Gravatar头像，以及便于接受评论新留言邮件。</p>
-<p><strong>我们不会主动向任何人泄露您的邮件。</strong><br>
-我们永远不会向您的邮件发送任何广告邮件，<br>
-CloudFlare提供邮件地址混淆服务，避免爬虫获取您的邮箱。</p>
-<h2 id="手机号码">手机号码</h2>
-<p>我们不会向您索要手机号码。</p>
-<h2 id="地理位置">地理位置</h2>
-<h3 id="目前已知收集的是-2">目前已知收集的是</h3>
-<p><strong>百度|Google|LeanCloud|Cloudflare|JSDeliver|</strong></p>
-<h3 id="用途-3">用途</h3>
-<p>第三方掌控用途，请阅读他们的隐私政策。</p>
-<p>我们能看到的<strong>仅精确到省级或市级的地理位置</strong></p>
-<h2 id="ip">ip</h2>
-<h3 id="目前已知收集的是-3">目前已知收集的是</h3>
-<p><strong>百度|Google|LeanCloud|Cloudflare|JSDeliver|</strong></p>
-<h3 id="用途-4">用途</h3>
-<p>设备连接网络，设备将被分配一个IP地址，用作标识。通过IP地址，设备间可以互相通讯，如果没有IP地址，我们将无法知道哪个设备是发送方，无法知道哪个是接收方。</p>
-<p>我们视为ip【包括ipv4和ipv6】是最重要的隐私，其重要程度大于地理位置，因为这基本包含了您当时的所有隐私。我们<strong>绝对不会</strong>向外界泄露您的ip.</p>
-<h2 id="性能和使用情况统计信息">性能和使用情况统计信息</h2>
-<p><strong>包括但不限于引荐来源、访问的频率、访问日期和时间、行为流、花费的时间、使用的浏览器、设备品牌、供应商、型号、屏幕尺寸、User-Agent和操作系统</strong></p>
-<p>我们认为这些信息并不属于您的隐私，因为这些信息并没有暴露到您个人，并且这些是不可避免的。</p>
-<h1 id="4政府请求">4.政府请求</h1>
-<p>除非本站服务器所在地政府援引清晰的法律条款要求本站提供访问者信息,我们不会主动向任何政府透露任何您的信息。</p>
-]]></content>
-    </entry>
     <entry>
         <title type="html"><![CDATA[如何理解麦克卢汉的「媒介即信息」？]]></title>
         <id>https://blog.gd1214b.icu/post/CRbjifrj5/</id>
@@ -3056,6 +2989,70 @@ navbar:
 <p>从财报业绩表现来看，Fastly仍处在业务快速扩张阶段，第一季度收入同比增长34.8%，同时研发投入同比增长超过100%，导致当季净亏损5051万美元。去年全年，Fastly收入同比增速为45%，净亏损9593万美元。</p>
 <p>Fastly在2020年同样是一支疫情受益股，股价在当年从年初的每股约20美元一路涨至年末的每股100美元以上翻了4倍多。但在进入2021年后，股价又一路从高位回落，目前距离历史高位已经腰斩。</p>
 <p>Fastly断网事件再次提醒我们互联网服务的脆弱性，当提供互联网底层服务的单个公司出现短时故障时，将导致大规模用户的互联网服务受到影响，因为越来越多的互联网内容提供方正在依赖越来越少的类似Fastly这样的中间云服务提供商，这样的事件在近期时有发生，包括去年7月Cloudflare因故障中断服务以及亚马逊旗下AWS在去年11月碰到的短期故障等，云服务市场集中度的不断提高，正在不断加剧这样的潜在风险。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[在Heroku上部署v2ray]]></title>
+        <id>https://blog.gd1214b.icu/post/NbdQntVCG/</id>
+        <link href="https://blog.gd1214b.icu/post/NbdQntVCG/">
+        </link>
+        <updated>2021-06-08T07:47:14.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p><strong>请先阅读本站的免责声明:<a href="https://blog.gd1214b.icu/post/disclaimers/">https://blog.gd1214b.icu/post/disclaimers/</a></strong><br>
+<strong>请遵循当地法律使用，如您有违反当地法律造成的责任，本站拒不承担.</strong></p>
+</blockquote>
+<h1 id="简介">简介</h1>
+<h2 id="heroku">Heroku</h2>
+<p>Heroku是 Salesforce 旗下云服务商，提供方便便捷的各种云服务，如服务器，数据库，监控，计算等等。并且他提供了免费版本，这使得我们这些平时想搞一些小东西的人提供了莫大的便捷，虽然他有时长和宕机的限制，但是对于个人小程序来说已经足够了。</p>
+<h2 id="v2ray">V2Ray</h2>
+<p>V2Ray（Project V）是一个优秀的开源网络代理工具，目前已经全平台支持Windows、Mac、Android、IOS、Linux等操作系统的使用。相对起Shadowsocks来说属于后起之秀，在混淆能力、兼容性、速度上有着独到的优点，V2Ray是一个不错的选择。</p>
+<h1 id="服务端部署">服务端部署</h1>
+<h2 id="注册heroku">注册Heroku</h2>
+<p>很简单，根据官网的提示操作就行:<a href="https://signup.heroku.com/">https://signup.heroku.com/</a></p>
+<h2 id="部署">部署</h2>
+<p>点击下面的链接将v2ray部署到Heroku上：<br>
+<a href="https://heroku.com/deploy?template=https://github.com/libsgh/v2ray-heroku.git">https://heroku.com/deploy?template=https://github.com/libsgh/v2ray-heroku.git</a></p>
+<h2 id="app-name">App name</h2>
+<p><img src="https://blog.gd1214b.icu/post-images/1623138897097.png" alt="" loading="lazy"><br>
+应用名称，可随意填写。</p>
+<h2 id="choose-a-region">Choose a region</h2>
+<p><img src="https://blog.gd1214b.icu/post-images/1623139055193.png" alt="" loading="lazy"><br>
+服务器所在位置，有美国和欧洲两个选择。</p>
+<h2 id="protocol">PROTOCOL</h2>
+<p><img src="https://blog.gd1214b.icu/post-images/1623139144487.png" alt="" loading="lazy"><br>
+v2ray所使用的协议，可以不用改动。</p>
+<h2 id="uuid">UUID</h2>
+<p>用户的连接ID，必须填写，可在这里随机生成一个：<a href="https://1024tools.com/uuid">https://1024tools.com/uuid</a><br>
+(只需复制一个即可，千万要注意保存)。<br>
+<img src="https://blog.gd1214b.icu/post-images/1623139189773.png" alt="" loading="lazy"></p>
+<h2 id="ws_path">WS_PATH</h2>
+<p><img src="https://blog.gd1214b.icu/post-images/1623139413528.png" alt="" loading="lazy"><br>
+websocket路径,可以不用改动。</p>
+<h2 id="进行部署">进行部署</h2>
+<p>点击最后的“Deploy app”即可。<br>
+<img src="https://blog.gd1214b.icu/post-images/1623139548540.png" alt="" loading="lazy"><br>
+这里可能会需要一点时间，看到下面的界面就说明部署成功了：<br>
+<img src="https://blog.gd1214b.icu/post-images/1623139649895.png" alt="" loading="lazy"><br>
+打开网页：https://app-name.herokuapp.com/ray (<strong>将app name替换为你在第一部中填写的名称</strong>)如果显示Bad Request 则说明v2ray服务端部署就绪。</p>
+<h1 id="客户端配置">客户端配置</h1>
+<p>这里以windows端的v2rayN为例，其他客户端配置方法类似。<br>
+<img src="https://blog.gd1214b.icu/post-images/1623140960527.png" alt="" loading="lazy"><br>
+请严格按照以上信息填写，否则可能无法连接。</p>
+<p>到这一步你的v2ray应该已经部署好了，如果还是无法连接的话可以在下方的评论区中提出问题。</p>
+<h1 id="其他说明">其他说明</h1>
+<h2 id="伪装首页3d元素周期表">伪装首页（3D元素周期表）</h2>
+<p>请求/，返回3D元素周期表<br>
+<img src="https://blog.gd1214b.icu/post-images/1623156776166.png" alt="" loading="lazy"></p>
+<h2 id="html5测速">HTML5测速</h2>
+<p>请求/speedtest/，返回html5-speedtest测速页面<br>
+<img src="https://blog.gd1214b.icu/post-images/1623156810883.png" alt="" loading="lazy"></p>
+<h2 id="文件下载速度测试">文件下载速度测试</h2>
+<p>请求/test/，返回文件列表,可用于文件下载速度测试<br>
+<img src="https://blog.gd1214b.icu/post-images/1623156875631.png" alt="" loading="lazy"></p>
+<h1 id="致谢">致谢</h1>
+<ul>
+<li><a href="https://github.com/libsgh/v2ray-heroku">v2ray-heroku</a>是github上的一个开源项目，本文部署时用到了其中的源代码。</li>
+</ul>
 ]]></content>
     </entry>
 </feed>
