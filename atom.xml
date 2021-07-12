@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.gd1214b.icu</id>
     <title>gd1214b&apos;s blog</title>
-    <updated>2021-07-12T14:02:19.166Z</updated>
+    <updated>2021-07-12T14:06:47.149Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.gd1214b.icu"/>
     <link rel="self" href="https://blog.gd1214b.icu/atom.xml"/>
@@ -30,11 +30,11 @@
 <h1 id="3-正文">3. 正文</h1>
 <p>我们不会在自己的服务器上存储您的个人隐私数据，所有的个人隐私数据均由第三方存储，包括但不限于：</p>
 <ul>
-<li>BaiduTongji -百度【以下缩写为B】</li>
-<li>GoogleAdsence - 谷歌【以下缩写为G】</li>
-<li>LeanCloud(国际版）【以下缩写为L】</li>
-<li>CloudflareCDN -Cloudflare【以下缩写为C】</li>
-<li>cdn.jsdeliver.net - JSDeliver【以下缩写为D】</li>
+<li>BaiduTongji -百度</li>
+<li>GoogleAdsence - 谷歌</li>
+<li>LeanCloud(国际版）</li>
+<li>CloudflareCDN -Cloudflare</li>
+<li>cdn.jsdeliver.net - JSDeliver</li>
 </ul>
 <p><strong>所有第三方隐私政策内容优先级均大于本篇隐私政策。</strong></p>
 <p>以下网站的隐私政策：<a href="http://privacy.baidu.com/detail?id=288">百度</a>|<a href="https://policies.google.com/technologies/product-privacy">Google</a>|<a href="https://leancloud.app/privacy/">LeanCloud</a>|<a href="https://www.cloudflare.com/zh-cn/privacypolicy/">Cloudflare</a>|<a href="https://www.jsdelivr.com/privacy-policy">JSDeliver</a></p>
@@ -45,7 +45,7 @@
 <h3 id="目前已知收集cookies的是">目前已知收集Cookies的是：</h3>
 <p><strong>百度|Google|LeanCloud</strong></p>
 <h3 id="用途">用途：</h3>
-<p>Cookie往往用于暂时缓存当前您的位置和身份，欧盟强制要求告知用户Cookie使用情况,但我们立足于中国大陆,服务器构建于美利坚共和国,面向中国提供服务,<strong>无需</strong>进行特殊标识.</p>
+<p>Cookie往往用于暂时缓存当前您的位置和身份，欧盟强制要求告知用户Cookie使用情况,但我们立足于中国大陆,服务器部署于美利坚共和国,面向中国提供服务,<strong>无需</strong>进行特殊标识.</p>
 <p>我们将通过 Cookie 和其他技术收集的信息视为非个人信息，因为他人无法使用这些信息还原出您的任何个人相关数据。</p>
 <p>我们<strong>不会</strong>使用 Cookie 技术向任何第三方披露、或辅助第三方收集任何您的个人信息。</p>
 <h2 id="电子邮件">电子邮件</h2>
@@ -74,7 +74,7 @@ CloudFlare提供邮件地址混淆服务，避免爬虫获取您的邮箱。</p>
 <p><strong>包括但不限于引荐来源、访问的频率、访问日期和时间、行为流、花费的时间、使用的浏览器、设备品牌、供应商、型号、屏幕尺寸、User-Agent和操作系统</strong></p>
 <p>我们认为这些信息并不属于您的隐私，因为这些信息并没有暴露到您个人，并且这些是不可避免的。</p>
 <h1 id="4政府请求">4.政府请求</h1>
-<p>除非本站服务器所在地政府援引清晰的法律条款要求本站提供访问者谢谢,我们不会主动向任何政府透露任何您的信息。</p>
+<p>除非本站服务器所在地政府援引清晰的法律条款要求本站提供访问者信息,我们不会主动向任何政府透露任何您的信息。</p>
 ]]></content>
     </entry>
     <entry>
