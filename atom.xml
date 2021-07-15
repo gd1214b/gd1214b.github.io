@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.gd1214b.icu</id>
     <title>gd1214b&apos;s blog</title>
-    <updated>2021-07-14T06:51:40.835Z</updated>
+    <updated>2021-07-15T10:13:58.188Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.gd1214b.icu"/>
     <link rel="self" href="https://blog.gd1214b.icu/atom.xml"/>
@@ -3035,10 +3035,21 @@ websocket路径,可以不用改动。</p>
 <img src="https://blog.gd1214b.icu/post-images/1623139649895.png" alt="" loading="lazy"><br>
 打开网页：https://app-name.herokuapp.com/ray (<strong>将app name替换为你在第一部中填写的名称</strong>)如果显示Bad Request 则说明v2ray服务端部署就绪。</p>
 <h1 id="客户端配置">客户端配置</h1>
-<p>这里以windows端的v2rayN为例，其他客户端配置方法类似。<br>
+<p>这里以windows端的v2rayN(下载地址:<a href="https://github.com/2dust/v2rayN/releases">https://github.com/2dust/v2rayN/releases</a>)为例，其他客户端配置方法类似。<br>
 <img src="https://blog.gd1214b.icu/post-images/1623140960527.png" alt="" loading="lazy"><br>
 请严格按照以上信息填写，否则可能无法连接。</p>
 <p>到这一步你的v2ray应该已经部署好了，如果还是无法连接的话可以在下方的评论区中提出问题。</p>
+<h1 id="故障排除">故障排除</h1>
+<h2 id="请确保v2rayn的代理已打开">请确保v2rayN的代理已打开</h2>
+<figure data-type="image" tabindex="1"><img src="https://blog.gd1214b.icu/post-images/1626343819487.jpg" alt="" loading="lazy"></figure>
+<h2 id="请确保你的电脑时间准确">请确保你的电脑时间准确</h2>
+<p>与北京时间相差不超过30秒：<br>
+<a href="https://time.is/China" id="time_is_link" rel="nofollow" style="font-size:36px">北京时间:</a><br>
+<span id="China_z43d" style="font-size:36px"></span></p>
+<script src="//widget.time.is/t.js"></script>
+<script>
+time_is_widget.init({China_z43d:{}});
+</script>
 <h1 id="其他说明">其他说明</h1>
 <h2 id="伪装首页3d元素周期表">伪装首页（3D元素周期表）</h2>
 <p>请求/，返回3D元素周期表<br>
