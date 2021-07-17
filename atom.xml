@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.gd1214b.icu</id>
     <title>gd1214b&apos;s blog</title>
-    <updated>2021-07-17T08:54:54.004Z</updated>
+    <updated>2021-07-17T12:02:34.257Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.gd1214b.icu"/>
     <link rel="self" href="https://blog.gd1214b.icu/atom.xml"/>
@@ -18,12 +18,14 @@
         <updated>2021-07-17T07:31:08.000Z</updated>
         <content type="html"><![CDATA[<h1 id="准备工作">准备工作</h1>
 <ul>
-<li>一个OneDrive账户</li>
+<li>OneDrive账户</li>
+<li>Vercel账户(注册地址:<a href="https://vercel.com/signup">https://vercel.com/signup</a>)</li>
+<li>Github账户(注册地址:<a href="https://github.com/signup">https://github.com/signup</a>)</li>
 <li>安装 <a href="https://nodejs.org/zh-cn/download/">Node.js</a></li>
 <li>配置npm环境变量, 可参考:<a href="https://www.jianshu.com/p/2d9fa3659645">https://www.jianshu.com/p/2d9fa3659645</a></li>
 </ul>
 <h1 id="获取onedrive-api-令牌">获取Onedrive API 令牌</h1>
-<h2 id="获取client_id和client_secret">获取<code>client_id</code>和<code>client_secret</code></h2>
+<h2 id="获取client_id和client_secret">获取client_id和client_secret</h2>
 <p>登录<a href="https://portal.azure.com/">Microsoft Azure管理控制台</a><br>
 <img src="https://blog.gd1214b.icu/post-images/1626507543866.jpg" alt="" loading="lazy"></p>
 <p>进入<a href="https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade">Azure面板应用注册界面</a>,注册一个新的应用程序.<br>
@@ -33,33 +35,32 @@
 <ol>
 <li>这里的名称可随意填写.</li>
 <li>选择这一项.</li>
-<li>填写: <code>http://localhost</code></li>
+<li>填写: http://localhost</li>
 <li>点击 注册.</li>
 </ol>
 <p>点击确定后跳转到概要，记录下其中的应用程序(客户端) ID。这个是Client_id 的值。<br>
 <img src="https://blog.gd1214b.icu/post-images/1626508486890.jpg" alt="" loading="lazy"></p>
 <p>设置【API权限】<br>
-依次点击下图中的三个按钮,选择并添加 <code>offline_access</code>, <code>Files.Read</code>, <code>Files.Read.All</code> 这三个权限.<br>
+依次点击下图中的三个按钮,选择并添加 offline_access, Files.Read, Files.Read.All 这三个权限.<br>
 <img src="https://blog.gd1214b.icu/post-images/1626508983170.jpg" alt="" loading="lazy"></p>
 <p>接着我们获取Secrets,点击【证书和密码】，按照下图填写:<br>
 <img src="https://blog.gd1214b.icu/post-images/1626509201610.jpg" alt="" loading="lazy"></p>
 <p>复制生成的密钥（即Client_secret）,请注意此处密钥仅出现一次,以后就不会再出现了, 所以请妥善保存。<br>
 <img src="https://blog.gd1214b.icu/post-images/1626509401306.jpg" alt="" loading="lazy"></p>
-<h1 id="获取refresh_token和access_token">获取<code>refresh_token</code>和<code>access_token</code></h1>
+<h1 id="获取refresh_token和access_token">获取refresh_token和access_token</h1>
 <p>打开你的设备的命令行界面(如Windows的CMD), 运行一下命令:</p>
-<pre><code>npx @beetcb/ms-graph-cli
-</code></pre>
+<p>npx @beetcb/ms-graph-cli</p>
 <p>这里可能需要一点时间</p>
 <p>随后出现这个界面:<br>
 <img src="https://blog.gd1214b.icu/post-images/1626509809642.jpg" alt="" loading="lazy"><br>
 第一个选项是国际版的Onedrive, 第二个是世纪互联(中国)版的Onedrive,根据你的实际情况选择(一般情况都是第一个)</p>
 <p>这一步直接选择第一个(Onedrive)<br>
 <img src="https://blog.gd1214b.icu/post-images/1626509975043.jpg" alt="" loading="lazy"></p>
-<p>这里输入你之前获取的<code>client_id</code>:<br>
+<p>这里输入你之前获取的client_id:<br>
 <img src="https://blog.gd1214b.icu/post-images/1626510039884.jpg" alt="" loading="lazy"></p>
-<p>然后输入<code>client_secret</code>:<br>
+<p>然后输入client_secret:<br>
 <img src="https://blog.gd1214b.icu/post-images/1626510188289.jpg" alt="" loading="lazy"></p>
-<p>最后输入<code>redirect_uri</code>, 默认直接回车即可:<br>
+<p>最后输入redirect_uri, 默认直接回车即可:<br>
 <img src="https://blog.gd1214b.icu/post-images/1626510311042.jpg" alt="" loading="lazy"></p>
 <p>接下来将图中的url粘贴到浏览器中打开:<br>
 <img src="https://blog.gd1214b.icu/post-images/1626510505979.jpg" alt="" loading="lazy"></p>
@@ -68,21 +69,21 @@
 <p>将返回的url粘贴到命令行界面中:<br>
 <img src="https://blog.gd1214b.icu/post-images/1626510737613.jpg" alt="" loading="lazy"><br>
 <img src="https://blog.gd1214b.icu/post-images/1626510779698.jpg" alt="" loading="lazy"></p>
-<p>获取到<code>refresh_token</code>和<code>access_token</code><br>
+<p>获取到refresh_token和access_token<br>
 <img src="https://blog.gd1214b.icu/post-images/1626510934097.jpg" alt="" loading="lazy"><br>
 同样将其保存好.(注意不包括'号)</p>
-<p><strong>最后,在你的Onedrive根目录中新建一个叫<code>Public</code>的文件夹</strong></p>
+<p><strong>最后,在你的Onedrive根目录中新建一个叫Public的文件夹</strong></p>
 <h1 id="在vercel上部署onedrive-index">在Vercel上部署OneDrive-Index</h1>
-<p>点击下面的链接部署:<br>
+<p>点击下面的链接进行部署:<br>
 <a href="https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fspencerwooo%2Fonedrive-vercel-index&amp;env=REFRESH_TOKEN,ACCESS_TOKEN,CLIENT_SECRET&amp;envDescription=Required%20API%20tokens%20for%20this%20project.&amp;project-name=onedrive-vercel-index&amp;repo-name=onedrive-vercel-index&amp;demo-title=onedrive-vercel-index&amp;demo-description=Probably%20the%20best%20looking%20OneDrive%20Index%20around!%20Powered%20by%20Vercel%20and%20Next.js.&amp;demo-url=http%3A%2F%2Fonedrive-vercel-index.vercel.app&amp;demo-image=https%3A%2F%2Fraw.githubusercontent.com%2Fspencerwooo%2Fonedrive-vercel-index%2Fmain%2Fpublic%2Fdemo.png">https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fspencerwooo%2Fonedrive-vercel-index&amp;env=REFRESH_TOKEN,ACCESS_TOKEN,CLIENT_SECRET&amp;envDescription=Required API tokens for this project.&amp;project-name=onedrive-vercel-index&amp;repo-name=onedrive-vercel-index&amp;demo-title=onedrive-vercel-index&amp;demo-description=Probably the best looking OneDrive Index around! Powered by Vercel and Next.js.&amp;demo-url=http%3A%2F%2Fonedrive-vercel-index.vercel.app&amp;demo-image=https%3A%2F%2Fraw.githubusercontent.com%2Fspencerwooo%2Fonedrive-vercel-index%2Fmain%2Fpublic%2Fdemo.png</a></p>
-<p>输入你的仓库名称(可随意), 然后点击<code>Create</code><br>
+<p>输入你的仓库名称(可随意), 然后点击Create<br>
 <img src="https://blog.gd1214b.icu/post-images/1626511314340.jpg" alt="" loading="lazy"></p>
 <p>跳过这一步:<br>
 <img src="https://blog.gd1214b.icu/post-images/1626511351235.jpg" alt="" loading="lazy"></p>
-<p>依次输入你的<code>refresh_token</code> <code>access_token</code> <code>client_secret</code>, 然后点击<code>Deploy</code><br>
+<p>依次输入你的refresh_token, access_token, client_secret, 然后点击Deploy<br>
 <img src="https://blog.gd1214b.icu/post-images/1626511525801.jpg" alt="" loading="lazy"></p>
 <p>等待部署完成即可.</p>
-<p>最后打开你的Github仓库中的<code>config/api.json</code>文件, 将其中的<code>clientId</code> 替换为你自己的即可.</p>
+<p>最后打开你的Github仓库中的config/api.json文件, 将其中的clientId 替换为你自己的即可.</p>
 ]]></content>
     </entry>
     <entry>
