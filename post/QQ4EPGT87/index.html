@@ -9,7 +9,7 @@
 <meta name="description" content="念念不忘，必有回响">
 <meta name="theme-color" content="#f8f9fa">
 <title>测试博客 | gd1214b&#39;s blog</title>
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/gd1214b/gd1214b.github.io@latest/favicon.ico?v=1626448723027">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/gd1214b/gd1214b.github.io@latest/favicon.ico?v=1626512078702">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gd1214b/gd1214b.github.io@latest/media/css/gemini.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gd1214b/gd1214b.github.io@latest/media/fonts/font-awesome.css">
 <link
@@ -274,19 +274,19 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">22</span>
+        <span class="site-item-stat-count">23</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
     <div class="sidebar-item-box">
       <a href="">
-        <span class="site-item-stat-count">20</span>
+        <span class="site-item-stat-count">22</span>
         <span class="site-item-stat-name language" data-lan="category">分类</span>
       </a>
     </div>
     <div class="sidebar-item-box">
       <a href="/tags/">
-        <span class="site-item-stat-count">20</span>
+        <span class="site-item-stat-count">22</span>
         <span class="site-item-stat-name language" data-lan="tag">标签</span>
       </a>
     </div>
@@ -1993,6 +1993,78 @@ int main()
       <hr>
     </div>
     <div class="result" id="result">
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://blog.gd1214b.icu/post/xUIBYCvAl/"" data-c="
+          &lt;h1 id=&#34;准备工作&#34;&gt;准备工作&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;一个OneDrive账户&lt;/li&gt;
+&lt;li&gt;安装 &lt;a href=&#34;https://nodejs.org/zh-cn/download/&#34;&gt;Node.js&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;配置npm环境变量, 可参考:&lt;a href=&#34;https://www.jianshu.com/p/2d9fa3659645&#34;&gt;https://www.jianshu.com/p/2d9fa3659645&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;获取onedrive-api-令牌&#34;&gt;获取Onedrive API 令牌&lt;/h1&gt;
+&lt;h2 id=&#34;获取client_id和client_secret&#34;&gt;获取&lt;code&gt;client_id&lt;/code&gt;和&lt;code&gt;client_secret&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;登录&lt;a href=&#34;https://portal.azure.com/&#34;&gt;Microsoft Azure管理控制台&lt;/a&gt;&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626507543866.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;进入&lt;a href=&#34;https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade&#34;&gt;Azure面板应用注册界面&lt;/a&gt;,注册一个新的应用程序.&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626507831454.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;按照下图指示填写&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626508125510.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;这里的名称可随意填写.&lt;/li&gt;
+&lt;li&gt;选择这一项.&lt;/li&gt;
+&lt;li&gt;填写: &lt;code&gt;http://localhost&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;点击 注册.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;点击确定后跳转到概要，记录下其中的应用程序(客户端) ID。这个是Client_id 的值。&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626508486890.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;设置【API权限】&lt;br&gt;
+依次点击下图中的三个按钮,选择并添加 &lt;code&gt;offline_access&lt;/code&gt;, &lt;code&gt;Files.Read&lt;/code&gt;, &lt;code&gt;Files.Read.All&lt;/code&gt; 这三个权限.&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626508983170.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;接着我们获取Secrets,点击【证书和密码】，按照下图填写:&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626509201610.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;复制生成的密钥（即Client_secret）,请注意此处密钥仅出现一次,以后就不会再出现了, 所以请妥善保存。&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626509401306.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;获取refresh_token和access_token&#34;&gt;获取&lt;code&gt;refresh_token&lt;/code&gt;和&lt;code&gt;access_token&lt;/code&gt;&lt;/h1&gt;
+&lt;p&gt;打开你的设备的命令行界面(如Windows的CMD), 运行一下命令:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npx @beetcb/ms-graph-cli
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这里可能需要一点时间&lt;/p&gt;
+&lt;p&gt;随后出现这个界面:&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626509809642.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+第一个选项是国际版的Onedrive, 第二个是世纪互联(中国)版的Onedrive,根据你的实际情况选择(一般情况都是第一个)&lt;/p&gt;
+&lt;p&gt;这一步直接选择第一个(Onedrive)&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626509975043.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;这里输入你之前获取的&lt;code&gt;client_id&lt;/code&gt;:&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626510039884.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;然后输入&lt;code&gt;client_secret&lt;/code&gt;:&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626510188289.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;最后输入&lt;code&gt;redirect_uri&lt;/code&gt;, 默认直接回车即可:&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626510311042.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;接下来将图中的url粘贴到浏览器中打开:&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626510505979.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;接受许可:&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626510572088.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;将返回的url粘贴到命令行界面中:&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626510737613.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626510779698.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;获取到&lt;code&gt;refresh_token&lt;/code&gt;和&lt;code&gt;access_token&lt;/code&gt;&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626510934097.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+同样将其保存好.(注意不包括&#39;号)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;最后,在你的Onedrive根目录中新建一个叫&lt;code&gt;Public&lt;/code&gt;的文件夹&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&#34;在vercel上部署onedrive-index&#34;&gt;在Vercel上部署OneDrive-Index&lt;/h1&gt;
+&lt;p&gt;点击下面的链接部署:&lt;br&gt;
+&lt;a href=&#34;https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fspencerwooo%2Fonedrive-vercel-index&amp;amp;env=REFRESH_TOKEN,ACCESS_TOKEN,CLIENT_SECRET&amp;amp;envDescription=Required%20API%20tokens%20for%20this%20project.&amp;amp;project-name=onedrive-vercel-index&amp;amp;repo-name=onedrive-vercel-index&amp;amp;demo-title=onedrive-vercel-index&amp;amp;demo-description=Probably%20the%20best%20looking%20OneDrive%20Index%20around!%20Powered%20by%20Vercel%20and%20Next.js.&amp;amp;demo-url=http%3A%2F%2Fonedrive-vercel-index.vercel.app&amp;amp;demo-image=https%3A%2F%2Fraw.githubusercontent.com%2Fspencerwooo%2Fonedrive-vercel-index%2Fmain%2Fpublic%2Fdemo.png&#34;&gt;https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fspencerwooo%2Fonedrive-vercel-index&amp;amp;env=REFRESH_TOKEN,ACCESS_TOKEN,CLIENT_SECRET&amp;amp;envDescription=Required API tokens for this project.&amp;amp;project-name=onedrive-vercel-index&amp;amp;repo-name=onedrive-vercel-index&amp;amp;demo-title=onedrive-vercel-index&amp;amp;demo-description=Probably the best looking OneDrive Index around! Powered by Vercel and Next.js.&amp;amp;demo-url=http%3A%2F%2Fonedrive-vercel-index.vercel.app&amp;amp;demo-image=https%3A%2F%2Fraw.githubusercontent.com%2Fspencerwooo%2Fonedrive-vercel-index%2Fmain%2Fpublic%2Fdemo.png&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;输入你的仓库名称(可随意), 然后点击&lt;code&gt;Create&lt;/code&gt;&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626511314340.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;跳过这一步:&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626511351235.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;依次输入你的&lt;code&gt;refresh_token&lt;/code&gt; &lt;code&gt;access_token&lt;/code&gt; &lt;code&gt;client_secret&lt;/code&gt;, 然后点击&lt;code&gt;Deploy&lt;/code&gt;&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626511525801.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;等待部署完成即可.&lt;/p&gt;
+&lt;p&gt;最后打开你的Github仓库中的&lt;code&gt;config/api.json&lt;/code&gt;文件, 将其中的&lt;code&gt;clientId&lt;/code&gt; 替换为你自己的即可.&lt;/p&gt;
+">OneDrive-Index部署指南</a>
+      </div>
       
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://blog.gd1214b.icu/post/privacy-policy/"" data-c="
