@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.gd1214b.icu</id>
     <title>gd1214b&apos;s blog</title>
-    <updated>2021-07-17T12:37:17.177Z</updated>
+    <updated>2021-07-18T09:18:29.578Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.gd1214b.icu"/>
     <link rel="self" href="https://blog.gd1214b.icu/atom.xml"/>
@@ -83,7 +83,20 @@
 <p>依次输入你的refresh_token, access_token, client_secret, 然后点击Deploy<br>
 <img src="https://blog.gd1214b.icu/post-images/1626511525801.jpg" alt="" loading="lazy"></p>
 <p>等待部署完成即可.</p>
-<p>最后打开你的Github仓库中的config/api.json文件, 将其中的clientId 替换为你自己的即可.</p>
+<p>最后打开你的Github仓库中的config/api.json文件, 将其中的clientId 替换为你自己的即可.<br>
+详细步骤:</p>
+<ol>
+<li>打开config文件夹<br>
+<img src="https://blog.gd1214b.icu/post-images/1626599720152.jpg" alt="" loading="lazy"></li>
+<li>打开api.json文件<br>
+<img src="https://blog.gd1214b.icu/post-images/1626599761439.jpg" alt="" loading="lazy"></li>
+<li>点击下图中的铅笔按钮<br>
+<img src="https://blog.gd1214b.icu/post-images/1626599788030.jpg" alt="" loading="lazy"></li>
+<li>更改clientId 为你自己的值<br>
+<img src="https://blog.gd1214b.icu/post-images/1626599832035.jpg" alt="" loading="lazy"></li>
+<li>点击Commit changes 按钮<br>
+<img src="https://blog.gd1214b.icu/post-images/1626599870964.jpg" alt="" loading="lazy"></li>
+</ol>
 ]]></content>
     </entry>
     <entry>
