@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.gd1214b.icu</id>
     <title>gd1214b&apos;s blog</title>
-    <updated>2021-07-18T09:18:29.578Z</updated>
+    <updated>2021-07-20T10:14:47.330Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.gd1214b.icu"/>
     <link rel="self" href="https://blog.gd1214b.icu/atom.xml"/>
@@ -11,12 +11,70 @@
     <icon>https://blog.gd1214b.icu/favicon.ico</icon>
     <rights>All rights reserved 2021, gd1214b&apos;s blog</rights>
     <entry>
-        <title type="html"><![CDATA[OneDrive-Index部署指南]]></title>
+        <title type="html"><![CDATA[OneManager的部署]]></title>
+        <id>https://blog.gd1214b.icu/post/3UOqAuzLr/</id>
+        <link href="https://blog.gd1214b.icu/post/3UOqAuzLr/">
+        </link>
+        <updated>2021-07-20T08:25:05.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="onemanager是什么">OneManager是什么</h1>
+<p>这是一个利用微软onedrive api将onedrive目录映射成一个云盘的程序，类似的程序有很多，比如OneIndex、Pyone、OnePoint等等。这个程序的特点是支持多种onedrive类型，可以部署在多种平台上</p>
+<h1 id="部署教程">部署教程</h1>
+<p>本教程以在Glitch上部署为例.</p>
+<ol>
+<li>打开Glitch 官网:<a href="https://glitch.com/">https://glitch.com/</a></li>
+<li>点击 Log in<br>
+<img src="https://blog.gd1214b.icu/post-images/1626770019121.jpg" alt="" loading="lazy"></li>
+<li>通过Github登录<br>
+<img src="https://blog.gd1214b.icu/post-images/1626770099003.jpg" alt="" loading="lazy"></li>
+<li>新建一个项目<br>
+<img src="https://blog.gd1214b.icu/post-images/1626770852108.jpg" alt="" loading="lazy"><br>
+选择Import from Github<br>
+<img src="https://blog.gd1214b.icu/post-images/1626770925832.jpg" alt="" loading="lazy"><br>
+在弹出的对话框中输入 https://github.com/qkqpttgf/OneManager-php, 然后点击确定.<br>
+<img src="https://blog.gd1214b.icu/post-images/1626771001198.jpg" alt="" loading="lazy"><br>
+接下来Glitch将会为你导入该项目, 这可能会需要一点时间.</li>
+<li>配置onemanager<br>
+(非必需)项目导入完毕后, 依次点击 Show &gt;In a New Window<br>
+<img src="https://blog.gd1214b.icu/post-images/1626773665387.jpg" alt="" loading="lazy"><br>
+<img src="https://blog.gd1214b.icu/post-images/1626773739645.jpg" alt="" loading="lazy"><br>
+然后按照提示往下走，设置好密码后会来到这个界面，点击登录：<br>
+<img src="https://blog.gd1214b.icu/post-images/1626773861826.jpg" alt="" loading="lazy"><br>
+输入密码后来到这个界面，点击管理＞设置：<br>
+<img src="https://blog.gd1214b.icu/post-images/1626773970547.jpg" alt="" loading="lazy"><br>
+选择Sharelink,点击添加盘:<br>
+<img src="https://blog.gd1214b.icu/post-images/1626774117873.jpg" alt="" loading="lazy"><br>
+标签和显示名称可以随便填:<br>
+<img src="https://blog.gd1214b.icu/post-images/1626774382796.jpg" alt="" loading="lazy"><br>
+Sharelink在登录你的OneDrive网盘后,按以下步骤获取:<br>
+<img src="https://blog.gd1214b.icu/post-images/1626774629064.jpg" alt="" loading="lazy"><br>
+将其粘贴到这个框中, 点击确定:<br>
+<img src="https://blog.gd1214b.icu/post-images/1626774742056.jpg" alt="" loading="lazy"><br>
+稍等几秒后即可看到这个界面:<br>
+<img src="https://blog.gd1214b.icu/post-images/1626774809625.jpg" alt="" loading="lazy"><br>
+到此你的OneManager就算部署成功了.</li>
+</ol>
+<h1 id="可选项自定义域名">(可选项)自定义域名</h1>
+<p>在Glitch中,依次点击 Tools &gt; Custom Domains :<br>
+<img src="https://blog.gd1214b.icu/post-images/1626775210453.jpg" alt="" loading="lazy"><br>
+输入你的域名, 并点击Add Domain:(我这里的onemanager只是一个示例, 你可以用其他的二级域名)<br>
+<img src="https://blog.gd1214b.icu/post-images/1626775295510.jpg" alt="" loading="lazy"><br>
+在你的域名服务供应商中为你的域名添加一条解析:<br>
+<img src="https://blog.gd1214b.icu/post-images/1626775414873.jpg" alt="" loading="lazy"><br>
+类型为CNAME, 目标填 glitch.edgeapp.net</p>
+<p>Glitch默认不会启用https, 你可以在OneManager 的设置 &gt; 平台变量 中将 forceHttps 的值设置为1来启用 https :<br>
+<img src="https://blog.gd1214b.icu/post-images/1626776001478.jpg" alt="" loading="lazy"></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[在Vercel上部署OneDrive-Index]]></title>
         <id>https://blog.gd1214b.icu/post/xUIBYCvAl/</id>
         <link href="https://blog.gd1214b.icu/post/xUIBYCvAl/">
         </link>
         <updated>2021-07-17T07:31:08.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="准备工作">准备工作</h1>
+        <content type="html"><![CDATA[<blockquote>
+<p>特别说明: 本教程比较复杂, 新手可能难以掌握.</p>
+</blockquote>
+<h1 id="准备工作">准备工作</h1>
 <ul>
 <li>OneDrive账户</li>
 <li>Vercel账户(注册地址:<a href="https://vercel.com/signup">https://vercel.com/signup</a>)</li>
@@ -3044,40 +3102,6 @@ navbar:
 <li>Heroku每个月有550小时的时长限制，只适合轻度使用用户.</li>
 <li>Heroku的实例半小时没有访问就会自动休眠,你可以使用Uptimebot定时访问来解决这个问题。</li>
 </ul>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[搞瘫全球大半个互联网，Fastly是何方神圣？]]></title>
-        <id>https://blog.gd1214b.icu/post/YdM16VZBI/</id>
-        <link href="https://blog.gd1214b.icu/post/YdM16VZBI/">
-        </link>
-        <updated>2021-06-09T06:59:40.000Z</updated>
-        <content type="html"><![CDATA[<blockquote>
-<p>本文转自:<a href="https://new.qq.com/omn/20210609/20210609A01G7M00.html">https://new.qq.com/omn/20210609/20210609A01G7M00.html</a></p>
-</blockquote>
-<p><img src="https://blog.gd1214b.icu/post-images/1623222085018.webp" alt="" loading="lazy"><br>
-人们习以为常的互联网服务，已经成为现代生活必备的基础设施，但在背后网络云服务商集中度不断提升的情况下，其脆弱性也愈发突出。8日全球互联网世界碰到的一次不大不小的“断网”事件，就是这一脆弱性的最新例证。</p>
-<p>全世界数以亿计互联网用户在当天发现自己无法打开日常访问的网站，在经过约1小时后才逐渐恢复。最终，一家名为Fastly的CDN（content delivery network）服务提供商浮出水面，这家公司表示，由于进行了一项“服务配置”的修改，引发了大规模故障。</p>
-<p>有意思的是，当人们得知问题出自Fastly这家公司后，其股价在当天出现大涨，因为通过这起事件，投资者意识到，这家总部位于旧金山，员工数不到1000人的“边缘计算云服务”公司，对互联网世界有着举足轻重的影响力。</p>
-<p>宣称在互联网终端用户和服务器之间架设“中继站”，为用户提供更快捷、便利的互联网内容体验的同时，由于这一类服务商集中度过高，导致了类似当天大范围用户无法打开网页这样的风险隐患。</p>
-<h1 id="服务配置修改搞瘫大半个互联网">“服务配置”修改搞瘫大半个互联网</h1>
-<p>本周二，当全球各地数以亿计的互联网用户登陆自己平日经常登陆的网站时，发现页面无法打开，并出现了“503 Errors”的错误提示，包括亚马逊、Reddit、Twitch、Pinterest以及包括纽约时报、CNN等在内的多数新闻网站均悉数中招。</p>
-<p>这一问题大约持续了一个小时，初步的调查结果显示，互联网内容传递服务公司Fastly是引起这一场互联网大规模掉线的主要原因。</p>
-<p>从Fastly发布的状态更新报告可以追踪事件的整个进展过程，大约在美国太平洋时间8日凌晨2:58分，Fastly称，“我们目前正在调查对我们的内容传递网络服务（Content Delivery Network）带来潜在影响的冲击。”</p>
-<p>在这则报告发布后不久，推特上便出现了许多用户声称无法打开BBC、CNN、纽约时报等新闻网站的推文。社交平台推特本身也受到了一定程度的影响，其负责表情包的服务器无法接入，导致在出问题的时段内，许多推文的表情无法正常显示。</p>
-<p>随后问题变得愈发严重，全球各个地区均不同程度出现网站无法打开的问题，甚至连英国政府官方网站都一度受到影响。</p>
-<p>在大约一个小时后，Fastly再度更新状态报告，称已经找到问题并实施了修复措施，在美国太平洋时间8日凌晨4点10分，Fastly通过其官方推特称，“我们发现一个服务配置的更改引发了全球服务的短暂中断，目前已将这一配置关闭，我们全球服务网络已恢复正常。”</p>
-<h1 id="fastly是何方神圣">Fastly是何方神圣？</h1>
-<p>对于许多普通互联网用户来说，Fastly的名字或许十分陌生，这家公司创办于2011年，总部位于旧金山，从事的主要业务是互联网云服务。2017年，该公司发布了边缘云计算平台，提供将终端服务器的内容更近、更快地给到终端用户的服务。简而言之，Fastly为服务器和终端用户之间搭建了一个中继站，让用户无需再从终端服务器上下载网络内容，而由Fastly事先预载一部分内容，当用户访问相应网站时，就无需再从远端的终端服务器上下载，而从Fastly处获得，提高终端用户获得互联网内容的效率。</p>
-<p>Fastly的这一互联网内容传递服务，能够让网页的加载速度更快、优化图片、视频和其他大尺寸的内容能够更快的在用户终端上出现。在Fastly官方网站的介绍中，该公司列举了几个例子，例如新闻网站Buzzfeed在使用了Fastly的服务后，加载速度提高了50%，纽约时报在美国大选夜能够承载200万用户登陆等。</p>
-<p>此外，边缘云计算的另一个好处是作为一道额外的防范黑客攻击的防火墙，例如最常见的DDoS攻击等，保障终端服务器不受攻击的影响。</p>
-<p>但同时带来的一个问题是，由于Fastly作为连接终端服务器和终端用户的桥梁，一旦这座“桥梁”发生问题，双方之间的连接也就断了，这正是8日所短暂发生的情况。</p>
-<p>目前对于这起故障到底如何发生的有关细节还不得而知，Fastly方面也仅给出了是因为进行一项“服务配置”的调试而引发的简单解释。</p>
-<p>一个有意思的现象是，在外界已经得知此次不得不小的“断网”事件主要责任方是Fastly的情况下，Fastly的股价在8日盘中大涨超过10%，这背后的逻辑是：通过这次事件，许多投资者发现Fastly居然服务如此多的互联网内容提供方，对互联网有着超过之前预期的影响力，尽管是一桩负面事件，但却对公司本身是一次利好。</p>
-<p>根据Fastly 2021年第一季度财报显示，截至3月31日，服务全球58个市场，第一季度总收入8485万美元，其中6273万美元来自于美国市场，占绝大部分比例，来自亚太和欧洲市场的收入则分别为915万和964万美元。Fastly在美国以外的用户在截至3月31日为1208，约占全部用户量的53%。</p>
-<p>从财报业绩表现来看，Fastly仍处在业务快速扩张阶段，第一季度收入同比增长34.8%，同时研发投入同比增长超过100%，导致当季净亏损5051万美元。去年全年，Fastly收入同比增速为45%，净亏损9593万美元。</p>
-<p>Fastly在2020年同样是一支疫情受益股，股价在当年从年初的每股约20美元一路涨至年末的每股100美元以上翻了4倍多。但在进入2021年后，股价又一路从高位回落，目前距离历史高位已经腰斩。</p>
-<p>Fastly断网事件再次提醒我们互联网服务的脆弱性，当提供互联网底层服务的单个公司出现短时故障时，将导致大规模用户的互联网服务受到影响，因为越来越多的互联网内容提供方正在依赖越来越少的类似Fastly这样的中间云服务提供商，这样的事件在近期时有发生，包括去年7月Cloudflare因故障中断服务以及亚马逊旗下AWS在去年11月碰到的短期故障等，云服务市场集中度的不断提高，正在不断加剧这样的潜在风险。</p>
 ]]></content>
     </entry>
 </feed>
