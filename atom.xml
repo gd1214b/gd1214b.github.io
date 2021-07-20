@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.gd1214b.icu</id>
     <title>gd1214b&apos;s blog</title>
-    <updated>2021-07-20T12:35:11.640Z</updated>
+    <updated>2021-07-20T13:24:40.545Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.gd1214b.icu"/>
     <link rel="self" href="https://blog.gd1214b.icu/atom.xml"/>
@@ -11,7 +11,7 @@
     <icon>https://blog.gd1214b.icu/favicon.ico</icon>
     <rights>All rights reserved 2021, gd1214b&apos;s blog</rights>
     <entry>
-        <title type="html"><![CDATA[OneManager的部署]]></title>
+        <title type="html"><![CDATA[OneManager 部署教程]]></title>
         <id>https://blog.gd1214b.icu/post/3UOqAuzLr/</id>
         <link href="https://blog.gd1214b.icu/post/3UOqAuzLr/">
         </link>
@@ -72,7 +72,7 @@ Sharelink在登录你的OneDrive网盘后,按以下步骤获取:<br>
         </link>
         <updated>2021-07-17T07:31:08.000Z</updated>
         <content type="html"><![CDATA[<blockquote>
-<p>特别说明: 本教程比较复杂, 新手可能难以掌握.</p>
+<p>特别说明: 本教程比较复杂, 新手可能难以掌握. 可以参考我的另一篇博文:<a href="https://blog.gd1214b.icu/post/3UOqAuzLr/">https://blog.gd1214b.icu/post/3UOqAuzLr/</a></p>
 </blockquote>
 <h1 id="准备工作">准备工作</h1>
 <ul>
