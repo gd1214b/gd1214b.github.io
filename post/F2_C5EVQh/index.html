@@ -9,7 +9,7 @@
 <meta name="description" content="念念不忘，必有回响">
 <meta name="theme-color" content="#f8f9fa">
 <title>解决Gridea同步失败的问题 | gd1214b&#39;s blog</title>
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/gd1214b/gd1214b.github.io@latest/favicon.ico?v=1626856475836">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/gd1214b/gd1214b.github.io@latest/favicon.ico?v=1627113245170">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gd1214b/gd1214b.github.io@latest/media/css/gemini.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gd1214b/gd1214b.github.io@latest/media/fonts/font-awesome.css">
 <link
@@ -274,7 +274,7 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">24</span>
+        <span class="site-item-stat-count">25</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
@@ -1857,6 +1857,89 @@
       <hr>
     </div>
     <div class="result" id="result">
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://blog.gd1214b.icu/post/ZWEkcveiz/"" data-c="
+          &lt;blockquote&gt;
+&lt;p&gt;本文转自:&lt;a href=&#34;https://mp.weixin.qq.com/s/pciazhEWr81A6XzA8CVQ6g&#34;&gt;https://mp.weixin.qq.com/s/pciazhEWr81A6XzA8CVQ6g&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;昨天，关于翼龙无人机救灾的新闻，刷屏了整个网络。&lt;/p&gt;
+&lt;p&gt;由国家应急管理部紧急调派的翼龙-2H应急救灾型无人机，搭载中国移动的基站设备，从贵州安顺出发，连续出动两次，分别赶赴河南省巩义市米河镇以及郑州市中牟县阜外华中心血管病医院，执行应急通信网络保障任务。&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1627112723095.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+今天赶个晚集，刚好写点更有深度的内容，分析一下这个事件的前前后后。&lt;/p&gt;
+&lt;h1 id=&#34;无人机通信的技术利弊&#34;&gt;无人机通信的技术利弊&lt;/h1&gt;
+&lt;p&gt;赞美的话我就不说了，直接看技术。&lt;/p&gt;
+&lt;p&gt;无人机通信，严格来说分为两种。一种是为了实现无人机飞行控制而进行的通信（例如无人机表演），另一种是指利用无人机提供区域内的通信保障服务。我们今天讲的，主要是后者，姑且称为无人机通信保障。&lt;/p&gt;
+&lt;p&gt;其实，无人机通信保障，并不是什么新鲜事物。&lt;/p&gt;
+&lt;p&gt;2008年汶川地震发生的时候，地面基站微波线缆等通信设备几乎全毁，导致灾区彻底失联。当时，空军派出了15名空降兵勇士，携带2部海事卫星电话，冒险跳伞进入灾区，才算恢复了联系。&lt;/p&gt;
+&lt;p&gt;灾后，通信及应急管理等有关部门汲取经验教训，重点加强了应急通信保障能力的建设。随着无人机技术的成熟和普及，无人机基站应急通信也成为了一个热门的研究方向，吸引了不少学者进行研究，也有了一些成果。&lt;/p&gt;
+&lt;p&gt;2017年九寨沟发生地震后，中国移动紧急调运了一套无人机高空基站，连夜送达地震灾区，用于恢复周边30多平方公里受灾区域的手机信号。这是国内无人机高空基站在地震救灾中的首次应用，当时也引起了不小的轰动。&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1627112797782.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+需要注意的是，在这次翼龙-2H应急救灾型无人机出现之前，我们看到的几乎所有无人机高空基站，都属于旋翼无人机。&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1627112820437.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+它们的特点是运输方便，起降和操控（相对）容易，可以空中悬停。缺点也很明显：飞行高度和移动范围有限，且受限于电池续航能力，留空时间较短。&lt;/p&gt;
+&lt;p&gt;有些旋翼无人机的下方，会有一根线缆与地面相连，进行数据回传或者提供电力。这种无人机，也称为系留式无人机。&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1627112841220.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+这次出现的翼龙-2H应急救灾型无人机，之所以引起轰动，其中一个主要的原因，就是它是首次将固定翼无人机应用于应急通信保障任务。&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1627112892894.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+相比旋翼无人机，这种固定翼无人机飞行高度高，飞行距离远，覆盖范围大，优势明显。&lt;/p&gt;
+&lt;p&gt;不过，因为和地面之间没有有线连接，所以它只能通过无线回传的方式，建立与核心网设备之间的联系。&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1627112930583.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+这种无线回传，基本上只能通过卫星通信系统实现。所以，翼龙-2H通信应急保障任务的难点，除了飞行平台本身之外（翼龙算是航空工业集团的成熟平台），就是&lt;strong&gt;空天链路的建立和调测&lt;/strong&gt;。&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1627112959985.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+空天一体化，这几年是通信领域的重点研究方向，也是6G的主要方向。埃隆马斯克的星链计划，更是大大刺激了人们对卫星通信的关注。&lt;/p&gt;
+&lt;p&gt;这次翼龙-2H刷屏网络，大家表面上看到的是无人机大放光彩，实际上背后真正发挥作用的，是卫星。&lt;/p&gt;
+&lt;p&gt;我们再来看看这次任务的具体执行情况：&lt;/p&gt;
+&lt;p&gt;7月21日下午14:22，翼龙-2H应急救灾型从安顺机场起飞，历时4.5个小时抵达巩义市，18时21分进入米河镇通信中断区，为50平方公里范围提供长时稳定连续信号覆盖。&lt;/p&gt;
+&lt;p&gt;截止20时，空中基站累计接通用户2572个，产生流量1089.89M，单次最大接入用户648个。&lt;/p&gt;
+&lt;p&gt;此次任务，无人机在任务区内作业时间共计8小时8分。无人机除了搭载通信设备，为受灾人员提供移动网络信号之外，还应用CCD航测相机、EO光电设备和SAR合成孔径雷达，对受灾区域进行拍照和监测，实时将有关信息回传至指挥中心，有效支持了灾区的应急救援行动。&lt;/p&gt;
+&lt;p&gt;7月22日6时15分，翼龙-2H应急救灾型无人机返场降落，飞行近16小时。&lt;/p&gt;
+&lt;p&gt;从上面的文字，我们可以看出几点细节。&lt;/p&gt;
+&lt;p&gt;首先，作业时间问题。&lt;/p&gt;
+&lt;p&gt;因为机场距离较远，无人机飞行在途时间较长（单程4小时以上），所以，在灾区的实际作业时间，并不是太久（大约8个小时，其中5小时用于覆盖信号）。&lt;/p&gt;
+&lt;p&gt;相信随着这次翼龙-2H的成功实践，应急管理部会在全国各个片区部署多个无人机基地，实现就近支援。&lt;/p&gt;
+&lt;p&gt;其次，载荷量问题。&lt;/p&gt;
+&lt;p&gt;翼龙2无人机最大起飞重量4200公斤，外挂载荷超过500公斤。按理来说，这个载荷量不算低。&lt;/p&gt;
+&lt;p&gt;但是，我们要知道，无人机需要执行多项任务（航拍等），挂载多种吊舱，所以，留给通信设备和配套电源的空间和重量配额有限，这限制了无人机通信保障服务的能力。&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1627113045208.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+第三，多运营商支持问题。&lt;/p&gt;
+&lt;p&gt;本次任务，无人机只携带了中国移动的基站设备，联通和电信用户无法获取信号。后续的话，希望能够有支持三家运营商基本通信频段的全网通通信设备吊舱，作用会更大。&lt;/p&gt;
+&lt;p&gt;或者，希望各家运营商都有自己的无人机，帮到更多的灾民。&lt;/p&gt;
+&lt;p&gt;第四，价格成本问题。&lt;/p&gt;
+&lt;p&gt;应急保障，人命大于天，所以，成本问题可以稍微往后靠。&lt;/p&gt;
+&lt;p&gt;这次翼龙出动，尚不清楚具体的成本是多少，但估计费用不低（硬件成本、油费、人力成本、卫星链路租用等）。如果能大幅降低成本，将有利于这项技术的进一步普及，包括前面所说的全国各区域布点。&lt;/p&gt;
+&lt;p&gt;第五，带宽容量问题。&lt;/p&gt;
+&lt;p&gt;“累计接通用户2572个，产生流量1089.89M，单次最大接入用户648个”。说实话，就50平方公里的覆盖范围而言，这个数据并不算多（即便是农村地区），远不如一个普通的宏站。&lt;/p&gt;
+&lt;p&gt;一方面，可能说明还有大量的用户因为身处室内的原因，未能搜索到高空无人机基站的信号，另一方面，也可能是无人机基站本身的能力瓶颈。&lt;/p&gt;
+&lt;p&gt;无人机基站最大的弱点，就在于通信容量。卫星链路回传带宽的限制，决定了灾区人民看视频玩游戏是不太现实的，能保证通话、短信和微信，就已经很不错了。&lt;/p&gt;
+&lt;p&gt;以上问题，相信随着时间的推移、技术的发展，会逐渐得到解决。&lt;/p&gt;
+&lt;h1 id=&#34;应急通信的更多思考&#34;&gt;应急通信的更多思考&lt;/h1&gt;
+&lt;p&gt;接下来，我们延伸一下话题，再简单说说应急通信。&lt;/p&gt;
+&lt;p&gt;应急通信是一个重要的通信细分领域。根据灾害级别和范围的不同，手段也不太一样。&lt;/p&gt;
+&lt;p&gt;例如演唱会或体育赛事这样的区域性应急通信，往往出动应急通信车，就足以应付了。&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1627113098365.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+而地震、洪水、海啸甚至恐怖袭击的话，应急通信车肯定没用，基本上都要靠卫星终端。&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1627113117840.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+说实话，目前我国在商用（民用）卫星的市场化方面还是存在很大不足的。&lt;/p&gt;
+&lt;p&gt;全球主流的卫星通信系统，都是国外的服务提供商（海事卫星inmarsat、铱星iridium、欧星THURAYA等）。国内不少党政单位，包括抗灾应急，也在用国外商用卫星电话。这显然是不太合适的。&lt;/p&gt;
+&lt;p&gt;对于应急通信保障来说，保密性要求不是特别高，更关键的是普及。普及的话，又取决于成本。&lt;/p&gt;
+&lt;p&gt;如果国内民用卫星电话能够做大做强，那么可以进一步降低卫星使用成本，让卫星接收终端可以下沉普及到村镇一级，将有效应对重大自然灾害。&lt;/p&gt;
+&lt;p&gt;另外，我还想提一点：我们在应急通信保障技术方面，其实还有很大的想象空间。&lt;/p&gt;
+&lt;p&gt;突发奇想一下，我们有通信无人机，通信保障车，为什么不考虑研发一个通信无人船呢？基于MESH自组网技术的无人通信船，携带基站，穿梭在淹没的城市或农村区域，为灾民提供应急通信保障服务，也会非常有用。&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1627113156453.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+此外，高空热气球、飞艇等，也都可以用于应急通信保障。这些此前都有先例，只不过尚未成熟，我们应该鼓励研究和尝试。&lt;/p&gt;
+&lt;p&gt;最后的最后，我再提醒大家一下：通信技术在重大自然灾害面前，并不是只有应急通信保障这一个作用。它更大的作用，其实是&lt;strong&gt;灾害预防和预警&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;如果数字物联技术能够充分落地，我们将大幅减少灾害带来的损失。&lt;/p&gt;
+&lt;p&gt;例如这次河南洪灾。我们在视频上看到的危急场面，很多都是居民未能及时防范造成的。&lt;br&gt;
+&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1627113216379.gif&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+如果关键河流、库区、涵洞、隧道都有水位数字传感器，实时汇报水位变化，通过洪灾预警系统对居民进行短信提醒，肯定有助于减少损失，挽救生命。&lt;/p&gt;
+&lt;p&gt;四川建成的地震预警系统，就是一个很好的例子。&lt;/p&gt;
+&lt;p&gt;此外，今年发生的多次重大伤亡事故，包括5·26广州江门井下中毒事故、6·13湖北十堰燃气爆炸事故、7·12苏州酒店倒塌事故，其实借助城市物联传感网络，都可以有效预防或者预警。&lt;/p&gt;
+&lt;p&gt;面对各种各样的自然灾害，数字技术还有很大的潜力可以挖掘，我们广大通信人和IT人，还有很多地方可以努力。&lt;/p&gt;
+&lt;p&gt;终有一天，当我们真正建成数字城市、数字世界的时候，面对自然灾害，我们将进行更为有力的反击。&lt;/p&gt;
+&lt;p&gt;好了，以上就是今天文章的全部内容。最后，再次为河南灾区加油，希望早日度过难关，生活恢复正常。&lt;/p&gt;
+">作为一名通信老司机，我是如何看待翼龙通信无人机救灾的？</a>
+      </div>
       
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://blog.gd1214b.icu/post/3UOqAuzLr/"" data-c="
@@ -6643,6 +6726,7 @@ IPv6：&lt;br&gt;
 &lt;ul&gt;
 &lt;li&gt;OneDrive x Vercel: &lt;a href=&#34;https://onedrive-index.gd1214b.tk/&#34;&gt;https://onedrive-index.gd1214b.tk/&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;OneManager x Glitch: &lt;a href=&#34;https://onemanager.gd1214b.tk/&#34;&gt;https://onemanager.gd1214b.tk/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;OneManager x Heroku : &lt;a href=&#34;https://gd1214b-onemanager.herokuapp.com/&#34;&gt;https://gd1214b-onemanager.herokuapp.com/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 ">工具</a>
       </div>

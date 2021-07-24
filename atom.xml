@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.gd1214b.icu</id>
     <title>gd1214b&apos;s blog</title>
-    <updated>2021-07-21T08:34:57.046Z</updated>
+    <updated>2021-07-24T07:54:29.950Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.gd1214b.icu"/>
     <link rel="self" href="https://blog.gd1214b.icu/atom.xml"/>
@@ -10,6 +10,92 @@
     <logo>https://blog.gd1214b.icu/images/avatar.png</logo>
     <icon>https://blog.gd1214b.icu/favicon.ico</icon>
     <rights>All rights reserved 2021, gd1214b&apos;s blog</rights>
+    <entry>
+        <title type="html"><![CDATA[作为一名通信老司机，我是如何看待翼龙通信无人机救灾的？]]></title>
+        <id>https://blog.gd1214b.icu/post/ZWEkcveiz/</id>
+        <link href="https://blog.gd1214b.icu/post/ZWEkcveiz/">
+        </link>
+        <updated>2021-07-24T07:44:28.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>本文转自:<a href="https://mp.weixin.qq.com/s/pciazhEWr81A6XzA8CVQ6g">https://mp.weixin.qq.com/s/pciazhEWr81A6XzA8CVQ6g</a></p>
+</blockquote>
+<p>昨天，关于翼龙无人机救灾的新闻，刷屏了整个网络。</p>
+<p>由国家应急管理部紧急调派的翼龙-2H应急救灾型无人机，搭载中国移动的基站设备，从贵州安顺出发，连续出动两次，分别赶赴河南省巩义市米河镇以及郑州市中牟县阜外华中心血管病医院，执行应急通信网络保障任务。<br>
+<img src="https://blog.gd1214b.icu/post-images/1627112723095.webp" alt="" loading="lazy"><br>
+今天赶个晚集，刚好写点更有深度的内容，分析一下这个事件的前前后后。</p>
+<h1 id="无人机通信的技术利弊">无人机通信的技术利弊</h1>
+<p>赞美的话我就不说了，直接看技术。</p>
+<p>无人机通信，严格来说分为两种。一种是为了实现无人机飞行控制而进行的通信（例如无人机表演），另一种是指利用无人机提供区域内的通信保障服务。我们今天讲的，主要是后者，姑且称为无人机通信保障。</p>
+<p>其实，无人机通信保障，并不是什么新鲜事物。</p>
+<p>2008年汶川地震发生的时候，地面基站微波线缆等通信设备几乎全毁，导致灾区彻底失联。当时，空军派出了15名空降兵勇士，携带2部海事卫星电话，冒险跳伞进入灾区，才算恢复了联系。</p>
+<p>灾后，通信及应急管理等有关部门汲取经验教训，重点加强了应急通信保障能力的建设。随着无人机技术的成熟和普及，无人机基站应急通信也成为了一个热门的研究方向，吸引了不少学者进行研究，也有了一些成果。</p>
+<p>2017年九寨沟发生地震后，中国移动紧急调运了一套无人机高空基站，连夜送达地震灾区，用于恢复周边30多平方公里受灾区域的手机信号。这是国内无人机高空基站在地震救灾中的首次应用，当时也引起了不小的轰动。<br>
+<img src="https://blog.gd1214b.icu/post-images/1627112797782.webp" alt="" loading="lazy"><br>
+需要注意的是，在这次翼龙-2H应急救灾型无人机出现之前，我们看到的几乎所有无人机高空基站，都属于旋翼无人机。<br>
+<img src="https://blog.gd1214b.icu/post-images/1627112820437.webp" alt="" loading="lazy"><br>
+它们的特点是运输方便，起降和操控（相对）容易，可以空中悬停。缺点也很明显：飞行高度和移动范围有限，且受限于电池续航能力，留空时间较短。</p>
+<p>有些旋翼无人机的下方，会有一根线缆与地面相连，进行数据回传或者提供电力。这种无人机，也称为系留式无人机。<br>
+<img src="https://blog.gd1214b.icu/post-images/1627112841220.webp" alt="" loading="lazy"><br>
+这次出现的翼龙-2H应急救灾型无人机，之所以引起轰动，其中一个主要的原因，就是它是首次将固定翼无人机应用于应急通信保障任务。<br>
+<img src="https://blog.gd1214b.icu/post-images/1627112892894.webp" alt="" loading="lazy"><br>
+相比旋翼无人机，这种固定翼无人机飞行高度高，飞行距离远，覆盖范围大，优势明显。</p>
+<p>不过，因为和地面之间没有有线连接，所以它只能通过无线回传的方式，建立与核心网设备之间的联系。<br>
+<img src="https://blog.gd1214b.icu/post-images/1627112930583.webp" alt="" loading="lazy"><br>
+这种无线回传，基本上只能通过卫星通信系统实现。所以，翼龙-2H通信应急保障任务的难点，除了飞行平台本身之外（翼龙算是航空工业集团的成熟平台），就是<strong>空天链路的建立和调测</strong>。<br>
+<img src="https://blog.gd1214b.icu/post-images/1627112959985.webp" alt="" loading="lazy"><br>
+空天一体化，这几年是通信领域的重点研究方向，也是6G的主要方向。埃隆马斯克的星链计划，更是大大刺激了人们对卫星通信的关注。</p>
+<p>这次翼龙-2H刷屏网络，大家表面上看到的是无人机大放光彩，实际上背后真正发挥作用的，是卫星。</p>
+<p>我们再来看看这次任务的具体执行情况：</p>
+<p>7月21日下午14:22，翼龙-2H应急救灾型从安顺机场起飞，历时4.5个小时抵达巩义市，18时21分进入米河镇通信中断区，为50平方公里范围提供长时稳定连续信号覆盖。</p>
+<p>截止20时，空中基站累计接通用户2572个，产生流量1089.89M，单次最大接入用户648个。</p>
+<p>此次任务，无人机在任务区内作业时间共计8小时8分。无人机除了搭载通信设备，为受灾人员提供移动网络信号之外，还应用CCD航测相机、EO光电设备和SAR合成孔径雷达，对受灾区域进行拍照和监测，实时将有关信息回传至指挥中心，有效支持了灾区的应急救援行动。</p>
+<p>7月22日6时15分，翼龙-2H应急救灾型无人机返场降落，飞行近16小时。</p>
+<p>从上面的文字，我们可以看出几点细节。</p>
+<p>首先，作业时间问题。</p>
+<p>因为机场距离较远，无人机飞行在途时间较长（单程4小时以上），所以，在灾区的实际作业时间，并不是太久（大约8个小时，其中5小时用于覆盖信号）。</p>
+<p>相信随着这次翼龙-2H的成功实践，应急管理部会在全国各个片区部署多个无人机基地，实现就近支援。</p>
+<p>其次，载荷量问题。</p>
+<p>翼龙2无人机最大起飞重量4200公斤，外挂载荷超过500公斤。按理来说，这个载荷量不算低。</p>
+<p>但是，我们要知道，无人机需要执行多项任务（航拍等），挂载多种吊舱，所以，留给通信设备和配套电源的空间和重量配额有限，这限制了无人机通信保障服务的能力。<br>
+<img src="https://blog.gd1214b.icu/post-images/1627113045208.webp" alt="" loading="lazy"><br>
+第三，多运营商支持问题。</p>
+<p>本次任务，无人机只携带了中国移动的基站设备，联通和电信用户无法获取信号。后续的话，希望能够有支持三家运营商基本通信频段的全网通通信设备吊舱，作用会更大。</p>
+<p>或者，希望各家运营商都有自己的无人机，帮到更多的灾民。</p>
+<p>第四，价格成本问题。</p>
+<p>应急保障，人命大于天，所以，成本问题可以稍微往后靠。</p>
+<p>这次翼龙出动，尚不清楚具体的成本是多少，但估计费用不低（硬件成本、油费、人力成本、卫星链路租用等）。如果能大幅降低成本，将有利于这项技术的进一步普及，包括前面所说的全国各区域布点。</p>
+<p>第五，带宽容量问题。</p>
+<p>“累计接通用户2572个，产生流量1089.89M，单次最大接入用户648个”。说实话，就50平方公里的覆盖范围而言，这个数据并不算多（即便是农村地区），远不如一个普通的宏站。</p>
+<p>一方面，可能说明还有大量的用户因为身处室内的原因，未能搜索到高空无人机基站的信号，另一方面，也可能是无人机基站本身的能力瓶颈。</p>
+<p>无人机基站最大的弱点，就在于通信容量。卫星链路回传带宽的限制，决定了灾区人民看视频玩游戏是不太现实的，能保证通话、短信和微信，就已经很不错了。</p>
+<p>以上问题，相信随着时间的推移、技术的发展，会逐渐得到解决。</p>
+<h1 id="应急通信的更多思考">应急通信的更多思考</h1>
+<p>接下来，我们延伸一下话题，再简单说说应急通信。</p>
+<p>应急通信是一个重要的通信细分领域。根据灾害级别和范围的不同，手段也不太一样。</p>
+<p>例如演唱会或体育赛事这样的区域性应急通信，往往出动应急通信车，就足以应付了。<br>
+<img src="https://blog.gd1214b.icu/post-images/1627113098365.webp" alt="" loading="lazy"><br>
+而地震、洪水、海啸甚至恐怖袭击的话，应急通信车肯定没用，基本上都要靠卫星终端。<br>
+<img src="https://blog.gd1214b.icu/post-images/1627113117840.webp" alt="" loading="lazy"><br>
+说实话，目前我国在商用（民用）卫星的市场化方面还是存在很大不足的。</p>
+<p>全球主流的卫星通信系统，都是国外的服务提供商（海事卫星inmarsat、铱星iridium、欧星THURAYA等）。国内不少党政单位，包括抗灾应急，也在用国外商用卫星电话。这显然是不太合适的。</p>
+<p>对于应急通信保障来说，保密性要求不是特别高，更关键的是普及。普及的话，又取决于成本。</p>
+<p>如果国内民用卫星电话能够做大做强，那么可以进一步降低卫星使用成本，让卫星接收终端可以下沉普及到村镇一级，将有效应对重大自然灾害。</p>
+<p>另外，我还想提一点：我们在应急通信保障技术方面，其实还有很大的想象空间。</p>
+<p>突发奇想一下，我们有通信无人机，通信保障车，为什么不考虑研发一个通信无人船呢？基于MESH自组网技术的无人通信船，携带基站，穿梭在淹没的城市或农村区域，为灾民提供应急通信保障服务，也会非常有用。<br>
+<img src="https://blog.gd1214b.icu/post-images/1627113156453.webp" alt="" loading="lazy"><br>
+此外，高空热气球、飞艇等，也都可以用于应急通信保障。这些此前都有先例，只不过尚未成熟，我们应该鼓励研究和尝试。</p>
+<p>最后的最后，我再提醒大家一下：通信技术在重大自然灾害面前，并不是只有应急通信保障这一个作用。它更大的作用，其实是<strong>灾害预防和预警</strong>。</p>
+<p>如果数字物联技术能够充分落地，我们将大幅减少灾害带来的损失。</p>
+<p>例如这次河南洪灾。我们在视频上看到的危急场面，很多都是居民未能及时防范造成的。<br>
+<img src="https://blog.gd1214b.icu/post-images/1627113216379.gif" alt="" loading="lazy"><br>
+如果关键河流、库区、涵洞、隧道都有水位数字传感器，实时汇报水位变化，通过洪灾预警系统对居民进行短信提醒，肯定有助于减少损失，挽救生命。</p>
+<p>四川建成的地震预警系统，就是一个很好的例子。</p>
+<p>此外，今年发生的多次重大伤亡事故，包括5·26广州江门井下中毒事故、6·13湖北十堰燃气爆炸事故、7·12苏州酒店倒塌事故，其实借助城市物联传感网络，都可以有效预防或者预警。</p>
+<p>面对各种各样的自然灾害，数字技术还有很大的潜力可以挖掘，我们广大通信人和IT人，还有很多地方可以努力。</p>
+<p>终有一天，当我们真正建成数字城市、数字世界的时候，面对自然灾害，我们将进行更为有力的反击。</p>
+<p>好了，以上就是今天文章的全部内容。最后，再次为河南灾区加油，希望早日度过难关，生活恢复正常。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[OneManager 部署教程]]></title>
         <id>https://blog.gd1214b.icu/post/3UOqAuzLr/</id>
@@ -3046,62 +3132,6 @@ navbar:
 </blockquote>
 <h1 id="其他说明">其他说明</h1>
 <p>此时你的博客应该已经同步到GitHub上了，如果有任何问题，欢迎在下方的评论区中提出。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[使用Cloudflare自选IP加速Heroku-v2ray]]></title>
-        <id>https://blog.gd1214b.icu/post/P9MODAcdP/</id>
-        <link href="https://blog.gd1214b.icu/post/P9MODAcdP/">
-        </link>
-        <updated>2021-06-09T11:27:43.000Z</updated>
-        <content type="html"><![CDATA[<blockquote>
-<p><strong>请先阅读本站的免责声明:<a href="https://blog.gd1214b.icu/post/disclaimers/">https://blog.gd1214b.icu/post/disclaimers/</a></strong><br>
-<strong>请遵循当地法律使用，如您有违反当地法律造成的责任，本站拒不承担.</strong></p>
-</blockquote>
-<h1 id="前言">前言</h1>
-<p>在<a href="https://blog.gd1214b.icu/post/NbdQntVCG/">上一篇文章</a>中,我们介绍了在Heroku上部署v2ray的方法。但在中国大陆直连Heroku服务器的速度不是很快，因此我们使用Cloudflare的自选IP来加速连接。</p>
-<h1 id="配置cloudflare反向代理">配置CloudFlare反向代理</h1>
-<h2 id="1">1.</h2>
-<p>首先登陆<a href="https://dash.cloudflare.com/">CloudFlare官网</a>，然后点击 右侧的 Workers.<br>
-<img src="https://blog.gd1214b.icu/post-images/1623238734720.webp" alt="" loading="lazy"></p>
-<h2 id="2">2.</h2>
-<p>接着点击创建Workers<br>
-<img src="https://blog.gd1214b.icu/post-images/1623238793121.webp" alt="" loading="lazy"></p>
-<h2 id="3">3.</h2>
-<p>接着复制下方代码，并添加进去.注意把下面的中文替换成你的Heroku应用名称</p>
-<pre><code class="language-javascript">addEventListener(
-  &quot;fetch&quot;,event =&gt; {
-     let url=new URL(event.request.url);
-     url.hostname=&quot;你的heroku应用名称.herokuapp.com&quot;;
-     let request=new Request(url,event.request);
-     event. respondWith(
-       fetch(request)
-     )
-  }
-)
-</code></pre>
-<figure data-type="image" tabindex="1"><img src="https://blog.gd1214b.icu/post-images/1623239005214.png" alt="" loading="lazy"></figure>
-<h1 id="使用cloudflare自选ip">使用Cloudflare自选IP</h1>
-<p>下载<a href="https://cdn.jsdelivr.net/gh/gd1214b/files@main/CloudflareST_windows_amd64.zip">这个</a>文件,解压之后打开这个程序:<br>
-<img src="https://blog.gd1214b.icu/post-images/1623239272158.png" alt="" loading="lazy"><br>
-这个程序会对Cloudflare的所有IP进行测速，这可能会需要几分钟的时间。</p>
-<p>测速结果会保存在应用程序目录下的result.csv文件中<br>
-<img src="https://blog.gd1214b.icu/post-images/1623239511772.png" alt="" loading="lazy"><br>
-在里面找到延迟最低的IP地址（一般在第一行），把它复制下来，等会会用到。</p>
-<h1 id="配置v2ray">配置V2Ray</h1>
-<p>打开你的v2ray客户端，添加vmess服务器，按照下面的图填写<br>
-<img src="https://blog.gd1214b.icu/post-images/1623239829821.png" alt="" loading="lazy"><br>
-除了中文部分以外严格按照图上内容填写。</p>
-<p>然后保存，就可以愉快地使用v2ray了</p>
-<hr>
-<p>如果你遇到了任何问题 欢迎在下方的评论区中提出。</p>
-<h1 id="其他说明">其他说明</h1>
-<ul>
-<li>Heroku 为我们提供了免费的容器服务，我们不应该滥用它，所以本项目不宜长期使用.</li>
-<li>Heroku 的网络并不稳定，部署前请三思。</li>
-<li>Heroku每个月有550小时的时长限制，只适合轻度使用用户.</li>
-<li>Heroku的实例半小时没有访问就会自动休眠,你可以使用Uptimebot定时访问来解决这个问题。</li>
-</ul>
 ]]></content>
     </entry>
 </feed>

@@ -8,7 +8,7 @@
 <meta name="keywords" content="gd1214b&#39;s blog">
 <meta name="description" content="念念不忘，必有回响">
 <meta name="theme-color" content="#f8f9fa">
-<title>DDoS科普系列：什么是 DDoS 攻击？ | gd1214b&#39;s blog</title>
+<title>作为一名通信老司机，我是如何看待翼龙通信无人机救灾的？ | gd1214b&#39;s blog</title>
 <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/gd1214b/gd1214b.github.io@latest/favicon.ico?v=1627113245170">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gd1214b/gd1214b.github.io@latest/media/css/gemini.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gd1214b/gd1214b.github.io@latest/media/fonts/font-awesome.css">
@@ -65,8 +65,8 @@
 
 
 
-  <meta name="description" content="DDoS科普系列：什么是 DDoS 攻击？" />
-  <meta name="keywords" content="DDoS,网络" />
+  <meta name="description" content="作为一名通信老司机，我是如何看待翼龙通信无人机救灾的？" />
+  <meta name="keywords" content="" />
 </head>
 
 <body>
@@ -350,41 +350,8 @@
   <div class="toc-wrapper auto-number auto"
     id="toc_wrapper">
     <ul class="markdownIt-TOC">
-<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF-ddos-%E6%94%BB%E5%87%BB">什么是 DDoS 攻击？</a></li>
-<li><a href="#ddos-%E6%94%BB%E5%87%BB%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86">DDoS 攻击的工作原理</a></li>
-<li><a href="#%E5%A6%82%E4%BD%95%E8%AF%86%E5%88%AB-ddos-%E6%94%BB%E5%87%BB">如何识别 DDoS 攻击</a></li>
-<li><a href="#%E5%B8%B8%E8%A7%81%E7%9A%84-ddos-%E6%94%BB%E5%87%BB%E6%9C%89%E5%93%AA%E5%87%A0%E7%B1%BB">常见的 DDoS 攻击有哪几类</a>
-<ul>
-<li><a href="#%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%B1%82%E6%94%BB%E5%87%BB">应用程序层攻击</a>
-<ul>
-<li><a href="#%E6%94%BB%E5%87%BB%E7%9B%AE%E6%A0%87">攻击目标：</a></li>
-<li><a href="#%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%B1%82%E6%94%BB%E5%87%BB%E7%A4%BA%E4%BE%8B">应用程序层攻击示例：</a></li>
-<li><a href="#http-%E6%B4%AA%E6%B0%B4">HTTP 洪水</a></li>
-</ul>
-</li>
-<li><a href="#%E5%8D%8F%E8%AE%AE%E6%94%BB%E5%87%BB">协议攻击</a>
-<ul>
-<li><a href="#%E6%94%BB%E5%87%BB%E7%9B%AE%E6%A0%87-2">攻击目标：</a></li>
-<li><a href="#%E5%8D%8F%E8%AE%AE%E6%94%BB%E5%87%BB%E7%A4%BA%E4%BE%8B">协议攻击示例：</a></li>
-<li><a href="#syn-%E6%B4%AA%E6%B0%B4">SYN 洪水</a></li>
-</ul>
-</li>
-<li><a href="#%E5%AE%B9%E9%87%8F%E8%80%97%E5%B0%BD%E6%94%BB%E5%87%BB">容量耗尽攻击</a>
-<ul>
-<li><a href="#%E6%94%BB%E5%87%BB%E7%9B%AE%E6%A0%87-3">攻击目标：</a></li>
-<li><a href="#%E6%94%BE%E5%A4%A7%E7%A4%BA%E4%BE%8B">放大示例：</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#%E5%A6%82%E4%BD%95%E9%98%B2%E6%8A%A4-ddos-%E6%94%BB%E5%87%BB">如何防护 DDoS 攻击？</a>
-<ul>
-<li><a href="#%E9%BB%91%E6%B4%9E%E8%B7%AF%E7%94%B1">黑洞路由</a></li>
-<li><a href="#%E9%80%9F%E7%8E%87%E9%99%90%E5%88%B6">速率限制</a></li>
-<li><a href="#web-%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E9%98%B2%E7%81%AB%E5%A2%99">Web 应用程序防火墙</a></li>
-<li><a href="#anycast-%E7%BD%91%E7%BB%9C%E6%89%A9%E6%95%A3">Anycast 网络扩散</a></li>
-</ul>
-</li>
+<li><a href="#%E6%97%A0%E4%BA%BA%E6%9C%BA%E9%80%9A%E4%BF%A1%E7%9A%84%E6%8A%80%E6%9C%AF%E5%88%A9%E5%BC%8A">无人机通信的技术利弊</a></li>
+<li><a href="#%E5%BA%94%E6%80%A5%E9%80%9A%E4%BF%A1%E7%9A%84%E6%9B%B4%E5%A4%9A%E6%80%9D%E8%80%83">应急通信的更多思考</a></li>
 </ul>
 
   </div>
@@ -650,8 +617,8 @@
           <div class="section bg-color post post-page">
             <section class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://blog.gd1214b.icu/post/gfV9Uqj8F/">
-      DDoS科普系列：什么是 DDoS 攻击？
+    <a class="post-title-link" href="https://blog.gd1214b.icu/post/ZWEkcveiz/">
+      作为一名通信老司机，我是如何看待翼龙通信无人机救灾的？
     </a>
   </h1>
   <div class="post-meta">
@@ -659,42 +626,23 @@
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span class="language" data-lan="publish">发布于</span>
-      <span class="publish-time" data-t="2021-05-11 18:14:31">2021-05-11</span>
+      <span class="publish-time" data-t="2021-07-24 15:44:28">2021-07-24</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
     <span class="meta-item">
-      <i class="fa fa-folder-o"></i>
-      <span class="pc-show language" data-lan="category-in">分类于</span>
-      
-      
-      <a href="https://blog.gd1214b.icu/tag/ddos/">
-        <span>DDoS</span>
-      </a>、
-      
-      
-      
-      <a href="https://blog.gd1214b.icu/tag/wang-luo/">
-        <span>网络</span>
-      </a>
-      
-      
-    </span>
-    <span class="post-meta-divider">|</span>
-    
-    <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>9<span class="language" data-lan="minute">分钟</span></span>
+      <span>10<span class="language" data-lan="minute">分钟</span></span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>2494<span class="pc-show language" data-lan="words">字数</span></span>
+      <span>2795<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
     
     
-    <span id="/post/gfV9Uqj8F/" data-flag-title="DDoS科普系列：什么是 DDoS 攻击？" class="meta-item pc-show leancloud_visitors">
+    <span id="/post/ZWEkcveiz/" data-flag-title="作为一名通信老司机，我是如何看待翼龙通信无人机救灾的？" class="meta-item pc-show leancloud_visitors">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-eye"></i>
       <span><span class="language" data-lan="view">浏览量</span>：<span class="leancloud-visitors-count"></span></span>
@@ -704,83 +652,83 @@
 </section>
             <div class="post-body next-md-body" id="post_body">
               <blockquote>
-<p>本文转自：<a href="https://www.cloudflare.com/zh-cn/learning/ddos/what-is-a-ddos-attack/">https://www.cloudflare.com/zh-cn/learning/ddos/what-is-a-ddos-attack/</a></p>
+<p>本文转自:<a href="https://mp.weixin.qq.com/s/pciazhEWr81A6XzA8CVQ6g">https://mp.weixin.qq.com/s/pciazhEWr81A6XzA8CVQ6g</a></p>
 </blockquote>
-<h1 id="什么是-ddos-攻击">什么是 DDoS 攻击？</h1>
-<p>分布式拒绝服务（DDoS）攻击是通过大规模互联网流量淹没目标服务器或其周边基础设施，以破坏目标服务器、服务或网络正常流量的恶意行为。</p>
-<p>DDoS 攻击利用多台受损计算机系统作为攻击流量来源以达到攻击效果。利用的机器可以包括计算机，也可以包括其他联网资源（如 IoT 设备）。</p>
-<p>总体而言，DDoS 攻击好比高速公路发生交通堵塞，妨碍常规车辆抵达预定目的地。<br>
-<img src="https://blog.gd1214b.icu/post-images/1620728184860.jpg" alt="" loading="lazy"></p>
-<h1 id="ddos-攻击的工作原理">DDoS 攻击的工作原理</h1>
-<p>DDoS 攻击是通过连接互联网的计算机网络进行的。</p>
-<p>这些网络由计算机和其他设备（例如 IoT 设备）组成，它们感染了恶意软件，从而被攻击者远程控制。这些个体设备称为机器人（或僵尸），一组机器人则称为僵尸网络。</p>
-<p>一旦建立了僵尸网络，攻击者就可通过向每个机器人发送远程指令来发动攻击。</p>
-<p>当僵尸网络将受害者的服务器或网络作为目标时，每个机器人会将请求发送到目标的 IP 地址，这可能导致服务器或网络不堪重负，从而造成对正常流量的拒绝服务。</p>
-<p>由于每个机器人都是合法的 Internet 设备，因而可能很难区分攻击流量与正常流量。</p>
-<h1 id="如何识别-ddos-攻击">如何识别 DDoS 攻击</h1>
-<p>DDoS 攻击最明显的症状是网站或服务突然变慢或不可用。但是，造成类似性能问题的原因有多种（如合法流量激增），因此通常需要进一步调查。流量分析工具可以帮助您发现 DDoS 攻击的一些明显迹象：<br>
-* 来自单个 IP 地址或 IP 范围的可疑流量<br>
-* 来自共享单个行为特征（例如设备类型、地理位置或 Web 浏览器版本）的用户的大量流量<br>
-* 对单个页面或端点的请求数量出现不明原因的激增<br>
-* 奇怪的流量模式，例如一天中零碎时间上的激增或看似不自然的模式（例如，每 10 分钟出现一次激增）</p>
-<p>DDoS 攻击还有其他更具体的迹象，具体取决于攻击的类型。</p>
-<h1 id="常见的-ddos-攻击有哪几类">常见的 DDoS 攻击有哪几类</h1>
-<p>不同类型的 DDoS 攻击针对不同的网络连接组件。为了解不同的 DDoS 攻击如何运作，有必要知道网络连接是如何建立的。</p>
-<p>互联网上的网络连接由许多不同的组件或“层”构成。就像打地基盖房子一样，模型中的每一步都有不同的用途。</p>
-<p>OSI 模型（如下图所示）是一个概念框架，用于描述 7 个不同层级的网络连接。<br>
-<img src="https://blog.gd1214b.icu/post-images/1620728353166.jpg" alt="" loading="lazy"><br>
-虽然几乎所有 DDoS 攻击都涉及用流量淹没目标设备或网络，但攻击可以分为三类。攻击者可能利用一种或多种不同的攻击手段，也可能根据目标采取的防范措施循环使用多种攻击手段。</p>
-<h2 id="应用程序层攻击">应用程序层攻击</h2>
-<h3 id="攻击目标">攻击目标：</h3>
-<p>此类攻击有时称为第 7 层 DDoS 攻击（指 OSI 模型第 7 层），其目标是耗尽目标资源。</p>
-<p>攻击目标是生成网页并传输网页响应 HTTP 请求的服务器层。在客户端执行一项 HTTP 请求的计算成本比较低，但目标服务器做出响应却可能非常昂贵，因为服务器通常必须加载多个文件并运行数据库查询才能创建网页。</p>
-<p>第 7 层攻击很难防御，因为难以区分恶意流量和合法流量。</p>
-<h3 id="应用程序层攻击示例">应用程序层攻击示例：</h3>
-<figure data-type="image" tabindex="1"><img src="https://blog.gd1214b.icu/post-images/1620728401946.jpg" alt="" loading="lazy"></figure>
-<h3 id="http-洪水">HTTP 洪水</h3>
-<p>HTTP 洪水攻击类似于同时在大量不同计算机的 Web 浏览器中一次又一次地按下刷新 – 大量 HTTP 请求涌向服务器，导致拒绝服务。</p>
-<p>这种类型的攻击有简单的，也有复杂的。</p>
-<p>较简单的实现可以使用相同范围的攻击 IP 地址、referrer 和用户代理访问一个 URL。复杂版本可能使用大量攻击性 IP 地址，并使用随机 referrer 和用户代理来针对随机网址。</p>
-<h2 id="协议攻击">协议攻击</h2>
-<h3 id="攻击目标-2">攻击目标：</h3>
-<p>协议攻击也称为状态耗尽攻击，这类攻击会过度消耗服务器资源和/或防火墙和负载平衡器之类的网络设备资源，从而导致服务中断。</p>
-<p>协议攻击利用协议堆栈第 3 层和第 4 层的弱点致使目标无法访问。</p>
-<h3 id="协议攻击示例">协议攻击示例：</h3>
-<figure data-type="image" tabindex="2"><img src="https://blog.gd1214b.icu/post-images/1620728449707.jpg" alt="" loading="lazy"></figure>
-<h3 id="syn-洪水">SYN 洪水</h3>
-<p>SYN 洪水就好比补给室中的工作人员从商店的柜台接收请求。</p>
-<p>工作人员收到请求，前去取包裹，再等待确认，然后将包裹送到柜台。一时之间，工作人员收到太多包裹请求，来不及确认，直到无法处理更多包裹，实在不堪重负，致使无人能对请求做出回应。</p>
-<p>此类攻击利用 TCP 握手（两台计算机发起网络连接时要经过的一系列通信），通过向目标发送大量带有伪造源 IP 地址的 TCP“初始连接请求”SYN 数据包来实现。</p>
-<p>目标计算机响应每个连接请求，然后等待握手中的最后一步，但这一步确永远不会发生，因此在此过程中耗尽目标的资源。</p>
-<h2 id="容量耗尽攻击">容量耗尽攻击</h2>
-<h3 id="攻击目标-3">攻击目标：</h3>
-<p>此类攻击试图通过消耗目标与较大的 Internet 之间的所有可用带宽来造成拥塞。攻击运用某种放大攻击或其他生成大量流量的手段（如僵尸网络请求），向目标发送大量数据。</p>
-<h3 id="放大示例">放大示例：</h3>
-<figure data-type="image" tabindex="3"><img src="https://blog.gd1214b.icu/post-images/1620728541749.jpg" alt="" loading="lazy"></figure>
-<h1 id="如何防护-ddos-攻击">如何防护 DDoS 攻击？</h1>
-<p>若要缓解 DDoS 攻击，关键在于区分攻击流量与正常流量。</p>
-<p>例如，如果因发布某款产品导致公司网站涌现大批热情客户，那么全面切断流量是错误之举。如果公司从已知恶意用户处收到的流量突然激增，或许需要努力缓解攻击。</p>
-<p>难点在于区分真实客户流量与攻击流量。</p>
-<p>在现代互联网中，DDoS 流量以多种形式出现。流量设计可能有所不同，从非欺骗性单源攻击到复杂的自适应多方位攻击无所不有。</p>
-<p>多方位 DDoS 攻击采用多种攻击手段，以期通过不同的方式击垮目标，很可能分散各个层级的缓解工作注意力。</p>
-<p>同时针对协议堆栈的多个层级（如 DNS 放大（针对第 3/4 层）外加 HTTP 洪水（针对第 7 层））发动攻击就是多方位 DDoS 攻击的一个典型例子。</p>
-<p>为防护多方位 DDoS 攻击，需要部署多项不同策略，从而缓解不同层级的攻击。</p>
-<p>一般而言，攻击越复杂，越难以区分攻击流量与正常流量 —— 攻击者的目标是尽可能混入正常流量，从而尽量减弱缓解成效。</p>
-<p>如果缓解措施不加选择地丢弃或限制流量，很可能将正常流量与攻击流量一起丢弃，同时攻击还可能进行修改调整以规避缓解措施。为克服复杂的破坏手段，采用分层解决方案效果最理想。</p>
-<h2 id="黑洞路由">黑洞路由</h2>
-<p>有一种解决方案几乎适用于所有网络管理员：创建黑洞路由，并将流量汇入该路由。在最简单的形式下，当在没有特定限制条件的情况下实施黑洞过滤时，合法网络流量和恶意网络流量都将路由到空路由或黑洞，并从网络中丢弃。</p>
-<p>如果互联网设备遭受 DDoS 攻击，则该设备的互联网服务提供商（ISP）可能会将站点的所有流量发送到黑洞中作为防御。这不是理想的解决方案，因为它相当于让攻击者达成预期的目标：使网络无法访问。</p>
-<h2 id="速率限制">速率限制</h2>
-<p>限制服务器在某个时间段接收的请求数量也是防护拒绝服务攻击的一种方法。</p>
-<p>虽然速率限制对于减缓 Web 爬虫窃取内容及防护暴力破解攻击很有帮助，但仅靠速率限制可能不足以有效应对复杂的 DDoS 攻击。</p>
-<p>然而，在高效 DDoS 防护策略中，速率限制不失为一种有效手段。</p>
-<h2 id="web-应用程序防火墙">Web 应用程序防火墙</h2>
-<p>Web 应用程序防火墙（WAF） 是一种有效工具，有助于缓解第 7 层 DDoS 攻击。在互联网和源站之间部署 WAF 后，WAF 可以充当反向代理，保护目标服务器，防止其遭受特定类型的恶意流量入侵。</p>
-<p>通过基于一系列用于识别 DDoS 工具的规则筛选请求，可以阻止第 7 层攻击。有效的 WAF 的一个关键价值是能够快速实施自定义规则以应对攻击。</p>
-<h2 id="anycast-网络扩散">Anycast 网络扩散</h2>
-<p>此类缓解方法使用 Anycast 网络，将攻击流量分散至分布式服务器网络，直到网络吸收流量为止。</p>
-<p>这种方法就好比将湍急的河流引入若干独立的小水渠，将分布式攻击流量的影响分散到可以管理的程度，从而分散破坏力。</p>
-<p>Anycast 网络在缓解 DDoS 攻击方面的可靠性取决于攻击规模及网络规模和效率。</p>
+<p>昨天，关于翼龙无人机救灾的新闻，刷屏了整个网络。</p>
+<p>由国家应急管理部紧急调派的翼龙-2H应急救灾型无人机，搭载中国移动的基站设备，从贵州安顺出发，连续出动两次，分别赶赴河南省巩义市米河镇以及郑州市中牟县阜外华中心血管病医院，执行应急通信网络保障任务。<br>
+<img src="https://blog.gd1214b.icu/post-images/1627112723095.webp" alt="" loading="lazy"><br>
+今天赶个晚集，刚好写点更有深度的内容，分析一下这个事件的前前后后。</p>
+<h1 id="无人机通信的技术利弊">无人机通信的技术利弊</h1>
+<p>赞美的话我就不说了，直接看技术。</p>
+<p>无人机通信，严格来说分为两种。一种是为了实现无人机飞行控制而进行的通信（例如无人机表演），另一种是指利用无人机提供区域内的通信保障服务。我们今天讲的，主要是后者，姑且称为无人机通信保障。</p>
+<p>其实，无人机通信保障，并不是什么新鲜事物。</p>
+<p>2008年汶川地震发生的时候，地面基站微波线缆等通信设备几乎全毁，导致灾区彻底失联。当时，空军派出了15名空降兵勇士，携带2部海事卫星电话，冒险跳伞进入灾区，才算恢复了联系。</p>
+<p>灾后，通信及应急管理等有关部门汲取经验教训，重点加强了应急通信保障能力的建设。随着无人机技术的成熟和普及，无人机基站应急通信也成为了一个热门的研究方向，吸引了不少学者进行研究，也有了一些成果。</p>
+<p>2017年九寨沟发生地震后，中国移动紧急调运了一套无人机高空基站，连夜送达地震灾区，用于恢复周边30多平方公里受灾区域的手机信号。这是国内无人机高空基站在地震救灾中的首次应用，当时也引起了不小的轰动。<br>
+<img src="https://blog.gd1214b.icu/post-images/1627112797782.webp" alt="" loading="lazy"><br>
+需要注意的是，在这次翼龙-2H应急救灾型无人机出现之前，我们看到的几乎所有无人机高空基站，都属于旋翼无人机。<br>
+<img src="https://blog.gd1214b.icu/post-images/1627112820437.webp" alt="" loading="lazy"><br>
+它们的特点是运输方便，起降和操控（相对）容易，可以空中悬停。缺点也很明显：飞行高度和移动范围有限，且受限于电池续航能力，留空时间较短。</p>
+<p>有些旋翼无人机的下方，会有一根线缆与地面相连，进行数据回传或者提供电力。这种无人机，也称为系留式无人机。<br>
+<img src="https://blog.gd1214b.icu/post-images/1627112841220.webp" alt="" loading="lazy"><br>
+这次出现的翼龙-2H应急救灾型无人机，之所以引起轰动，其中一个主要的原因，就是它是首次将固定翼无人机应用于应急通信保障任务。<br>
+<img src="https://blog.gd1214b.icu/post-images/1627112892894.webp" alt="" loading="lazy"><br>
+相比旋翼无人机，这种固定翼无人机飞行高度高，飞行距离远，覆盖范围大，优势明显。</p>
+<p>不过，因为和地面之间没有有线连接，所以它只能通过无线回传的方式，建立与核心网设备之间的联系。<br>
+<img src="https://blog.gd1214b.icu/post-images/1627112930583.webp" alt="" loading="lazy"><br>
+这种无线回传，基本上只能通过卫星通信系统实现。所以，翼龙-2H通信应急保障任务的难点，除了飞行平台本身之外（翼龙算是航空工业集团的成熟平台），就是<strong>空天链路的建立和调测</strong>。<br>
+<img src="https://blog.gd1214b.icu/post-images/1627112959985.webp" alt="" loading="lazy"><br>
+空天一体化，这几年是通信领域的重点研究方向，也是6G的主要方向。埃隆马斯克的星链计划，更是大大刺激了人们对卫星通信的关注。</p>
+<p>这次翼龙-2H刷屏网络，大家表面上看到的是无人机大放光彩，实际上背后真正发挥作用的，是卫星。</p>
+<p>我们再来看看这次任务的具体执行情况：</p>
+<p>7月21日下午14:22，翼龙-2H应急救灾型从安顺机场起飞，历时4.5个小时抵达巩义市，18时21分进入米河镇通信中断区，为50平方公里范围提供长时稳定连续信号覆盖。</p>
+<p>截止20时，空中基站累计接通用户2572个，产生流量1089.89M，单次最大接入用户648个。</p>
+<p>此次任务，无人机在任务区内作业时间共计8小时8分。无人机除了搭载通信设备，为受灾人员提供移动网络信号之外，还应用CCD航测相机、EO光电设备和SAR合成孔径雷达，对受灾区域进行拍照和监测，实时将有关信息回传至指挥中心，有效支持了灾区的应急救援行动。</p>
+<p>7月22日6时15分，翼龙-2H应急救灾型无人机返场降落，飞行近16小时。</p>
+<p>从上面的文字，我们可以看出几点细节。</p>
+<p>首先，作业时间问题。</p>
+<p>因为机场距离较远，无人机飞行在途时间较长（单程4小时以上），所以，在灾区的实际作业时间，并不是太久（大约8个小时，其中5小时用于覆盖信号）。</p>
+<p>相信随着这次翼龙-2H的成功实践，应急管理部会在全国各个片区部署多个无人机基地，实现就近支援。</p>
+<p>其次，载荷量问题。</p>
+<p>翼龙2无人机最大起飞重量4200公斤，外挂载荷超过500公斤。按理来说，这个载荷量不算低。</p>
+<p>但是，我们要知道，无人机需要执行多项任务（航拍等），挂载多种吊舱，所以，留给通信设备和配套电源的空间和重量配额有限，这限制了无人机通信保障服务的能力。<br>
+<img src="https://blog.gd1214b.icu/post-images/1627113045208.webp" alt="" loading="lazy"><br>
+第三，多运营商支持问题。</p>
+<p>本次任务，无人机只携带了中国移动的基站设备，联通和电信用户无法获取信号。后续的话，希望能够有支持三家运营商基本通信频段的全网通通信设备吊舱，作用会更大。</p>
+<p>或者，希望各家运营商都有自己的无人机，帮到更多的灾民。</p>
+<p>第四，价格成本问题。</p>
+<p>应急保障，人命大于天，所以，成本问题可以稍微往后靠。</p>
+<p>这次翼龙出动，尚不清楚具体的成本是多少，但估计费用不低（硬件成本、油费、人力成本、卫星链路租用等）。如果能大幅降低成本，将有利于这项技术的进一步普及，包括前面所说的全国各区域布点。</p>
+<p>第五，带宽容量问题。</p>
+<p>“累计接通用户2572个，产生流量1089.89M，单次最大接入用户648个”。说实话，就50平方公里的覆盖范围而言，这个数据并不算多（即便是农村地区），远不如一个普通的宏站。</p>
+<p>一方面，可能说明还有大量的用户因为身处室内的原因，未能搜索到高空无人机基站的信号，另一方面，也可能是无人机基站本身的能力瓶颈。</p>
+<p>无人机基站最大的弱点，就在于通信容量。卫星链路回传带宽的限制，决定了灾区人民看视频玩游戏是不太现实的，能保证通话、短信和微信，就已经很不错了。</p>
+<p>以上问题，相信随着时间的推移、技术的发展，会逐渐得到解决。</p>
+<h1 id="应急通信的更多思考">应急通信的更多思考</h1>
+<p>接下来，我们延伸一下话题，再简单说说应急通信。</p>
+<p>应急通信是一个重要的通信细分领域。根据灾害级别和范围的不同，手段也不太一样。</p>
+<p>例如演唱会或体育赛事这样的区域性应急通信，往往出动应急通信车，就足以应付了。<br>
+<img src="https://blog.gd1214b.icu/post-images/1627113098365.webp" alt="" loading="lazy"><br>
+而地震、洪水、海啸甚至恐怖袭击的话，应急通信车肯定没用，基本上都要靠卫星终端。<br>
+<img src="https://blog.gd1214b.icu/post-images/1627113117840.webp" alt="" loading="lazy"><br>
+说实话，目前我国在商用（民用）卫星的市场化方面还是存在很大不足的。</p>
+<p>全球主流的卫星通信系统，都是国外的服务提供商（海事卫星inmarsat、铱星iridium、欧星THURAYA等）。国内不少党政单位，包括抗灾应急，也在用国外商用卫星电话。这显然是不太合适的。</p>
+<p>对于应急通信保障来说，保密性要求不是特别高，更关键的是普及。普及的话，又取决于成本。</p>
+<p>如果国内民用卫星电话能够做大做强，那么可以进一步降低卫星使用成本，让卫星接收终端可以下沉普及到村镇一级，将有效应对重大自然灾害。</p>
+<p>另外，我还想提一点：我们在应急通信保障技术方面，其实还有很大的想象空间。</p>
+<p>突发奇想一下，我们有通信无人机，通信保障车，为什么不考虑研发一个通信无人船呢？基于MESH自组网技术的无人通信船，携带基站，穿梭在淹没的城市或农村区域，为灾民提供应急通信保障服务，也会非常有用。<br>
+<img src="https://blog.gd1214b.icu/post-images/1627113156453.webp" alt="" loading="lazy"><br>
+此外，高空热气球、飞艇等，也都可以用于应急通信保障。这些此前都有先例，只不过尚未成熟，我们应该鼓励研究和尝试。</p>
+<p>最后的最后，我再提醒大家一下：通信技术在重大自然灾害面前，并不是只有应急通信保障这一个作用。它更大的作用，其实是<strong>灾害预防和预警</strong>。</p>
+<p>如果数字物联技术能够充分落地，我们将大幅减少灾害带来的损失。</p>
+<p>例如这次河南洪灾。我们在视频上看到的危急场面，很多都是居民未能及时防范造成的。<br>
+<img src="https://blog.gd1214b.icu/post-images/1627113216379.gif" alt="" loading="lazy"><br>
+如果关键河流、库区、涵洞、隧道都有水位数字传感器，实时汇报水位变化，通过洪灾预警系统对居民进行短信提醒，肯定有助于减少损失，挽救生命。</p>
+<p>四川建成的地震预警系统，就是一个很好的例子。</p>
+<p>此外，今年发生的多次重大伤亡事故，包括5·26广州江门井下中毒事故、6·13湖北十堰燃气爆炸事故、7·12苏州酒店倒塌事故，其实借助城市物联传感网络，都可以有效预防或者预警。</p>
+<p>面对各种各样的自然灾害，数字技术还有很大的潜力可以挖掘，我们广大通信人和IT人，还有很多地方可以努力。</p>
+<p>终有一天，当我们真正建成数字城市、数字世界的时候，面对自然灾害，我们将进行更为有力的反击。</p>
+<p>好了，以上就是今天文章的全部内容。最后，再次为河南灾区加油，希望早日度过难关，生活恢复正常。</p>
 
             </div>
             
@@ -793,7 +741,7 @@
     </li>
     <li class="post-copyright-link">
       <strong class="language" data-lan="link">本文链接：</strong>
-      <a href="https://blog.gd1214b.icu/post/gfV9Uqj8F/" title="DDoS科普系列：什么是 DDoS 攻击？">https://blog.gd1214b.icu/post/gfV9Uqj8F/</a>
+      <a href="https://blog.gd1214b.icu/post/ZWEkcveiz/" title="作为一名通信老司机，我是如何看待翼龙通信无人机救灾的？">https://blog.gd1214b.icu/post/ZWEkcveiz/</a>
     </li>
     <li class="post-copyright-license">
       <strong class="language" data-lan="copyright">版权声明： </strong>
@@ -802,23 +750,15 @@
   </ul>
   <div class="tags">
     
-      <a href="https://blog.gd1214b.icu/tag/ddos/"># DDoS</a>
-    
-      <a href="https://blog.gd1214b.icu/tag/wang-luo/"># 网络</a>
-    
   </div>
   <div class="nav">
     <div class="nav-prev">
       
-        <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="国内主流网络运营商国际连接线路简谈" href="https://blog.gd1214b.icu/post/EbWtYgMvU/">国内主流网络运营商国际连接线路简谈</a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="国内主流网络运营商国际连接线路简谈" href="https://blog.gd1214b.icu/post/EbWtYgMvU/">上一篇</a>
-      
     </div>
     <div class="nav-next">
       
-        <a class="nav-pc-next" title="个人使用vpn&#34;翻墙&#34;是否违法？——基于规范性法律文件、案例以及相关计算机技术的分析与讨论" href="https://blog.gd1214b.icu/post/CoDNIXdTR/">个人使用vpn&#34;翻墙&#34;是否违法？——基于规范性法律文件、案例以及相关计算机技术的分析与讨论</a>
-        <a class="nav-mobile-next" title="个人使用vpn&#34;翻墙&#34;是否违法？——基于规范性法律文件、案例以及相关计算机技术的分析与讨论" href="https://blog.gd1214b.icu/post/CoDNIXdTR/">下一篇</a>
+        <a class="nav-pc-next" title="OneManager 部署教程" href="https://blog.gd1214b.icu/post/3UOqAuzLr/">OneManager 部署教程</a>
+        <a class="nav-mobile-next" title="OneManager 部署教程" href="https://blog.gd1214b.icu/post/3UOqAuzLr/">下一篇</a>
         <i class="fa fa-chevron-right"></i>
       
     </div>
