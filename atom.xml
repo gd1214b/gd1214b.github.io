@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.gd1214b.icu</id>
     <title>gd1214b&apos;s blog</title>
-    <updated>2021-07-29T10:57:06.774Z</updated>
+    <updated>2021-07-29T11:06:44.457Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.gd1214b.icu"/>
     <link rel="self" href="https://blog.gd1214b.icu/atom.xml"/>
@@ -16,7 +16,10 @@
         <link href="https://blog.gd1214b.icu/post/kyFI8q8Or/">
         </link>
         <updated>2021-07-29T10:36:42.000Z</updated>
-        <content type="html"><![CDATA[<p>现代互联网上，绝大多数网站都已经支持 HTTPS，其使用的 SSL/TLS 加密协议会将用户的请求数据与网站的响应进行加密，以防止信息被路径上的恶意用户窃取或篡改。而 SSL/TLS 协议中的一个重要组成部分是 RSA、ECDSA 等非对称加密算法，这些算法的密钥分为公钥、私钥两份，公钥可以公开，而私钥则要妥善保管。</p>
+        <content type="html"><![CDATA[<blockquote>
+<p>本文转自: <a href="https://lantian.pub/article/modify-website/post-quantum-encryption.lantian/">https://lantian.pub/article/modify-website/post-quantum-encryption.lantian/</a><br>
+现代互联网上，绝大多数网站都已经支持 HTTPS，其使用的 SSL/TLS 加密协议会将用户的请求数据与网站的响应进行加密，以防止信息被路径上的恶意用户窃取或篡改。而 SSL/TLS 协议中的一个重要组成部分是 RSA、ECDSA 等非对称加密算法，这些算法的密钥分为公钥、私钥两份，公钥可以公开，而私钥则要妥善保管。</p>
+</blockquote>
 <p>在访问 HTTPS 网站时，会经过以下的流程：</p>
 <ol>
 <li>网站会将它的公钥（以证书形式）发送给浏览器。</li>
