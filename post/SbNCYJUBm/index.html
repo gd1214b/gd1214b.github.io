@@ -9,7 +9,7 @@
 <meta name="description" content="念念不忘，必有回响">
 <meta name="theme-color" content="#f8f9fa">
 <title>数字证书及 CA 的扫盲介绍 | gd1214b&#39;s blog</title>
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/gd1214b/gd1214b.github.io@latest/favicon.ico?v=1627721574945">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/gd1214b/gd1214b.github.io@latest/favicon.ico?v=1628342108677">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gd1214b/gd1214b.github.io@latest/media/css/gemini.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gd1214b/gd1214b.github.io@latest/media/fonts/font-awesome.css">
 <link
@@ -299,7 +299,7 @@
       <div class="sidebar-item">
         <span class="site-item-rss">
             <i class="fa fa-rss"></i>
-            <a href="https://blog.gd1214b.icu/atom.xml" target="_blank">RSS</a>
+            <a href="https:////atom.xml" target="_blank">RSS</a>
         </span>
       </div>
     
@@ -640,7 +640,7 @@
           <div class="section bg-color post post-page">
             <section class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://blog.gd1214b.icu/post/SbNCYJUBm/">
+    <a class="post-title-link" href="https://post/SbNCYJUBm/">
       数字证书及 CA 的扫盲介绍
     </a>
   </h1>
@@ -658,13 +658,13 @@
       <span class="pc-show language" data-lan="category-in">分类于</span>
       
       
-      <a href="https://blog.gd1214b.icu/tag/ca-zheng-shu/">
+      <a href="https://tag/ca-zheng-shu/">
         <span>CA证书</span>
       </a>、
       
       
       
-      <a href="https://blog.gd1214b.icu/tag/wang-luo/">
+      <a href="https://tag/wang-luo/">
         <span>网络</span>
       </a>
       
@@ -684,7 +684,7 @@
     
     
     
-    <span id="/post/SbNCYJUBm/" data-flag-title="数字证书及 CA 的扫盲介绍" class="meta-item pc-show leancloud_visitors">
+    <span id="/SbNCYJUBm/" data-flag-title="数字证书及 CA 的扫盲介绍" class="meta-item pc-show leancloud_visitors">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-eye"></i>
       <span><span class="language" data-lan="view">浏览量</span>：<span class="leancloud-visitors-count"></span></span>
@@ -732,7 +732,7 @@
 <h2 id="啥是根证书">啥是【根证书】？</h2>
 <p>“根证书”的洋文叫“root certificate”。为了说清楚根证书是咋回事，再来看个稍微复杂点的例子。<br>
 　　假设 C 证书信任 A 和 B；然后 A 信任 A1 和 A2；B 信任 B1 和 B2。则它们之间，构成如下的一个树形关系（一个倒立的树）。<br>
-<img src="https://blog.gd1214b.icu/post-images/1622197859502.png" alt="" loading="lazy"></p>
+<img src="https:////post-images/1622197859502.png" alt="" loading="lazy"></p>
 <p>处于最顶上的树根位置的那个证书，就是“根证书”。除了根证书，其它证书都要依靠上一级的证书，来证明自己。那谁来证明“根证书”可靠捏？实际上，根证书自己证明自己是可靠滴（或者换句话说，根证书是不需要被证明滴）。<br>
 　　聪明的同学此刻应该意识到了：根证书是整个证书体系安全的根本。所以，如果某个证书体系中，根证书出了问题（不再可信了），那么所有被根证书所信任的其它证书，也就不再可信了。这个后果是相当相当滴严重（简直可以说是灾难性的）。</p>
 <h1 id="证书有啥用">证书有啥用？</h1>
@@ -742,24 +742,24 @@
 　　但是，千万【不要】以为，HTTPS 协议有了加密，就可高枕无忧了。俺再举一个例子来说明，光有加密是不够滴。假设有一个坏人，搞了一个假的网银的站点，然后诱骗你上这个站点。假设你又比较单纯，一不留神，就把你的帐号，口令都输入进去了。那这个坏蛋的阴谋就得逞鸟。<br>
 　　为了防止坏人这么干，HTTPS 协议除了有加密的机制，还有一套证书的机制。通过证书来确保，某个站点确实就是某个站点。<br>
 　　有了证书之后，当你的浏览器在访问某个 HTTPS 网站时，会验证该站点上的 CA 证书（类似于验证介绍信的公章）。如果浏览器发现该证书没有问题（证书被某个根证书信任、证书上绑定的域名和该网站的域名一致、证书没有过期），那么页面就直接打开；否则的话，浏览器会给出一个警告，告诉你该网站的证书存在某某问题，是否继续访问该站点？为了形象起见，下面给出 IE 和 Firefox 的抓图：<br>
-<img src="https://blog.gd1214b.icu/post-images/1622197913198.png" alt="" loading="lazy"><br>
-<img src="https://blog.gd1214b.icu/post-images/1622197930063.png" alt="" loading="lazy"></p>
+<img src="https:////post-images/1622197913198.png" alt="" loading="lazy"><br>
+<img src="https:////post-images/1622197930063.png" alt="" loading="lazy"></p>
 <p>大多数知名的网站，如果用了 HTTPS 协议，其证书都是可信的（也就不会出现上述警告）。所以，今后你如果上某个知名网站，发现浏览器跳出上述警告，你就要小心啦！</p>
 <h2 id="验证某文件是否可信是否被篡改">验证某文件是否可信（是否被篡改）</h2>
 <p>证书除了可以用来验证某个网站，还可以用来验证某个文件是否被篡改。具体是通过证书来制作文件的数字签名。制作数字签名的过程太专业，咱就不说了。后面专门告诉大家如何验证文件的数字签名。考虑到大多数人用 Windows 系统，俺就拿 Windows 的例子来说事儿。<br>
 　　比如，俺手头有一个 Firefox 的安装文件（带有数字签名）。当俺查看该文件的属性，会看到如下的界面。眼神好的同学，会注意到到上面有个“数字签名”的标签页。如果没有出现这个标签页，就说明该文件没有附带数字签名。<br>
-<img src="https://blog.gd1214b.icu/post-images/1622197973986.png" alt="" loading="lazy"></p>
+<img src="https:////post-images/1622197973986.png" alt="" loading="lazy"></p>
 <p>选择该标签页，看到如下界面。<br>
 　　顺便说一下，某些数字签名中没有包含“邮件地址”，那么这一项会显示“不可用”；同样的，某些数字签名没有包含“时间戳”，也会显示“不可用”。不要紧张，这里显示的“不可用”跟数字签名的有效性【没关系】。<br>
-<img src="https://blog.gd1214b.icu/post-images/1622197996715.png" alt="" loading="lazy"></p>
+<img src="https:////post-images/1622197996715.png" alt="" loading="lazy"></p>
 <p>一般来说，签名列表中，有且仅有一个签名。选中它，点“详细信息”按钮。跳出如下界面：<br>
 　　通常这个界面会显示一行字：“该数字签名正常”（图中红圈标出）。如果有这行字，就说明该文件从出厂到你手里，中途没有被篡改过（是原装滴、是纯洁滴）。<br>
-<img src="https://blog.gd1214b.icu/post-images/1622198010703.png" alt="" loading="lazy"></p>
+<img src="https:////post-images/1622198010703.png" alt="" loading="lazy"></p>
 <p>如果该文件被篡改过了（比如，感染了病毒、被注入木马），那么对话框会出现一个警告提示“该数字签名无效”（图中红圈标出）。界面如下：<br>
-<img src="https://blog.gd1214b.icu/post-images/1622198028435.png" alt="" loading="lazy"><br>
+<img src="https:////post-images/1622198028435.png" alt="" loading="lazy"><br>
 　　不论签名是否正常，你都可以点“查看证书”按钮。这时候，会跳出证书的对话框。如下：<br>
-<img src="https://blog.gd1214b.icu/post-images/1622198041625.png" alt="" loading="lazy"><br>
-<img src="https://blog.gd1214b.icu/post-images/1622198052027.png" alt="" loading="lazy"></p>
+<img src="https:////post-images/1622198041625.png" alt="" loading="lazy"><br>
+<img src="https:////post-images/1622198052027.png" alt="" loading="lazy"></p>
 <p>从后一个界面，可以看到俺刚才说的证书信任链。图中的信任链有3层：<br>
 第1层是根证书（Thawte Premium Server CA）<br>
 第2层是 Thawte 专门用来签名的证书<br>
@@ -778,7 +778,7 @@
     </li>
     <li class="post-copyright-link">
       <strong class="language" data-lan="link">本文链接：</strong>
-      <a href="https://blog.gd1214b.icu/post/SbNCYJUBm/" title="数字证书及 CA 的扫盲介绍">https://blog.gd1214b.icu/post/SbNCYJUBm/</a>
+      <a href="https://post/SbNCYJUBm/" title="数字证书及 CA 的扫盲介绍">https://post/SbNCYJUBm/</a>
     </li>
     <li class="post-copyright-license">
       <strong class="language" data-lan="copyright">版权声明： </strong>
@@ -787,23 +787,23 @@
   </ul>
   <div class="tags">
     
-      <a href="https://blog.gd1214b.icu/tag/ca-zheng-shu/"># CA证书</a>
+      <a href="https://tag/ca-zheng-shu/"># CA证书</a>
     
-      <a href="https://blog.gd1214b.icu/tag/wang-luo/"># 网络</a>
+      <a href="https://tag/wang-luo/"># 网络</a>
     
   </div>
   <div class="nav">
     <div class="nav-prev">
       
         <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="编程随想的博客备份" href="https://blog.gd1214b.icu/post/myyQXbG7P/">编程随想的博客备份</a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="编程随想的博客备份" href="https://blog.gd1214b.icu/post/myyQXbG7P/">上一篇</a>
+        <a class="nav-pc-next" title="编程随想的博客备份" href="https://post/myyQXbG7P/">编程随想的博客备份</a class="nav-pc-next">
+        <a class="nav-mobile-prev" title="编程随想的博客备份" href="https://post/myyQXbG7P/">上一篇</a>
       
     </div>
     <div class="nav-next">
       
-        <a class="nav-pc-next" title="对比4种强化域名安全的协议——DNSSEC，DNSCrypt，DNS over TLS，DNS over HTTPS" href="https://blog.gd1214b.icu/post/ee3pG-Qog/">对比4种强化域名安全的协议——DNSSEC，DNSCrypt，DNS over TLS，DNS over HTTPS</a>
-        <a class="nav-mobile-next" title="对比4种强化域名安全的协议——DNSSEC，DNSCrypt，DNS over TLS，DNS over HTTPS" href="https://blog.gd1214b.icu/post/ee3pG-Qog/">下一篇</a>
+        <a class="nav-pc-next" title="对比4种强化域名安全的协议——DNSSEC，DNSCrypt，DNS over TLS，DNS over HTTPS" href="https://post/ee3pG-Qog/">对比4种强化域名安全的协议——DNSSEC，DNSCrypt，DNS over TLS，DNS over HTTPS</a>
+        <a class="nav-mobile-next" title="对比4种强化域名安全的协议——DNSSEC，DNSCrypt，DNS over TLS，DNS over HTTPS" href="https://post/ee3pG-Qog/">下一篇</a>
         <i class="fa fa-chevron-right"></i>
       
     </div>
@@ -1906,7 +1906,7 @@
     <div class="result" id="result">
       
       <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://blog.gd1214b.icu/post/kyFI8q8Or/"" data-c="
+        <a class="result-title" style="opacity: 0;" href="https://post/kyFI8q8Or/"" data-c="
           &lt;blockquote&gt;
 &lt;p&gt;本文转自: &lt;a href=&#34;https://lantian.pub/article/modify-website/post-quantum-encryption.lantian/&#34;&gt;https://lantian.pub/article/modify-website/post-quantum-encryption.lantian/&lt;/a&gt;&lt;br&gt;
 现代互联网上，绝大多数网站都已经支持 HTTPS，其使用的 SSL/TLS 加密协议会将用户的请求数据与网站的响应进行加密，以防止信息被路径上的恶意用户窃取或篡改。而 SSL/TLS 协议中的一个重要组成部分是 RSA、ECDSA 等非对称加密算法，这些算法的密钥分为公钥、私钥两份，公钥可以公开，而私钥则要妥善保管。&lt;/p&gt;
@@ -2019,7 +2019,7 @@ docker run -it openquantumsafe/curl:0.4.0 curl https://lantian.pub --curves p256
 &lt;/ol&gt;
 &lt;p&gt;之后按照正常步骤编译 Chromium 即可。&lt;/p&gt;
 &lt;p&gt;编译、安装完成后，启动 Chromium 访问开启了后量子加密的网站，然后打开开发者工具的 Security（安全）面板：&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1627555863044.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1627555863044.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 上面已经显示使用了 p256_frodo640aes 算法，也就意味着你的网页浏览已经有了后量子时代的保护。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;额外要注意的是，Open Quantum Safe 的 BoringSSL 只支持一小部分的密钥交换算法：&lt;/p&gt;
@@ -2030,13 +2030,13 @@ docker run -it openquantumsafe/curl:0.4.0 curl https://lantian.pub --curves p256
       </div>
       
       <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://blog.gd1214b.icu/post/ZWEkcveiz/"" data-c="
+        <a class="result-title" style="opacity: 0;" href="https://post/ZWEkcveiz/"" data-c="
           &lt;blockquote&gt;
 &lt;p&gt;本文转自:&lt;a href=&#34;https://mp.weixin.qq.com/s/pciazhEWr81A6XzA8CVQ6g&#34;&gt;https://mp.weixin.qq.com/s/pciazhEWr81A6XzA8CVQ6g&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;昨天，关于翼龙无人机救灾的新闻，刷屏了整个网络。&lt;/p&gt;
 &lt;p&gt;由国家应急管理部紧急调派的翼龙-2H应急救灾型无人机，搭载中国移动的基站设备，从贵州安顺出发，连续出动两次，分别赶赴河南省巩义市米河镇以及郑州市中牟县阜外华中心血管病医院，执行应急通信网络保障任务。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1627112723095.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1627112723095.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 今天赶个晚集，刚好写点更有深度的内容，分析一下这个事件的前前后后。&lt;/p&gt;
 &lt;h1 id=&#34;无人机通信的技术利弊&#34;&gt;无人机通信的技术利弊&lt;/h1&gt;
 &lt;p&gt;赞美的话我就不说了，直接看技术。&lt;/p&gt;
@@ -2045,19 +2045,19 @@ docker run -it openquantumsafe/curl:0.4.0 curl https://lantian.pub --curves p256
 &lt;p&gt;2008年汶川地震发生的时候，地面基站微波线缆等通信设备几乎全毁，导致灾区彻底失联。当时，空军派出了15名空降兵勇士，携带2部海事卫星电话，冒险跳伞进入灾区，才算恢复了联系。&lt;/p&gt;
 &lt;p&gt;灾后，通信及应急管理等有关部门汲取经验教训，重点加强了应急通信保障能力的建设。随着无人机技术的成熟和普及，无人机基站应急通信也成为了一个热门的研究方向，吸引了不少学者进行研究，也有了一些成果。&lt;/p&gt;
 &lt;p&gt;2017年九寨沟发生地震后，中国移动紧急调运了一套无人机高空基站，连夜送达地震灾区，用于恢复周边30多平方公里受灾区域的手机信号。这是国内无人机高空基站在地震救灾中的首次应用，当时也引起了不小的轰动。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1627112797782.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1627112797782.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 需要注意的是，在这次翼龙-2H应急救灾型无人机出现之前，我们看到的几乎所有无人机高空基站，都属于旋翼无人机。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1627112820437.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1627112820437.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 它们的特点是运输方便，起降和操控（相对）容易，可以空中悬停。缺点也很明显：飞行高度和移动范围有限，且受限于电池续航能力，留空时间较短。&lt;/p&gt;
 &lt;p&gt;有些旋翼无人机的下方，会有一根线缆与地面相连，进行数据回传或者提供电力。这种无人机，也称为系留式无人机。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1627112841220.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1627112841220.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 这次出现的翼龙-2H应急救灾型无人机，之所以引起轰动，其中一个主要的原因，就是它是首次将固定翼无人机应用于应急通信保障任务。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1627112892894.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1627112892894.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 相比旋翼无人机，这种固定翼无人机飞行高度高，飞行距离远，覆盖范围大，优势明显。&lt;/p&gt;
 &lt;p&gt;不过，因为和地面之间没有有线连接，所以它只能通过无线回传的方式，建立与核心网设备之间的联系。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1627112930583.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1627112930583.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 这种无线回传，基本上只能通过卫星通信系统实现。所以，翼龙-2H通信应急保障任务的难点，除了飞行平台本身之外（翼龙算是航空工业集团的成熟平台），就是&lt;strong&gt;空天链路的建立和调测&lt;/strong&gt;。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1627112959985.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1627112959985.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 空天一体化，这几年是通信领域的重点研究方向，也是6G的主要方向。埃隆马斯克的星链计划，更是大大刺激了人们对卫星通信的关注。&lt;/p&gt;
 &lt;p&gt;这次翼龙-2H刷屏网络，大家表面上看到的是无人机大放光彩，实际上背后真正发挥作用的，是卫星。&lt;/p&gt;
 &lt;p&gt;我们再来看看这次任务的具体执行情况：&lt;/p&gt;
@@ -2072,7 +2072,7 @@ docker run -it openquantumsafe/curl:0.4.0 curl https://lantian.pub --curves p256
 &lt;p&gt;其次，载荷量问题。&lt;/p&gt;
 &lt;p&gt;翼龙2无人机最大起飞重量4200公斤，外挂载荷超过500公斤。按理来说，这个载荷量不算低。&lt;/p&gt;
 &lt;p&gt;但是，我们要知道，无人机需要执行多项任务（航拍等），挂载多种吊舱，所以，留给通信设备和配套电源的空间和重量配额有限，这限制了无人机通信保障服务的能力。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1627113045208.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1627113045208.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 第三，多运营商支持问题。&lt;/p&gt;
 &lt;p&gt;本次任务，无人机只携带了中国移动的基站设备，联通和电信用户无法获取信号。后续的话，希望能够有支持三家运营商基本通信频段的全网通通信设备吊舱，作用会更大。&lt;/p&gt;
 &lt;p&gt;或者，希望各家运营商都有自己的无人机，帮到更多的灾民。&lt;/p&gt;
@@ -2088,21 +2088,21 @@ docker run -it openquantumsafe/curl:0.4.0 curl https://lantian.pub --curves p256
 &lt;p&gt;接下来，我们延伸一下话题，再简单说说应急通信。&lt;/p&gt;
 &lt;p&gt;应急通信是一个重要的通信细分领域。根据灾害级别和范围的不同，手段也不太一样。&lt;/p&gt;
 &lt;p&gt;例如演唱会或体育赛事这样的区域性应急通信，往往出动应急通信车，就足以应付了。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1627113098365.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1627113098365.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 而地震、洪水、海啸甚至恐怖袭击的话，应急通信车肯定没用，基本上都要靠卫星终端。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1627113117840.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1627113117840.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 说实话，目前我国在商用（民用）卫星的市场化方面还是存在很大不足的。&lt;/p&gt;
 &lt;p&gt;全球主流的卫星通信系统，都是国外的服务提供商（海事卫星inmarsat、铱星iridium、欧星THURAYA等）。国内不少党政单位，包括抗灾应急，也在用国外商用卫星电话。这显然是不太合适的。&lt;/p&gt;
 &lt;p&gt;对于应急通信保障来说，保密性要求不是特别高，更关键的是普及。普及的话，又取决于成本。&lt;/p&gt;
 &lt;p&gt;如果国内民用卫星电话能够做大做强，那么可以进一步降低卫星使用成本，让卫星接收终端可以下沉普及到村镇一级，将有效应对重大自然灾害。&lt;/p&gt;
 &lt;p&gt;另外，我还想提一点：我们在应急通信保障技术方面，其实还有很大的想象空间。&lt;/p&gt;
 &lt;p&gt;突发奇想一下，我们有通信无人机，通信保障车，为什么不考虑研发一个通信无人船呢？基于MESH自组网技术的无人通信船，携带基站，穿梭在淹没的城市或农村区域，为灾民提供应急通信保障服务，也会非常有用。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1627113156453.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1627113156453.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 此外，高空热气球、飞艇等，也都可以用于应急通信保障。这些此前都有先例，只不过尚未成熟，我们应该鼓励研究和尝试。&lt;/p&gt;
 &lt;p&gt;最后的最后，我再提醒大家一下：通信技术在重大自然灾害面前，并不是只有应急通信保障这一个作用。它更大的作用，其实是&lt;strong&gt;灾害预防和预警&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;如果数字物联技术能够充分落地，我们将大幅减少灾害带来的损失。&lt;/p&gt;
 &lt;p&gt;例如这次河南洪灾。我们在视频上看到的危急场面，很多都是居民未能及时防范造成的。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1627113216379.gif&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1627113216379.gif&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 如果关键河流、库区、涵洞、隧道都有水位数字传感器，实时汇报水位变化，通过洪灾预警系统对居民进行短信提醒，肯定有助于减少损失，挽救生命。&lt;/p&gt;
 &lt;p&gt;四川建成的地震预警系统，就是一个很好的例子。&lt;/p&gt;
 &lt;p&gt;此外，今年发生的多次重大伤亡事故，包括5·26广州江门井下中毒事故、6·13湖北十堰燃气爆炸事故、7·12苏州酒店倒塌事故，其实借助城市物联传感网络，都可以有效预防或者预警。&lt;/p&gt;
@@ -2113,7 +2113,7 @@ docker run -it openquantumsafe/curl:0.4.0 curl https://lantian.pub --curves p256
       </div>
       
       <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://blog.gd1214b.icu/post/3UOqAuzLr/"" data-c="
+        <a class="result-title" style="opacity: 0;" href="https://post/3UOqAuzLr/"" data-c="
           &lt;h1 id=&#34;onemanager是什么&#34;&gt;OneManager是什么&lt;/h1&gt;
 &lt;p&gt;这是一个利用微软onedrive api将onedrive目录映射成一个云盘的程序，类似的程序有很多，比如OneIndex、Pyone、OnePoint等等。这个程序的特点是支持多种onedrive类型，可以部署在多种平台上&lt;/p&gt;
 &lt;h1 id=&#34;部署教程&#34;&gt;部署教程&lt;/h1&gt;
@@ -2121,51 +2121,51 @@ docker run -it openquantumsafe/curl:0.4.0 curl https://lantian.pub --curves p256
 &lt;ol&gt;
 &lt;li&gt;打开Glitch 官网:&lt;a href=&#34;https://glitch.com/&#34;&gt;https://glitch.com/&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;点击 Log in&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626770019121.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;img src=&#34;https:////post-images/1626770019121.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
 &lt;li&gt;通过Github登录&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626770099003.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;img src=&#34;https:////post-images/1626770099003.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
 &lt;li&gt;新建一个项目&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626770852108.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1626770852108.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 选择Import from Github&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626770925832.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1626770925832.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 在弹出的对话框中输入 https://github.com/qkqpttgf/OneManager-php, 然后点击确定.&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626771001198.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1626771001198.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 接下来Glitch将会为你导入该项目, 这可能会需要一点时间.&lt;/li&gt;
 &lt;li&gt;配置onemanager&lt;br&gt;
 (非必需)项目导入完毕后, 依次点击 Show &amp;gt;In a New Window&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626773665387.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626773739645.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1626773665387.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1626773739645.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 然后按照提示往下走，设置好密码后会来到这个界面，点击登录：&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626773861826.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1626773861826.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 输入密码后来到这个界面，点击管理＞设置：&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626773970547.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1626773970547.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 选择Sharelink,点击添加盘:&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626774117873.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1626774117873.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 标签和显示名称可以随便填:&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626774382796.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1626774382796.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 Sharelink在登录你的OneDrive网盘后,按以下步骤获取:&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626774629064.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1626774629064.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 将其粘贴到这个框中, 点击确定:&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626774742056.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1626774742056.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 稍等几秒后即可看到这个界面:&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626774809625.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1626774809625.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 到此你的OneManager就算部署成功了.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h1 id=&#34;可选项自定义域名&#34;&gt;(可选项)自定义域名&lt;/h1&gt;
 &lt;p&gt;在Glitch中,依次点击 Tools &amp;gt; Custom Domains :&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626775210453.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1626775210453.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 输入你的域名, 并点击Add Domain:(我这里的onemanager只是一个示例, 你可以用其他的二级域名)&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626775295510.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1626775295510.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 在你的域名服务供应商中为你的域名添加一条解析:&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626775414873.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1626775414873.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 类型为CNAME, 目标填 glitch.edgeapp.net&lt;/p&gt;
 &lt;p&gt;Glitch默认不会启用https, 你可以在OneManager 的设置 &amp;gt; 平台变量 中将 forceHttps 的值设置为1来启用 https :&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626776001478.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1626776001478.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 ">OneManager 部署教程</a>
       </div>
       
       <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://blog.gd1214b.icu/post/xUIBYCvAl/"" data-c="
+        <a class="result-title" style="opacity: 0;" href="https://post/xUIBYCvAl/"" data-c="
           &lt;blockquote&gt;
 &lt;p&gt;特别说明: 本教程比较复杂, 新手可能难以掌握. 可以参考我的另一篇博文:&lt;a href=&#34;https://blog.gd1214b.icu/post/3UOqAuzLr/&#34;&gt;https://blog.gd1214b.icu/post/3UOqAuzLr/&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -2180,11 +2180,11 @@ Sharelink在登录你的OneDrive网盘后,按以下步骤获取:&lt;br&gt;
 &lt;h1 id=&#34;获取onedrive-api-令牌&#34;&gt;获取Onedrive API 令牌&lt;/h1&gt;
 &lt;h2 id=&#34;获取client_id和client_secret&#34;&gt;获取client_id和client_secret&lt;/h2&gt;
 &lt;p&gt;登录&lt;a href=&#34;https://portal.azure.com/&#34;&gt;Microsoft Azure管理控制台&lt;/a&gt;&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626507543866.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1626507543866.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;p&gt;进入&lt;a href=&#34;https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade&#34;&gt;Azure面板应用注册界面&lt;/a&gt;,注册一个新的应用程序.&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626507831454.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1626507831454.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;p&gt;按照下图指示填写&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626508125510.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1626508125510.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;这里的名称可随意填写.&lt;/li&gt;
 &lt;li&gt;选择这一项.&lt;/li&gt;
@@ -2192,73 +2192,73 @@ Sharelink在登录你的OneDrive网盘后,按以下步骤获取:&lt;br&gt;
 &lt;li&gt;点击 注册.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;点击确定后跳转到概要，记录下其中的应用程序(客户端) ID。这个是Client_id 的值。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626508486890.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1626508486890.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;p&gt;设置【API权限】&lt;br&gt;
 依次点击下图中的三个按钮,选择并添加 offline_access, Files.Read, Files.Read.All 这三个权限.&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626508983170.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1626508983170.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;p&gt;接着我们获取Secrets,点击【证书和密码】，按照下图填写:&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626509201610.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1626509201610.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;p&gt;复制生成的密钥（即Client_secret）,请注意此处密钥仅出现一次,以后就不会再出现了, 所以请妥善保存。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626509401306.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1626509401306.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;h1 id=&#34;获取refresh_token和access_token&#34;&gt;获取refresh_token和access_token&lt;/h1&gt;
 &lt;p&gt;打开你的设备的命令行界面(如Windows的CMD), 运行一下命令:&lt;/p&gt;
 &lt;p&gt;npx @beetcb/ms-graph-cli&lt;/p&gt;
 &lt;p&gt;这里可能需要一点时间&lt;/p&gt;
 &lt;p&gt;随后出现这个界面:&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626509809642.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1626509809642.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 第一个选项是国际版的Onedrive, 第二个是世纪互联(中国)版的Onedrive,根据你的实际情况选择(一般情况都是第一个)&lt;/p&gt;
 &lt;p&gt;这一步直接选择第一个(Onedrive)&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626509975043.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1626509975043.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;p&gt;这里输入你之前获取的client_id:&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626510039884.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1626510039884.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;p&gt;然后输入client_secret:&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626510188289.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1626510188289.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;p&gt;最后输入redirect_uri, 默认直接回车即可:&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626510311042.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1626510311042.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;p&gt;接下来将图中的url粘贴到浏览器中打开:&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626510505979.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1626510505979.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;p&gt;接受许可:&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626510572088.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1626510572088.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;p&gt;将返回的url粘贴到命令行界面中:&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626510737613.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626510779698.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1626510737613.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1626510779698.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;p&gt;获取到refresh_token和access_token&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626510934097.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1626510934097.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 同样将其保存好.(注意不包括&#39;号)&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;最后,在你的Onedrive根目录中新建一个叫Public的文件夹&lt;/strong&gt;&lt;/p&gt;
 &lt;h1 id=&#34;在vercel上部署onedrive-index&#34;&gt;在Vercel上部署OneDrive-Index&lt;/h1&gt;
 &lt;p&gt;点击下面的链接进行部署:&lt;br&gt;
 &lt;a href=&#34;https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fspencerwooo%2Fonedrive-vercel-index&amp;amp;env=REFRESH_TOKEN,ACCESS_TOKEN,CLIENT_SECRET&amp;amp;envDescription=Required%20API%20tokens%20for%20this%20project.&amp;amp;project-name=onedrive-vercel-index&amp;amp;repo-name=onedrive-vercel-index&amp;amp;demo-title=onedrive-vercel-index&amp;amp;demo-description=Probably%20the%20best%20looking%20OneDrive%20Index%20around!%20Powered%20by%20Vercel%20and%20Next.js.&amp;amp;demo-url=http%3A%2F%2Fonedrive-vercel-index.vercel.app&amp;amp;demo-image=https%3A%2F%2Fraw.githubusercontent.com%2Fspencerwooo%2Fonedrive-vercel-index%2Fmain%2Fpublic%2Fdemo.png&#34;&gt;https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fspencerwooo%2Fonedrive-vercel-index&amp;amp;env=REFRESH_TOKEN,ACCESS_TOKEN,CLIENT_SECRET&amp;amp;envDescription=Required API tokens for this project.&amp;amp;project-name=onedrive-vercel-index&amp;amp;repo-name=onedrive-vercel-index&amp;amp;demo-title=onedrive-vercel-index&amp;amp;demo-description=Probably the best looking OneDrive Index around! Powered by Vercel and Next.js.&amp;amp;demo-url=http%3A%2F%2Fonedrive-vercel-index.vercel.app&amp;amp;demo-image=https%3A%2F%2Fraw.githubusercontent.com%2Fspencerwooo%2Fonedrive-vercel-index%2Fmain%2Fpublic%2Fdemo.png&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;输入你的仓库名称(可随意), 然后点击Create&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626511314340.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1626511314340.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;p&gt;跳过这一步:&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626511351235.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1626511351235.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;p&gt;依次输入你的refresh_token, access_token, client_secret, 然后点击Deploy&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626511525801.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1626511525801.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;p&gt;等待部署完成即可.&lt;/p&gt;
 &lt;p&gt;最后打开你的Github仓库中的config/api.json文件, 将其中的clientId 替换为你自己的即可.&lt;br&gt;
 详细步骤:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;打开config文件夹&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626599720152.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;img src=&#34;https:////post-images/1626599720152.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
 &lt;li&gt;打开api.json文件&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626599761439.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;img src=&#34;https:////post-images/1626599761439.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
 &lt;li&gt;点击下图中的铅笔按钮&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626599788030.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;img src=&#34;https:////post-images/1626599788030.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
 &lt;li&gt;更改clientId 为你自己的值&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626599832035.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;img src=&#34;https:////post-images/1626599832035.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
 &lt;li&gt;点击Commit changes 按钮&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626599870964.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;img src=&#34;https:////post-images/1626599870964.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
 &lt;/ol&gt;
 ">在Vercel上部署OneDrive-Index</a>
       </div>
       
       <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://blog.gd1214b.icu/post/privacy-policy/"" data-c="
+        <a class="result-title" style="opacity: 0;" href="https://post/privacy-policy/"" data-c="
           &lt;blockquote&gt;
 &lt;p&gt;本条款生效于:2021年7月12日&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626098524913.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https:////post-images/1626098524913.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
 &lt;h1 id=&#34;1-总则&#34;&gt;1. 总则&lt;/h1&gt;
 &lt;p&gt;尽管我们可能会收集信息以改善应用程序和服务质量，但是我们非常重视您的隐私。为了更好的保护您的隐私，我们提供了本隐私政策声明，描述我们收集、处理、存储和使用您的个人信息的方式。&lt;/p&gt;
 &lt;h1 id=&#34;2-修订策略&#34;&gt;2. 修订策略&lt;/h1&gt;
@@ -2318,11 +2318,11 @@ CloudFlare提供邮件地址混淆服务，避免爬虫获取您的邮箱。&lt;
       </div>
       
       <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://blog.gd1214b.icu/post/CRbjifrj5/"" data-c="
+        <a class="result-title" style="opacity: 0;" href="https://post/CRbjifrj5/"" data-c="
           &lt;blockquote&gt;
 &lt;p&gt;本文转自：&lt;a href=&#34;https://mp.weixin.qq.com/s/xkL09_Tdljg8pk0v9taLjg&#34;&gt;https://mp.weixin.qq.com/s/xkL09_Tdljg8pk0v9taLjg&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1625737952672.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https:////post-images/1625737952672.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
 &lt;p&gt;“媒介即讯息”这个理论，本质含义没有那么复杂，实际上就是它的字面义：媒介本身才是最有价值的讯息。&lt;/p&gt;
 &lt;p&gt;但如果真这么简单，我们就不会把麦克卢汉的理论奉为圭臬，他大概也不能瞑目。只有把这样一个理论放在传播学的学科背景、麦克卢汉的思想体系以及对后世传播学的影响这三个方面加以思考，才能真正理解这一理论及其现实意义。&lt;/p&gt;
 &lt;p&gt;首先，“媒介即讯息”强调的是媒介形式也就是媒介本身的重要性。与“形式”相对的维度是“内容”，以手机为例，“手机”本身是一种媒介形式，而我们通过手机观看的东西如新闻、图片、视频等都是媒介内容（也就是“讯息”）。如果问形式和内容哪个对我们的影响更大，我想大部分人第一反应都是后者，也就是内容，毕竟人们直接阅读接收的东西才是影响认知、态度的主要因素，而非抽象的形式概念。&lt;/p&gt;
@@ -2343,7 +2343,7 @@ CloudFlare提供邮件地址混淆服务，避免爬虫获取您的邮箱。&lt;
       </div>
       
       <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://blog.gd1214b.icu/post/H5XieIE3d/"" data-c="
+        <a class="result-title" style="opacity: 0;" href="https://post/H5XieIE3d/"" data-c="
           &lt;blockquote&gt;
 &lt;p&gt;本文转自：&lt;a href=&#34;https://guozeyu.com/?p=2519&#34;&gt;https://guozeyu.com/?p=2519&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -2445,10 +2445,10 @@ DNSSEC 的只签名，不加密主要是因为 DNSSEC 是 DNS 的一个子集，
       </div>
       
       <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://blog.gd1214b.icu/post/JYQWA_wHa/"" data-c="
+        <a class="result-title" style="opacity: 0;" href="https://post/JYQWA_wHa/"" data-c="
           &lt;blockquote&gt;
 &lt;p&gt;本文转自：&lt;a href=&#34;https://tingtalk.me/telegram/&#34;&gt;https://tingtalk.me/telegram/&lt;/a&gt;&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1624777352841.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1624777352841.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;电报是迄今为止最棒的即时聊天软件，在这个自由新世界，不必自我审查（Freedom of speech）。&lt;/p&gt;
 &lt;p&gt;🧱 TG 在中国大陆必须 &lt;a href=&#34;https://tingtalk.me/fq/&#34;&gt;翻墙&lt;/a&gt; 后才能使用。不过，学会科学上网，难道不是当代数字公民的必备技能吗？&lt;/p&gt;
@@ -2540,7 +2540,7 @@ DNSSEC 的只签名，不加密主要是因为 DNSSEC 是 DNS 的一个子集，
 &lt;/blockquote&gt;
 &lt;p&gt;既然说不动认识我的人，但世界那么大，人口那么多，网络世界上一定有一群人，Ta 们和我一样，反感「温室园丁」不透明的做法，不愿做一只数字农场里的电子绵羊，相信「自由价更高」。&lt;/p&gt;
 &lt;p&gt;我要当一个 &lt;a href=&#34;https://kenengba.com/post/3393.html&#34;&gt;踹车轮&lt;/a&gt; 的人，为我心中的理想世界投票。因此我熬了几个月，把 Telegram 官网的 &lt;a href=&#34;https://telegram.org/faq&#34;&gt;FAQ&lt;/a&gt; 和 &lt;a href=&#34;https://telegram.org/blog&#34;&gt;Blog&lt;/a&gt; 全部看完了（从 2013 年创立电报至今），结合 Google 搜索引擎旁征博引，整理出这篇&lt;s&gt;可能是&lt;/s&gt;中文互联网内容最翔实，排版最精美的《电报指南》，目的就是尽可能地为读者呈现 Telegram 的强大、私密以及友好的用户体验。&lt;/p&gt;
-&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1624777229880.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https:////post-images/1624777229880.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
 &lt;blockquote&gt;
 &lt;p&gt;在 &lt;a href=&#34;https://t.me/durovschat&#34;&gt;Durov&#39;s Chat&lt;/a&gt; 用蹩脚的中式英语给教程做推广，受到 &lt;a href=&#34;https://t.me/durovschat/283&#34;&gt;Pavel 的肯定&lt;/a&gt;。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -4721,7 +4721,7 @@ DNSSEC 的只签名，不加密主要是因为 DNSSEC 是 DNS 的一个子集，
       </div>
       
       <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://blog.gd1214b.icu/post/sZOPxqKBm/"" data-c="
+        <a class="result-title" style="opacity: 0;" href="https://post/sZOPxqKBm/"" data-c="
           &lt;blockquote&gt;
 &lt;p&gt;本文转自：&lt;a href=&#34;https://www.orangeclk.com/2016/10/03/cyber-time-space/&#34;&gt;https://www.orangeclk.com/2016/10/03/cyber-time-space/&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -4778,7 +4778,7 @@ DNSSEC 的只签名，不加密主要是因为 DNSSEC 是 DNS 的一个子集，
       </div>
       
       <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://blog.gd1214b.icu/post/G9dquz6bG/"" data-c="
+        <a class="result-title" style="opacity: 0;" href="https://post/G9dquz6bG/"" data-c="
           &lt;p&gt;前阵子在网络上看到一个很酷的开源项目： &lt;a href=&#34;https://github.com/upptime/upptime&#34;&gt;Upptime&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;每隔一段时间用GitHub Actions 看网站有没有挂掉,若挂掉就用GitHub Issues 回报异常事件,使用GitHub Pages 产生服务状态的页面.&lt;/p&gt;
 &lt;h1 id=&#34;github-actions-简介&#34;&gt;GitHub Actions 简介&lt;/h1&gt;
@@ -4790,58 +4790,58 @@ DNSSEC 的只签名，不加密主要是因为 DNSSEC 是 DNS 的一个子集，
 &lt;ol&gt;
 &lt;li&gt;进入Upptime的&lt;a href=&#34;https://github.com/upptime/upptime&#34;&gt;repo&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;点击 &lt;strong&gt;Use this template&lt;/strong&gt;&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1624168642287.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;img src=&#34;https:////post-images/1624168642287.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
 &lt;li&gt;创建repo&lt;br&gt;
 * 输入repo name&lt;br&gt;
 * 勾选 &lt;strong&gt;Include all branches&lt;/strong&gt;&lt;br&gt;
 * 点击 &lt;strong&gt;Create repository from temple&lt;/strong&gt;&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1624168745412.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1624168745412.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 等一阵子后,就会复制一样的repo到你的帐号下&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h1 id=&#34;设置github-pages&#34;&gt;设置GitHub Pages&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;到你的repo，点击 &lt;strong&gt;Settings&lt;/strong&gt;&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1624168798869.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;img src=&#34;https:////post-images/1624168798869.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
 &lt;li&gt;往下找到GitHub Pages 的&lt;strong&gt;Source&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;Branch 设为 &lt;strong&gt;gh-pages&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;点击 &lt;strong&gt;Save&lt;/strong&gt;&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1624168860771.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;img src=&#34;https:////post-images/1624168860771.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;设置repository-secret&#34;&gt;设置Repository Secret&lt;/h1&gt;
 &lt;p&gt;为了让Upptime有commit和publish网页的权限，需要设定Personal Access Token&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;点击自己的&lt;strong&gt;Profile picture&lt;/strong&gt; &amp;gt; &lt;strong&gt;Settings&lt;/strong&gt;&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1624168921775.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;img src=&#34;https:////post-images/1624168921775.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
 &lt;li&gt;点击左侧的&lt;strong&gt;Developer settings&lt;/strong&gt; &amp;gt; &lt;strong&gt;Personal access tokens&lt;/strong&gt; &amp;gt; &lt;strong&gt;Generate new token&lt;/strong&gt;&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1624168964700.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;img src=&#34;https:////post-images/1624168964700.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
 &lt;li&gt;新增token
 &lt;ul&gt;
 &lt;li&gt;Note: &lt;strong&gt;upptime&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;Select scopes:勾选&lt;strong&gt;repo&lt;/strong&gt;和&lt;strong&gt;workflow&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;点击 &lt;strong&gt;Generate token&lt;/strong&gt;&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1624169013442.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;img src=&#34;https:////post-images/1624169013442.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;复制token&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1624169029896.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;img src=&#34;https:////post-images/1624169029896.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
 &lt;li&gt;返回&lt;strong&gt;repo&lt;/strong&gt; &amp;gt;&lt;strong&gt;Settings&lt;/strong&gt;&lt;br&gt;
 点击左侧&lt;strong&gt;Secrets&lt;/strong&gt;&amp;gt; &lt;strong&gt;Add a new secret&lt;/strong&gt; &amp;gt; &lt;strong&gt;New repository secret&lt;/strong&gt;&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1624169066911.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;img src=&#34;https:////post-images/1624169066911.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
 &lt;li&gt;设定repo 的token&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;Name: &lt;strong&gt;GH_PAT&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;Value: 贴上刚刚复制的 &lt;strong&gt;token&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;点击 &lt;strong&gt;Add secret&lt;/strong&gt;&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1624169109524.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;img src=&#34;https:////post-images/1624169109524.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;更新yaml文件&#34;&gt;更新YAML文件&lt;/h1&gt;
 &lt;p&gt;Upptime使用.yml来做“集中式设置”，只要更改这个文件的设置，所有相关代码就会一起修改。&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;到你的repo，点击&lt;strong&gt;Code&lt;/strong&gt; &amp;gt; &lt;strong&gt;.upptimerc.yml&lt;/strong&gt;&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1624169199844.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;img src=&#34;https:////post-images/1624169199844.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
 &lt;li&gt;点击铅笔按钮编辑文件&lt;/li&gt;
 &lt;li&gt;按照以下模版修改此文件：(方括号内是需要修改的内容，修改完之后请删除方括号)&lt;/li&gt;
 &lt;/ol&gt;
@@ -4872,15 +4872,15 @@ navbar:
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h1 id=&#34;查看github-actions&#34;&gt;查看GitHub Actions&lt;/h1&gt;
 &lt;p&gt;设定好.upptimerc.yml后，Actions就会自动开始运行(黄圈在转)。运行成功会显示绿色的勾，运行失败会显示红色的叉。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1624169705043.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1624169705043.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 如果发现Actions没运行，或是想要让它马上执行，就点击左侧的&lt;strong&gt;Setup CI&lt;/strong&gt;&amp;gt; &lt;strong&gt;Run workflow&lt;/strong&gt; &amp;gt; &lt;strong&gt;Run workflow&lt;/strong&gt;&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1624169731129.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1624169731129.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;h1 id=&#34;查看status-website&#34;&gt;查看Status Website&lt;/h1&gt;
 &lt;p&gt;你的状态页面URL是:https://【user_name】.github.io/【repo_name】/&lt;br&gt;
 或是可以到&lt;strong&gt;repo&lt;/strong&gt; &amp;gt; &lt;strong&gt;Settings&lt;/strong&gt; &amp;gt; &lt;strong&gt;GitHub Pages&lt;/strong&gt;查看URL&lt;/p&gt;
 &lt;p&gt;点击URL后，我们来到了状态页面，页面分成三个区块。&lt;/p&gt;
 &lt;p&gt;Active Incidents 显示目前的异常事件，Past Incidents 显示过去的异常事件，Live Status 可以切换五种response time 图形。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1624170045428.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1624170045428.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;h1 id=&#34;进阶操作&#34;&gt;进阶操作&lt;/h1&gt;
 &lt;h2 id=&#34;自定义运行时间&#34;&gt;自定义运行时间&lt;/h2&gt;
 &lt;p&gt;Upptime有七个Workflows，只要把下面这段粘贴到.upptimerc.yml，就可以自定义Workflow的时间点&lt;/p&gt;
@@ -4981,14 +4981,14 @@ navbar:
       </div>
       
       <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://blog.gd1214b.icu/post/yZTkyJpRj/"" data-c="
+        <a class="result-title" style="opacity: 0;" href="https://post/yZTkyJpRj/"" data-c="
           &lt;blockquote&gt;
 &lt;p&gt;本文转自:&lt;a href=&#34;https://m.ithome.com/html/523947.htm&#34;&gt;https://m.ithome.com/html/523947.htm&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;987 年 9 月 20 日，北京中国兵器工业计算机应用研究所的钱天白教授，发出了我国第一封电子邮件，内容是：&lt;/p&gt;
 &lt;p&gt;“Across the Great Wall we can reach every corner in the world. ”（“越过长城，我们能到达世界的每个角落。” ）&lt;/p&gt;
 &lt;p&gt;这封邮件当时具有极为深远的意义，它被视为中国与互联网的第一次 “亲密接触”。而钱天白教授，也被世人称为 “中国互联网之父”。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623555143911.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;p&gt;&lt;img src=&#34;https:////post-images/1623555143911.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 其实，当时钱天白所使用的网络，并不是我国自主建设的 Internet 骨干网，而是 1986 年计算机应用技术研究所与德国卡尔斯鲁厄大学合作建设的一个国际联网项目——中国学术网（Chinese Academic Network，简称 CANET）。&lt;/p&gt;
 &lt;p&gt;这封邮件的传输路径，也颇为曲折。邮件发出之后，首先通过意大利公用分组网 ITAPAC 设在北京侧的 PAD 机，跨过半个地球，进入意大利本土的 ITAPAC 主网。然后，再进入德国的 DATEX―P 分组网。最终，到达卡尔斯鲁厄大学。当时，这条线路的速率，仅仅只有 300bps。&lt;/p&gt;
 &lt;p&gt;不管怎么说，这封邮件还是拉开了中国互联网时代的序幕。此后，越来越多的国内高校和科研院所，开始加入到互联网的研究中，并尝试组建更大规模的计算机网络。&lt;/p&gt;
@@ -5007,14 +5007,14 @@ navbar:
 &lt;p&gt;中美双方的学术界人士，对于中国连入 Internet 这件事是非常积极的。&lt;/p&gt;
 &lt;p&gt;1991 年 10 月，在中美高能物理年会上，美方发言人怀特 · 托基提出，中国应该尽快接入 Internet。&lt;/p&gt;
 &lt;p&gt;1992 年 6 月，在日本神户举行的 INET&#39;92 年会上，中国科学院钱华林研究员约见美国国家科学基金会国际联网部负责人，第一次正式提出，希望能够连入 Internet。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623555198471.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1623555198471.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 钱华林&lt;/p&gt;
 &lt;p&gt;结果，中方提出的请求，遭到来自美国政界的反对。之所以反对，是因为他们认为，来自社会主义阵营的中国，会利用 Internet 偷取美国的信息和技术研究成果。&lt;/p&gt;
 &lt;p&gt;经过反复的谈判和沟通，美方勉强同意，可以先建立一根专线连接。美国对这根专线提出了苛刻的要求：1、只能连入能源科学网（ESNET）；2、不得散布病毒；3、不得用于军事和商业领域。&lt;/p&gt;
 &lt;p&gt;为了长远考虑，中方接受了这些条件。1993 年 3 月 2 日，中科院高能物理研究所接入美国斯坦福线性加速器中心（SLAC）的 64K 专线正式开通，成为中国 “部分连入 Internet”的第一根专线。&lt;/p&gt;
 &lt;p&gt;1993 年 6 月，NCFC 专家们在 INET&#39;93 年会上，利用各种机会重申了中国 “全功能连入 Internet”的要求，获得大部分到会人员的支持，极大地推动了项目的进展。&lt;/p&gt;
 &lt;p&gt;1994 年 4 月初，中美科技合作联委会在美国华盛顿举行。会前，中科院副院长胡启恒代表中方向美国国家科学基金会（NSF）重申连入 Internet 的要求，得到美方的认可。至此，所有的阻碍都被消除。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623555221767.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1623555221767.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 胡启恒&lt;/p&gt;
 &lt;p&gt;1994 年 4 月 20 日，NCFC 接入 Internet 的 64K 国际卫星专线正式开通（通过美国 Sprint 公司），实现了与 Internet 的全功能连接。&lt;/p&gt;
 &lt;p&gt;从这一天起，中国正式迈入互联网世界的大门，被国际上承认为真正拥有全功能 Internet 的第 77 个国家。&lt;/p&gt;
@@ -5038,7 +5038,7 @@ navbar:
 &lt;p&gt;1994 年 6 月 8 日，金桥前期工程建设全面展开。1995 年 8 月，金桥工程初步建成，在 24 省市开通联网（卫星网），并与国际网络实现互联。&lt;/p&gt;
 &lt;p&gt;1996 年 9 月 6 日，中国金桥信息网（CHINAGBN）连入美国的 256K 专线正式开通。中国金桥信息网宣布开始提供 Internet 服务，主要提供专线集团用户的接入和个人用户的单点上网服务。&lt;/p&gt;
 &lt;p&gt;最终，国内形成了四大骨干网的格局。正是这些网络，支撑起了中国互联网的起步。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623555306931.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1623555306931.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 1997 年 12 月，四大骨干网实现互联互通。此后，中国的互联网，进入了崭新的时代！&lt;/p&gt;
 &lt;h1 id=&#34;中国电信&#34;&gt;中国电信&lt;/h1&gt;
 &lt;p&gt;上面我们提到，中国邮电部在 1995 年建立了 ChinaNet（中国公用计算机互联网），也就是大家俗称的 163 网。&lt;/p&gt;
@@ -5046,7 +5046,7 @@ navbar:
 &lt;p&gt;因为当时中国邮电还没有实行 “邮电分营”，所以这张网是邮电部电信总局负责建设和维护。&lt;/p&gt;
 &lt;p&gt;1997 年，邮电部实施 “邮电分营”，这张网的责任主体，变成了 “中国电信”（老电信）。&lt;/p&gt;
 &lt;p&gt;同年，中国电信各省公司开始独立建设省内 IP 骨干网（省网）。建成之后，整个 ChinaNet 分为骨干网、省网和城域网三级结构。其中，骨干网分为核心层、汇聚层两层。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623555369281.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1623555369281.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 某省组网范例&lt;/p&gt;
 &lt;p&gt;1998 年 7 月，ChinaNet 骨干网第二阶段建设开始。八个大区域的骨干带宽被扩展到 155M，且所有节点路由器被替换为千兆路由器。&lt;/p&gt;
 &lt;p&gt;到了 2000 年的下半年，中国电信借助 DWDM（波分复用）和千兆路由器技术，再次对 ChinaNet 进行大规模升级和扩容。网络节点间的路由中继，由 155M 提升到 2.5Gbps，提速 16 倍。&lt;/p&gt;
@@ -5061,7 +5061,7 @@ navbar:
 &lt;p&gt;一般来说，运营商的骨干网架构和技术细节属于秘密信息，不对外公开。但是，如今在互联网上，这些信息基本上都能查到。我就基于能公开查到的信息，大致介绍一下（可能有所变动，仅供参考）。&lt;/p&gt;
 &lt;p&gt;从架构来说，ChinaNet 分为骨干网和城域网（前面有说，干掉了省网），骨干网又分核心层、汇聚层和接入层。&lt;/p&gt;
 &lt;p&gt;北京、上海、广州，是 ChinaNet 的超级核心。除了超级核心之外，ChinaNet 还有天津、西安、南京、杭州、武汉、成都等普通核心。所有核心之间，采用 Full-Mesh 连接。国际出入口，以及运营商之间的互联互通，基本上都在核心层。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623555392422.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1623555392422.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 找到一张老图，仅供参考&lt;/p&gt;
 &lt;p&gt;汇聚层一般都在各省省会或第二大城市，采用双方向互联，分别连到一个超级核心和一个普通核心，有的省份会三方向互联。&lt;/p&gt;
 &lt;p&gt;接入层，就是汇聚层到各个地市城域网。&lt;/p&gt;
@@ -5071,7 +5071,7 @@ navbar:
 &lt;p&gt;中国电信将 CN2 定位为 “精品网络项目”，非常有前瞻性。后来的事实证明，CN2 在抢占政企高端市场方面，确实发挥了重要作用。&lt;/p&gt;
 &lt;p&gt;CN2 的基本建网特点，就是扁平化、大容量和轻载运行。建网初期的核心技术，是 IP/MPLS。&lt;/p&gt;
 &lt;p&gt;从架构上来看，CN2 和 ChinaNet 有很大区别。CN2 一共是 7 个核心节点，分别是北京、上海、广州、南京、武汉、西安、成都。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623555412096.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1623555412096.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 同样是一张老图，供参考&lt;/p&gt;
 &lt;p&gt;此外，CN2 还在香港、新加坡、东京、伦敦、法兰克福等国际大城市设立了 POP 节点，提供国际 Internet 接入和网间互联业务。&lt;/p&gt;
 &lt;p&gt;CN2 作为高端网络，面向客户的时候，也进行了进一步的产品等级划分，例如 CN2 GT、CN2 GIA。&lt;/p&gt;
@@ -5098,10 +5098,10 @@ navbar:
 &lt;p&gt;与之相对应的 “联通 B 网”，就是原联通建设的 IP 承载网，主要承载 2G/3G 移动网业务的那个网。后来好像逐渐没用了，业务迁到了 A 网。&lt;/p&gt;
 &lt;p&gt;2018 年，联通将 IP 承载 A 网改名为 CUII，中国联通工业（产业）互联网。CUII 的定位有点像中国电信的 CN2，主要提供国际和国内跨地市 MPLS-VPN 和大客户互联网专线任务的承载，常用于企业宽带和 IDC，极少用于家用宽带。&lt;/p&gt;
 &lt;p&gt;总之，联通主要就是 “China169+CUII”的双网格局。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623555456726.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1623555456726.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 由于历史原因，联通 China169 的网络流量存在较大的南北差异，北方 10 省的业务流量明显大于南方。&lt;/p&gt;
 &lt;p&gt;早期的时候，China169 全网分为四个大区，分别是北方大区、华东大区、南方大区、西部大区。设置了北京 1、北京 2、上海、广州四个核心节点，并将陕西、四川、山东、辽宁设为区域核心节点。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623555476419.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1623555476419.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;h1 id=&#34;中国移动&#34;&gt;中国移动&lt;/h1&gt;
 &lt;p&gt;再来说说中国移动。&lt;/p&gt;
 &lt;p&gt;中国移动的骨干网发展史没有电信和联通那么复杂，这家公司本身的历史就很简单。&lt;/p&gt;
@@ -5110,37 +5110,37 @@ navbar:
 &lt;p&gt;当时，CMNET 是中国移动 GPRS 网络的两大接入点（另一个是 CMWAP）之一。通过 CMNET 接入点，中国移动手机用户可以接入 CMNET 网络，访问 Internet。&lt;/p&gt;
 &lt;p&gt;虽然 CMNET 起步比较晚（相对来说），但发展速度非常快。尤其是这些年中国移动拼命拓展固网宽带业务，流量增长迅猛，扩容招标也是非常频繁。&lt;/p&gt;
 &lt;p&gt;CMNET 为骨干网和省网两级自治域、多层结构。骨干网分为核心层、汇聚层和接入层。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623555503680.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1623555503680.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 北京、上海、广州 3 个节点为核心节点，它们与相连链路共同构成骨干核心层。骨干核心层提供大区内省份流量的交换，并负责全网与国际 Internet、国内其他运营商的互联。&lt;/p&gt;
 &lt;p&gt;汇聚层负责汇接各省到骨干网的连接。南京、武汉、成都、西安、沈阳等节点为汇聚节点，负责本大区内省份流量之间的交换。&lt;/p&gt;
 &lt;p&gt;接入层负责汇聚本省省际流量和出网流量。接入节点一般双上联核心节点，部分流量较大的省份，会采用多上联。&lt;/p&gt;
 &lt;p&gt;国内和国际网间互联方面，节点都设置在北京、上海、广州。&lt;/p&gt;
 &lt;p&gt;除了 CMNET 之外，中国移动还有 IP 专用承载网，简称 IP 专网。当时建设这个网的主要目的，是为了承载高价值客户业务，如话音，流媒体，信令，网管，大型客户的 VPN 等业务。&lt;/p&gt;
 &lt;p&gt;IP 专网为三层结构，分别为核心、汇聚和接入三层，采用单一自治域，目前已经延伸到国内 330 多个主要地市。大致架构如下：&lt;/p&gt;
-&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623555523849.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https:////post-images/1623555523849.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
 &lt;h1 id=&#34;中国广电&#34;&gt;中国广电&lt;/h1&gt;
 &lt;p&gt;最后再说说新入坑的中国广电吧。&lt;/p&gt;
 &lt;p&gt;2018 年，中国广电的广电宽带获批骨干网运营资质，启动全国骨干网建设，并将其命名为 CBNNET。&lt;/p&gt;
 &lt;p&gt;CBNNET 的主要建设单位，是中国广电的子公司中国有线。&lt;/p&gt;
 &lt;p&gt;2019 年，广电骨干网已经与中国电信的骨干网进行了互联互通。&lt;/p&gt;
 &lt;p&gt;按照规划，CBNNET 将是一张 “五纵五横”的全国性 IP 骨干网，全网 100G OTN 起步，部分关键链路 400G/1T OTN。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623555561296.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1623555561296.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 未来，CBNNET 将采用三层架构，即国干层、省网 / 接入层、互联层，覆盖 337 个地市，逐步形成双平面网络，直接提供宽带出口，互联网总出口带宽将达到 5T。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623555575630.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1623555575630.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;h1 id=&#34;结语&#34;&gt;结语&lt;/h1&gt;
 &lt;p&gt;好啦，以上就是目前国内运营商骨干网的大致情况。简单画个表，如下：&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623555598219.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1623555598219.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 值得一提的是，包括中移在内的运营商，针对现有骨干网容量不足的情况，普遍建设了所谓的 “第二平面”。“第二平面”属于扩容，并不是新建独立的第二张网络。&lt;/p&gt;
 &lt;p&gt;除了上述骨干网之外，我们国家还有几张针对特定用户的骨干网，分别如下：&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623555614338.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1623555614338.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 ">大话中国骨干网</a>
       </div>
       
       <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://blog.gd1214b.icu/post/F2_C5EVQh/"" data-c="
+        <a class="result-title" style="opacity: 0;" href="https://post/F2_C5EVQh/"" data-c="
           &lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
 &lt;p&gt;由于众所周知的原因，GitHub在中国大陆地区受到的干扰严重，大部分情况下根本无法连接，这也导致Gridea的同步失败问题。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623391923562.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1623391923562.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;h1 id=&#34;解决方案&#34;&gt;解决方案&lt;/h1&gt;
 &lt;p&gt;通常的解决方案是通过代理服务器连接，但由于大部分的代理软件（如v2rayN等），只能更改系统的代理设置，，像Gridea这些不遵守系统代理设置的软件，无法通过代理服务器连接。&lt;br&gt;
 下面介绍一种本人亲测有效的方法, 这种方法的基本原理是用GitHub Desktop将Gridea生成的网页源代码手动push到GitHub上。&lt;/p&gt;
@@ -5154,11 +5154,11 @@ navbar:
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;点击 Sign into GitHub.com&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623481745688.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1623481745688.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;在浏览器里登陆你的GitHub账号&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623481982934.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1623481982934.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;第四步-清空gridea-配置目录下ouput文件夹里的所有内容&#34;&gt;第四步 清空Gridea 配置目录下ouput文件夹里的所有内容&lt;/h2&gt;
@@ -5166,18 +5166,18 @@ navbar:
 &lt;p&gt;需要清空ouput文件夹里的所有内容的原因是GitHub Desktop无法克隆仓库到非空文件夹中，这一步不会影响你的博客数据。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;strong&gt;注意output文件夹不要删除&lt;/strong&gt;&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623482115749.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1623482115749.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;第五步-在github-desktop中克隆你的博客仓库&#34;&gt;第五步 在GitHub Desktop中克隆你的博客仓库&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623482247255.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;p&gt;&lt;img src=&#34;https:////post-images/1623482247255.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 注意目录要选择Gridea 配置目录下ouput文件夹&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623482322654.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1623482322654.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;第六步-同步gridea&#34;&gt;第六步 同步Gridea&lt;/h2&gt;
 &lt;p&gt;在Gridea中依次点击 远程 &amp;gt; 检测远程连接 &amp;gt; 同步&lt;br&gt;
 这一步无所谓是否同步成功.&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623482746893.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1623482746893.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;第七步-同步到github上&#34;&gt;第七步 同步到GitHub上&lt;/h2&gt;
 &lt;p&gt;在GitHub Desktop 中点击 Pushu origin&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623482930640.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1623482930640.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 等候完成即可。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;根据评论区中某匿名网友的提醒，有change files的话需要先点击左下角的Commit，才会出现第七步截图里的push origin。&lt;/p&gt;
@@ -5188,7 +5188,7 @@ navbar:
       </div>
       
       <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://blog.gd1214b.icu/post/P9MODAcdP/"" data-c="
+        <a class="result-title" style="opacity: 0;" href="https://post/P9MODAcdP/"" data-c="
           &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;请先阅读本站的免责声明:&lt;a href=&#34;https://blog.gd1214b.icu/post/disclaimers/&#34;&gt;https://blog.gd1214b.icu/post/disclaimers/&lt;/a&gt;&lt;/strong&gt;&lt;br&gt;
 &lt;strong&gt;请遵循当地法律使用，如您有违反当地法律造成的责任，本站拒不承担.&lt;/strong&gt;&lt;/p&gt;
@@ -5198,10 +5198,10 @@ navbar:
 &lt;h1 id=&#34;配置cloudflare反向代理&#34;&gt;配置CloudFlare反向代理&lt;/h1&gt;
 &lt;h2 id=&#34;1&#34;&gt;1.&lt;/h2&gt;
 &lt;p&gt;首先登陆&lt;a href=&#34;https://dash.cloudflare.com/&#34;&gt;CloudFlare官网&lt;/a&gt;，然后点击 右侧的 Workers.&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623238734720.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1623238734720.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;2&#34;&gt;2.&lt;/h2&gt;
 &lt;p&gt;接着点击创建Workers&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623238793121.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1623238793121.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;3&#34;&gt;3.&lt;/h2&gt;
 &lt;p&gt;接着复制下方代码，并添加进去.注意把下面的中文替换成你的Heroku应用名称&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;addEventListener(
@@ -5215,17 +5215,17 @@ navbar:
   }
 )
 &lt;/code&gt;&lt;/pre&gt;
-&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623239005214.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https:////post-images/1623239005214.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
 &lt;h1 id=&#34;使用cloudflare自选ip&#34;&gt;使用Cloudflare自选IP&lt;/h1&gt;
 &lt;p&gt;下载&lt;a href=&#34;https://cdn.jsdelivr.net/gh/gd1214b/files@main/CloudflareST_windows_amd64.zip&#34;&gt;这个&lt;/a&gt;文件,解压之后打开这个程序:&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623239272158.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1623239272158.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 这个程序会对Cloudflare的所有IP进行测速，这可能会需要几分钟的时间。&lt;/p&gt;
 &lt;p&gt;测速结果会保存在应用程序目录下的result.csv文件中&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623239511772.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1623239511772.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 在里面找到延迟最低的IP地址（一般在第一行），把它复制下来，等会会用到。&lt;/p&gt;
 &lt;h1 id=&#34;配置v2ray&#34;&gt;配置V2Ray&lt;/h1&gt;
 &lt;p&gt;打开你的v2ray客户端，添加vmess服务器，按照下面的图填写&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623239829821.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1623239829821.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 除了中文部分以外严格按照图上内容填写。&lt;/p&gt;
 &lt;p&gt;然后保存，就可以愉快地使用v2ray了&lt;/p&gt;
 &lt;hr&gt;
@@ -5241,11 +5241,11 @@ navbar:
       </div>
       
       <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://blog.gd1214b.icu/post/YdM16VZBI/"" data-c="
+        <a class="result-title" style="opacity: 0;" href="https://post/YdM16VZBI/"" data-c="
           &lt;blockquote&gt;
 &lt;p&gt;本文转自:&lt;a href=&#34;https://new.qq.com/omn/20210609/20210609A01G7M00.html&#34;&gt;https://new.qq.com/omn/20210609/20210609A01G7M00.html&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623222085018.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;p&gt;&lt;img src=&#34;https:////post-images/1623222085018.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 人们习以为常的互联网服务，已经成为现代生活必备的基础设施，但在背后网络云服务商集中度不断提升的情况下，其脆弱性也愈发突出。8日全球互联网世界碰到的一次不大不小的“断网”事件，就是这一脆弱性的最新例证。&lt;/p&gt;
 &lt;p&gt;全世界数以亿计互联网用户在当天发现自己无法打开日常访问的网站，在经过约1小时后才逐渐恢复。最终，一家名为Fastly的CDN（content delivery network）服务提供商浮出水面，这家公司表示，由于进行了一项“服务配置”的修改，引发了大规模故障。&lt;/p&gt;
 &lt;p&gt;有意思的是，当人们得知问题出自Fastly这家公司后，其股价在当天出现大涨，因为通过这起事件，投资者意识到，这家总部位于旧金山，员工数不到1000人的“边缘计算云服务”公司，对互联网世界有着举足轻重的影响力。&lt;/p&gt;
@@ -5272,7 +5272,7 @@ navbar:
       </div>
       
       <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://blog.gd1214b.icu/post/disclaimers/"" data-c="
+        <a class="result-title" style="opacity: 0;" href="https://post/disclaimers/"" data-c="
           &lt;blockquote&gt;
 &lt;p&gt;gd1214b&#39;s blog 提醒您：在使用本网站之前，请您务必仔细阅读并透彻理解本声明。一旦您使用本网站，您的使用行为将被视为对本声明全部内容认可。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -5322,7 +5322,7 @@ navbar:
       </div>
       
       <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://blog.gd1214b.icu/post/NbdQntVCG/"" data-c="
+        <a class="result-title" style="opacity: 0;" href="https://post/NbdQntVCG/"" data-c="
           &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;请先阅读本站的免责声明:&lt;a href=&#34;https://blog.gd1214b.icu/post/disclaimers/&#34;&gt;https://blog.gd1214b.icu/post/disclaimers/&lt;/a&gt;&lt;/strong&gt;&lt;br&gt;
 &lt;strong&gt;请遵循当地法律使用，如您有违反当地法律造成的责任，本站拒不承担.&lt;/strong&gt;&lt;/p&gt;
@@ -5339,35 +5339,35 @@ navbar:
 &lt;p&gt;点击下面的链接将v2ray部署到Heroku上：&lt;br&gt;
 &lt;a href=&#34;https://heroku.com/deploy?template=https://github.com/libsgh/v2ray-heroku.git&#34;&gt;https://heroku.com/deploy?template=https://github.com/libsgh/v2ray-heroku.git&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;app-name&#34;&gt;App name&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623138897097.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;p&gt;&lt;img src=&#34;https:////post-images/1623138897097.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 应用名称，可随意填写。&lt;/p&gt;
 &lt;h2 id=&#34;choose-a-region&#34;&gt;Choose a region&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623139055193.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;p&gt;&lt;img src=&#34;https:////post-images/1623139055193.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 服务器所在位置，有美国和欧洲两个选择。&lt;/p&gt;
 &lt;h2 id=&#34;protocol&#34;&gt;PROTOCOL&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623139144487.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;p&gt;&lt;img src=&#34;https:////post-images/1623139144487.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 v2ray所使用的协议，可以不用改动。&lt;/p&gt;
 &lt;h2 id=&#34;uuid&#34;&gt;UUID&lt;/h2&gt;
 &lt;p&gt;用户的连接ID，必须填写，可在这里随机生成一个：&lt;a href=&#34;https://1024tools.com/uuid&#34;&gt;https://1024tools.com/uuid&lt;/a&gt;&lt;br&gt;
 (只需复制一个即可，千万要注意保存)。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623139189773.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1623139189773.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ws_path&#34;&gt;WS_PATH&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623139413528.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;p&gt;&lt;img src=&#34;https:////post-images/1623139413528.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 websocket路径,可以不用改动。&lt;/p&gt;
 &lt;h2 id=&#34;进行部署&#34;&gt;进行部署&lt;/h2&gt;
 &lt;p&gt;点击最后的“Deploy app”即可。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623139548540.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1623139548540.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 这里可能会需要一点时间，看到下面的界面就说明部署成功了：&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623139649895.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1623139649895.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 打开网页：https://app-name.herokuapp.com/ray (&lt;strong&gt;将app name替换为你在第一部中填写的名称&lt;/strong&gt;)如果显示Bad Request 则说明v2ray服务端部署就绪。&lt;/p&gt;
 &lt;h1 id=&#34;客户端配置&#34;&gt;客户端配置&lt;/h1&gt;
 &lt;p&gt;这里以windows端的v2rayN(下载地址:&lt;a href=&#34;https://github.com/2dust/v2rayN/releases&#34;&gt;https://github.com/2dust/v2rayN/releases&lt;/a&gt;)为例，其他客户端配置方法类似。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623140960527.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1623140960527.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 请严格按照以上信息填写，否则可能无法连接。&lt;/p&gt;
 &lt;p&gt;到这一步你的v2ray应该已经部署好了，如果还是无法连接的话可以在下方的评论区中提出问题。&lt;/p&gt;
 &lt;h1 id=&#34;故障排除&#34;&gt;故障排除&lt;/h1&gt;
 &lt;h2 id=&#34;请确保v2rayn的代理已打开&#34;&gt;请确保v2rayN的代理已打开&lt;/h2&gt;
-&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1626343819487.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https:////post-images/1626343819487.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
 &lt;h2 id=&#34;请确保你的电脑时间准确&#34;&gt;请确保你的电脑时间准确&lt;/h2&gt;
 &lt;p&gt;与北京时间相差不超过30秒：&lt;br&gt;
 &lt;a id=&#34;time_is_link&#34; rel=&#34;nofollow&#34; style=&#34;font-size:36px&#34;&gt;北京时间:&lt;/a&gt;&lt;br&gt;
@@ -5379,13 +5379,13 @@ time_is_widget.init({China_z43d:{}});
 &lt;h1 id=&#34;其他说明&#34;&gt;其他说明&lt;/h1&gt;
 &lt;h2 id=&#34;伪装首页3d元素周期表&#34;&gt;伪装首页（3D元素周期表）&lt;/h2&gt;
 &lt;p&gt;请求/，返回3D元素周期表&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623156776166.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1623156776166.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;html5测速&#34;&gt;HTML5测速&lt;/h2&gt;
 &lt;p&gt;请求/speedtest/，返回html5-speedtest测速页面&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623156810883.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1623156810883.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;文件下载速度测试&#34;&gt;文件下载速度测试&lt;/h2&gt;
 &lt;p&gt;请求/test/，返回文件列表,可用于文件下载速度测试&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623156875631.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1623156875631.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;h1 id=&#34;致谢&#34;&gt;致谢&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/libsgh/v2ray-heroku&#34;&gt;v2ray-heroku&lt;/a&gt;是github上的一个开源项目，本文部署时用到了其中的源代码。&lt;/li&gt;
@@ -5394,7 +5394,7 @@ time_is_widget.init({China_z43d:{}});
       </div>
       
       <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://blog.gd1214b.icu/post/h7Wc7SF8X/"" data-c="
+        <a class="result-title" style="opacity: 0;" href="https://post/h7Wc7SF8X/"" data-c="
           &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;请先阅读本站的免责声明:&lt;a href=&#34;https://blog.gd1214b.icu/post/disclaimers/&#34;&gt;https://blog.gd1214b.icu/post/disclaimers/&lt;/a&gt;&lt;/strong&gt;&lt;br&gt;
 &lt;strong&gt;请遵循当地法律使用，如您有违反当地法律造成的责任，本站拒不承担.&lt;/strong&gt;&lt;/p&gt;
@@ -5404,10 +5404,10 @@ time_is_widget.init({China_z43d:{}});
 &lt;h1 id=&#34;教程&#34;&gt;教程&lt;/h1&gt;
 &lt;h2 id=&#34;1&#34;&gt;1&lt;/h2&gt;
 &lt;p&gt;打开&lt;a href=&#34;https://dash.cloudflare.com/&#34;&gt;Cloudflare&lt;/a&gt;，登录CLoudflare账户。（Cloudflare支持中文界面，操作前可先将界面语言调换只中文）；&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623119946925.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1623119946925.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;2&#34;&gt;2&lt;/h2&gt;
 &lt;p&gt;创建Worker实例（创建前还要配置一下，这里就不多说了，可以根据自己的需求进行选择，免费的一天可以处理十万请求，正常来说很够用）；&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623119975841.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1623119975841.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;3&#34;&gt;3&lt;/h2&gt;
 &lt;p&gt;将以下代码复制到左侧脚本框中；&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&#39;use strict&#39;
@@ -5701,19 +5701,19 @@ async function parseYtVideoRedir(urlObj, newLen, res) {
   return urlObj
 }
 &lt;/code&gt;&lt;/pre&gt;
-&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623120092067.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https:////post-images/1623120092067.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
 &lt;h2 id=&#34;4&#34;&gt;4&lt;/h2&gt;
 &lt;p&gt;点击保存并部署即可。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623120198254.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1623120198254.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;5&#34;&gt;5&lt;/h2&gt;
 &lt;p&gt;点击这里即可访问你搭建的反向代理网站:&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623120299391.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1623120299391.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 如果你在搭建过程中遇到任何问题, 欢迎在下方的评论区里留言.&lt;/p&gt;
 ">使用Cloudflare Worker搭建反向代理</a>
       </div>
       
       <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://blog.gd1214b.icu/post/BS6mLI2Ud/"" data-c="
+        <a class="result-title" style="opacity: 0;" href="https://post/BS6mLI2Ud/"" data-c="
           &lt;blockquote&gt;
 &lt;p&gt;本文转自:&lt;a href=&#34;https://www.zhihu.com/question/460776718/answer/1911149556&#34;&gt;https://www.zhihu.com/question/460776718/answer/1911149556&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -5722,7 +5722,7 @@ async function parseYtVideoRedir(urlObj, newLen, res) {
 &lt;p&gt;形势倒逼至此，已是矛盾迫近临界之态。&lt;/p&gt;
 &lt;h1 id=&#34;&#34;&gt;&lt;/h1&gt;
 &lt;p&gt;很多油头粉面的食肉者忍不住指责或阴阳怪气的内涵当代年轻人：“不热爱劳动、不热爱奋斗！”&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623030779063.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1623030779063.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 这真的是对青年群体最恶毒的污蔑了，必须首先讨论清楚劳动的问题。&lt;/p&gt;
 &lt;p&gt;马克思认为，“劳动本身是一种自由自觉的实践活动，人之所以为人，而非动物，很重要的一点就在于有自觉性的劳动，这是人的本质属性之一。”&lt;/p&gt;
 &lt;p&gt;劳动是无罪的，乃至是光荣的，我们无产阶级甚至还有自己专门的节日：五一劳动节。&lt;/p&gt;
@@ -5743,16 +5743,16 @@ async function parseYtVideoRedir(urlObj, newLen, res) {
 &lt;p&gt;如马克思所言：“劳动的异化性质明显的表现是：只要肉体的强制或其他强制一旦停止，人们就会像逃避鼠疫那样逃避劳动。异化的劳动，仅仅是为了生存的牺牲与折磨。”&lt;/p&gt;
 &lt;p&gt;这就是资本家“996是福报”、“奋斗理所应当”洗脑恶论的来源。&lt;/p&gt;
 &lt;p&gt;昨夜，共青团中央官博迫于某些压力，不得不亲自下场就“躺平”发声。它的意图很明显：想爹味十足地教育一番年轻人，扭转一下舆论被动局面。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623030826024.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1623030826024.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 然而，不出意料地评论区翻了车：&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623030838006.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1623030838006.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 可以看看共青团的这幅海报，它列举的都是什么人：救灾救难的人民子弟兵，风雨无阻的边防戍边战士，舍生忘死的一线抗疫英雄——这些人都有什么共同点？&lt;/p&gt;
 &lt;p&gt;他们是为集体而拼搏、为人民大众而献身、为最广泛的国家利益而奋斗！&lt;/p&gt;
 &lt;p&gt;这就牵扯出了一个讨论、也是年轻人纷纷躺平的根源性缘由：我们是在为谁奋斗？是为包括自己在内的国家集体，还是为了某一个两个的资本家？&lt;/p&gt;
 &lt;p&gt;前者，叫做“劳动人民身先士卒当家作主”；后者，叫做“被剥削阶层甘为奴役甘为仆狗”。&lt;/p&gt;
 &lt;p&gt;所谓“宁当国家一颗螺丝钉，不做资本家的一株韭”。&lt;/p&gt;
 &lt;p&gt;观察者网马前卒曾有鼓吹：“拒绝加班，无产阶级就和先进生产力分离了”、“无产阶级如果不对自己狠一点，是没有未来的！”&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623030868215.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1623030868215.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 这种论调的错误在于，它偷换乃至隐藏了“剥削剩余价值”的概念。&lt;/p&gt;
 &lt;p&gt;说白了就是：无产阶级所谓的“对自己狠一点”，这种“狠一点”所额外创造的利润，归了谁？&lt;/p&gt;
 &lt;p&gt;是归了身心俱疲（某些肝病肾病现在在996白领阶层中越来越低龄化）的自己，还是归了端坐塔尖、每天只靠着剪息票就能每秒钟净入百万的资本持有人？&lt;/p&gt;
@@ -5761,7 +5761,7 @@ async function parseYtVideoRedir(urlObj, newLen, res) {
 &lt;p&gt;你被人勒令“拼命奋斗”，可是你在为谁奋斗？&lt;/p&gt;
 &lt;p&gt;年轻人自我标榜“躺平”，这实为一种无奈。&lt;/p&gt;
 &lt;p&gt;正如如果没有“骑手质疑饿了么变相降加班奖励”、“饿了么被曝为留骑手过春节而画大饼”、“外卖员吐槽1000元订单配送费仅5元”、“饿了么猝死员工被爆每天被扣3元”…诸如此类种种的极端压缩成本、拔高强榨剩余价值的行为，会有今年2月份饿了么骑手们的全国性大罢工吗？他们会去停止劳动、停止生产吗？&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623030886334.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1623030886334.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 你若问饿了么为什么不多招点人、不停止众包模式而完善劳资关系（匹配所有的险金社保）？&lt;/p&gt;
 &lt;p&gt;人家资本家面对这种问题，估计能翻你一天一夜的白眼。&lt;/p&gt;
 &lt;p&gt;过去不久的货拉拉事件同理，你质问货拉拉平台为何不安装摄像头、不提高安全维护成本，货拉拉大boss估计要被逗乐：“还不如等到死了人，我届时再赔个钱划算呢！”&lt;/p&gt;
@@ -5769,16 +5769,16 @@ async function parseYtVideoRedir(urlObj, newLen, res) {
 &lt;p&gt;包括汽车巨头福特公司，曾经有过内部计算，没有投入安全设备的话，公司因为赔偿事故遇难的损失为49.5 million，而投入安全设备、修复安全隐患的总成本则为$137 million——资本果断选择了前者。&lt;/p&gt;
 &lt;p&gt;同理，饿了么同样不会“傻了吧唧”地多招骑手、多发奖金、多缴社保，它必须把骑手数量控制在一个“合理”的区间，既能让骑手不得不疯狂闯红灯，又能让闯红灯带来的死人风险被降到一个资本可接受的赔偿范围，最终实现GMV和利润的最大化。&lt;/p&gt;
 &lt;p&gt;大不了，还可以发明一个“请消费者宽容骑手”的戏码，发动无产阶级斗无产阶级，而资本则立于不败之地、两头坐收渔利。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623030925914.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1623030925914.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 如此局面下，被逼到悬崖边走投无路的骑手们，凭什么不能罢工？凭什么不能“躺平”？&lt;/p&gt;
 &lt;p&gt;躺平，有错乎？&lt;/p&gt;
 &lt;h1 id=&#34;-3&#34;&gt;&lt;/h1&gt;
 &lt;p&gt;昨夜共青团“教育无果”并被迫关闭评论区之后，今天又弄了个“补救措施”，继续想运用偷换概念的招数为“镇压躺平”站台：&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623030946319.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1623030946319.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 我看到这一幕倒是内心毫无波澜，因为这一招率先玩出来的是谁？是他共青团中央等官媒吗？当然不。&lt;/p&gt;
 &lt;p&gt;不是别人，正是996福报论的发明者，马云。&lt;/p&gt;
 &lt;p&gt;早在2018年时，马云先生就创物垂范地为社会贡献了“996是福报”的伟大理论，从此辩论激荡绵延至今不止。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623030964909.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1623030964909.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 甚至马云先生自己都已经在人生滑铁卢中思考过往，某些人士依旧拿这位“马粑粑”的言论当做真理，乐此不疲地洗脑青年一代。&lt;/p&gt;
 &lt;p&gt;昨天共青团中央把钱学森等共和国国士大家搬出来的行为，和三年前的马云别无二致：直接把“国家”摆上辩论台，意图用政治正确来打压打工人：“两弹一星、核潜艇都是科学家们用996干出来的，你们这些年轻人还有不努力的理由？”&lt;/p&gt;
 &lt;p&gt;这叫杀人不见血。&lt;/p&gt;
@@ -5795,7 +5795,7 @@ async function parseYtVideoRedir(urlObj, newLen, res) {
 &lt;h1 id=&#34;-4&#34;&gt;&lt;/h1&gt;
 &lt;p&gt;躺平的表象是一种自暴自弃，但深源则是困于阶级固化的无力感。&lt;/p&gt;
 &lt;p&gt;我微博有粉丝的这样一条评论：&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623030993658.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1623030993658.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 这种想法，实质与前文提到的马前卒的论调是极为相似的，都是理想主义的想当然所思。&lt;/p&gt;
 &lt;p&gt;现今，「垄断」的作用，难道看不见吗？&lt;/p&gt;
 &lt;p&gt;现在真要聚集一伙人，也开发一个外卖app（这不是什么难事），那结果只能是：你还没占领1/5你所在小城市的市场、日活量还没达到百人，现有的巨头财阀就会闻着味儿一手胡萝卜一手狼牙棒得来找你谈判了——“兄弟，要么我收购你，要么我大量发行代金券玩死你，你选一个吧！”&lt;/p&gt;
@@ -5813,17 +5813,17 @@ async function parseYtVideoRedir(urlObj, newLen, res) {
 &lt;p&gt;五年前，外卖app是科技前卒；五年后，外卖功能竟然还是它的主业——用来为其金融信贷聚集用户的主业，这已经说明其科技性在下降了。&lt;/p&gt;
 &lt;p&gt;布雷弗曼说过：“技术的进步非但没有改变无产阶级的命运，反而成为了限制无产阶级的新枷锁。”&lt;/p&gt;
 &lt;p&gt;所以即便不说阶级情感，就是从生产力角度，「垄断」这种巨头形态应该被抛弃和消灭。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623031009807.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1623031009807.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 否则，就永远会造成“打工人必须匍匐在资本家胯下奋斗”、“不奋斗就没有未来”这种看似挺有道理、实际完全是颠倒社会主义分配原则的就业生态。&lt;/p&gt;
 &lt;h1 id=&#34;-5&#34;&gt;&lt;/h1&gt;
 &lt;p&gt;曾在微博见有一著名油腻食肉者的“镇压躺平”言论：&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623031035589.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1623031035589.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 年轻时好好忍着被剥削，这样待到年老油腻时就可以去剥削别人了？&lt;/p&gt;
 &lt;p&gt;即：安心做一个被剥削者的目的，是为了有朝一日可以去当一个剥削者？&lt;/p&gt;
 &lt;p&gt;老老实实地“躺平”，就可以自然而然地“躺赢”吗？&lt;/p&gt;
 &lt;p&gt;这种思维，其实就是“吃得苦中苦，方为人上人”这句改开之后极其政治正确的话。&lt;/p&gt;
 &lt;p&gt;“人上人”，人身之上亦有他人，这便构筑了一个阶级分明的压迫体系：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623031049993.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;p&gt;&lt;img src=&#34;https:////post-images/1623031049993.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 在这样的油腻小脑中，这种阶级分明的社会状态是非常光伟正的。&lt;/p&gt;
 &lt;p&gt;正如所言“20来岁有个屁的剩余价值”这种直接把“价值”与“剩余价值”偷换概念的蛮语，用意自然是为了叫嚷“加班无罪”、“跪舔有理”，进而对“躺平”进行镇压和肃反。&lt;/p&gt;
 &lt;p&gt;恐怕1886年芝加哥大罢工之前，工人每天劳作15个小时以上这种情况，在食肉者眼里皆是“正确”的、“合理”的。&lt;/p&gt;
@@ -5833,13 +5833,13 @@ async function parseYtVideoRedir(urlObj, newLen, res) {
 &lt;p&gt;那么什么是“高级经理人”？&lt;/p&gt;
 &lt;p&gt;列宁指出：食利阶层往往会拿出一部分利润收买无产阶级中的精英分子，使他们“资产阶级化”，成为资产阶级在无产阶级中的“代理人”。&lt;/p&gt;
 &lt;p&gt;这就是我们所说的“工贼”：&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623031068063.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1623031068063.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 常见于今天体制内的中层油腻小老头，和体制外市场中的财阀中层领导、中小企业老板，以及一大堆精神资本家。&lt;/p&gt;
 &lt;p&gt;这些人往往会在既得利益的体系中由于异常会舔（今天的话术叫做情商高、眼头活、会来事；本质则是比较擅于抛弃自己原本的阶级属性）而得到一丝丝高于底层工农的甜头。&lt;/p&gt;
 &lt;p&gt;于是他们便会摇身一变、为身处的既得利益体系以及这份体系事实上真正的顶层吸益人，大肆摇旗呐喊、奔走鼓吹——仿佛自己也是这个体系的顶端话事人一般，而忽略了自己其实也是一个被剥削者、也有太多需要去点头哈腰的时刻的事实——不论是体制内的权力程序，还是体制外的市场程序。&lt;/p&gt;
 &lt;p&gt;正如许多小企业主，平时对员工颐指气使、鼓吹966奋斗论，却忘了自己完全也是市场语境下的被剥削者、在公司背后的投资人面前也得装孙子的现实。&lt;/p&gt;
 &lt;p&gt;还是鲁迅先生警示被压榨的年轻人警示得好哇：“做奴隶虽然不幸，但并不可怕，因为知道挣扎，毕竟还有挣脱的希望；若是从奴隶生活中寻出美来，赞叹、陶醉，就是万劫不复的奴才了！”&lt;/p&gt;
-&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623031090165.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https:////post-images/1623031090165.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
 &lt;h1 id=&#34;-6&#34;&gt;&lt;/h1&gt;
 &lt;p&gt;附一段【毛泽东警卫员李银桥 回忆录片段】&lt;/p&gt;
 &lt;p&gt;毛主席转身，终于望住我：“你是哪里人呢？”&lt;/p&gt;
@@ -5855,12 +5855,12 @@ async function parseYtVideoRedir(urlObj, newLen, res) {
 &lt;p&gt;“我也喜欢母亲。她也信佛，心地善良。小时候我还跟她一起去庙里烧过香呢。后来我不信了。你磕多少头，中国也强不起来，人民还是受苦。”&lt;/p&gt;
 &lt;p&gt;主席顿一顿，“磕头不如造反！”&lt;/p&gt;
 &lt;p&gt;……………&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623031110876.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1623031110876.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 “人人生而平等”这句话有没有问题？没问题，但它必须还有一个配套的下半句，叫做“造反有理”。&lt;/p&gt;
 &lt;p&gt;也就是毛泽东1939年在延安说的：“马克思主义的道理千条万绪，归根结底就是一句话：‘造反有理’。几千年来总是说压迫有理、剥削有理，而造反无理。自从马克思主义出来，就把这个旧案翻过来了，这是个大功劳，这个道理是无产阶级从斗争中得来的，而马克思作了结论。根据这个道理，于是就反抗，就斗争，就干社会主义。”&lt;/p&gt;
 &lt;p&gt;没有了“造反有理”这个配套的后缀，“人人生而平等”就成了一句扯淡的空谈，且反而会成为统治阶层洗脑下层的利器，割草都是割得润物无声。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623031128736.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1623031138198.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1623031128736.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1623031138198.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 刘建宏曾直言不讳地说过这样一段话：“你说我们是利益既得者吗？我想我们是。我们之前的人相对来说好动摇，他虽然挡在你面前，你稍微动一动，他就让位了。但是后面的人要想让我去让位，不是很容易。这个事我跟（白）岩松探讨过很长时间，我说你看到你后面的威胁了吗？他说真没看到，我说，我也没看到。”&lt;/p&gt;
 &lt;p&gt;那么此时，羸弱的“草”们所能做的，也就是“躺平”了。&lt;/p&gt;
 &lt;h1 id=&#34;跋&#34;&gt;跋&lt;/h1&gt;
@@ -5879,7 +5879,7 @@ async function parseYtVideoRedir(urlObj, newLen, res) {
       </div>
       
       <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://blog.gd1214b.icu/post/myyQXbG7P/"" data-c="
+        <a class="result-title" style="opacity: 0;" href="https://post/myyQXbG7P/"" data-c="
           &lt;p&gt;最近著名中文匿名博主【编程随想】自5月9日起长时间静默，疑似被捕，在海内外中文舆论圈中引发轩然大波。本文列出了几个编程随想的博客备份.&lt;/p&gt;
 &lt;h1 id=&#34;编程随想的博客备份&#34;&gt;编程随想的博客备份&lt;/h1&gt;
 &lt;h2 id=&#34;在线备份&#34;&gt;在线备份&lt;/h2&gt;
@@ -5899,7 +5899,7 @@ async function parseYtVideoRedir(urlObj, newLen, res) {
       </div>
       
       <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://blog.gd1214b.icu/post/SbNCYJUBm/"" data-c="
+        <a class="result-title" style="opacity: 0;" href="https://post/SbNCYJUBm/"" data-c="
           &lt;blockquote&gt;
 &lt;p&gt;本文转自:&lt;a href=&#34;https://program-think.blogspot.com/2010/02/introduce-digital-certificate-and-ca.html&#34;&gt;https://program-think.blogspot.com/2010/02/introduce-digital-certificate-and-ca.html&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -5939,7 +5939,7 @@ async function parseYtVideoRedir(urlObj, newLen, res) {
 &lt;h2 id=&#34;啥是根证书&#34;&gt;啥是【根证书】？&lt;/h2&gt;
 &lt;p&gt;“根证书”的洋文叫“root certificate”。为了说清楚根证书是咋回事，再来看个稍微复杂点的例子。&lt;br&gt;
 　　假设 C 证书信任 A 和 B；然后 A 信任 A1 和 A2；B 信任 B1 和 B2。则它们之间，构成如下的一个树形关系（一个倒立的树）。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1622197859502.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1622197859502.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;p&gt;处于最顶上的树根位置的那个证书，就是“根证书”。除了根证书，其它证书都要依靠上一级的证书，来证明自己。那谁来证明“根证书”可靠捏？实际上，根证书自己证明自己是可靠滴（或者换句话说，根证书是不需要被证明滴）。&lt;br&gt;
 　　聪明的同学此刻应该意识到了：根证书是整个证书体系安全的根本。所以，如果某个证书体系中，根证书出了问题（不再可信了），那么所有被根证书所信任的其它证书，也就不再可信了。这个后果是相当相当滴严重（简直可以说是灾难性的）。&lt;/p&gt;
 &lt;h1 id=&#34;证书有啥用&#34;&gt;证书有啥用？&lt;/h1&gt;
@@ -5949,24 +5949,24 @@ async function parseYtVideoRedir(urlObj, newLen, res) {
 　　但是，千万【不要】以为，HTTPS 协议有了加密，就可高枕无忧了。俺再举一个例子来说明，光有加密是不够滴。假设有一个坏人，搞了一个假的网银的站点，然后诱骗你上这个站点。假设你又比较单纯，一不留神，就把你的帐号，口令都输入进去了。那这个坏蛋的阴谋就得逞鸟。&lt;br&gt;
 　　为了防止坏人这么干，HTTPS 协议除了有加密的机制，还有一套证书的机制。通过证书来确保，某个站点确实就是某个站点。&lt;br&gt;
 　　有了证书之后，当你的浏览器在访问某个 HTTPS 网站时，会验证该站点上的 CA 证书（类似于验证介绍信的公章）。如果浏览器发现该证书没有问题（证书被某个根证书信任、证书上绑定的域名和该网站的域名一致、证书没有过期），那么页面就直接打开；否则的话，浏览器会给出一个警告，告诉你该网站的证书存在某某问题，是否继续访问该站点？为了形象起见，下面给出 IE 和 Firefox 的抓图：&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1622197913198.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1622197930063.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1622197913198.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1622197930063.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;p&gt;大多数知名的网站，如果用了 HTTPS 协议，其证书都是可信的（也就不会出现上述警告）。所以，今后你如果上某个知名网站，发现浏览器跳出上述警告，你就要小心啦！&lt;/p&gt;
 &lt;h2 id=&#34;验证某文件是否可信是否被篡改&#34;&gt;验证某文件是否可信（是否被篡改）&lt;/h2&gt;
 &lt;p&gt;证书除了可以用来验证某个网站，还可以用来验证某个文件是否被篡改。具体是通过证书来制作文件的数字签名。制作数字签名的过程太专业，咱就不说了。后面专门告诉大家如何验证文件的数字签名。考虑到大多数人用 Windows 系统，俺就拿 Windows 的例子来说事儿。&lt;br&gt;
 　　比如，俺手头有一个 Firefox 的安装文件（带有数字签名）。当俺查看该文件的属性，会看到如下的界面。眼神好的同学，会注意到到上面有个“数字签名”的标签页。如果没有出现这个标签页，就说明该文件没有附带数字签名。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1622197973986.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1622197973986.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;p&gt;选择该标签页，看到如下界面。&lt;br&gt;
 　　顺便说一下，某些数字签名中没有包含“邮件地址”，那么这一项会显示“不可用”；同样的，某些数字签名没有包含“时间戳”，也会显示“不可用”。不要紧张，这里显示的“不可用”跟数字签名的有效性【没关系】。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1622197996715.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1622197996715.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;p&gt;一般来说，签名列表中，有且仅有一个签名。选中它，点“详细信息”按钮。跳出如下界面：&lt;br&gt;
 　　通常这个界面会显示一行字：“该数字签名正常”（图中红圈标出）。如果有这行字，就说明该文件从出厂到你手里，中途没有被篡改过（是原装滴、是纯洁滴）。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1622198010703.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1622198010703.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;p&gt;如果该文件被篡改过了（比如，感染了病毒、被注入木马），那么对话框会出现一个警告提示“该数字签名无效”（图中红圈标出）。界面如下：&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1622198028435.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1622198028435.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 　　不论签名是否正常，你都可以点“查看证书”按钮。这时候，会跳出证书的对话框。如下：&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1622198041625.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1622198052027.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1622198041625.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1622198052027.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;p&gt;从后一个界面，可以看到俺刚才说的证书信任链。图中的信任链有3层：&lt;br&gt;
 第1层是根证书（Thawte Premium Server CA）&lt;br&gt;
 第2层是 Thawte 专门用来签名的证书&lt;br&gt;
@@ -5977,7 +5977,7 @@ async function parseYtVideoRedir(urlObj, newLen, res) {
       </div>
       
       <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://blog.gd1214b.icu/post/ee3pG-Qog/"" data-c="
+        <a class="result-title" style="opacity: 0;" href="https://post/ee3pG-Qog/"" data-c="
           &lt;blockquote&gt;
 &lt;p&gt;本文转自:&lt;a href=&#34;https://program-think.blogspot.com/2018/10/Comparison-of-DNS-Protocols.html&#34;&gt;https://program-think.blogspot.com/2018/10/Comparison-of-DNS-Protocols.html&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -6112,7 +6112,7 @@ IP
 　　相比 DoT，DoH 还有一个小缺点——由于 DoH 比 DoT 多了一层（请对比两者的协议栈），所以在性能方面，DoH 会比 DoT 略差。为啥说这是个【小】缺点捏？因为域名的查询并【不】频繁，而且客户端软件可以很容易地对域名的查询结果进行【缓存】（以降低查询次数）。所以 DoH 比 DoT 性能略差，无伤大雅。&lt;/p&gt;
 &lt;h1 id=&#34;4种协议的综合对照表&#34;&gt;4种协议的综合对照表&lt;/h1&gt;
 &lt;p&gt;为了给列位看官一个直观的印象，放一个综合的对照表。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1621680391731.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1621680391731.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;h1 id=&#34;为啥-dns-over-https-更有前途谈谈俺个人观点&#34;&gt;为啥 DNS over HTTPS 更有前途？——谈谈俺个人观点&lt;/h1&gt;
 &lt;p&gt;接着来聊一下：4个协议中，谁的前景最看好？（以下是俺个人观点，仅供参考）&lt;/p&gt;
 &lt;h2 id=&#34;首先排除dnssec&#34;&gt;首先【排除】DNSSEC&lt;/h2&gt;
@@ -6172,8 +6172,8 @@ IP
       </div>
       
       <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://blog.gd1214b.icu/post/UN4IHs4TZ/"" data-c="
-          &lt;p&gt;&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1621149248887.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+        <a class="result-title" style="opacity: 0;" href="https://post/UN4IHs4TZ/"" data-c="
+          &lt;p&gt;&lt;img src=&#34;https:////post-images/1621149248887.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 当我们打开网站时也许不会去留意网站前面的HTTP是怎么来的。但是它毫无疑问在网络中有着举足轻重的地位。本文从起源到发展，详说HTTP从1到3的演变。&lt;/p&gt;
 &lt;h1 id=&#34;说在前面&#34;&gt;说在前面&lt;/h1&gt;
 &lt;p&gt;本文不致力于讲完 HTTP 的全部内容，事实上短短的篇幅也不可能讲完。本文也无意于深挖 HTTP 中的某一点，这是像 《HTTP 权威指南》或者是 RFC 协议做的事。&lt;/p&gt;
@@ -6285,7 +6285,7 @@ IP
 &lt;h1 id=&#34;改进与-http2&#34;&gt;改进与 HTTP2&lt;/h1&gt;
 &lt;p&gt;回到 HTTP 本身。在很长一段时间里，HTTP/1.1 已经足够好了（确实是，现在仍应用最为广泛），但是，Web 不断变化的需求使得我们需要一个更好更合适的协议。&lt;/p&gt;
 &lt;p&gt;HTTP/1.1 自从 1997 年发布以来，我们已经使用 HTTP/1.x 相当长一段时间了。但随着互联网近十年爆炸式的发展，从当初网页内容以文本为主，到现在以富媒体（如图片、声音、视频）为主，而且对页面内容实时性高要求的应用越来越多（比如聊天、视频直播），所以当时协议规定的某些特性，已经逐渐无法满足现代网络的需求了。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1621149840419.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1621149840419.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 如果你有仔细观察，那些最流行的网站首页所需要下载资源的话，会发现一个非常明显的趋势。近年来加载网站首页需要下载的数据量在逐渐增加，并已经超过了 2100K。但在这里我们更关心的是：平均每个页面为了完成显示与渲染所需要下载的资源数也已经超过了 100 个。&lt;/p&gt;
 &lt;p&gt;基于此，在 2010 年到 2015 年，谷歌通过实践一个实验性的 SPDY 协议，证明了一个在客户端和服务器端交换数据的另类方式。其收集了浏览器和服务器端的开发者的焦点问题，明确了响应数量的增加和解决复杂的数据传输。在启动 SPDY 这个项目时预设的目标是：&lt;/p&gt;
 &lt;ul&gt;
@@ -6296,7 +6296,7 @@ IP
 &lt;li&gt;收集真实性能数据，验证这个实验性协议是否有效。为了达到降低目标，减少页面加载时间的目标，SPDY 引入了一个新的二进制分帧数据层，以实现多向请求和响应、优先次序、最小化及消除不必要的网络延迟，目的是更有效地利用底层 TCP 连接。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;HTTP/1.1 有两个主要的缺点：安全不足和性能不高，由于背负着 HTTP/1.x 庞大的历史包袱，所以协议的修改，兼容性是首要考虑的目标，否则就会破坏互联网上无数现有的资产。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1621149904461.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1621149904461.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 而如上图所示，SPDY 位于 HTTP 之下，TCP 和 SSL 之上，这样可以轻松兼容老版本的 HTTP 协议同时可以使用已有的 SSL 功能。&lt;/p&gt;
 &lt;p&gt;SPDY 协议在 Chrome 浏览器上证明可行以后，就被当作 HTTP/2 的基础，主要特性都在 HTTP/2 之中得到继承。&lt;/p&gt;
 &lt;p&gt;于是时间来到 2015 年，HTTP/2.0 问世。&lt;/p&gt;
@@ -6324,7 +6324,7 @@ IP
 &lt;p&gt;第二，TCP 的队头阻塞并没有得到彻底解决。我们知道，为了实现多路复用，在 HTTP/2 中多个请求是跑在一个 TCP 管道中的。但当出现了丢包时，HTTP/2 的表现反倒不如 HTTP/1.X 了。因为 TCP 为了保证可靠传输，有个特别的丢包重传机制，丢失的包必须要等待重新传输确认，HTTP/2 出现丢包时，整个 TCP 都要开始等待重传，那么就会阻塞该 TCP 连接中的所有请求。而对于 HTTP/1.1 来说，可以开启多个 TCP 连接，出现这种情况反到只会影响其中一个连接，剩余的 TCP 连接还可以正常传输数据。&lt;/p&gt;
 &lt;p&gt;至此，我们很容易就会想到，为什么不直接去修改 TCP 协议？其实这已经是一件不可能完成的任务了。因为 TCP 存在的时间实在太长，已经充斥在各种设备中，并且这个协议是由操作系统实现的，更新起来非常麻烦，不具备显示操作性。&lt;/p&gt;
 &lt;p&gt;HTTP/3 乘着 QUIC 来了。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1621150022490.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1621150022490.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 HTTP3 是基于 QUIC 的协议，如上图。先说 QUIC，QUIC 协议是 Google 提出的一套开源协议，它基于 UDP 来实现，直接竞争对手是 TCP 协议。QUIC 协议的性能非常好，甚至在某些场景下可以实现 0-RTT 的加密通信。&lt;/p&gt;
 &lt;p&gt;在 Google 关于 QUIC &lt;a href=&#34;https://docs.google.com/document/d/1gY9-YNDNAB1eip-RTPbqphgySwSNSDHLq9D5Bty4FSU/edit&#34;&gt;https://docs.google.com/document/d/1gY9-YNDNAB1eip-RTPbqphgySwSNSDHLq9D5Bty4FSU/edit&lt;/a&gt; 的文件中提到，与 HTTP/2 相比，QUIC 主要具有下列优势：&lt;/p&gt;
 &lt;ul&gt;
@@ -6343,10 +6343,10 @@ HTTP3 是基于 QUIC 的协议，如上图。先说 QUIC，QUIC 协议是 Google
 &lt;p&gt;Pipeline 解决了 TCP 连接浪费的问题，但它自己还存在一些不足之处，也就是所有管道模型都难以避免的队头阻塞问题。&lt;/p&gt;
 &lt;h3 id=&#34;队头阻塞&#34;&gt;队头阻塞&lt;/h3&gt;
 &lt;p&gt;我们再举个简单而且直观的例子，假设加载一个 HTML 一共要请求 10 个资源，那么请求的总时间是每一个资源请求时间的总和。最直观的体验就是，网速越快请求时间越短。然而如果某一个资源的请求被阻塞了（比如 SQL 语句执行非常慢）。但对于客户端来说所有后续的请求都会因此而被阻塞。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1621150146278.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1621150146278.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 队头阻塞（Head of line blocking，下文简称 HOC）说的是当有多个串行请求执行时，如果第一个请求不执行完，后续的请求也无法执行。比如上图中，如果第四个资源的传输花了很久，后面的资源都得等着，平白浪费了很多时间，带宽资源没有得到充分利用。&lt;/p&gt;
 &lt;p&gt;因此，HTTP 协议允许客户端发起多个并行请求，比如在笔者的机器上最多支持六个并发请求。并发请求主要是用于解决 HOC 问题，当有三个并发请求时，情况会变成这样：&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1621150164326.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1621150164326.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 可见虽然第四个资源的请求被阻塞了，但是其他的资源请求并不一定会被阻塞，这样总的来说网络的平均利用率得到了提升。&lt;/p&gt;
 &lt;p&gt;支持并发请求是解决 HOC 问题的一种方案，这句话没有错。但是我们要理解到：“并发请求并非是直接解决了 HOC 的问题，而是尽可能减少 HOC 造成的影响“，以上图为例，HOC 的问题依然存在，只是不会太浪费带宽而已。&lt;/p&gt;
 &lt;p&gt;有读者可能会好奇，为什么不多搞几个并发的 HTTP 请求呢？刚刚说过笔者的电脑最多支持 6 个并发请求，谷歌曾经做过实验，把 6 改成 10，然后尝试访问了三千多个网页，发现平均访问时间竟然还增加了 5% 左右。这是因为一次请求涉及的域名有限，再多的并发 HTTP 请求并不能显著提高带宽利用率，反而会消耗性能。&lt;/p&gt;
@@ -6357,13 +6357,13 @@ HTTP3 是基于 QUIC 的协议，如上图。先说 QUIC，QUIC 协议是 Google
 &lt;h3 id=&#34;tcp-窗口&#34;&gt;TCP 窗口&lt;/h3&gt;
 &lt;p&gt;是不是觉得 SPDY 的多路复用已经够厉害了，解决了队头阻塞问题？很遗憾的是，并没有，而且我可以很肯定的说，只要你还在用 TCP 链接，HOC 就是逃不掉的噩梦，不信我们来看看 TCP 的实现细节。&lt;/p&gt;
 &lt;p&gt;我们知道 TCP 协议会保证数据的可达性，如果发生了丢包或者错包，数据就会被重传。于是问题来了，如果一个包丢了，那么后面的包就得停下来等这个包重新传输，也就是发生了队头阻塞。当然 TCP 协议的设计者们也不傻，他们发明了滑动窗口的概念：&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1621150247344.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1621150247344.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 这样的好处是在第一个数据包（1-1000） 发出后，不必等到 ACK 返回就可以立刻发送第二个数据包。可以看出图中的 TCP 窗口大小是 4，所以第四个包发送后就会开始等待，直到第一个包的 ACK 返回。这样窗口可以向后滑动一位，第五个包被发送。&lt;/p&gt;
 &lt;p&gt;如果第一、二、三个的包都丢失了也没有关系，当发送方收到第四个包时，它可以确信一定是前三个 ACK 丢了而不是数据包丢了，否则不会收到 4001 的 ACK，所以发送方可以大胆的把窗口向后滑动四位。&lt;/p&gt;
 &lt;p&gt;滑动窗口的概念大幅度提高了 TCP 传输数据时抗干扰的能力，一般丢失一两个 ACK 根本没关系。但如果是发送的包丢失，或者出错，窗口就无法向前滑动，出现了队头阻塞的现象。&lt;/p&gt;
 &lt;h2 id=&#34;quic-是如何做的&#34;&gt;QUIC 是如何做的&lt;/h2&gt;
 &lt;p&gt;所以说 HOC 不仅仅在 HTTP 层存在，在 TCP 层也存在，这也正是 QUIC 协议要解决的问题。回顾 SPDY 是如何解决 HOC 的，没错，多路复用（Multiplex）。QUIC 协议也采用了多路复用技术。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1621150282852.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1621150282852.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 UIC 协议基于 UDP 实现，我们知道 UDP 协议只负责发送数据，并不保证数据可达性。这一方面为 QUIC 的多路复用提供了基础，另一方面也要求 QUIC 协议自己保证数据可达性。&lt;/p&gt;
 &lt;p&gt;SPDY 为各个数据包做好标记，指明他们属于哪个 HTTP 请求，至于这些包能不能到达客户端，SPDY 并不关心，因为数据可达性由 TCP 协议保证。既然客户端一定能收到包，那就只要排序、拼接就行了。QUIC 协议采用了多路复用的思想，但同时还得自己保证数据的可达性。&lt;/p&gt;
 &lt;p&gt;TCP 协议的丢包重传并不是一个好想法，因为一旦有了前后顺序，队头阻塞问题将不可避免。而无序的数据发送给接受者以后，如何保证不丢包，不错包呢？这看起来是个不可能完成的任务，不过如果把要求降低成：最多丢一个包，或者错一个包。事情就简单多了，操作系统中有一种存储方式叫 RAID 5，采用的是异或运算加上数据冗余的方式来保证前向纠错（FEC: Forward Error Correcting）。QUIC 协议也是采用这样的思想，这里不再赘述。&lt;/p&gt;
@@ -6377,9 +6377,9 @@ UIC 协议基于 UDP 实现，我们知道 UDP 协议只负责发送数据，并
 &lt;p&gt;因为如果 SYN 握手的包能被传输到应用层，那么现有的防护措施都无法防御泛洪攻击，而且服务端也会因为这些攻击而耗尽内存和 CPU。&lt;/p&gt;
 &lt;p&gt;当然 TCP 快速打开并不是完全不可行的。人们设计了 TFO (TCP Fast Open)，这是对 TCP 的拓展，不仅可以在发送 SYN 时携带数据，还可以保证安全性。&lt;/p&gt;
 &lt;p&gt;TFO 设计了一个 Cookie，它在第一次握手时由 server 生成，Cookie 主要是用来标识客户端的身份，以及保存上次会话的配置信息。因此在后续重新建立 TCP 连接时，客户端会携带 SYN + Cookie + 请求数据，然后不等 ACK 返回就直接开始发送数据。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1621150338682.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1621150338682.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 服务端收到 SYN 后会验证 Cookie 是否有效，如果无效则会退回到三次握手的步骤，如下图所示：&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1621150351416.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1621150351416.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 同时，为了安全起见，服务端为每个端口记录了一个值 PendingFastOpenRequests，用来表示有多少请求利用了 TFO，如果超过预设上限就不再接受。&lt;/p&gt;
 &lt;p&gt;关于 TFO 的优化，可以总结出三点内容:&lt;/p&gt;
 &lt;ul&gt;
@@ -6410,14 +6410,14 @@ UIC 协议基于 UDP 实现，我们知道 UDP 协议只负责发送数据，并
       </div>
       
       <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://blog.gd1214b.icu/post/G2KB6-qOq/"" data-c="
+        <a class="result-title" style="opacity: 0;" href="https://post/G2KB6-qOq/"" data-c="
           &lt;blockquote&gt;
 &lt;p&gt;本文转自:&lt;a href=&#34;https://www.upyun.com/tech/article/577/HTTP%2F3%20%E6%9D%A5%E4%BA%86%EF%BC%8C%E4%BD%A0%E4%BA%86%E8%A7%A3%E5%AE%83%E4%B9%88%EF%BC%9F.html&#34;&gt;https://www.upyun.com/tech/article/577/HTTP%2F3 来了，你了解它么？.html&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;作为我们网上冲浪最为常见，也经常被人忽视的 HTTP 已经更新换代到了 HTTP/3。本文简单明了的带你认识 HTTP/3 的作用。&lt;/p&gt;
 &lt;h1 id=&#34;http3-是什么&#34;&gt;HTTP/3 是什么？&lt;/h1&gt;
 &lt;p&gt;要深入了解 HTTP/3，那首先要知道什么是 HTTP/3。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1621086450147.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1621086450147.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 如上图所示，HTTP/3 是基于 QUIC 的协议。而 QUIC 协议是 Google 提出的一套开源协议，它基于 UDP 来实现，直接竞争对手是 TCP 协议。&lt;/p&gt;
 &lt;p&gt;另外，要聊 HTTP/3，HTTP 的发展历程是怎么也绕不过去的，而且可以讲很久。&lt;/p&gt;
 &lt;h1 id=&#34;http3-的优点及不足&#34;&gt;HTTP/3 的优点及不足&lt;/h1&gt;
@@ -6458,7 +6458,7 @@ UIC 协议基于 UDP 实现，我们知道 UDP 协议只负责发送数据，并
       </div>
       
       <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://blog.gd1214b.icu/post/EbWtYgMvU/"" data-c="
+        <a class="result-title" style="opacity: 0;" href="https://post/EbWtYgMvU/"" data-c="
           &lt;blockquote&gt;
 &lt;p&gt;本文转自:&lt;a href=&#34;https://zhuanlan.zhihu.com/p/64467370&#34;&gt;https://zhuanlan.zhihu.com/p/64467370&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -6484,7 +6484,7 @@ UIC 协议基于 UDP 实现，我们知道 UDP 协议只负责发送数据，并
 &lt;p&gt;中国联通 ＞ 中国电信 ＞ 中国移动&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;国际出口带宽量的增长，与海缆建设周期息息相关：&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620810934625.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1620810934625.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 根据中国信息通信研究院公布的中国国际光缆互联互通白皮书指出：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;2009-2012 年,数据中心成为驱动国际海底光缆建设的最大驱动力，国际海底光缆又迎了一个建设小高潮。目前，全球海缆建设正在进入第三次建设高潮，全球 40%的海缆是 2000 年之前建设的，已经逐步进入了海缆使用生命 周期的尾期，未来几年，数据中心互联及互联网带宽需求将持续增长， 全球海缆将进入一个新旧更替的时期，形成海缆布局的时间窗口， 2016 年跨太平洋、跨大西洋、亚欧间海缆系统已经开始升级换代。&lt;/p&gt;
@@ -6499,7 +6499,7 @@ UIC 协议基于 UDP 实现，我们知道 UDP 协议只负责发送数据，并
 &lt;h1 id=&#34;目前国内三大主流运营商的国际出口路由现状&#34;&gt;目前国内三大主流运营商的国际出口路由现状&lt;/h1&gt;
 &lt;p&gt;看过上述分析的同学应该晓得了，如果有经常访问外网的需求，使用中国联通的固网是最明智的选择，那么，这三大运营商的国际出口路由具体是什么情况呢？我们来逐一分析。&lt;/p&gt;
 &lt;h2 id=&#34;1-中国电信&#34;&gt;1. 中国电信&lt;/h2&gt;
-&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620814000707.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https:////post-images/1620814000707.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;中国电信目前拥有两条线路，一条是 163 骨干网（ChinaNet），另一条就是 CN2 网络；&lt;/p&gt;
@@ -6542,9 +6542,9 @@ UIC 协议基于 UDP 实现，我们知道 UDP 协议只负责发送数据，并
 &lt;/ul&gt;
 &lt;p&gt;中国电信 163 网络 AS4134 路由拓扑图，图示来源：&lt;a href=&#34;https://bgp.he.net/AS4134&#34;&gt;https://bgp.he.net/AS4134&lt;/a&gt;&lt;br&gt;
 IPv4:&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620811329916.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1620811329916.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 IPv6:&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620811358657.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1620811358657.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 说明：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -6573,15 +6573,15 @@ IPv6:&lt;br&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;一个典型的 163 网络的国际访问路由，注意出海前经过路由的 AS 号和对应的 IP 地址&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620811543895.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1620811543895.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 16 ~ 17 年时，连接亚太地区的路径普遍较差，绕美是家常便饭.&lt;/p&gt;
 &lt;p&gt;从 18 年末，渐渐有了好转，电信一般都是绕日 NTT 过去，不过访问质量依旧很糟糕，线路无优化商家的劣势就是通信不稳定:&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620813559023.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1620813559023.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 中国电信 CN2 网络 AS4809 路由拓扑图，图示来源：&lt;a href=&#34;https://bgp.he.net/AS4809&#34;&gt;https://bgp.he.net/AS4809&lt;/a&gt;&lt;br&gt;
 IPv4:&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620813617487.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1620813617487.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 IPv6:&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620813644223.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1620813644223.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 说明：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -6613,11 +6613,11 @@ IPv6:&lt;br&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;一个非常典型的 CN2 GIA 网络，注意跳了一下 202.97 打头的路由，其余全程 59.43:&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620813794863.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1620813794863.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 一个非常典型的 CN2 GT 网络，注意在国内走的时候，一定是 202.97 路由，出海后再走 59.43 路由:&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620813817069.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1620813817069.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;2-中国联通这部分会加入一些-vps-线路购置经验谈&#34;&gt;2. 中国联通(这部分会加入一些 VPS 线路购置经验谈)&lt;/h2&gt;
-&lt;figure data-type=&#34;image&#34; tabindex=&#34;2&#34;&gt;&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620814048408.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;2&#34;&gt;&lt;img src=&#34;https:////post-images/1620814048408.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;中国联通宽带用户增长率不高，拥有的总用户数最近竟被移动赶超，目前市场份额处于垫底，但对用户来说无疑是极其利好的消息。因为其拥有全国仅次于电信用户的国际总出口带宽，这就意味着中国联通用户访问外网遭遇的烦心事儿比电信和/移动用户要少很多，如果不想在 CN2 GIA 上花一笔大洋，一个普通中国联通宽带用户的国际访问“人权”是最有保障的；&lt;/p&gt;
@@ -6640,9 +6640,9 @@ IPv6:&lt;br&gt;
 &lt;/ul&gt;
 &lt;p&gt;中国联通 169 网络 AS4837 路由拓扑图，图示来源：https://bgp.he.net/AS4837&lt;br&gt;
 IPv4:&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620814223987.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1620814223987.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 IPv6:&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620814238200.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1620814238200.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 说明：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -6681,27 +6681,27 @@ IPv6:&lt;br&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;一个典型的中国联通 169 网络连接外网路径图:&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620814616245.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1620814616245.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 169 网络的中美回程也不绕路:&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620814639192.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1620814639192.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 169 网络也比较看中对方 VPS 商的线路优化:&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620814663128.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1620814663128.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 御三家：Linode/Vultr/DigitalOcean 新加坡节点电信/联通去程绕日，费拉不堪:&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620814684882.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1620814684882.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 普通新加坡线路回程部分从广州直连回来，部分依旧绕日:&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620814701735.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1620814701735.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 IIJ 线路对联通十分友好，非常适合中国华东、华南地区的联通用户选择:&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620814731516.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1620814731516.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 珍爱生命，远离 NTT:&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620814818435.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620814827514.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1620814818435.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1620814827514.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 生活在中国东北、华北地区，且预算有限的联通用户，可以试试俄罗斯 VPS:&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620814850856.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1620814850856.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 中国联通 A 网 AS9929 路由拓扑图，图示来源：&lt;a href=&#34;https://bgp.he.net/AS9929&#34;&gt;https://bgp.he.net/AS9929&lt;/a&gt;&lt;br&gt;
 IPv4：&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620814896917.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1620814896917.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 IPv6：&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620815052636.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1620815052636.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 说明：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -6721,13 +6721,13 @@ IPv6：&lt;br&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;一个典型的中国联通 A 网回程路由:&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620815189058.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1620815189058.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 对方网络没做优化的情况下，A 网回程也不会绕路:&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620815212029.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1620815212029.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 红框圈起来的就是传说中的 A 网，出海后果然便汇入到 169 网络上:&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620815235791.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1620815235791.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;3-中国移动&#34;&gt;3. 中国移动&lt;/h2&gt;
-&lt;figure data-type=&#34;image&#34; tabindex=&#34;3&#34;&gt;&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620986355803.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;3&#34;&gt;&lt;img src=&#34;https:////post-images/1620986355803.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;中国移动进出国际网络，在国内经过的绝大部分流量，均由 AS9808 网络承载，旧铁通的 AS9314 网络几乎已被放弃；&lt;/p&gt;
@@ -6759,9 +6759,9 @@ IPv6：&lt;br&gt;
 &lt;/ul&gt;
 &lt;p&gt;中国移动 AS9808 路由拓扑图，图示来源：&lt;a href=&#34;https://bgp.he.net/AS9808&#34;&gt;https://bgp.he.net/AS9808&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;IPv4：&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620986458854.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1620986458854.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 IPv6：&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620986474614.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1620986474614.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 说明：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -6784,24 +6784,24 @@ IPv6：&lt;br&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;绕道联通&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620986612456.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1620986612456.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 直连且有独立的中美线路&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620986630514.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1620986630514.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 访问 Vultr 新加坡的线路质量很不错，三网最佳&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620986642741.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1620986642741.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 对于位于香港的服务器，VPS 商如果和移动有合作，则全程走中国移动线路，否则走 PCCW&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620986666405.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1620986666405.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 北京移动主要负责处理欧洲地区的外网通信&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620986679287.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1620986679287.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;h1 id=&#34;谨记木桶理论&#34;&gt;谨记木桶理论&lt;/h1&gt;
 &lt;p&gt;即使有“全程 CN2”、“A 网”等“精品网络”光环加持，一定不要忘了，网络速度、延迟、丢包等关键指标，还与 VPS 商的销售行为息息相关，就比如说，商家标称“共享 1Gbps”，如果平均分给 8 个人用，每个人能享受到的速度就是 128Mbps，但如果商家贪心，把 VPS 超售 10 倍（无论是 OpenVZ/KVM/HyperV 等架构，网络端口都可以为所欲为地超售），那么每个人在高峰期只能享用 12.8 Mbps 的带宽，如果你的邻居们各个都是“一键脚本”大神，什么锐速、暴力魔改 BBR、KCPTun 多倍狂发包 等争抢网络资源的奇技淫巧一股脑儿使劲怼，而你什么优化也不做时，自然就更吃亏，源头速度被卡死了，国家给你单独铺一条海缆也没用。&lt;/p&gt;
 &lt;p&gt;#牢记品质三原色&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620986742742.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1620986742742.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 ">国内主流网络运营商国际连接线路简谈</a>
       </div>
       
       <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://blog.gd1214b.icu/post/gfV9Uqj8F/"" data-c="
+        <a class="result-title" style="opacity: 0;" href="https://post/gfV9Uqj8F/"" data-c="
           &lt;blockquote&gt;
 &lt;p&gt;本文转自：&lt;a href=&#34;https://www.cloudflare.com/zh-cn/learning/ddos/what-is-a-ddos-attack/&#34;&gt;https://www.cloudflare.com/zh-cn/learning/ddos/what-is-a-ddos-attack/&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -6809,7 +6809,7 @@ IPv6：&lt;br&gt;
 &lt;p&gt;分布式拒绝服务（DDoS）攻击是通过大规模互联网流量淹没目标服务器或其周边基础设施，以破坏目标服务器、服务或网络正常流量的恶意行为。&lt;/p&gt;
 &lt;p&gt;DDoS 攻击利用多台受损计算机系统作为攻击流量来源以达到攻击效果。利用的机器可以包括计算机，也可以包括其他联网资源（如 IoT 设备）。&lt;/p&gt;
 &lt;p&gt;总体而言，DDoS 攻击好比高速公路发生交通堵塞，妨碍常规车辆抵达预定目的地。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620728184860.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1620728184860.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;h1 id=&#34;ddos-攻击的工作原理&#34;&gt;DDoS 攻击的工作原理&lt;/h1&gt;
 &lt;p&gt;DDoS 攻击是通过连接互联网的计算机网络进行的。&lt;/p&gt;
 &lt;p&gt;这些网络由计算机和其他设备（例如 IoT 设备）组成，它们感染了恶意软件，从而被攻击者远程控制。这些个体设备称为机器人（或僵尸），一组机器人则称为僵尸网络。&lt;/p&gt;
@@ -6827,7 +6827,7 @@ IPv6：&lt;br&gt;
 &lt;p&gt;不同类型的 DDoS 攻击针对不同的网络连接组件。为了解不同的 DDoS 攻击如何运作，有必要知道网络连接是如何建立的。&lt;/p&gt;
 &lt;p&gt;互联网上的网络连接由许多不同的组件或“层”构成。就像打地基盖房子一样，模型中的每一步都有不同的用途。&lt;/p&gt;
 &lt;p&gt;OSI 模型（如下图所示）是一个概念框架，用于描述 7 个不同层级的网络连接。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620728353166.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1620728353166.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 虽然几乎所有 DDoS 攻击都涉及用流量淹没目标设备或网络，但攻击可以分为三类。攻击者可能利用一种或多种不同的攻击手段，也可能根据目标采取的防范措施循环使用多种攻击手段。&lt;/p&gt;
 &lt;h2 id=&#34;应用程序层攻击&#34;&gt;应用程序层攻击&lt;/h2&gt;
 &lt;h3 id=&#34;攻击目标&#34;&gt;攻击目标：&lt;/h3&gt;
@@ -6835,7 +6835,7 @@ IPv6：&lt;br&gt;
 &lt;p&gt;攻击目标是生成网页并传输网页响应 HTTP 请求的服务器层。在客户端执行一项 HTTP 请求的计算成本比较低，但目标服务器做出响应却可能非常昂贵，因为服务器通常必须加载多个文件并运行数据库查询才能创建网页。&lt;/p&gt;
 &lt;p&gt;第 7 层攻击很难防御，因为难以区分恶意流量和合法流量。&lt;/p&gt;
 &lt;h3 id=&#34;应用程序层攻击示例&#34;&gt;应用程序层攻击示例：&lt;/h3&gt;
-&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620728401946.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https:////post-images/1620728401946.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
 &lt;h3 id=&#34;http-洪水&#34;&gt;HTTP 洪水&lt;/h3&gt;
 &lt;p&gt;HTTP 洪水攻击类似于同时在大量不同计算机的 Web 浏览器中一次又一次地按下刷新 – 大量 HTTP 请求涌向服务器，导致拒绝服务。&lt;/p&gt;
 &lt;p&gt;这种类型的攻击有简单的，也有复杂的。&lt;/p&gt;
@@ -6845,7 +6845,7 @@ IPv6：&lt;br&gt;
 &lt;p&gt;协议攻击也称为状态耗尽攻击，这类攻击会过度消耗服务器资源和/或防火墙和负载平衡器之类的网络设备资源，从而导致服务中断。&lt;/p&gt;
 &lt;p&gt;协议攻击利用协议堆栈第 3 层和第 4 层的弱点致使目标无法访问。&lt;/p&gt;
 &lt;h3 id=&#34;协议攻击示例&#34;&gt;协议攻击示例：&lt;/h3&gt;
-&lt;figure data-type=&#34;image&#34; tabindex=&#34;2&#34;&gt;&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620728449707.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;2&#34;&gt;&lt;img src=&#34;https:////post-images/1620728449707.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
 &lt;h3 id=&#34;syn-洪水&#34;&gt;SYN 洪水&lt;/h3&gt;
 &lt;p&gt;SYN 洪水就好比补给室中的工作人员从商店的柜台接收请求。&lt;/p&gt;
 &lt;p&gt;工作人员收到请求，前去取包裹，再等待确认，然后将包裹送到柜台。一时之间，工作人员收到太多包裹请求，来不及确认，直到无法处理更多包裹，实在不堪重负，致使无人能对请求做出回应。&lt;/p&gt;
@@ -6855,7 +6855,7 @@ IPv6：&lt;br&gt;
 &lt;h3 id=&#34;攻击目标-3&#34;&gt;攻击目标：&lt;/h3&gt;
 &lt;p&gt;此类攻击试图通过消耗目标与较大的 Internet 之间的所有可用带宽来造成拥塞。攻击运用某种放大攻击或其他生成大量流量的手段（如僵尸网络请求），向目标发送大量数据。&lt;/p&gt;
 &lt;h3 id=&#34;放大示例&#34;&gt;放大示例：&lt;/h3&gt;
-&lt;figure data-type=&#34;image&#34; tabindex=&#34;3&#34;&gt;&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620728541749.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;3&#34;&gt;&lt;img src=&#34;https:////post-images/1620728541749.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
 &lt;h1 id=&#34;如何防护-ddos-攻击&#34;&gt;如何防护 DDoS 攻击？&lt;/h1&gt;
 &lt;p&gt;若要缓解 DDoS 攻击，关键在于区分攻击流量与正常流量。&lt;/p&gt;
 &lt;p&gt;例如，如果因发布某款产品导致公司网站涌现大批热情客户，那么全面切断流量是错误之举。如果公司从已知恶意用户处收到的流量突然激增，或许需要努力缓解攻击。&lt;/p&gt;
@@ -6884,7 +6884,7 @@ IPv6：&lt;br&gt;
       </div>
       
       <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://blog.gd1214b.icu/post/tools/"" data-c="
+        <a class="result-title" style="opacity: 0;" href="https://post/tools/"" data-c="
           &lt;h1 id=&#34;图床&#34;&gt;图床&lt;/h1&gt;
 &lt;p&gt;本站已上线专属图床，大家可以通过以下链接访问：&lt;/p&gt;
 &lt;h2 id=&#34;主站点&#34;&gt;主站点:&lt;/h2&gt;
@@ -6943,7 +6943,7 @@ IPv6：&lt;br&gt;
       </div>
       
       <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://blog.gd1214b.icu/post/CoDNIXdTR/"" data-c="
+        <a class="result-title" style="opacity: 0;" href="https://post/CoDNIXdTR/"" data-c="
           &lt;blockquote&gt;
 &lt;p&gt;本文转自:&lt;a href=&#34;https://mp.weixin.qq.com/s?__biz=Mzg2OTIyMzY0Ng==&amp;amp;mid=2247483696&amp;amp;idx=1&amp;amp;sn=5fd8a3d57308bdbf993ab7545c141a8e&amp;amp;chksm=cea11c81f9d69597487bf17018dba4d329a491c98abed4d6f1b1a88a83abcd2a2d8cfe18a2c7&amp;amp;scene=158#rd&#34;&gt;https://mp.weixin.qq.com/s?__biz=Mzg2OTIyMzY0Ng==&amp;amp;mid=2247483696&amp;amp;idx=1&amp;amp;sn=5fd8a3d57308bdbf993ab7545c141a8e&amp;amp;chksm=cea11c81f9d69597487bf17018dba4d329a491c98abed4d6f1b1a88a83abcd2a2d8cfe18a2c7&amp;amp;scene=158#rd&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -6978,11 +6978,11 @@ IPv6：&lt;br&gt;
 &lt;/ol&gt;
 &lt;h1 id=&#34;案例导入及相关材料真实性的检证&#34;&gt;案例导入及相关材料真实性的检证&lt;/h1&gt;
 &lt;p&gt;2018年12月28日，广东韶关南雄市公安局对“翻墙”的朱某某作出行政处罚决定，理由为“擅自建立、使用非法定信道进行国际联网”，处以1000元人民币罚款，其处罚依据为《中华人民共和国计算机信息网络国际联网管理暂行规定》第六条、第十四条。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620293844801.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1620293844801.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;广东公安执法信息公开平台行政处罚决定书信息 韶雄公(网)行罚决字 [2019]1号&lt;br&gt;
 &lt;a href=&#34;http://www.gdgafz.alldayfilm.com/bookDetail.html?type=1&amp;amp;id=1134323&#34;&gt;http://www.gdgafz.alldayfilm.com/bookDetail.html?type=1&amp;amp;id=1134323&lt;/a&gt;&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620294082225.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1620294082225.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 笔者此前看到此新闻时一度是不相信的，但未曾料到，近日在检索过程中真的在官方信息公开平台查到了这一案件的处罚决定。但上图显示的“行政处罚决定书”拍摄样图并非来源于官方，且样图有很多可疑之处（法律文书课老师看到可能会被气哭），在此提前予以指出：&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;ol&gt;
@@ -6999,7 +6999,7 @@ IPv6：&lt;br&gt;
 &lt;p&gt;其次，手机app本身并不会保存每天的连接次数，也没有日志的功能；&lt;/p&gt;
 &lt;p&gt;此外，即使该数据在手机和app内部以日志的形式保存，行政机关也不可能靠妄加猜测突然检查朱某某的手机，而是只可能使用远程手段（例如公安机关远程监控系统、电信运营商的举报或直接向运营商收集用户访问境外ip地址相关信息），但这样的证据并没有在此份决定书样图中反映出来，所以在证据层面是可疑的。&lt;/p&gt;
 &lt;p&gt;另附一份我在实习期间曾经手的一份行政处罚决定书的模板（关键信息已经隐藏）。从图中可见，基层机关行政处罚决定书的格式和行文要求是非常高的。而前后两相比较，可以看出前一份处罚决定书颇有些山寨的味道。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620294061874.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1620294061874.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 当然，上述文书所反映的问题并不必然证明其为刻意捏造，因为笔者对于不同地区基层行政机关的法律文书和执法水平差异并不了解，但至少上述缺陷会降低该材料的可信度。&lt;/p&gt;
 &lt;h1 id=&#34;法条分析及相关专业名词释义&#34;&gt;法条分析及相关专业名词释义&lt;/h1&gt;
 &lt;p&gt;上述行政处罚案件的处罚依据如下:&lt;/p&gt;
@@ -7025,8 +7025,8 @@ IPv6：&lt;br&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;因此，国际出入口物理信道，只限于陆地光缆、海底光缆以及卫星通讯等实际存在的、供国内外进行数据、信息交换的物理介质。&lt;/p&gt;
 &lt;p&gt;根据《电信业务分类目录（2015年版）》，国际联网所使用的物理信道包括但不限于以下几种：国际陆缆、国际海缆、陆地入境站、海缆登陆站、国际地面传输通道、国际卫星地球站、卫星空间段资源、国际传输通道的国内延伸段，以及国际通信网带宽、光通信波长、电缆、光纤、光缆等国际通信传输设施。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620294357761.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620294362920.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1620294357761.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1620294362920.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 与此同时，我们在立法中可以发现不少细节，其足以就“国际出入口信道属于物理信道”这一论点找出进一步的佐证。&lt;/p&gt;
 &lt;p&gt;首先必须对GFW的渊源有一定的了解。&lt;/p&gt;
 &lt;blockquote&gt;
@@ -7092,7 +7092,7 @@ IPv6：&lt;br&gt;
 &lt;h1 id=&#34;提供翻墙方法-售卖翻墙服务的违法性&#34;&gt;提供翻墙方法、售卖翻墙服务的违法性&lt;/h1&gt;
 &lt;p&gt;这一段虽然和本文主题“个人翻墙”并没有直接关系，但本文的结论和现行司法实践对于“出售翻墙工具”的论证是矛盾的，所以必须指出来。&lt;/p&gt;
 &lt;p&gt;下图展示了可能涉及“翻墙”的罪名，我们主要关注第一类案由：“非法出售可访问境外互联网网站的&#39;VPN&#39;翻墙服务”，其对应的罪名是“提供侵入、非法控制计算机信息系统程序、工具罪”。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620380626725.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1620380626725.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 目前出售翻墙服务是违法犯罪行为，相关的案例在无讼的检索结果中不计其数。法院判决的论述部分基本上与下面的引用大同小异：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;本院认为，被告人为牟取非法利益，违反国家规定，在互联网推广用于侵入计算机信息系统的程序、工具，情节特别严重，其行为已构成提供侵入、非法控制计算机信息系统的程序、工具罪。公诉机关指控的罪名成立。经查，本案的“XXX”软件，利用公用网络架设专用网络，并进行数据加密传输，使计算机信息系统自由访问中国境内无法访问的境外网站，因此，该软件属于“用于侵入计算机信息系统的程序、工具”。被告人在未经电信主管部门批准的情况下，提供的“XXX”软件使客户的计算机自由访问境外网站，数据传输受到加密保护，突破我国技术安全防护措施，危害了国家信息网络安全，符合提供侵入、非法控制计算机信息系统的程序、工具罪的客体。&lt;br&gt;
@@ -7111,7 +7111,7 @@ IPv6：&lt;br&gt;
 &lt;p&gt;在了解GFW和翻墙的原理之前，你必须对互联网运行的基本原理有一个宏观的了解——至少，你需要知道当你在浏览器键入baidu.com，页面呈现在你眼前时，究竟发生了什么。你只有知道发生了什么，才可能看懂GFW是怎么样阻止你访问网页，而翻墙又是如何让你穿越重重阻碍成功访问境外服务器的页面的。&lt;/p&gt;
 &lt;h2 id=&#34;1-互联网访问的基本原理osi参考模型&#34;&gt;1、互联网访问的基本原理——OSI参考模型&lt;/h2&gt;
 &lt;p&gt;我们之中一定有很多人还依稀记得高中、大学计算机课曾提及“互联网分成好几个层次”。最浅显易懂的当然是物理层，因为日常生活中，光纤、网线、电话线之类的东西是随处可见、看得见摸得着的。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620380709387.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1620380709387.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 那么，关于GFW和翻墙的一切话题，都在上述模型中的哪一层呢？你以为他们在第一层（物理层），实际上他们分布在第三层（网络层）、第四层（传输层）和第七层（应用层）。&lt;/p&gt;
 &lt;p&gt;为了让大家更好地理解这个“老千层饼”，我分别以访问baidu.com主页和境外服务器ip来简单阐述一下其过程中涉及的原理（对应OSI参考模型）。&lt;/p&gt;
 &lt;h3 id=&#34;国内网站访问原理&#34;&gt;国内网站访问原理&lt;/h3&gt;
@@ -7137,9 +7137,9 @@ IPv6：&lt;br&gt;
 &lt;li&gt;数据包是如何从你在上海的计算机发至架设在北京的百度服务器呢？&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;tcp三次握手已经很生动形象了，但毕竟从上海发送一个数据包至百度架设在北京的服务器的难度，与“在小区里和美女当面互相打招呼”的难度压根不在一个数量级，数据包是如何通过祖国大地下架设的“杂乱无章”、连通全国的光纤中找到去往北京的最快的路，而不至于兜圈或者迷路呢？&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620382548778.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1620382548778.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 这要得益于国内几家国有电信运营商建立的庞大的骨干网和城域网。我们作为外行，可以把这种网络理解成一个个互相连通的节点。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620382568209.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1620382568209.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 例如，中国电信163骨干网分为北京、上海、广州3大片区，这三个片区有大型的骨干路由作为邻近省级区域的数据交汇中心，例如上海片区涵盖了上海、江苏、安徽、山东、浙江、福建、江西这几个省，而每个省的内部又有庞大的、互相连接的城域网，而在某个城市的城域网内部，又有数以万计的学校、企业、家庭等局域网的接入，从而形成了从局域网→城域网→广域网三个层级。&lt;/p&gt;
 &lt;p&gt;此外，不只是中国电信，其他运营商也有各自的骨干网，例如中国联通有CHINA169骨干网和CNCNET骨干网，中国移动有CMNET全国骨干网……不同国家级互联网业务提供商（Internet Service Provider， ISP）建立的不同骨干网之间也有数据交换的中心，这使得信息和数据包可以自由地从全国的任何地方流向任何地方。（相关链接：《互联网骨干网全面解析》&lt;a href=&#34;https://zhuanlan.zhihu.com/p/32090927&#34;&gt;https://zhuanlan.zhihu.com/p/32090927&lt;/a&gt;）&lt;/p&gt;
 &lt;p&gt;连通性的问题解决了，还要解决数据包在庞大的“网上公路”迷路的可能性。在上述提到的各个级别的网路中，分布着无数路由节点，每一张骨干网都有自己负责的路由群组和节点，整个群组统称为as自治系统（Autonomous system），每一个骨干网管理的as自治系统都经过名为互联网号码分配局的国际机构分配唯一识别代码，例如，中国电信163骨干网的as自治系统编号为AS4134。每一张骨干网都有内部路由协议，每一个节点都在依据某种规定互相交换他们所连通的ip地址信息，作为数据包在“旅行”过程中的指路人。而全国性的骨干网之间也依靠外部路由协议互相交换它们所掌握的“服务器地图“，典型的有BGP协议。&lt;/p&gt;
@@ -7149,7 +7149,7 @@ IPv6：&lt;br&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;BGP协议使得各大骨干网的路由节点可以以tcp数据包的形式互相转发其掌握的路由信息，从而形成一个庞大的、完整的决策网，对数据包提供全面的“导航服务”，它能计算出数据包从一个客户端通往另一个外省客户端必经的最优路线和路由节点。条条大路通罗马，当一个路由节点故障时，因为各个节点都互相沟通，从而可以带领数据包选择其他路线通网可达的节点，避免“兜圈子”、“迷路”等情况。&lt;/p&gt;
 &lt;p&gt;使用traceroute（链接：https://tools.ipip.net/traceroute.php），可以利用ICMP 协议定位您的计算机和目标计算机之间的所有路由器节点。下图展示了我从自己的计算机访问百度设在北京的服务器39.156.69.79所经过的骨干网和路由节点，可以看见其经过了AS4812（中国电信163骨干网）的124.74.232.53、124.74.166.125等路由节点，而其途径的AS9808为中国移动骨干网的AS自治系统。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620382652706.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1620382652706.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;4&#34;&gt;
 &lt;li&gt;传输数据，发送http请求报文，加载页面（省略）&lt;br&gt;
 →http协议是明文协议&lt;/li&gt;
@@ -7181,7 +7181,7 @@ IPv6：&lt;br&gt;
 &lt;p&gt;换句话说，即使一家企业使用某个国外代理服务器作为中转节点以逃避GFW的审查，这一翻墙行为的一切基础都是建立在使用合法的国家互联网基础设施之上的。因为你不可能自己去发射一颗卫星专门用来刷推特，也不可能自己制造海底电缆，自发地潜水到海底接入别的国家的网络。&lt;/p&gt;
 &lt;p&gt;因此，对于普通个人和企业来说（这里的“普通”是指没有能力发射卫星、埋海底光缆），根本不存在所谓“非法的国际出入口信道”、非法的“接入网络”、“在不使用境内互联网络的前提下访问域外服务器”。&lt;/p&gt;
 &lt;p&gt;一个最直接的证据，也是每个人都能亲身试验的方法，就是使用前文介绍的traceroute命令，访问某个境外服务器的ip地址，遍历数据包途经的骨干网和路由节点，你就会知道，你到底是不是在使用国家级电信运营商布建的、国家批准的网络基础设施了。我随机使用一个尚未被限制的境外服务器ip测试一下，结果如下：&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620545692474.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1620545692474.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 可见，当你成功访问境外服务器，当然也意味着成功实现了翻墙，但你的数据经过的是AS4812（中国电信上海路由群组）、AS4134（中国电信163骨干网路由群组），最后通过海底光缆直连美国加利福尼亚州洛杉矶的AS8100路由群组。你使用的一切光缆、路由节点、海底光缆，全都是经过工信部审批通过的国家级互联网基础设施。翻墙就是使用了非法的信道——这种逻辑是很可笑的。&lt;/p&gt;
 &lt;p&gt;因此，国际出入口就在那里等着你，海底光缆也在向你招手，凭什么不能访问境外网站呢？在看了下文GFW原理和翻墙原理的介绍，你就会知道，你不能访问境外网站的唯一原因是你正在遭受一个不受法律规制的系统的不间断网络攻击，而你使用任何途径翻墙的基本原理永远都是——你使用了某种技术抵御或避免了上述网络攻击。&lt;/p&gt;
 &lt;h2 id=&#34;gfw的原理&#34;&gt;GFW的原理&lt;/h2&gt;
@@ -7192,7 +7192,7 @@ IPv6：&lt;br&gt;
 &lt;p&gt;大家一定还记得那个电话号码簿的故事。GFW最早、最初始的原理，就是将这个电话号码簿掉包，或者将号码簿里的电话号码替换成错误的号码，这个原理诞生于2002年，在2012年以前达到高峰。GFW对所有经过骨干出口路由的基于UDP的DNS域名查询请求进行Intrusion Detection Systems（入侵检测系统）检测，一旦发现处于黑名单关键词中相匹配的域名查询请求，防火长城作为中间设备会向查询者返回虚假结果。&lt;/p&gt;
 &lt;p&gt;简而言之，DNS域名污染就好比你想在电话号码簿上查询朋友的电话号码，但是不曾想，电话号码簿被人掉包了，你拿到的是假的电话号码簿，原本正确的手机号码被替换成了错误的号码，导致你无法打通电话。而该系统触发的规则使用了类似正则表达式的结构，例如规定“对于一切*.google.com的域名解析到某个不存在的ip地址”。&lt;/p&gt;
 &lt;p&gt;直接使用windows的ping命令就可以亲眼看到DNS污染的运作效果。谷歌官网的服务器明明架设在美国科罗拉多丹佛，但从下图可以看见，在国内从DNS服务器请求到的ip地址却是93.46.8.90这个来自意大利的无效IP地址。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620545784700.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1620545784700.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 此项技术不仅是2012年前后人们无法再访问Google的直接原因，其在运转过程中更是殃及了全球DNS域名解析服务的正常运作。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;种DNS污染的方式曾经向中国大陆以外的用户造成影响。2010年3月，当美国和智利的用户试图访问热门社交网站如facebook.com和youtube.com还有twitter.com等域名，他们的域名查询请求转交给中国控制的DNS根镜像服务器处理，由于这些网站在中国被封锁，结果用户收到了错误的DNS解析信息，这意味着防火长城的DNS污染已影响国际互联网。2010年4月8日，中国大陆一个小型ISP的错误路由数据，经过中国电信的二次传播，扩散到了整个国际互联网，波及到了AT&amp;amp;T、Level3、德国电信、Qwest和西班牙电信等多个国家的大型ISP。(来源:&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E9%98%B2%E7%81%AB%E9%95%BF%E5%9F%8E#TCP%E8%BF%9E%E6%8E%A5%E9%87%8D%E7%BD%AE&#34;&gt;维基百科&lt;/a&gt;)&lt;/p&gt;
@@ -7206,7 +7206,7 @@ IPv6：&lt;br&gt;
 A Chinese ISP Momentarily Hijacks the Internet. PC World. 2010-04-09 [2011-05-19]. （原始内容存档于2011-06-22）.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;我们依旧可以通过traceroute观察到这一技术的运行效果，我们尝试traceroute一下google.com的真实ip地址，得到如下结果：&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620545943807.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1620545943807.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 可以看见，当数据包跳转给中国电信上海AS4812群组的101.95.120.166路由节点之后，就再也跟踪不到数据包的踪迹了。这是因为在这一节点，存在着一个无效的路由黑洞，其声称自己拥有172.217.24.12这一ip地址的访问可达性，但话音刚落，它就把数据包丢弃在角落了……&lt;/p&gt;
 &lt;p&gt;与此同时，骨干路由器还有一种ACL Based Forwarding (ABF)的匹配规则，可以在全国骨干路由器同步步数ip端口封锁规则，由于理解不太深入，这里不做专门介绍。&lt;/p&gt;
 &lt;p&gt;另外，在路由黑洞成为封锁ip的主要途径以前，GFW在早期使用的是访问控制列表（ACL）技术来封锁特定的IP地址，但这种方法有性能不佳的问题。这里不做专门介绍。&lt;/p&gt;
@@ -7230,10 +7230,10 @@ RST阻断也称为TCP旁路阻断，其运行的原理如下：&lt;/p&gt;
 &lt;p&gt;另外一个IP协议的特性是当TTL耗尽的时候，路由器应该发回一个TTL EXCEEDED的ICMP包，并把自己的IP地址设置成SRC（来源）。结合这两点，就可以探测出IP包是到了IP地址为什么的路由器之后才被GFW检测到，结合IP地址地理位置的数据库就可以知道其地理位置。&lt;br&gt;
 《G.F.W的原理》 &lt;a href=&#34;http://www.oneyearago.me/2019/06/14/learn_gwf/&#34;&gt;http://www.oneyearago.me/2019/06/14/learn_gwf/&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620546389143.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https:////post-images/1620546389143.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
 &lt;h3 id=&#34;协议检测根据流量协议拆包关键词匹配封锁&#34;&gt;协议检测→根据流量协议拆包→关键词匹配→封锁&lt;/h3&gt;
 &lt;p&gt;我们在上面一段曾了解到，GFW的TCP旁路阻断的前提是“将主交换机的数据镜像到控制系统”。这其实也是目前业内猜测的 GFW系统存在的主要方式——GFW存在于骨干路由器节点，其作为一个设备附着在主干路由器身边，通过“分光”的方式把数据包复制到另外一根光纤上。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620546425631.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1620546425631.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 基于此，GFW作为一个独立设备就可以作为旁观者分析经过其附着的主干路由器的所有数据包。&lt;/p&gt;
 &lt;p&gt;HTTP协议有非常明显的特征，可以轻易被GFW系统检测和识别，GFW进而依据HTTP协议规则对数据包进行拆解，由于其表现为明文，所以可以直接进行关键词匹配。例如，从HTTP的GET请求中取得请求的URL。然后GFW拿到这个请求的URL去与关键字做匹配，比如查找Twitter是否在请求的URL中。而关键字匹配使用的依旧是一些高效的正则表达式。&lt;/p&gt;
 &lt;h3 id=&#34;深度包检测机器学习识别翻墙流量直接阻断&#34;&gt;深度包检测（机器学习识别翻墙流量→直接阻断）&lt;/h3&gt;
@@ -7253,12 +7253,12 @@ RST阻断也称为TCP旁路阻断，其运行的原理如下：&lt;/p&gt;
 &lt;p&gt;但是我相信，认真学习自己的专业知识，同时广泛地接受和学习其他领域的专业知识，就能轻松避免被网上大肆输出情绪的人鼓动和欺瞒，保持冷静地思考——你真的可以对现状有一个清晰的认识和判断，并在不久的将来参与到各行各业的运行过程中，为社会做出贡献。&lt;/p&gt;
 &lt;p&gt;而这篇文章，就权当我在学习之余的放松心情、自娱自乐罢。&lt;/p&gt;
 &lt;p&gt;那么现在，你能否就程序员群体提出的以下选择题给出正确解答了呢？&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620546621696.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1620546621696.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 ">个人使用vpn"翻墙"是否违法？——基于规范性法律文件、案例以及相关计算机技术的分析与讨论</a>
       </div>
       
       <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://blog.gd1214b.icu/post/UdDINeaAU/"" data-c="
+        <a class="result-title" style="opacity: 0;" href="https://post/UdDINeaAU/"" data-c="
           &lt;blockquote&gt;
 &lt;p&gt;作者：欧洲金靴&lt;br&gt;
 链接：&lt;a href=&#34;https://www.zhihu.com/question/455705530/answer/1852406576&#34;&gt;https://www.zhihu.com/question/455705530/answer/1852406576&lt;/a&gt;&lt;br&gt;
@@ -7294,7 +7294,7 @@ RST阻断也称为TCP旁路阻断，其运行的原理如下：&lt;/p&gt;
       </div>
       
       <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://blog.gd1214b.icu/post/Computer-Networks-Overview/"" data-c="
+        <a class="result-title" style="opacity: 0;" href="https://post/Computer-Networks-Overview/"" data-c="
           &lt;blockquote&gt;
 &lt;p&gt;版权声明&lt;br&gt;
 本博客所有的原创文章，作者皆保留版权。转载必须包含本声明，保持本文完整，并以超链接形式注明作者编程随想和本文原始地址：&lt;br&gt;
@@ -7351,11 +7351,11 @@ https://program-think.blogspot.com/2021/03/Computer-Networks-Overview.html&lt;/p
 &lt;h2 id=&#34;协议栈的原理&#34;&gt;协议栈的原理&lt;/h2&gt;
 &lt;p&gt;对于多层次的协议栈。每个层次都有各自的“端点”（进行通讯的主体）。处于【同一层次】的两个端点会使用该层次的协议进行通讯（注：同一个层次的协议，可能只有一个，也可能有多个）。&lt;br&gt;
 　　除了最顶层，每个层次的端点会向其【直接】上层提供“服务”；除了最底层，每个层次的端点会调用【直接】下层提供的“服务”（这里所说的“服务”指某种“编程接口”，技术行话叫 API）。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620103298802.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620103316148.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1620103298802.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1620103316148.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;逻辑信道&#34;&gt;逻辑信道&lt;/h2&gt;
 &lt;p&gt;（前一个小节说了）每个层次会向上一个层次提供服务（API 调用）。对上层而言，调用下层提供的 API 发送信息，其效果相当于在使用某种【信道】进行通讯，这也就是俺在 ★基本概念 那个章节所说的“逻辑信道”。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620103332581.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1620103332581.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;数据格式的原理&#34;&gt;数据格式的原理&lt;/h2&gt;
 &lt;p&gt;大部分协议会把要传送的数据切割为 N 份，每一份就是一个数据包。&lt;br&gt;
 　　通常来说，数据包的格式有如下三部分：&lt;/p&gt;
@@ -7369,7 +7369,7 @@ https://program-think.blogspot.com/2021/03/Computer-Networks-Overview.html&lt;/p
 &lt;p&gt;对于【相邻】两层的协议，【下】层包含【上】层。也就是说：下层协议的【载荷】就是上层协议的【整体】。&lt;br&gt;
 　　还是以快递举例：&lt;br&gt;
 　　假设你从网上买了一台笔记本电脑。电脑出厂时，电脑厂商肯定会提供一个包装盒。快递公司在寄送这台笔记本的时候，又会在笔记本的盒子外面再加一个包装袋。对应到网络协议——“快递公司的包装袋”相当于【下层】协议；“电脑厂商的包装盒”，相当于【上层】协议。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620103392411.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1620103392411.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;网络分层的参考模型&#34;&gt;网络分层的参考模型&lt;/h2&gt;
 &lt;p&gt;上述所说的“分层 ＆ 协议栈”只是一个抽象的（笼统的）思路。具体要分几层？每一层要干啥事儿？这些都是很有讲究滴！网络技术发展了几十年，已经有很多牛人提出了各种不同的划分方案，称之为“网络分层的参考模型”（为了打字省力，以下简称“模型”）。&lt;br&gt;
 　　在各种模型中，名气最大的当然是“OSI 模型”（洋文称作“&lt;a href=&#34;https://en.wikipedia.org/wiki/OSI_model&#34;&gt;OSI model&lt;/a&gt;”）。在后续的章节中，俺会以这个模型为主体，进行介绍。&lt;br&gt;
@@ -7392,7 +7392,7 @@ https://program-think.blogspot.com/2021/03/Computer-Networks-Overview.html&lt;/p
 　　因此，本文后续章节中，凡是提到 OSI，指的是【OSI model】。&lt;/p&gt;
 &lt;h2 id=&#34;osi-模型的7层&#34;&gt;OSI 模型的7层&lt;/h2&gt;
 &lt;p&gt;OSI 模型总共分7层，示意图参见如下表格：&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620103709930.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1620103709930.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 考虑到本文是针对一般性读者的【扫盲教程】，俺重点聊第1~4层。搞明白这几个层次之后，有助于你更好地理解网络的很多概念，也有助于你更好地理解很多信息安全的概念。&lt;br&gt;
 　　网上已经有很多关于 OSI 的文章，可惜大部分写得粗糙——很多文章只是在照抄定义。&lt;br&gt;
 　　俺曾经写过一篇&lt;a href=&#34;https://program-think.blogspot.com/2009/02/study-technology-in-three-steps.html&#34;&gt;《学习技术的三部曲：WHAT、HOW、WHY》&lt;/a&gt;，其中提到【理解技术】的不同层次。要想更好地理解 OSI 模型，你得搞明白：为啥需要引入某某层？（请注意：这是一个 WHY 型的问题）&lt;br&gt;
@@ -7454,21 +7454,21 @@ https://program-think.blogspot.com/2021/03/Computer-Networks-Overview.html&lt;/p
 &lt;h2 id=&#34;物理层的协议实现&#34;&gt;物理层的【协议实现】&lt;/h2&gt;
 &lt;p&gt;对于电脑主机（含移动设备），“网卡硬件”包含了物理层的协议实现（参见如下示意图）&lt;br&gt;
 　　另外，还有一些专门的【1层】网络设备，也提供物理层的功能（参见下一个小节）。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620107754703.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1620107754703.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;物理层相关的网络设备&#34;&gt;物理层相关的【网络设备】&lt;/h2&gt;
 &lt;p&gt;1. &lt;a href=&#34;https://zh.wikipedia.org/wiki/%E8%B0%83%E5%88%B6%E8%A7%A3%E8%B0%83%E5%99%A8&#34;&gt;调制解调器&lt;/a&gt;（modem）&lt;br&gt;
 　　通俗地说，“调制解调器”就是用来翻译“数字信号 ＆ 模拟信号”。&lt;br&gt;
 　　在发送信息时，modem 把电脑要发送的“字节流”（数字信号）翻译成“模拟信号”，然后通过物理介质发送出去；当它从物理介质收到“模拟信号”，再翻译成“数字信号”，传回给电脑。&lt;br&gt;
 　　早期的拨号上网，modem 面对的物理介质是“固话线路”；如今家庭宽带普及，光纤入户，modem 面对的物理介质是“光纤线路”。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620107833132.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1620107833132.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;p&gt;2. &lt;a href=&#34;https://en.wikipedia.org/wiki/Repeater&#34;&gt;中继器&lt;/a&gt;（repeater）&lt;br&gt;
 　　信号在物理介质中传输，会出现【衰减】（不论是“有线 or 无线”都有可能衰减）。“中继器”的作用是【信号增益】，使得信号能传得更远。&lt;br&gt;
 　　另外，比如“微波通讯”是直线传播，而地球表面有弧度，还有地形的起伏。所以每隔一定距离要建“微波塔”。这玩意儿也相当于“中继器”。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620107862051.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1620107862051.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;p&gt;3. &lt;a href=&#34;https://zh.wikipedia.org/wiki/%E9%9B%86%E7%B7%9A%E5%99%A8&#34;&gt;集线器&lt;/a&gt;（hub）&lt;br&gt;
 　　可以把“集线器”视作更牛逼的“中继器”——“中继器”只有两个口（只能连接两个通讯端点），而“集线器”有多个口（同时连接多个通讯端点）。&lt;br&gt;
 　　通常所说的“集线器”是指“以太网集线器”。这种设备如今已经逐步淘汰，很少见到了。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620107904990.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1620107904990.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 另外，很多同学应该都用过“USB hub”，就是针对 USB 线的“集线器”（“USB 线”也可以视作某种通讯介质）。&lt;/p&gt;
 &lt;h1 id=&#34;链路层概述&#34;&gt;链路层：概述&lt;/h1&gt;
 &lt;h2 id=&#34;链路层的必要性&#34;&gt;链路层的必要性&lt;/h2&gt;
@@ -7500,7 +7500,7 @@ https://program-think.blogspot.com/2021/03/Computer-Networks-Overview.html&lt;/p
 &lt;p&gt;如何保证 MAC 地址全球唯一捏？简单说一下：&lt;br&gt;
 　　MAC 地址包含6个字节（48个比特），分为两半。第一部分称作【OUI】，OUI 的24个比特中，其中2个比特有特殊含义，其它22个比特，用来作为网卡厂商的唯一编号。这个编号由国际组织 IEEE 统一分配。&lt;br&gt;
 　　MAC 地址第二部分的24比特，由网卡厂商自己决定如何分配。每个厂商只要确保自己生产的网卡，后面这24比特是唯一的，就行啦。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620108096408.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1620108096408.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 　由于俺在很多安全教程中鼓吹大伙儿使用“&lt;a href=&#34;https://program-think.blogspot.com/2012/10/system-vm-0.html&#34;&gt;操作系统虚拟机&lt;/a&gt;”，再顺便说说【虚拟网卡】的 MAC 地址。&lt;br&gt;
 　　“虚拟网卡”是由【虚拟化软件】创建滴。IEEE 也给每个虚拟化软件的厂商（含开源社区）分配了唯一的 OUI。因此，虚拟化软件在创建“虚拟网卡”时，会使用自己的 OUI 生成前面24个比特；后面的24比特，会采用某种算法使之尽可能【随机化】。由于“2的24次方”很大（224 = 16777216），碰巧一样的概率很低。&lt;br&gt;
 　　（注：如果手工修改 MAC 地址，故意把两块网卡的 MAC 地址搞成一样，那确实就做不到唯一性了。并且会导致链路层的通讯出问题）&lt;/p&gt;
@@ -7519,7 +7519,7 @@ https://program-think.blogspot.com/2021/03/Computer-Networks-Overview.html&lt;/p
 &lt;h2 id=&#34;链路层的协议实现&#34;&gt;链路层的【协议实现】&lt;/h2&gt;
 &lt;p&gt;对于电脑主机（含移动设备），“网卡硬件 ＆ 网卡驱动”会包含链路层协议的实现（参见如下示意图）。&lt;br&gt;
 　　另外，还有一些专门的【2层】网络设备，也提供链路层的功能（参见下一个小节）。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620108330012.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1620108330012.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;链路层相关的网络设备&#34;&gt;链路层相关的【网络设备】&lt;/h2&gt;
 &lt;p&gt;1. &lt;a href=&#34;https://zh.wikipedia.org/wiki/%E7%B6%B2%E8%B7%AF%E4%BA%A4%E6%8F%9B%E5%99%A8&#34;&gt;网络交换机&lt;/a&gt;（network switch）&lt;br&gt;
 　　（注：一般提到“网络交换机”，如果不加定语，指的就是“2层交换机”；此外还有更高层的交换机，在后续章节介绍）&lt;br&gt;
@@ -7568,14 +7568,14 @@ https://program-think.blogspot.com/2021/03/Computer-Networks-Overview.html&lt;/p
 　　假设【没有】统一的网络层，网关的工作就很难做。就好比说：如果全球没有某种通用的自然语言，就需要培养非常多不同类型的翻译人才（假设有30种主要语言，任意两种互译，就需要几百种不同的翻译人才）。&lt;br&gt;
 　　反之，如果有了某种统一的网络层标准，问题就好办多了（还是假设有30种主要语言，只要选定某种作为通用语，然后培养29种翻译人才，就可以实现任意两种语言互译）。&lt;br&gt;
 　　如今的互联网时代，【IP 协议】就是那个充当统一标准的网络层协议。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620108920280.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1620108920280.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;网络拓扑network-topology&#34;&gt;网络拓扑（network topology）&lt;/h2&gt;
 &lt;p&gt;网络的拓扑结构有很多种，有简单的，有复杂的。一般来说，再复杂的拓扑，也可以逐步分解为若干简单拓扑的组合。&lt;br&gt;
 　　对拓扑的研究，有专门一个数学分支（拓扑学）。考虑到本文只是扫盲，俺不可能再去聊“拓扑学”。因此，只挑几种简单的拓扑结构，让大伙儿有个直观的印象。&lt;br&gt;
 以下是几种常见的拓扑结构&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620108958718.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1620108958718.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 如今的互联网，整体的拓扑结构超级复杂。但还是可以逐步分解为上述几种基本的拓扑结构。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620109056854.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1620109056854.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;互联网的拓扑从历史的角度看其健壮性&#34;&gt;互联网的拓扑——从“历史”的角度看其健壮性&lt;/h2&gt;
 &lt;p&gt;上面那张图可以看出：互联网拓扑的【局部】有很多是“星形拓扑”（当然也有其它的）。但从【宏观】上看，更像是“网状拓扑”。&lt;br&gt;
 　　在现实生活中，对于复杂结构，通常都会采用“树状层次结构”，以便于管理。比如：域名系统、公司组织结构、官僚系统 ...... 那为啥互联网的【宏观】拓扑结构是“网状”捏？这就要说到互联网的历史。&lt;/p&gt;
@@ -7585,7 +7585,7 @@ https://program-think.blogspot.com/2021/03/Computer-Networks-Overview.html&lt;/p
 　　简而言之，当时美国的电话网络是典型的【多级星形拓扑】。这种拓扑的优点是：简单、高效、便于管理；但缺点是：健壮性很差。从这个案例中，大伙儿可以再次体会到“效率”与“健壮性”之间的矛盾。&lt;br&gt;
 　　话说1957年的时候，苏联成功试射第一颗洲际弹道导弹（ICBM），美国军方开始担心：一旦苏联先用洲际导弹攻击美国，只要把少数几个长途局轰掉，军方的指挥系统就会瘫痪。也就是说，“长途局”已经成为美国军方的【单点故障】（何为“单点故障”？参见这篇博文）。&lt;br&gt;
 　　1960年，美国国防部找来大名鼎鼎的兰德公司进行咨询，要求提供一个应对核打击的方案。该公司的研究员 Paul Baran 设计了一个方案，把“星形拓扑”改为【网状拓扑】。采用【网状拓扑】的好处在于：即使发生全面核大战，大量骨干节点被摧毁，整个网络也不会被分隔成几个孤岛，军方的指挥系统依然能正常运作。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620109508606.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1620109508606.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 有了兰德公司的方案，美国军方找到当时最大的电信公司 AT＆T，想要实现这个系统，结果被否决了。AT＆T 高层认为：搞这样一种系统根本不切实际。于是 Baran 的方案中途夭折。&lt;br&gt;
 　　为啥 AT＆T 反对这个方案捏？一方面，成功的大公司总是有很强的思维定势（关于这点，参见这篇文章）；另一方面，Baran 的设计方案确实很超前——其前瞻性不仅包括“拓扑结构”，而且把当时电信行业的几大核心观念完全颠覆掉了（具体如何颠覆，后续章节还会再聊）。&lt;br&gt;
 　　时间一晃又过了好多年，到了60年代末，由于一系列机缘巧合，英国佬发现了“Baran 方案”的价值，并据此搞了一个小型的 NPL 网络（NPL 是“国家物理实验室”的缩写）。然后在某次 ACM 会议上，美国佬看到英国佬的论文，才意识到：Baran 方案完全可行。经历了“出口转内销”的命运之后，该方案重新被美国国防部重视。之后，（国防部下属的）“高级计划研究局”（ARPA）开始筹建“阿帕网”（ARPANET），才有了如今的互联网。&lt;/p&gt;
@@ -7620,8 +7620,8 @@ A 主机的协议栈先判断“A B 两个地址”是否在同一个子网（�
 　　（前面说了）互联网的前身是“阿帕网/ARPANET”。在阿帕网诞生初期（上世纪70年代），全球的主机很少。因此，早期的路由表很简单，既是“全局”滴，又是“静态”滴。简而言之，每个路由器内部都维护一张“全局路由表”，这个“路由表”包含了全球所有其它路由器的关联信息。每当来了一个数据包，查一下这张全局路由表，自然就清楚要转发给谁，才能最快到达目的地。&lt;br&gt;
 　　早期的阿帕网，主机的变化比较少，也很少增加路由器。每当出现一个新的路由器，其它路由器的管理员就手工编辑各自的“全局路由表”。&lt;br&gt;
 　　为了加深大伙儿印象，特意找来两张70年代初的阿帕网拓扑图（注：图中的 IMP 是“Interface Message Processor”的缩写，也就是如今所说的“路由器”）。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620120438050.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620120452002.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1620120438050.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1620120452002.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 第2阶段：动态全局路由表&lt;br&gt;
 　　后来，“阿帕网/互联网”的规模猛增，路由器数量也跟着猛增，隔三差五都有新的路由器冒出来。再用“静态路由表”这种机制，（编辑路由表的）管理员会被活活累死。于是改用“动态路由表”，并引入某种“路由发现机制”。但“路由表”依然是【全局】滴。&lt;/p&gt;
 &lt;p&gt;第3阶段：动态分级路由表&lt;br&gt;
@@ -7630,7 +7630,7 @@ A 主机的协议栈先判断“A B 两个地址”是否在同一个子网（�
 另一方面，由于互联网的流量越来越大，每来一个数据包都要查表，查询越来越频繁。&lt;br&gt;
 　　于是，路由器开始吃不消了。为了解决困境，想出一个新招数：引入“分级路由”（hierarchical routing）。所谓的“分级路由”就是：把整个互联网分为多个大区域，每个大区域内部再分小区域，小区域内部再分小小区域 ...... 看到这里，熟悉“数据结构与算法”的同学就会意识到——这相当于构造了一个【树状】层次结构。&lt;br&gt;
 　　有了这个层次结构，每个路由器重点关注：自己所在的那个最小化区域里面的网络拓扑。如此一来，每个路由器的“路由表”都会大幅度减小。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620120473341.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1620120473341.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;互联网的路由从cas的角度看其健壮性&#34;&gt;互联网的路由——从“CAS”的角度看其健壮性&lt;/h2&gt;
 &lt;p&gt;如果把互联网视作一个系统，每个公网上的路由器都是一个自适应的主体。假如某个地区的网络流量突然暴涨，骨干网路由器会自动分流；假如因为地震或战争，导致某个地区的骨干网路由器全部下线，周边地区的路由器也会自动避开这个区域 .....&lt;br&gt;
 　　所有这些工作，【不需要】依靠任何最高指挥中枢，去进行协调。&lt;br&gt;
@@ -7641,7 +7641,7 @@ A 主机的协议栈先判断“A B 两个地址”是否在同一个子网（�
 　　一般来说，网络层的设计有两种截然不同的风格：【电路交换 VS 分组交换】。有时候也分别称之为“有连接的网络层 VS 无连接的网络层”。此处所说的“连接”指的是某种“虚电路”（洋文叫做“virtual circuit”，简称 VC）。&lt;/p&gt;
 &lt;p&gt;要理解“虚电路”，首先要从老式的电话系统说起。&lt;br&gt;
 　　最早期的电话，既没有拨号盘也没有按键，全靠一张嘴。当你拿起电话，先告诉接线员你要打给谁，接线员会用一根跳接线，插入电话交换设备的某个插孔，从而把你的电话机与对方的电话机相连。于是建立了一条两人之间的电话通路，也就是“电路”。你可以把“接线员”想象成某种“人肉路由器” 😃&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620120530652.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1620120530652.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 后来发明了“自动电话交换机”，导致“接线员”全体下岗。虽然自动化了，但原理还是一样——当你在电话上拨了某人的号码，电话局的交换机会自动选择一条线路。只有当这条线路建立起来，对方的电话才会响。一旦双方开始通话，双方之间的语音都是通过这条线路传输。并且这条线路是独占的——只要通话不挂断，这条线路就不会再分配给其他人使用。&lt;/p&gt;
 &lt;p&gt;前面提到“互联网诞生的历史”，当时军方推动的“Baran 方案”被 AT＆T 断然拒绝。因为这个方案完全颠覆了传统的电话系统——&lt;br&gt;
 颠覆之1：把“模拟信号”颠覆为“数字信号”（这点比较好理解，俺就不解释了）&lt;br&gt;
@@ -7672,12 +7672,12 @@ IP 协议（含 &lt;a href=&#34;https://en.wikipedia.org/wiki/IPv4&#34;&gt;IPv4&
 &lt;h2 id=&#34;网络层的协议实现&#34;&gt;网络层的【协议实现】&lt;/h2&gt;
 &lt;p&gt;对于电脑主机（含移动设备），网络层的协议实现通常包含在操作系统自带的网络模块中（也就是“操作系统协议栈”）。具体参见如下示意图。&lt;br&gt;
 　　另外，还有一些专门的【3层】网络设备，也提供网络层的功能（参见本章节的后续小节）。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620196533414.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1620196533414.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ip-地址的格式及含义&#34;&gt;IP 地址的格式及含义&lt;/h2&gt;
 &lt;p&gt;当年设计阿帕网的时候，采用了【4字节】（32比特）来表示“网络层地址”（也就是 IP 地址）。&lt;br&gt;
 　　“IP 地址”的含义很重要，俺有必要解释一下：&lt;br&gt;
 　　咱们平时所说的 IP 地址，采用【点分十进制】来表示。就是把地址的4个字节，先翻译为十进制，然后每个字节用一个小数点分隔开（参见如下示意图）：&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620196563350.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https:////post-images/1620196563350.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 “IP 地址”的32比特，分为两部分：第1部分用来标识【子网】，第2部分用来标识该子网中的【主机】。&lt;br&gt;
 　　这两部分各占用多少比特，是不确定的。在这种情况下，“操作系统协议栈”如何知道哪些比特标识“子网”，哪些比特标识“主机”捏？奥妙在于【子网掩码】。所以，大伙儿在给系统配置 IP 地址的时候，通常都需要再设置一个【子网掩码】，就这个用途。&lt;/p&gt;
 &lt;h2 id=&#34;ip-地址枯竭及其解决方法&#34;&gt;IP 地址枯竭，及其解决方法&lt;/h2&gt;
@@ -7707,7 +7707,7 @@ IP 协议（含 &lt;a href=&#34;https://en.wikipedia.org/wiki/IPv4&#34;&gt;IPv4&
 　　从上面这句话看，“3层交换机”的能力显然不如“路由器”。既然已经有“路由器”，为啥还要发明“3层交换机”捏？这就要说到【单臂路由器】的弊端。&lt;br&gt;
 　　对于企业内网的“2层交换机”，通常都支持 VLAN 功能。通俗地说：可以在交换机中划分多个【虚拟子网】。其实这些子网的中所有的电脑，都还是接入这台交换机，只不过这些子网配置了不同的网络地址。对于同一个 VLAN 内部的通讯，“2层交换机”自己就可以搞定（只需要用到2层协议）；但对于【跨】VLAN 主机之间的通讯，“2层交换机”就没戏啦（它没有路由功能）。因此，就必须在它旁边外加一个路由器，形成如下拓扑结构。在这个拓扑中，路由器只与单个设备（2层交换机）相连，所以称之为“单臂”。&lt;br&gt;
 　　请注意：如下示意图只画了两台电脑，位于两个 VLAN。实际上可能有很多个 VLAN，每个里面有几十台电脑。于是，交换机与路由器之间的传输通道就会成为瓶颈——【跨】VLAN 的任意两台电脑通讯，数据包都要到路由器那里兜一圈。为了消除这种瓶颈，才发明了“3层交换机”——把路由功能直接集成到交换机内部。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620196721088.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1620196721088.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;p&gt;3. &lt;a href=&#34;https://zh.wikipedia.org/wiki/%E7%84%A1%E7%B7%9A%E6%8E%A5%E5%85%A5%E9%BB%9E&#34;&gt;无线热点&lt;/a&gt;（Wireless Access Point）&lt;br&gt;
 　　“无线热点”通常用来提供无线接入，使得某个【无线】设备能接入到某个【有线】网络中。一般来说，热点都内置了路由功能，那么它就是“无线路由器”，对应到“3层”（网络层）。反之，如果没有路由功能，它就是“网桥”，属于“2层”（链路层）。&lt;/p&gt;
 &lt;h2 id=&#34;网络层相关的软件工具&#34;&gt;网络层相关的【软件工具】&lt;/h2&gt;
@@ -7751,7 +7751,7 @@ IP 协议（含 &lt;a href=&#34;https://en.wikipedia.org/wiki/IPv4&#34;&gt;IPv4&
 &lt;h2 id=&#34;传输层的协议实现&#34;&gt;传输层的【协议实现】&lt;/h2&gt;
 &lt;p&gt;对于电脑主机（含移动设备），传输层的协议实现通常包含在操作系统自带的网络模块中（也就是“操作系统协议栈”）。具体参见如下示意图。&lt;br&gt;
 　　另外，还有一些专门的【4层】网络设备，也提供传输层的功能（参见后续的小节）。&lt;br&gt;
-&lt;img src=&#34;https://blog.gd1214b.icu/post-images/1620196966096.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https:////post-images/1620196966096.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;套接字socket-api&#34;&gt;套接字（socket API）&lt;/h2&gt;
 &lt;p&gt;前面说了：传输层是面向程序员（让他们可以更方便地开发网络软件）。因此，就需要提供一些封装传输层的【库】（API）。程序员只需要调用这些【库】，就可以使用传输层的协议进行通讯啦。&lt;br&gt;
 　　影响力最大的传输层封装库，当然是 socket API。它来自加州大学伯克利分校。&lt;br&gt;
@@ -7819,7 +7819,7 @@ IP 协议（含 &lt;a href=&#34;https://en.wikipedia.org/wiki/IPv4&#34;&gt;IPv4&
       </div>
       
       <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://blog.gd1214b.icu/post/about/"" data-c="
+        <a class="result-title" style="opacity: 0;" href="https://post/about/"" data-c="
           &lt;h1 id=&#34;关于gd1214b&#34;&gt;👋关于gd1214b&lt;/h1&gt;
 &lt;p align=&#34;center&#34;&gt;
  &lt;img width=&#34;200px&#34; src=&#34;https://blog.gd1214b.icu/images/avatar.png&#34; align=&#34;center&#34; alt=&#34;gd1214b&#34; /&gt;
@@ -7921,7 +7921,7 @@ IP 协议（含 &lt;a href=&#34;https://en.wikipedia.org/wiki/IPv4&#34;&gt;IPv4&
       </div>
       
       <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://blog.gd1214b.icu/post/QQ4EPGT87/"" data-c="
+        <a class="result-title" style="opacity: 0;" href="https://post/QQ4EPGT87/"" data-c="
           &lt;h1 id=&#34;markdown-标题&#34;&gt;Markdown 标题&lt;/h1&gt;
 &lt;h1 id=&#34;一级标题&#34;&gt;一级标题&lt;/h1&gt;
 &lt;h2 id=&#34;二级标题&#34;&gt;二级标题&lt;/h2&gt;
