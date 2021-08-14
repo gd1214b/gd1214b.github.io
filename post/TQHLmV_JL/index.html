@@ -8,7 +8,7 @@
 <meta name="keywords" content="gd1214b blog">
 <meta name="description" content="念念不忘，必有回响">
 <meta name="theme-color" content="#f8f9fa">
-<title>OneManager 部署教程 | gd1214b&#39;s blog</title>
+<title>Statically.io：一款免费、强大、迅速的CDN加速服务 | gd1214b&#39;s blog</title>
 <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/gd1214b/gd1214b.github.io@latest/favicon.ico?v=1628944738141">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gd1214b/gd1214b.github.io@latest/media/css/gemini.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gd1214b/gd1214b.github.io@latest/media/fonts/font-awesome.css">
@@ -68,8 +68,8 @@
 
 
 
-  <meta name="description" content="OneManager 部署教程" />
-  <meta name="keywords" content="OneManager,Glitch,Onedrive" />
+  <meta name="description" content="Statically.io：一款免费、强大、迅速的CDN加速服务" />
+  <meta name="keywords" content="CDN,Statically" />
 </head>
 
 <body>
@@ -353,9 +353,11 @@
   <div class="toc-wrapper auto-number auto"
     id="toc_wrapper">
     <ul class="markdownIt-TOC">
-<li><a href="#onemanager%E6%98%AF%E4%BB%80%E4%B9%88">OneManager是什么</a></li>
-<li><a href="#%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B">部署教程</a></li>
-<li><a href="#%E5%8F%AF%E9%80%89%E9%A1%B9%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D">(可选项)自定义域名</a></li>
+<li><a href="#%E5%BC%95%E8%A8%80">引言</a></li>
+<li><a href="#git%E5%8A%A0%E9%80%9F">git加速</a></li>
+<li><a href="#%E5%9B%BE%E5%83%8F%E5%8A%A0%E9%80%9F">图像加速</a></li>
+<li><a href="#wordpress%E5%8A%A0%E9%80%9F">WordPress加速</a></li>
+<li><a href="#%E7%BD%91%E9%A1%B5%E6%88%AA%E5%9B%BE">网页截图</a></li>
 </ul>
 
   </div>
@@ -621,8 +623,8 @@
           <div class="section bg-color post post-page">
             <section class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://blog.gd1214b.icu/post/3UOqAuzLr/">
-      OneManager 部署教程
+    <a class="post-title-link" href="https://blog.gd1214b.icu/post/TQHLmV_JL/">
+      Statically.io：一款免费、强大、迅速的CDN加速服务
     </a>
   </h1>
   <div class="post-meta">
@@ -630,7 +632,7 @@
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span class="language" data-lan="publish">发布于</span>
-      <span class="publish-time" data-t="2021-07-20 16:25:05">2021-07-20</span>
+      <span class="publish-time" data-t="2021-08-14 19:33:23">2021-08-14</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
@@ -639,20 +641,14 @@
       <span class="pc-show language" data-lan="category-in">分类于</span>
       
       
-      <a href="https://blog.gd1214b.icu/tag/onemanager/">
-        <span>OneManager</span>
+      <a href="https://blog.gd1214b.icu/tag/cdn/">
+        <span>CDN</span>
       </a>、
       
       
       
-      <a href="https://blog.gd1214b.icu/tag/glitch/">
-        <span>Glitch</span>
-      </a>、
-      
-      
-      
-      <a href="https://blog.gd1214b.icu/tag/onedrive/">
-        <span>Onedrive</span>
+      <a href="https://blog.gd1214b.icu/tag/statically/">
+        <span>Statically</span>
       </a>
       
       
@@ -666,12 +662,12 @@
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>412<span class="pc-show language" data-lan="words">字数</span></span>
+      <span>409<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
     
     
-    <span id="/post/3UOqAuzLr/" data-flag-title="OneManager 部署教程" class="meta-item pc-show leancloud_visitors">
+    <span id="/post/TQHLmV_JL/" data-flag-title="Statically.io：一款免费、强大、迅速的CDN加速服务" class="meta-item pc-show leancloud_visitors">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-eye"></i>
       <span><span class="language" data-lan="view">浏览量</span>：<span class="leancloud-visitors-count"></span></span>
@@ -680,53 +676,55 @@
   </div>
 </section>
             <div class="post-body next-md-body" id="post_body">
-              <h1 id="onemanager是什么">OneManager是什么</h1>
-<p>这是一个利用微软onedrive api将onedrive目录映射成一个云盘的程序，类似的程序有很多，比如OneIndex、Pyone、OnePoint等等。这个程序的特点是支持多种onedrive类型，可以部署在多种平台上</p>
-<h1 id="部署教程">部署教程</h1>
-<p>本教程以在Glitch上部署为例.</p>
-<ol>
-<li>打开Glitch 官网:<a href="https://glitch.com/">https://glitch.com/</a></li>
-<li>点击 Log in<br>
-<img src="https://blog.gd1214b.icu/post-images/1626770019121.jpg" alt="" loading="lazy"></li>
-<li>通过Github登录<br>
-<img src="https://blog.gd1214b.icu/post-images/1626770099003.jpg" alt="" loading="lazy"></li>
-<li>新建一个项目<br>
-<img src="https://blog.gd1214b.icu/post-images/1626770852108.jpg" alt="" loading="lazy"><br>
-选择Import from Github<br>
-<img src="https://blog.gd1214b.icu/post-images/1626770925832.jpg" alt="" loading="lazy"><br>
-在弹出的对话框中输入 https://github.com/qkqpttgf/OneManager-php, 然后点击确定.<br>
-<img src="https://blog.gd1214b.icu/post-images/1626771001198.jpg" alt="" loading="lazy"><br>
-接下来Glitch将会为你导入该项目, 这可能会需要一点时间.</li>
-<li>配置onemanager<br>
-(非必需)项目导入完毕后, 依次点击 Show &gt;In a New Window<br>
-<img src="https://blog.gd1214b.icu/post-images/1626773665387.jpg" alt="" loading="lazy"><br>
-<img src="https://blog.gd1214b.icu/post-images/1626773739645.jpg" alt="" loading="lazy"><br>
-然后按照提示往下走，设置好密码后会来到这个界面，点击登录：<br>
-<img src="https://blog.gd1214b.icu/post-images/1626773861826.jpg" alt="" loading="lazy"><br>
-输入密码后来到这个界面，点击管理＞设置：<br>
-<img src="https://blog.gd1214b.icu/post-images/1626773970547.jpg" alt="" loading="lazy"><br>
-选择Sharelink,点击添加盘:<br>
-<img src="https://blog.gd1214b.icu/post-images/1626774117873.jpg" alt="" loading="lazy"><br>
-标签和显示名称可以随便填:<br>
-<img src="https://blog.gd1214b.icu/post-images/1626774382796.jpg" alt="" loading="lazy"><br>
-Sharelink在登录你的OneDrive网盘后,按以下步骤获取:<br>
-<img src="https://blog.gd1214b.icu/post-images/1626774629064.jpg" alt="" loading="lazy"><br>
-将其粘贴到这个框中, 点击确定:<br>
-<img src="https://blog.gd1214b.icu/post-images/1626774742056.jpg" alt="" loading="lazy"><br>
-稍等几秒后即可看到这个界面:<br>
-<img src="https://blog.gd1214b.icu/post-images/1626774809625.jpg" alt="" loading="lazy"><br>
-到此你的OneManager就算部署成功了.</li>
-</ol>
-<h1 id="可选项自定义域名">(可选项)自定义域名</h1>
-<p>在Glitch中,依次点击 Tools &gt; Custom Domains :<br>
-<img src="https://blog.gd1214b.icu/post-images/1626775210453.jpg" alt="" loading="lazy"><br>
-输入你的域名, 并点击Add Domain:(我这里的onemanager只是一个示例, 你可以用其他的二级域名)<br>
-<img src="https://blog.gd1214b.icu/post-images/1626775295510.jpg" alt="" loading="lazy"><br>
-在你的域名服务供应商中为你的域名添加一条解析:<br>
-<img src="https://blog.gd1214b.icu/post-images/1626775414873.jpg" alt="" loading="lazy"><br>
-类型为CNAME, 目标填 glitch.edgeapp.net</p>
-<p>Glitch默认不会启用https, 你可以在OneManager 的设置 &gt; 平台变量 中将 forceHttps 的值设置为1来启用 https :<br>
-<img src="https://blog.gd1214b.icu/post-images/1626776001478.jpg" alt="" loading="lazy"></p>
+              <blockquote>
+<p>本文转自 : <a href="https://www.qian.blue/archives/statically.html">https://www.qian.blue/archives/statically.html</a></p>
+</blockquote>
+<h1 id="引言">引言</h1>
+<p>jsDelivr我想很多人都知道，开发者们会用它来加速css、JavaScript之类的静态资源，当然也会有部分哥们用它来加速图像服务，但在这里建议适量使用，不要滥用。<br>
+  Statically也是一款为开发者免费提供的CDN加速服务，它与Jsdelivr一样有着深厚的资源支持，同时其支持的内容更加丰富一些。下面介绍一下。</p>
+<h1 id="git加速">git加速</h1>
+<ul>
+<li>GitHub : <code>https://cdn.statically.io/gh/:user/:repo/:tag/:file</code></li>
+<li>GitLab : <code>https://cdn.statically.io/gl/:user/:repo/:tag/:file</code></li>
+<li>Bitbucket : <code>https://cdn.statically.io/bb/:user/:repo/:tag/:file</code><br>
+其中 :user 为用户名, :repo为仓库名, :tag为仓库分支, :file为文件名(含后缀).<br>
+示例 : <a href="https://cdn.statically.io/gh/gd1214b/test/main/test.txt">https://cdn.statically.io/gh/gd1214b/test/main/test.txt</a></li>
+</ul>
+<h1 id="图像加速">图像加速</h1>
+<ul>
+<li>无修改打开 : <code>https://cdn.statically.io/img/:domain/:image</code></li>
+<li>限制width打开:	<code>https://cdn.statically.io/img/:domain/w=:pixel/:image</code></li>
+<li>限制height打开:	<code>https://cdn.statically.io/img/:domain/h=:pixel/:image</code></li>
+<li>启动自动WebP: 	<code>https://cdn.statically.io/img/:domain/f=auto/:image</code></li>
+<li>调整图像质量:	 <code>https://cdn.statically.io/img/:domain/q=:percentage/:image</code><br>
+其中:domain是域名, :image是图像路径.<br>
+示例: <a href="https://cdn.statically.io/img/blog.gd1214b.icu/images/avatar.png">https://cdn.statically.io/img/blog.gd1214b.icu/images/avatar.png</a></li>
+</ul>
+<h1 id="wordpress加速">WordPress加速</h1>
+<ul>
+<li>
+<p>核心代码加速: 	<code>https://cdn.statically.io/wp/c/:version/:file</code></p>
+</li>
+<li>
+<p>插件加速: 	<code>https://cdn.statically.io/wp/p/:plugin/:version/:file</code></p>
+</li>
+<li>
+<p>主题加速: 	<code>https://cdn.statically.io/wp/t/:theme/:version/:file</code></p>
+<h1 id="网页截图">网页截图</h1>
+<ul>
+<li>直接截屏:	<code>https://cdn.statically.io/screenshot/:url</code></li>
+<li>截长图: 	<code>https://cdn.statically.io/screenshot/full=true/:url</code><br>
+注：如果需要将选项整合到一起，用逗号隔开即可。<br>
+示例:<br>
+直接截屏:<br>
+<a href="https://cdn.statically.io/screenshot/blog.gd1214b.icu">https://cdn.statically.io/screenshot/blog.gd1214b.icu</a><br>
+<img src="https://cdn.statically.io/screenshot/blog.gd1214b.icu" alt="" loading="lazy"><br>
+截长图:<br>
+<a href="https://cdn.statically.io/screenshot/full=true/blog.gd1214b.icu">https://cdn.statically.io/screenshot/full=true/blog.gd1214b.icu</a><br>
+<img src="https://cdn.statically.io/screenshot/full=true/blog.gd1214b.icu" alt="" loading="lazy"></li>
+</ul>
+</li>
+</ul>
 
             </div>
             
@@ -739,7 +737,7 @@ Sharelink在登录你的OneDrive网盘后,按以下步骤获取:<br>
     </li>
     <li class="post-copyright-link">
       <strong class="language" data-lan="link">本文链接：</strong>
-      <a href="https://blog.gd1214b.icu/post/3UOqAuzLr/" title="OneManager 部署教程">https://blog.gd1214b.icu/post/3UOqAuzLr/</a>
+      <a href="https://blog.gd1214b.icu/post/TQHLmV_JL/" title="Statically.io：一款免费、强大、迅速的CDN加速服务">https://blog.gd1214b.icu/post/TQHLmV_JL/</a>
     </li>
     <li class="post-copyright-license">
       <strong class="language" data-lan="copyright">版权声明： </strong>
@@ -748,25 +746,19 @@ Sharelink在登录你的OneDrive网盘后,按以下步骤获取:<br>
   </ul>
   <div class="tags">
     
-      <a href="https://blog.gd1214b.icu/tag/onemanager/"># OneManager</a>
+      <a href="https://blog.gd1214b.icu/tag/cdn/"># CDN</a>
     
-      <a href="https://blog.gd1214b.icu/tag/glitch/"># Glitch</a>
-    
-      <a href="https://blog.gd1214b.icu/tag/onedrive/"># Onedrive</a>
+      <a href="https://blog.gd1214b.icu/tag/statically/"># Statically</a>
     
   </div>
   <div class="nav">
     <div class="nav-prev">
       
-        <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="作为一名通信老司机，我是如何看待翼龙通信无人机救灾的？" href="https://blog.gd1214b.icu/post/ZWEkcveiz/">作为一名通信老司机，我是如何看待翼龙通信无人机救灾的？</a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="作为一名通信老司机，我是如何看待翼龙通信无人机救灾的？" href="https://blog.gd1214b.icu/post/ZWEkcveiz/">上一篇</a>
-      
     </div>
     <div class="nav-next">
       
-        <a class="nav-pc-next" title="在Vercel上部署OneDrive-Index" href="https://blog.gd1214b.icu/post/xUIBYCvAl/">在Vercel上部署OneDrive-Index</a>
-        <a class="nav-mobile-next" title="在Vercel上部署OneDrive-Index" href="https://blog.gd1214b.icu/post/xUIBYCvAl/">下一篇</a>
+        <a class="nav-pc-next" title="未雨绸缪：使用后量子时代的加密算法" href="https://blog.gd1214b.icu/post/kyFI8q8Or/">未雨绸缪：使用后量子时代的加密算法</a>
+        <a class="nav-mobile-next" title="未雨绸缪：使用后量子时代的加密算法" href="https://blog.gd1214b.icu/post/kyFI8q8Or/">下一篇</a>
         <i class="fa fa-chevron-right"></i>
       
     </div>

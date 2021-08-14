@@ -9,7 +9,7 @@
 <meta name="description" content="念念不忘，必有回响">
 <meta name="theme-color" content="#f8f9fa">
 <title>如何理解麦克卢汉的「媒介即信息」？ | gd1214b&#39;s blog</title>
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/gd1214b/gd1214b.github.io@latest/favicon.ico?v=1628411238712">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/gd1214b/gd1214b.github.io@latest/favicon.ico?v=1628944738141">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gd1214b/gd1214b.github.io@latest/media/css/gemini.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gd1214b/gd1214b.github.io@latest/media/fonts/font-awesome.css">
 <link
@@ -276,19 +276,19 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">27</span>
+        <span class="site-item-stat-count">28</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
     <div class="sidebar-item-box">
       <a href="">
-        <span class="site-item-stat-count">25</span>
+        <span class="site-item-stat-count">27</span>
         <span class="site-item-stat-name language" data-lan="category">分类</span>
       </a>
     </div>
     <div class="sidebar-item-box">
       <a href="/tags/">
-        <span class="site-item-stat-count">25</span>
+        <span class="site-item-stat-count">27</span>
         <span class="site-item-stat-name language" data-lan="tag">标签</span>
       </a>
     </div>
@@ -1638,11 +1638,65 @@
     <div class="result" id="result">
       
       <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://blog.gd1214b.icu/post/TQHLmV_JL/"" data-c="
+          &lt;blockquote&gt;
+&lt;p&gt;本文转自 : &lt;a href=&#34;https://www.qian.blue/archives/statically.html&#34;&gt;https://www.qian.blue/archives/statically.html&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;引言&#34;&gt;引言&lt;/h1&gt;
+&lt;p&gt;jsDelivr我想很多人都知道，开发者们会用它来加速css、JavaScript之类的静态资源，当然也会有部分哥们用它来加速图像服务，但在这里建议适量使用，不要滥用。&lt;br&gt;
+  Statically也是一款为开发者免费提供的CDN加速服务，它与Jsdelivr一样有着深厚的资源支持，同时其支持的内容更加丰富一些。下面介绍一下。&lt;/p&gt;
+&lt;h1 id=&#34;git加速&#34;&gt;git加速&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;GitHub : &lt;code&gt;https://cdn.statically.io/gh/:user/:repo/:tag/:file&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;GitLab : &lt;code&gt;https://cdn.statically.io/gl/:user/:repo/:tag/:file&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Bitbucket : &lt;code&gt;https://cdn.statically.io/bb/:user/:repo/:tag/:file&lt;/code&gt;&lt;br&gt;
+其中 :user 为用户名, :repo为仓库名, :tag为仓库分支, :file为文件名(含后缀).&lt;br&gt;
+示例 : &lt;a href=&#34;https://cdn.statically.io/gh/gd1214b/test/main/test.txt&#34;&gt;https://cdn.statically.io/gh/gd1214b/test/main/test.txt&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;图像加速&#34;&gt;图像加速&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;无修改打开 : &lt;code&gt;https://cdn.statically.io/img/:domain/:image&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;限制width打开:	&lt;code&gt;https://cdn.statically.io/img/:domain/w=:pixel/:image&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;限制height打开:	&lt;code&gt;https://cdn.statically.io/img/:domain/h=:pixel/:image&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;启动自动WebP: 	&lt;code&gt;https://cdn.statically.io/img/:domain/f=auto/:image&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;调整图像质量:	 &lt;code&gt;https://cdn.statically.io/img/:domain/q=:percentage/:image&lt;/code&gt;&lt;br&gt;
+其中:domain是域名, :image是图像路径.&lt;br&gt;
+示例: &lt;a href=&#34;https://cdn.statically.io/img/blog.gd1214b.icu/images/avatar.png&#34;&gt;https://cdn.statically.io/img/blog.gd1214b.icu/images/avatar.png&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;wordpress加速&#34;&gt;WordPress加速&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;核心代码加速: 	&lt;code&gt;https://cdn.statically.io/wp/c/:version/:file&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;插件加速: 	&lt;code&gt;https://cdn.statically.io/wp/p/:plugin/:version/:file&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;主题加速: 	&lt;code&gt;https://cdn.statically.io/wp/t/:theme/:version/:file&lt;/code&gt;&lt;/p&gt;
+&lt;h1 id=&#34;网页截图&#34;&gt;网页截图&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;直接截屏:	&lt;code&gt;https://cdn.statically.io/screenshot/:url&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;截长图: 	&lt;code&gt;https://cdn.statically.io/screenshot/full=true/:url&lt;/code&gt;&lt;br&gt;
+注：如果需要将选项整合到一起，用逗号隔开即可。&lt;br&gt;
+示例:&lt;br&gt;
+直接截屏:&lt;br&gt;
+&lt;a href=&#34;https://cdn.statically.io/screenshot/blog.gd1214b.icu&#34;&gt;https://cdn.statically.io/screenshot/blog.gd1214b.icu&lt;/a&gt;&lt;br&gt;
+&lt;img src=&#34;https://cdn.statically.io/screenshot/blog.gd1214b.icu&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+截长图:&lt;br&gt;
+&lt;a href=&#34;https://cdn.statically.io/screenshot/full=true/blog.gd1214b.icu&#34;&gt;https://cdn.statically.io/screenshot/full=true/blog.gd1214b.icu&lt;/a&gt;&lt;br&gt;
+&lt;img src=&#34;https://cdn.statically.io/screenshot/full=true/blog.gd1214b.icu&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+">Statically.io：一款免费、强大、迅速的CDN加速服务</a>
+      </div>
+      
+      <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://blog.gd1214b.icu/post/kyFI8q8Or/"" data-c="
           &lt;blockquote&gt;
-&lt;p&gt;本文转自: &lt;a href=&#34;https://lantian.pub/article/modify-website/post-quantum-encryption.lantian/&#34;&gt;https://lantian.pub/article/modify-website/post-quantum-encryption.lantian/&lt;/a&gt;&lt;br&gt;
-现代互联网上，绝大多数网站都已经支持 HTTPS，其使用的 SSL/TLS 加密协议会将用户的请求数据与网站的响应进行加密，以防止信息被路径上的恶意用户窃取或篡改。而 SSL/TLS 协议中的一个重要组成部分是 RSA、ECDSA 等非对称加密算法，这些算法的密钥分为公钥、私钥两份，公钥可以公开，而私钥则要妥善保管。&lt;/p&gt;
+&lt;p&gt;本文转自: &lt;a href=&#34;https://lantian.pub/article/modify-website/post-quantum-encryption.lantian/&#34;&gt;https://lantian.pub/article/modify-website/post-quantum-encryption.lantian/&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;p&gt;现代互联网上，绝大多数网站都已经支持 HTTPS，其使用的 SSL/TLS 加密协议会将用户的请求数据与网站的响应进行加密，以防止信息被路径上的恶意用户窃取或篡改。而 SSL/TLS 协议中的一个重要组成部分是 RSA、ECDSA 等非对称加密算法，这些算法的密钥分为公钥、私钥两份，公钥可以公开，而私钥则要妥善保管。&lt;/p&gt;
 &lt;p&gt;在访问 HTTPS 网站时，会经过以下的流程：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;网站会将它的公钥（以证书形式）发送给浏览器。&lt;/li&gt;
