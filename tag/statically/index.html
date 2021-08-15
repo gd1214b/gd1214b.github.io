@@ -8,8 +8,8 @@
 <meta name="keywords" content="gd1214b blog">
 <meta name="description" content="念念不忘，必有回响">
 <meta name="theme-color" content="#f8f9fa">
-<title>未雨绸缪：使用后量子时代的加密算法 | gd1214b&#39;s blog</title>
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/gd1214b/gd1214b.github.io@latest/favicon.ico?v=1629013460260">
+<title>gd1214b&#39;s blog</title>
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/gd1214b/gd1214b.github.io@latest/favicon.ico?v=1628944738141">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gd1214b/gd1214b.github.io@latest/media/css/gemini.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gd1214b/gd1214b.github.io@latest/media/fonts/font-awesome.css">
 <link
@@ -68,8 +68,6 @@
 
 
 
-  <meta name="description" content="未雨绸缪：使用后量子时代的加密算法" />
-  <meta name="keywords" content="HTTPS,网络" />
 </head>
 
 <body>
@@ -241,26 +239,10 @@
   <div class="main-continer">
     
     <div
-      class="section-layout gemini ">
+      class="section-layout  gemini">
       <div class="section-layout-wrapper">
-        
-
-<div class="sidebar">
-  
-    <div class="sidebar-box box-shadow-wrapper bg-color right-motion" id="sidebar">
-      
-        <div class="post-list-sidebar">
-          <div class="sidebar-title">
-            <span id="tocSideBar" class="sidebar-title-item sidebar-title-active language" data-lan="index">文章目录</span>
-            <span id="metaSideBar" class="sidebar-title-item language" data-lan="preview">站点概览</span>
-          </div>
-        </div>
-      
-      <div class="sidebar-body gemini" id="sidebar_body">
-        
-          
-            <div class="post-side-meta" id="post_side_meta">
-              
+        <div id="sidebarMeta" class="sidebar">
+    
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="https://cdn.jsdelivr.net/gh/gd1214b/gd1214b.github.io@latest/images/avatar.png"/>
@@ -277,19 +259,19 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">27</span>
+        <span class="site-item-stat-count">28</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
     <div class="sidebar-item-box">
       <a href="">
-        <span class="site-item-stat-count">25</span>
+        <span class="site-item-stat-count">27</span>
         <span class="site-item-stat-name language" data-lan="category">分类</span>
       </a>
     </div>
     <div class="sidebar-item-box">
       <a href="/tags/">
-        <span class="site-item-stat-count">25</span>
+        <span class="site-item-stat-count">27</span>
         <span class="site-item-stat-name language" data-lan="tag">标签</span>
       </a>
     </div>
@@ -347,542 +329,206 @@
   </div>
 
 </div>
-            </div>
-            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
-              <div class="toc-box right-motion">
-  <div class="toc-wrapper auto-number auto"
-    id="toc_wrapper">
-    <ul class="markdownIt-TOC">
-<li><a href="#nginx-openssl">nginx / OpenSSL</a></li>
-<li><a href="#chromium-boringssl">Chromium / BoringSSL</a></li>
-</ul>
-
-  </div>
 </div>
-
 <script>
-
-  let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1;
-  let active = 'active-show', activeClass = 'active-current';
-  let tocWrapper = document.querySelector('#toc_wrapper');
-  let tocContent = tocWrapper.children[0];
-  let autoNumber = tocWrapper && tocWrapper.classList.contains('auto-number');
-
-  function addTocNumber(elem, deep) {
-    if (!elem) {
-      return;
-    }
-    let prop = elem.__proto__;
-
-    if (prop === HTMLUListElement.prototype) {
-      for (let i = 0; i < elem.children.length; i++) {
-        addTocNumber(elem.children[i], deep + (i + 1) + '.');
+  let sidebarMeta = document.querySelector('#sidebarMeta');
+  let scheme = 'gemini';
+  let sidebarWrapper = document.querySelector('.sidebar-wrapper');
+  if (sidebarMeta && (scheme === 'pisces' || scheme === 'gemini')) {
+    document.addEventListener('scroll', function(e) {
+      if (document.scrollingElement.scrollTop > parseInt(sidebarMeta.style.marginTop) + 10) {
+        sidebarWrapper.classList.add('home-sidebar-fixed')
+      } else {
+        sidebarWrapper.classList.remove('home-sidebar-fixed')
       }
-    } else if (prop === HTMLLIElement.prototype) {
-      // 保存li元素
-      if (elem.children[0] && elem.children[0].__proto__ === HTMLAnchorElement.prototype) {
-        lList.push(elem);
-      }
-      for (let i = 0; i < elem.children.length; i++) {
-        let cur = elem.children[i];
-        if (cur.__proto__ === HTMLAnchorElement.prototype) {
-          if (autoNumber) {
-            cur.text = deep + ' ' + cur.text;
-          }
-        } else if (cur.__proto__ === HTMLUListElement.prototype) {
-          addTocNumber(cur, deep);
-        }
-      }
-    }
-  }
-
-  function removeParentActiveClass() {
-    let parents = tocContent.querySelectorAll('.' + active)
-    parents.forEach(function (elem) {
-      elem.classList.remove(active);
     });
   }
-
-  function addActiveClass(index) {
-    if (index >= 0 && index < hList.length) {
-      lList[index].classList.add(activeClass);
-    }
-  }
-
-  function removeActiveClass(index) {
-    if (index >= 0 && index < hList.length) {
-      lList[index].classList.remove(activeClass);
-    }
-  }
-
-  function addActiveLiElemment(elem, parent) {
-    if (!elem || elem === parent) {
-      return;
-    } else {
-      if (elem.__proto__ === HTMLLIElement.prototype) {
-        elem.classList.add(active);
-      }
-      addActiveLiElemment(elem.parentElement, parent);
-    }
-  }
-
-  function showToc() {
-    if (tocWrapper) {
-      postBody = document.querySelector('#post_body');
-      for (let i = 0; i < postBody.children.length; i++) {
-        if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
-          hList.push(postBody.children[i]);
-        }
-      }
-      if (tocWrapper.classList.contains('compress')) {
-        tocContent.classList.add('closed');
-      } else if (tocWrapper.classList.contains('no_compress')) {
-        tocContent.classList.add('expanded');
-      } else {
-        if (hList.length > 10) {
-          active = 'active-hidden'
-          tocContent.classList.add('closed');
-        } else {
-          tocContent.classList.add('expanded');
-        }
-      }
-    }
-  }
-
-  (function () {
-    // 处理不是从#一级标题开始目录
-    if (tocContent.children.length === 1 && tocContent.children[0].__proto__ === HTMLLIElement.prototype) {
-      let con = tocContent.children[0].children[0];
-      tocContent.innerHTML = con.innerHTML;
-    }
-    let markdownItTOC = document.querySelector('.markdownIt-TOC');
-    let innerHeight = window.innerHeight;
-    markdownItTOC.style = `max-height: ${innerHeight - 80 > 0 ? innerHeight - 80 : innerHeight}px`
-    addTocNumber(tocContent, '');
-  })();
-
-  document.addEventListener('scroll', function (e) {
-    if (lList.length <= 0) {
-      return;
-    }
-    let scrollTop = document.scrollingElement.scrollTop + 10;
-    let dir;
-
-    if (lastTop - scrollTop > 0) {
-      dir = 'up';
-    } else {
-      dir = 'down';
-    }
-
-    lastTop = scrollTop;
-    if (scrollTop <= 0) {
-      if (lastIndex >= 0 && lastIndex < hList.length) {
-        lList[lastIndex].classList.remove(activeClass);
-      }
-      return;
-    }
-
-    let current = 0, hasFind = false;
-    for (let i = 0; i < hList.length; i++) {
-      if (hList[i].offsetTop > scrollTop) {
-        current = i;
-        hasFind = true;
-        break;
-      }
-    }
-    if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
-      current = hList.length - 1;
-    } else {
-      current--;
-    }
-    if (dir === 'down') {
-      if (current > lastIndex) {
-        addActiveClass(current);
-        removeActiveClass(lastIndex)
-        lastIndex = current;
-        removeParentActiveClass();
-        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
-      }
-    } else {
-      if (current < lastIndex) {
-        addActiveClass(current);
-        removeActiveClass(lastIndex);
-        lastIndex = current;
-        removeParentActiveClass();
-        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
-      }
-    }
-  });
-
-
-  window.addEventListener('load', function () {
-    showToc();
-    document.querySelector('#sidebar').style = 'display: block;';
-    tocWrapper.classList.add('toc-active');
-    setTimeout(function () {
-      if ("createEvent" in document) {
-        let evt = document.createEvent("HTMLEvents");
-        evt.initEvent("scroll", false, true);
-        document.dispatchEvent(evt);
-      }
-      else {
-        document.fireEvent("scroll");
-      }
-    }, 500)
-  })
-
-</script>
-            </div>
-          
-        
+  </script>
+        <div class="section-box tag-line box-shadow-wrapper">
+          <section class="section tags-section posts-expand bg-color">
+            <div class="padding-wrapper">
+  <div class="tag-timeline-box">
+    <div class="tag-timeline-wrapper">
+      <div class="tag-timeline-title">
+        <h2>
+          Statically
+          <small class="language" data-lan="tag">标签</small>
+        </h2>
       </div>
-    </div>
-  
-</div>
-<script>
-  const SIDEBAR_TITLE_ACTIVE = 'sidebar-title-active';
-  const SIDEBAR_BODY_ACTIVE = 'sidebar-body-active';
-  const SLIDE_UP_IN = 'slide-up-in';
-
-  let sidebar = document.querySelector('#sidebar'),
-  tocSideBar = document.querySelector('#tocSideBar'),
-  metaSideBar = document.querySelector('#metaSideBar'),
-  postToc = document.querySelector('#post_toc'),
-  postSiteMeta = document.querySelector('#post_side_meta'),
-  sidebarTitle = document.querySelector('.sidebar-title'),
-  sidebarBody = document.querySelector('#sidebar_body');
-
-  tocSideBar && tocSideBar.addEventListener('click', (e) => {
-    toggleSidebar(e);
-  });
-
-  metaSideBar && metaSideBar.addEventListener('click', (e) => {
-    toggleSidebar(e);
-  });
-
-  function toggleSidebar(e) {
-    let currentTitle = document.querySelector("."+SIDEBAR_TITLE_ACTIVE);
-    if (currentTitle == e.srcElement) {
-      return ;
-    }
-    let current, showElement, hideElement;
-    if (e.srcElement == metaSideBar) {
-      showElement = postSiteMeta;
-      hideElement = postToc;
-    } else if (e.srcElement == tocSideBar){
-      showElement = postToc;
-      hideElement = postSiteMeta;
-    }
-    currentTitle.classList.remove(SIDEBAR_TITLE_ACTIVE);
-    e.srcElement.classList.add(SIDEBAR_TITLE_ACTIVE);
-
-    jQuery.Velocity(hideElement, 'stop');
-    jQuery.Velocity(hideElement, 'transition.slideUpOut', {
-      display: 'none',
-      duration: 200,
-      complete: function () {
-        jQuery.Velocity(showElement, 'transition.slideDownIn', {
-          duration: 200
-        });
-      }
-    })
-    hideElement.classList.remove(SIDEBAR_BODY_ACTIVE);
-    showElement.classList.add(SIDEBAR_BODY_ACTIVE);
-  }
-
-  postToc && postToc.addEventListener('transitionend', function() {
-    this.classList.remove(SLIDE_UP_IN);
-  });
-
-  if (sidebarBody) {
-    if (sidebarBody.classList.contains('pisces') || sidebarBody.classList.contains('gemini')) {
-      let hasFix = false;
-      let scrollEl = document.querySelector('.main-continer');
-      let limitTop = document.querySelector('#nav_ul').children.length * 42 + 162;
-      window.addEventListener('scroll', function(e) {
-        if (document.scrollingElement.scrollTop >= limitTop) {
-          if (!hasFix) {
-            sidebar.classList.add('sidebar-fixed');
-            hasFix = true;
-          }
-        } else {
-          if (hasFix) {
-            sidebar.classList.remove('sidebar-fixed');
-            hasFix = false;
-          }
-        }
-      });
-    }
-  }
-  
-</script>
-        <div class="section-box box-shadow-wrapper">
-          <div class="section bg-color post post-page">
-            <section class="post-header">
-  <h1 class="post-title">
-    <a class="post-title-link" href="https://blog.gd1214b.icu/post/kyFI8q8Or/">
-      未雨绸缪：使用后量子时代的加密算法
-    </a>
-  </h1>
-  <div class="post-meta">
-    
-    <span class="meta-item pc-show">
-      <i class="fa fa-calendar-o"></i>
-      <span class="language" data-lan="publish">发布于</span>
-      <span class="publish-time" data-t="2021-07-29 18:36:42">2021-07-29</span>
-      <span class="post-meta-divider pc-show">|</span>
-    </span>
-    
-    <span class="meta-item">
-      <i class="fa fa-folder-o"></i>
-      <span class="pc-show language" data-lan="category-in">分类于</span>
-      
-      
-      <a href="https://blog.gd1214b.icu/tag/https/">
-        <span>HTTPS</span>
-      </a>、
       
       
       
-      <a href="https://blog.gd1214b.icu/tag/wang-luo/">
-        <span>网络</span>
+      
+      
+      <a href="https://blog.gd1214b.icu/post/TQHLmV_JL/">
+        <div class="motion-warpper">
+          <div class="tag-post-node">
+            <h1>
+              08-14
+              <small>Statically.io：一款免费、强大、迅速的CDN加速服务</small>
+            </h1>
+          </div>
+        </div>
       </a>
       
       
-    </span>
-    <span class="post-meta-divider">|</span>
-    
-    <span class="meta-item">
-      <i class="fa fa-clock-o"></i>
-      <span>10<span class="language" data-lan="minute">分钟</span></span>
-    </span>
-    <span class="meta-item">
-      <span class="post-meta-divider">|</span>
-      <i class="fa fa-file-word-o"></i>
-      <span>2411<span class="pc-show language" data-lan="words">字数</span></span>
-    </span>
-    
-    
-    
-    <span id="/post/kyFI8q8Or/" data-flag-title="未雨绸缪：使用后量子时代的加密算法" class="meta-item pc-show leancloud_visitors">
-      <span class="post-meta-divider">|</span>
-      <i class="fa fa-eye"></i>
-      <span><span class="language" data-lan="view">浏览量</span>：<span class="leancloud-visitors-count"></span></span>
-    </span>
-    
-  </div>
-</section>
-            <div class="post-body next-md-body" id="post_body">
-              <blockquote>
-<p>本文转自: <a href="https://lantian.pub/article/modify-website/post-quantum-encryption.lantian/">https://lantian.pub/article/modify-website/post-quantum-encryption.lantian/</a><br>
-现代互联网上，绝大多数网站都已经支持 HTTPS，其使用的 SSL/TLS 加密协议会将用户的请求数据与网站的响应进行加密，以防止信息被路径上的恶意用户窃取或篡改。而 SSL/TLS 协议中的一个重要组成部分是 RSA、ECDSA 等非对称加密算法，这些算法的密钥分为公钥、私钥两份，公钥可以公开，而私钥则要妥善保管。</p>
-</blockquote>
-<p>在访问 HTTPS 网站时，会经过以下的流程：</p>
-<ol>
-<li>网站会将它的公钥（以证书形式）发送给浏览器。</li>
-<li>浏览器会校验公钥的有效性，防止中间人篡改公钥，从而拦截或监听通信。</li>
-</ol>
-<ul>
-<li>浏览器（或操作系统）内置了一组可信任的证书颁发机构（CA）的公钥，通过密码学方法可以确认这份公钥是其中某个颁发机构生成的。</li>
-<li>证书颁发机构则会通过一系列方法（多级证书链，物理隔绝的密钥保存设备）来保护他们自己的私钥安全，防止有人窃取他们的私钥来随意生成被信任的证书信息。</li>
-<li>浏览器会与证书颁发机构的服务器联系，查询 “证书吊销列表”（Certificate Revocation List）。这个列表保存了所有的 “虽然的确是证书颁发机构颁发，但是因为系统错误 / 私钥泄漏等原因不能再被信任” 的证书。</li>
-</ul>
-<ol start="3">
-<li>浏览器在确定公钥可信后，本地随机产生一个随机密钥，用来加密这一次的连接。</li>
-<li>浏览器将随机密钥用网站的公钥加密，然后发送给网站服务器。</li>
-</ol>
-<ul>
-<li>加密后的内容只能用网站的私钥解密，不能用公钥解密，因此监听者是无法获取随机密钥内容的。</li>
-</ul>
-<ol start="5">
-<li>网站服务器用本地保存的私钥解密内容，获得浏览器产生的随机密钥。</li>
-<li>浏览器和网站服务器开始用解密后的随机密钥进行对称加密，也就是双方使用同一份密码进行加密 / 解密的加密算法，例如 AES。</li>
-</ol>
-<ul>
-<li>这里不再使用非对称加密是因为非对称加密对算力的消耗较大，而对称加密性能较高。</li>
-</ul>
-<p>非对称加密算法保证了浏览器和网站交换对称加密密钥的安全，从而保证数据不被窃取或篡改。</p>
-<p>但是随着量子计算机的诞生，事情发生了一点变化。在量子计算机上运行的<a href="https://zh.wikipedia.org/wiki/%E7%A7%80%E7%88%BE%E6%BC%94%E7%AE%97%E6%B3%95">秀尔算法</a>可以非常高效地破解 RSA、ECDSA 等基于质因数分解难度的传统非对称加密算法，只要有一台足够强大的量子计算机，也就是量子比特数目达标的计算机。</p>
-<p>而随着量子计算的逐渐火热，量子计算机正在迅速地发展。目前公开的最强大的量子计算机是 IBM 的 53 量子比特计算机（参见<a href="https://zh.wikipedia.org/wiki/%E9%87%8F%E5%AD%90%E9%9C%B8%E6%AC%8A">量子霸权</a>），仍然不够使用秀尔算法破解 RSA、ECDSA 等，但高速的科技发展随时可能将此变成现实。</p>
-<p>因此，密码学家们着手开发无法被量子计算机有效破解的非对称加密算法，并推广它们的使用，以准备好迎接 RSA 被破解的那一天。</p>
-<p>从 2016 年末开始，Open Quantum Safe 项目就开始将现有的、能抵抗量子计算机的加密算法整合到 liboqs 开发库里，并将它集成到 OpenSSL、BoringSSL 等广泛使用的加密库，以简化新加密算法的部署。</p>
-<p>同时，官方还提供了 nginx、Chromium 等软件的编译、集成流程文档。因此，只需要参照文档进行简单的修改，我们就可以准备好迎接实用量子计算机的到来。</p>
-<blockquote>
-<p>注意：这里所有的后量子加密算法都相对较新，并且正在进行 <a href="https://csrc.nist.gov/Projects/post-quantum-cryptography/round-3-submissions">NIST 的标准化审核流程</a>，可能仍有未被发现的漏洞。虽然 Open Quantum Safe 项目有一些方法降低风险，但在这些算法的标准化流程完成之前，不建议将它们用于生产环境等重要用途。</p>
-</blockquote>
-<h1 id="nginx-openssl">nginx / OpenSSL</h1>
-<p>由于 nginx 使用 OpenSSL 或 BoringSSL 作为自己的加密库，我们不需要对 nginx 做任何修改，只需要把 OpenSSL 替换成 Open Quantum Safe 项目的版本就可以。</p>
-<p>Open Quantum Safe 提供了一份修改后的 <a href="https://github.com/open-quantum-safe/oqs-demos/tree/master/chromium">Dockerfile</a>，可以用作参考。</p>
-<p>相比编译普通的 nginx，主要的改动有两处：</p>
-<ol>
-<li>需要使用 Open Quantum Safe 的 OpenSSL，并额外下载、编译 liboqs，将其安装到 OpenSSL 的源码目录，以便调用。我的 Dockerfile 中与之相关的是 44-52 行：</li>
-</ol>
-<pre><code class="language-shell"># 前略
-&amp;&amp; git clone -b OQS-OpenSSL_1_1_1-stable https://github.com/open-quantum-safe/openssl.git \
-   # 省略了一些我个人使用的 OpenSSL 修改，对后量子加密不是必要的
-&amp;&amp; git clone -b master https://github.com/open-quantum-safe/liboqs.git \
-   &amp;&amp; mkdir /tmp/liboqs/build &amp;&amp; cd /tmp/liboqs/build \
-   &amp;&amp; cmake -DOQS_BUILD_ONLY_LIB=1 -DBUILD_SHARED_LIBS=OFF -DCMAKE_INSTALL_PREFIX=/tmp/openssl/oqs .. \
-   &amp;&amp; make -j4 &amp;&amp; make install &amp;&amp; cd /tmp \
-# 后略
-</code></pre>
-<p>其中所有文件都被下载到了 /tmp 目录下。关键点是用 cmake 编译 liboqs 项目，并将其安装到 OpenSSL 源码目录的 oqs 子目录下。<br>
-2. 需要额外添加一些编译参数，以将 liboqs 包含在编译出来的 nginx 中，在 Dockerfile 的 102-104 行：</p>
-<pre><code class="language-shell"># 前略
-&amp;&amp; ./configure \
-   # 略过一些 nginx 的编译参数
-   --with-openssl=/tmp/openssl \
-   --with-cc-opt=&quot;-I/tmp/openssl/oqs/include&quot; \
-   --with-ld-opt=&quot;-L/tmp/openssl/oqs/lib&quot; \
-&amp;&amp; sed -i 's/libcrypto.a/libcrypto.a -loqs/g' objs/Makefile \
-# 后略
-</code></pre>
-<p>然后正常编译 nginx 即可。</p>
-<p>编译、安装 nginx 完成后，还需要修改参数使用这些后量子时代的非对称加密算法，包括密钥交换算法和身份验证算法两类：</p>
-<ul>
-<li>
-<p>密钥交换算法：即浏览器和网站传输对称加密密钥时使用的非对称加密算法。<br>
-只需简单修改 nginx.conf 中的 ssl_ecdh_curve 参数，使用这些非对称加密算法的椭圆曲线，就可以使用这些密钥交换算法：</p>
-<pre><code>ssl_ecdh_curve 'p256_frodo640aes:p256_bike1l1cpa:p256_kyber90s512:p256_ntru_hps2048509:p256_lightsaber:p256_sidhp434:p256_sikep434:prime256v1:secp384r1:secp521r1';
-</code></pre>
-<p>修改完成后 nginx -s reload 即可。</p>
-<p>这里只开启了支持的密钥交换算法的一部分，原因有二：</p>
-<ol>
-<li>nginx 对这一参数的长度有限制，过长会报错；</li>
-<li>选择的这些参数也都被 Open Quantum Safe 的 BoringSSL 支持，这在后续开启 Chromium 支持时至关重要。<br>
-同时，这些密钥交换算法都以 p256_ 开头，意味着后量子加密算法和传统加密算法同时使用。这是为了防止一种情况：新的加密算法存在数学漏洞，使得它们使用传统计算机（冯诺依曼计算机）就可以快速破解。同时使用两种交换算法，既保证了无法被量子计算机破解（如果新加密算法正常工作），也保证了一旦新加密算法被破解，密钥交换数据仍然拥有与传统算法同等级别的保护，不会被传统计算机立即破解。</li>
-</ol>
-</li>
-<li>
-<p>身份验证算法：即证书颁发机构（CA）给网站颁发证书形式公私钥的算法。使用这些算法需要找支持后量子算法的 CA（现在还不存在）重新签发证书，或者自己签发证书（不被浏览器信任），都不实用，因此我选择现在不使用。</p>
-</li>
-</ul>
-<p>在这里配置完后，你可以使用 Open Quantum Safe 的一个 curl Docker 镜像来测试一下你的网站：</p>
-<pre><code class="language-shell"># 将最后一个参数替换成你要用的加密算法，格式和 ssl_ecdh_curve 相同
-docker run -it openquantumsafe/curl:0.4.0 curl https://lantian.pub --curves p256_frodo640aes
-</code></pre>
-<h1 id="chromium-boringssl">Chromium / BoringSSL</h1>
-<p>虽然有了命令行的 curl 验证，但是一个全功能的浏览器的支持能够让后量子加密实用化，给用户更佳的保护。Open Quantum Safe 同样提供了修改后的 BoringSSL，只需要将它编译到 Chromium 里，就可以在目前世界上最流行的浏览器中体验后量子加密算法了。</p>
-<p>Open Quantum Safe 同样提供了 <a href="https://github.com/open-quantum-safe/oqs-demos/tree/master/chromium">Chromium 的编译教程</a>。与编译原版 Chromium 相比，主要不同的步骤有四处：</p>
-<ol>
-<li>
-<p>git clone https://github.com/open-quantum-safe/boringssl，用修改过的 BoringSSL 替换 Chromium 源代码中 third_party/boringssl/src 路径下的原版 BoringSSL；</p>
-</li>
-<li>
-<p>下载 liboqs，编译安装到 BoringSSL 的 oqs 目录下：</p>
-<pre><code class="language-shell"> git clone --branch master https://github.com/open-quantum-safe/liboqs.git
- cd liboqs &amp;&amp; mkdir build &amp;&amp; cd build
- cmake .. -G&quot;Ninja&quot; -DCMAKE_INSTALL_PREFIX=&lt;CHROMIUM_ROOT&gt;/third_party/boringssl/src/oqs -DOQS_USE_OPENSSL=OFF
- ninja &amp;&amp; ninja install
-</code></pre>
-</li>
-<li>
-<p>给 Chromium 打上<a href="https://github.com/open-quantum-safe/oqs-demos/raw/master/chromium/oqs-mods.patch">调用 liboqs 的补丁</a>。</p>
-</li>
-<li>
-<p>在 third_party/boringssl 文件夹下运行 python2 src/util/generate_build_files.py gn 以更新依赖，加入 liboqs 相关内容。</p>
-</li>
-</ol>
-<p>之后按照正常步骤编译 Chromium 即可。</p>
-<p>编译、安装完成后，启动 Chromium 访问开启了后量子加密的网站，然后打开开发者工具的 Security（安全）面板：<br>
-<img src="https://blog.gd1214b.icu/post-images/1627555863044.png" alt="" loading="lazy"><br>
-上面已经显示使用了 p256_frodo640aes 算法，也就意味着你的网页浏览已经有了后量子时代的保护。</p>
-<blockquote>
-<p>额外要注意的是，Open Quantum Safe 的 BoringSSL 只支持一小部分的密钥交换算法：</p>
-<p>P256_BIKE1L1CPA, P256_FRODO640AES, P256_KYBER90S512, P256_NTRU_HPS2048509, P256_LIGHTSABER, P256_SIDHP434, P256_SIKEP434</p>
-<p>这一列表只在官方测试站上提到。因此我先前选择了这些算法配置在 nginx 中。</p>
-</blockquote>
-
-            </div>
-            
-            
-              <div class="post-footer">
-  <ul class="post-copyright">
-    <li class="post-copyright-author">
-      <strong class="language" data-lan="author">本文作者：</strong>
-      gd1214b
-    </li>
-    <li class="post-copyright-link">
-      <strong class="language" data-lan="link">本文链接：</strong>
-      <a href="https://blog.gd1214b.icu/post/kyFI8q8Or/" title="未雨绸缪：使用后量子时代的加密算法">https://blog.gd1214b.icu/post/kyFI8q8Or/</a>
-    </li>
-    <li class="post-copyright-license">
-      <strong class="language" data-lan="copyright">版权声明： </strong>
-      本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i> BY-NC-SA</a> 许可协议。转载请注明出处！
-    </li>
-  </ul>
-  <div class="tags">
-    
-      <a href="https://blog.gd1214b.icu/tag/https/"># HTTPS</a>
-    
-      <a href="https://blog.gd1214b.icu/tag/wang-luo/"># 网络</a>
-    
-  </div>
-  <div class="nav">
-    <div class="nav-prev">
       
-    </div>
-    <div class="nav-next">
       
-        <a class="nav-pc-next" title="作为一名通信老司机，我是如何看待翼龙通信无人机救灾的？" href="https://blog.gd1214b.icu/post/ZWEkcveiz/">作为一名通信老司机，我是如何看待翼龙通信无人机救灾的？</a>
-        <a class="nav-mobile-next" title="作为一名通信老司机，我是如何看待翼龙通信无人机救灾的？" href="https://blog.gd1214b.icu/post/ZWEkcveiz/">下一篇</a>
-        <i class="fa fa-chevron-right"></i>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
       
     </div>
   </div>
 </div>
-            
-            
-  <script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
-<div id="vcomments" style="padding: 10px 0px 0px 0px"></div>
-
-<style>
-  .v .veditor {
-    min-height: 10rem;
-    background-image: url('https://apibug.cn/api/ecy/&amp;apiKey=a968f1357c9632b1dd70adb98fd2cd37');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: right;
-    background-color: rgba(255, 255, 255, 0);
-    resize: none;
-  }
-
-  .v .vwrap {
-    border: 1px solid #000 !important;
-  }
-
-  .v .vbtn {
-    padding: .4rem 1.2rem !important;
-    border-color: #fff !important;
-    background-color: #49b1f5 !important;
-    color: #fff !important;
-    font-size: .7rem !important;
-  }
-
-  .v .vcards .vcard .vh .vmeta .vat {
-    padding: 0 .8rem !important;
-    border: 1px solid #00c4b6 !important;
-    border-radius: 5px !important;
-    color: #00c4b6 !important;
-  }
-</style>
-<script>
-  new Valine({
-    el: '#vcomments',
-    appId: 'Eqcho7eIADmQxVjdvjhQjuGI-MdYXbMMI',
-    appKey: 'Kn8kGrwcRmknvbyvGmW1lg2C',
-    avatar: 'hide',
-    placeholder: '说点什么吧~',
-    pageSize: '',
-    lang: 'zh-cn',
-    enableQQ: 'true' === 'true',
-    visitor: 'true' === 'true',
-    highlight: 'true' === 'true',
-    avatarForce: 'true' === 'false',
-  });
-</script>
-
-          </div>
+          </section>
         </div>
       </div>
     </div>
@@ -966,7 +612,7 @@ docker run -it openquantumsafe/curl:0.4.0 curl https://lantian.pub --curves p256
   
   
   <div class="bg-img">
-    <img src="https://apibug.cn/api/ecy/&amp;apiKey=72c1f1258741e617b805dd938a387639" />
+    <img src="https://api.apibug.com/api/ecy/&amp;apiKey=72c1f1258741e617b805dd938a387639" />
   </div>
   
   
@@ -1692,223 +1338,6 @@ docker run -it openquantumsafe/curl:0.4.0 curl https://lantian.pub --curves p256
   })
 </script>
 
-    <div class="reward-mask" style="display: none;">
-  <div class="reward-relative">
-    <span class="close" aria-hidden="true">x</span>
-    <div class="reward-body">
-      <h2>感谢您的支持，我会继续努力的!</h2>
-      <div class="reward-img-box">
-        <div style="position: relative; width: 140px; height: 140px;">
-          
-          
-          
-        </div>
-      </div>
-      <p class="reward-word">扫码打赏，你说多少就多少</p>
-      <p class="reward-tip">打开微信扫一扫，即可进行扫码打赏哦</p>
-    </div>
-    <div class="bottom">
-      
-      
-    </div>
-  </div>
-</div>
-<style>
-  .reward-mask {
-    position: fixed;
-    z-index: 99999;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: #00000054;
-  }
-
-  .reward-relative {
-    position: relative;
-    width: 480px;
-    text-align: center;
-    margin: 0 auto;
-    border-radius: 5px;
-    background-color: #fff;
-    top: 50%;
-    margin-top: -205px;
-  }
-
-  .reward-relative .close {
-    position: absolute;
-    right: 10px;
-    font-weight: normal;
-    font-size: 16px;
-    color: #929292;
-  }
-
-  .reward-body {
-    padding: 40px 20px 20px;
-  }
-
-  .bottom {
-    display: flex;
-  }
-
-  .reward-btn {
-    text-align: center;
-  }
-
-  .reward-btn-text {
-    display: inline-block;
-    cursor: pointer;
-    width: 60px;
-    height: 60px;
-    line-height: 60px;
-    border-radius: 50%;
-    background-color: #ff9734;
-    color: #FFF;
-    margin-top: 20px;
-  }
-
-  .pay-text {
-    margin-top: 10px;
-    padding: 10px;
-    flex: 1;
-    transition: all .2s linear;
-  }
-
-  .pay-text:hover {
-    background-color: #a5a5a536;
-  }
-
-  .reward-body h2 {
-    padding-top: 10px;
-    text-align: center;
-    color: #a3a3a3;
-    font-size: 16px;
-    font-weight: normal;
-    margin: 0 0 20px;
-  }
-
-  .reward-body h2:after,
-  .reward-body h2:before {
-    font-family: Arial, Helvetica, sans-serif;
-    background: 0 0;
-    width: 0;
-    height: 0;
-    font-style: normal;
-    color: #eee;
-    font-size: 80px;
-    position: absolute;
-    top: 20px;
-  }
-
-  .reward-body h2:before {
-    content: '\201c';
-    left: 50px;
-  }
-
-  .reward-body h2:after {
-    content: '\201d';
-    right: 80px;
-  }
-
-  .reward-img-box {
-    display: inline-block;
-    padding: 10px;
-    border: 6px solid #ea5f00;
-    margin: 0 auto;
-    border-radius: 3px;
-    position: relative;
-  }
-
-  .reward-img {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-  }
-
-  @media (max-width: 767px) {
-    .reward-relative {
-      height: 100%;
-      top: 0px;
-      margin-top: 0;
-      width: auto;
-    }
-
-    .reward-relative .bottom {
-      flex-direction: column;
-    }
-
-    .reward-relative .pay-text {
-      width: 80%;
-      margin: 5px auto;
-      border: 1px solid silver;
-      padding: 6px;
-      border-radius: 4px;
-    }
-
-    .reward-body h2:after {
-      right: 40px;
-    }
-
-    .reward-body h2:after,
-    .reward-body h2:before {
-      font-size: 60px;
-    }
-
-    .reward-body h2:before {
-      left: 20px;
-    }
-  }
-</style>
-<script>
-  !function () {
-    var mask = document.querySelector('.reward-mask');
-    let close = document.querySelector('.reward-relative .close');
-    let rewardBtn = document.querySelector('.reward-btn');
-
-    let zfb = document.querySelector('#zfb'),
-      wx = document.querySelector('#wx'),
-      zfbBtn = document.querySelector('#zfbBtn'),
-      wxBtn = document.querySelector('#wxBtn');
-
-    if (zfbBtn && wxBtn) {
-      zfbBtn.addEventListener('click', () => {
-        jQuery.Velocity(zfb, 'transition.slideLeftIn', {
-          duration: 400
-        });
-        jQuery.Velocity(wx, 'transition.slideRightOut', {
-          display: 'none',
-          duration: 400
-        });
-      });
-
-      wxBtn.addEventListener('click', () => {
-        jQuery.Velocity(wx, 'transition.slideRightIn', {
-          duration: 400
-        });
-        jQuery.Velocity(zfb, 'transition.slideLeftOut', {
-          display: 'none',
-          duration: 400
-        });
-      });
-    }
-
-    rewardBtn.addEventListener('click', (e) => {
-      jQuery.Velocity(mask, 'transition.slideDownIn', {
-        duration: 400
-      })
-    });
-
-    close.addEventListener('click', (e) => {
-      e.preventDefault();
-      jQuery.Velocity(mask, 'transition.slideUpOut', {
-        duration: 400
-      })
-    })
-  }()
-</script>
-
   </div>
 </body>
 
@@ -1928,11 +1357,65 @@ docker run -it openquantumsafe/curl:0.4.0 curl https://lantian.pub --curves p256
     <div class="result" id="result">
       
       <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://blog.gd1214b.icu/post/TQHLmV_JL/"" data-c="
+          &lt;blockquote&gt;
+&lt;p&gt;本文转自 : &lt;a href=&#34;https://www.qian.blue/archives/statically.html&#34;&gt;https://www.qian.blue/archives/statically.html&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;引言&#34;&gt;引言&lt;/h1&gt;
+&lt;p&gt;jsDelivr我想很多人都知道，开发者们会用它来加速css、JavaScript之类的静态资源，当然也会有部分哥们用它来加速图像服务，但在这里建议适量使用，不要滥用。&lt;br&gt;
+  Statically也是一款为开发者免费提供的CDN加速服务，它与Jsdelivr一样有着深厚的资源支持，同时其支持的内容更加丰富一些。下面介绍一下。&lt;/p&gt;
+&lt;h1 id=&#34;git加速&#34;&gt;git加速&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;GitHub : &lt;code&gt;https://cdn.statically.io/gh/:user/:repo/:tag/:file&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;GitLab : &lt;code&gt;https://cdn.statically.io/gl/:user/:repo/:tag/:file&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Bitbucket : &lt;code&gt;https://cdn.statically.io/bb/:user/:repo/:tag/:file&lt;/code&gt;&lt;br&gt;
+其中 :user 为用户名, :repo为仓库名, :tag为仓库分支, :file为文件名(含后缀).&lt;br&gt;
+示例 : &lt;a href=&#34;https://cdn.statically.io/gh/gd1214b/test/main/test.txt&#34;&gt;https://cdn.statically.io/gh/gd1214b/test/main/test.txt&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;图像加速&#34;&gt;图像加速&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;无修改打开 : &lt;code&gt;https://cdn.statically.io/img/:domain/:image&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;限制width打开:	&lt;code&gt;https://cdn.statically.io/img/:domain/w=:pixel/:image&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;限制height打开:	&lt;code&gt;https://cdn.statically.io/img/:domain/h=:pixel/:image&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;启动自动WebP: 	&lt;code&gt;https://cdn.statically.io/img/:domain/f=auto/:image&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;调整图像质量:	 &lt;code&gt;https://cdn.statically.io/img/:domain/q=:percentage/:image&lt;/code&gt;&lt;br&gt;
+其中:domain是域名, :image是图像路径.&lt;br&gt;
+示例: &lt;a href=&#34;https://cdn.statically.io/img/blog.gd1214b.icu/images/avatar.png&#34;&gt;https://cdn.statically.io/img/blog.gd1214b.icu/images/avatar.png&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;wordpress加速&#34;&gt;WordPress加速&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;核心代码加速: 	&lt;code&gt;https://cdn.statically.io/wp/c/:version/:file&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;插件加速: 	&lt;code&gt;https://cdn.statically.io/wp/p/:plugin/:version/:file&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;主题加速: 	&lt;code&gt;https://cdn.statically.io/wp/t/:theme/:version/:file&lt;/code&gt;&lt;/p&gt;
+&lt;h1 id=&#34;网页截图&#34;&gt;网页截图&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;直接截屏:	&lt;code&gt;https://cdn.statically.io/screenshot/:url&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;截长图: 	&lt;code&gt;https://cdn.statically.io/screenshot/full=true/:url&lt;/code&gt;&lt;br&gt;
+注：如果需要将选项整合到一起，用逗号隔开即可。&lt;br&gt;
+示例:&lt;br&gt;
+直接截屏:&lt;br&gt;
+&lt;a href=&#34;https://cdn.statically.io/screenshot/blog.gd1214b.icu&#34;&gt;https://cdn.statically.io/screenshot/blog.gd1214b.icu&lt;/a&gt;&lt;br&gt;
+&lt;img src=&#34;https://cdn.statically.io/screenshot/blog.gd1214b.icu&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+截长图:&lt;br&gt;
+&lt;a href=&#34;https://cdn.statically.io/screenshot/full=true/blog.gd1214b.icu&#34;&gt;https://cdn.statically.io/screenshot/full=true/blog.gd1214b.icu&lt;/a&gt;&lt;br&gt;
+&lt;img src=&#34;https://cdn.statically.io/screenshot/full=true/blog.gd1214b.icu&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+">Statically.io：一款免费、强大、迅速的CDN加速服务</a>
+      </div>
+      
+      <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://blog.gd1214b.icu/post/kyFI8q8Or/"" data-c="
           &lt;blockquote&gt;
-&lt;p&gt;本文转自: &lt;a href=&#34;https://lantian.pub/article/modify-website/post-quantum-encryption.lantian/&#34;&gt;https://lantian.pub/article/modify-website/post-quantum-encryption.lantian/&lt;/a&gt;&lt;br&gt;
-现代互联网上，绝大多数网站都已经支持 HTTPS，其使用的 SSL/TLS 加密协议会将用户的请求数据与网站的响应进行加密，以防止信息被路径上的恶意用户窃取或篡改。而 SSL/TLS 协议中的一个重要组成部分是 RSA、ECDSA 等非对称加密算法，这些算法的密钥分为公钥、私钥两份，公钥可以公开，而私钥则要妥善保管。&lt;/p&gt;
+&lt;p&gt;本文转自: &lt;a href=&#34;https://lantian.pub/article/modify-website/post-quantum-encryption.lantian/&#34;&gt;https://lantian.pub/article/modify-website/post-quantum-encryption.lantian/&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;p&gt;现代互联网上，绝大多数网站都已经支持 HTTPS，其使用的 SSL/TLS 加密协议会将用户的请求数据与网站的响应进行加密，以防止信息被路径上的恶意用户窃取或篡改。而 SSL/TLS 协议中的一个重要组成部分是 RSA、ECDSA 等非对称加密算法，这些算法的密钥分为公钥、私钥两份，公钥可以公开，而私钥则要妥善保管。&lt;/p&gt;
 &lt;p&gt;在访问 HTTPS 网站时，会经过以下的流程：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;网站会将它的公钥（以证书形式）发送给浏览器。&lt;/li&gt;
@@ -8404,6 +7887,7 @@ int main()
 
 
 <script src="https://cdn.jsdelivr.net/gh/gd1214b/gd1214b.github.io@latest/media/js/cool.js"></script>
+
 
 
 
