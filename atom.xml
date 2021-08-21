@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.gd1214b.icu</id>
     <title>gd1214b&apos;s blog</title>
-    <updated>2021-08-21T07:38:11.079Z</updated>
+    <updated>2021-08-21T14:14:18.406Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.gd1214b.icu"/>
     <link rel="self" href="https://blog.gd1214b.icu/atom.xml"/>
@@ -453,6 +453,107 @@ Sharelink在登录你的OneDrive网盘后,按以下步骤获取:<br>
 <p>所以我不太同意「麦克卢汉建立了一个具有结构层次的“媒介环境”」的说法，事实上，对“媒介环境”的细分只是麦氏身后人的创造，所谓“社会环境、符号环境、感知环境”的提法出自林文刚的总结，是学派建制化的需要。要知道，麦克卢汉的理论并非是结构化鲜明的建构，更多是以创见和整体化描述为主，不能列出个1.2.3.4.5，这无论如何都是对他思想的一种矮化。我想说，用“媒介环境”来解释“媒介即讯息”只是文不对题、以偏概全。</p>
 <p>总结而言，麦克卢汉的“媒介即讯息”强调的是媒介形式对人与社会发展的重要决定作用，在以关注“内容”为主要取向的传播学界，麦克卢汉让人们开始重视媒介形式本身的影响力。对传播学而言，麦克卢汉开辟了传播研究的媒介转向，让传播学不至于陷入效果研究的狭隘框架之中，并且为媒介环境学派的出现奠定理论基础、确立学科合法性。时至今日，麦克卢汉的准确预见和深刻洞见对互联网时代的特征充满解释力，让我们得以更加深刻地认识媒介化社会的媒介本质，由此也对麦氏理论更为重视。</p>
 <p>而这一切，都源于一个年逾半百的加拿大学者在《理解媒介》的草稿纸上写下这几个字：“媒介，即讯息”。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[升级 Windows 11 碰壁了？送你一份尝鲜指南]]></title>
+        <id>https://blog.gd1214b.icu/post/H1CZFGpSp/</id>
+        <link href="https://blog.gd1214b.icu/post/H1CZFGpSp/">
+        </link>
+        <updated>2021-07-03T06:32:18.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>本文转自: <a href="https://sspai.com/post/67498">https://sspai.com/post/67498</a></p>
+</blockquote>
+<p>本周，Windows 11 开始通过 Windows Insider Dev 通道向部分用户进行推送，但想要尝鲜却被 Windows 11 拒之门外的用户不在少数。</p>
+<p>Windows 11 对设备的硬件配置究竟有什么要求，你的设备如何升级到 Windows 11？</p>
+<p>基于微软目前给出的相关文档、信息和部分用户的实际体验，本文整理了 Windows 11 尝鲜相关的常见问题，希望能够为你提供一些参考。</p>
+<h1 id="何时能升级">何时能升级</h1>
+<p>Windows 11 的首个预览版本 22000.51 已于 6 月 29 日面向 Windows Insider 推送，如果你的设备满足硬件配置要求，同时加入了 Windows 预览体验计划的 Dev 渠道，直接在设置中检查更新即可通过 OTA 升级，步骤与常规系统更新无异。<br>
+<img src="https://blog.gd1214b.icu/post-images/1629551319115.png" alt="" loading="lazy"><br>
+当然，预览版本的稳定性逊于正式版，Dev 渠道的代码未经过严格的可靠性验证，有较大几率出现影响正常使用的 bug。如果 Windows 是你的主要操作系统，我建议等待 Beta 渠道或 Release Preview 渠道开放后再考虑升级，不要贸然使用生产力设备尝鲜。</p>
+<p>目前微软并未公布 Windows 11 正式版的具体推送日期，仅表示将在今年晚些时候推出，正在运行 Windows 10 的设备将在 2022 年上半年收到免费更新。</p>
+<p>但发布会上的诸多暗示，以及沃尔玛等零售商的宣传语都指向了同一时间点。比如 The Verge 发布的一篇 报道 就指出，Windows 11 的正式推送时间或许会在今年 10 月，因为在不久前的 Windows 发布会中微软埋下了多处暗藏 Windows 11 正式推送日期的细节，包括 Microsoft Teams 对话消息、任务栏时间、日历事件、OneDrive 照片回顾等等，这些截图中的日期都指向了 2021 年 10 月 20 日。</p>
+<h1 id="哪些设备能升级">哪些设备能升级</h1>
+<p>和当年的 Windows 10 类似，微软为推广 Windows 11 又一次祭出了「免费升级」大法，上一次是 Windows 7 和 Windows 8.x 的消费级版本可以免费升级至 Windows 10，这一次则是「符合要求的 Windows 10」可以免费升级到 Windows 11。</p>
+<p>虽然都是免费的跨版本升级，措辞的变化也暗示着 Windows 11 对我们的设备有了新要求。<br>
+<img src="https://blog.gd1214b.icu/post-images/1629551371564.png" alt="" loading="lazy"><br>
+从这张最新的 Windows 11 系统要求中不难看出，要想「符合要求」并获得免费升级其实存在一定的硬件门槛。首先是 Windows 11 不存在 32 位版本，因此处理器必须支持 64 位，对应的就是内存达到 4GB 以上，存储空间也至少为 64GB。</p>
+<p>但真正的难点，也是这次卡住很多人的关键，则是支持 UEFI 安全启动以及受信任的平台模块 (TPM) 2.0 版本。</p>
+<h2 id="uefi-安全启动">UEFI 安全启动</h2>
+<p>因为当年需要让 Windows 7 和 Windows 8.1 用户平滑升级，因此 Windows 10 的最低系统要求几乎延续了 Windows 7 的要求，包括并不强制要求 UEFI 安全启动（Only UEFI）。</p>
+<p>情况在 Windows 11 这里有了变化。</p>
+<p>简单来说，在 Windows XP 时代我们只有 BIOS 启动，对应的磁盘分区结构则是 MBR，这样的结构一方面安全性较差，很多恶意程序可以在系统启动前就加载，另一方面最高也只能够支持到四个主分区，最高支持硬盘容量为 2TB。</p>
+<p>因此之后就出现了 BIOS 的高级版本 UFEI，对应的分区表也采用了更新的 GPT。虽然 UEFI 在 2007 年就已经出现了，由于 Windows 7 开发时并没有成为标准，2012 年以后的 PC 虽然大多出厂就带有 UEFI 支持，为了兼容性（安装 Windows 7）还是会允许用户打开 Legacy 兼容模式来安装 Windows 7 或 32 位操作系统。<br>
+<img src="https://blog.gd1214b.icu/post-images/1629551409049.jpg" alt="" loading="lazy"><br>
+而到了 Windows 11 ，因为只支持 64 位操作系统，从安全性考虑就只允许采用 UEFI 安全启动的方式进行引导，也就是在系统 BIOS 中设置为「only UEFI」并且关闭 Legacy 兼容模式，这样才能正常的安装、运行 Windows 11。</p>
+<h2 id="tpm-20">TPM 2.0</h2>
+<p>UEFI 支持其实并不是这一次 Windows 11 系统要求中最为苛刻的，更苛刻的是系统最低要求中强制需要可信平台模块 2.0（TPM 2.0）。TPM 中文名叫做可信平台模块，英文 Trusted Platform Module，简单来说就是一个以硬件形式处理设备加密的工具，可以保护当前硬件设备的数据不被破解。</p>
+<p>目前市面上的电脑如果支持 TPM ，一般上分为两种：</p>
+<h3 id="基于处理器主板的-tpm">基于处理器主板的 TPM</h3>
+<p>在很多的品牌主板上都有集成，比如如果是 Intel 处理器上的主板，那么在 BIOS 里面会有个 Intel Platform Trust Technology 设置项目，而 AMD 处理器的主板有个类似的叫做 fTPM。它们都是属于集成的 TPM，如果你有相关设备，升级前记得打开即可。<br>
+<img src="https://blog.gd1214b.icu/post-images/1629551505891.jpg" alt="" loading="lazy"></p>
+<h3 id="基于独立加密模块的-tpm">基于独立加密模块的 TPM</h3>
+<p>有些主板中并没有集成Intel PTT或者 AMD 的 fTPM，那么就需要使用单独的芯片模块来实现 TPM 加密了。这个小模块通过针脚和主板进行通信，从而实现 TPM 功能。<br>
+<img src="https://blog.gd1214b.icu/post-images/1629551540870.jpg" alt="" loading="lazy"><br>
+当然微软也并没有完全说死 TPM 2.0 的支持，考虑到 OEM 设备商的利益（很多厂商从法律法规或利润最大化的角度并不会安装 TPM），微软在其最新的一版硬件需求说明文档中进行了特殊备注，表示可以允许经过其认证的设备在没有安装 TPM 2.0 的情况下预装 Windows 11 出货，因此最终的硬件支持上还要等待下半年正式版发货才能最终确定。<br>
+<img src="https://blog.gd1214b.icu/post-images/1629551552359.png" alt="" loading="lazy"></p>
+<h2 id="如何自检">如何自检</h2>
+<p>微软在 Windows 11 发布活动的第一时间推出过一款硬件检查软件「电脑健康状况检查工具」，方便用户检测当前的设备是否满足升级到 Windows 11 的硬件需求。<br>
+<img src="https://blog.gd1214b.icu/post-images/1629551579618.png" alt="" loading="lazy"><br>
+<img src="https://blog.gd1214b.icu/post-images/1629551592088.png" alt="" loading="lazy"><br>
+打开软件之后点击「立即检查」就可以识别当前的硬件是否支持升级到 Windows 11，发布之初，这款工具并不会指出不符合的硬件到底哪一项不符合，虽然在之后的更新中解决，但微软还是决定暂时下线检查工具，进一步完善后重新推出。现在，我们可以通过一款第三方应用来进行检测。<br>
+<img src="https://blog.gd1214b.icu/post-images/1629551605476.png" alt="" loading="lazy"><br>
+这款名为<a href="https://github.com/rcmaehl/WhyNotWin11">「WhyNotWin11」</a>的检查工具相比微软的检查工具提供了更为全面的信息，既包括了硬件中不符合最低硬件标准的信息项目，也包含了显卡支持等情况，相对来说信息要更为准确详细。</p>
+<h2 id="升级后的-insider-提示判断">升级后的 Insider 提示判断</h2>
+<p>纵使系统硬件不支持，但我们依然可以使用各种「方法」升级到 Windows 11。但可以升级到 Windows 11 不代表万事大吉，微软将会在未来限制这些硬件能否使用正式版 Windows 11，甚至完全不满足的设备连 dev 测试版都将不再推送。</p>
+<p>如果你已经在 Insider 中了，那么你可以通过「设置」- 「Windows 更新」-「Windows 预览体验计划」的提示信息查看自己的电脑是否符合正式版的需求还是只能呆在测试版。目前有三种情况：<br>
+<img src="https://blog.gd1214b.icu/post-images/1629551685466.png" alt="" loading="lazy"><br>
+<img src="https://blog.gd1214b.icu/post-images/1629551697797.png" alt="" loading="lazy"><br>
+本次 Windows 11 Dev 测试中，所有种类的 CPU 和是否具备 TPM 的电脑都将可以参与测试，但只要不支持 TPM 那么在「Windows 预览体验计划」的提示信息一定是红色的；未来正式版只推送给具备 TPM 2.0 和具备 兼容 处理器的电脑，当然也不排除 下放 给 7 代 Intel 和 AMD Zen 1 处理器的可能性。</p>
+<h1 id="如何升级">如何升级</h1>
+<h2 id="排查环境问题">排查环境问题</h2>
+<p>鉴于上面提到的升级条件，你的设备如果在升级时遇到了阻碍，不妨先使用按照以下流程检查一下 TPM 相关原因：</p>
+<p>若想了解当前设备是否支持 TPM，最简单的方法是以管理员身份运行 PowerShell，键入 Get-Tpm 指令并回车。TpmPresent 的值为 True 则代表硬件已集成 TPM 组件，TpmReady 为 True 代表 TPM 符合系统标准，其它信息的含义可参考 <a href="https://docs.microsoft.com/zh-cn/powershell/module/trustedplatformmodule/get-tpm">微软官方文档</a>。<br>
+<img src="https://blog.gd1214b.icu/post-images/1629551777463.png" alt="" loading="lazy"><br>
+命令行提示不支持也不必灰心，让我们首先确认主板型号。使用快捷键 Win+R 然后运行 Msinfo32 打开系统信息面板，然后就能在右侧窗格中找到主板制造商和主板产品：<br>
+<img src="https://blog.gd1214b.icu/post-images/1629551843806.png" alt="" loading="lazy"><br>
+如果你和我一样使用的是 OEM 主机，获取到主板型号后可能还需要在相关品牌官网给出的信息中进一步查看实际主板型号，比如这里惠普 843B 主板对应的实际型号就是 Intel H370：<br>
+<img src="https://blog.gd1214b.icu/post-images/1629551897350.png" alt="" loading="lazy"><br>
+通过对 Intel H370 的主板信息进行检索可以进一步获悉，这块主板默认是支持 TPM 加密的，因此不排除 BIOS 屏蔽了相关选项。于是在进入 BIOS 并开启 TPM 开关后，我的设备成功满足了 Windows 11 Insider 的所有配置要求。</p>
+<h2 id="加入-windows-预览体验计划">加入 Windows 预览体验计划</h2>
+<p>扫清硬件障碍后，请打开「设置」，依次进入「更新和安全」-「Windows 预览体验计划」，按提示加入「Dev 渠道」，再次检查更新，即可无缝升级至 Windows 11。成功上车后，在其它渠道开放前无法切换测试组，全新安装才能降级到稳定版本，请务必留心。<br>
+<img src="https://blog.gd1214b.icu/post-images/1629551958159.png" alt="" loading="lazy"><br>
+即使你的设备不满足 Windows 11 的全部硬件要求，也可以通过 Windows 预览体验计划暂时绕过限制。微软表示，6 月 24 日前加入 Dev 渠道的先行者们甚至可无视 TPM，继续收到更新推送。这一部分用户反馈的问题会被标记为「在不兼容设备上运行」，提交的 bug 可能不会被修复。</p>
+<p>据微软说辞，Windows 11 正式发布后，不符合条件的设备会被踢出 Windows 预览体验计划，必须重新降级至 Windows 10——考虑到微软的作风，我对这条政策的实际执行力度持保留看法。但保不准微软这次就巨硬了，届时还想升级的话，手动安装镜像文件是个好方法。</p>
+<h2 id="通过-iso-镜像手动升级">通过 ISO 镜像手动升级</h2>
+<p>跨越版本号的重大系统更新，最稳妥的方法还是通过 ISO 镜像文件手动安装。由于微软尚未释出 Windows 11 的官方镜像文件，在本文发布的时间点，少数派不建议采用此方式升级，并提醒大家注意网络镜像版本与来源，避免个人数据丢失等意外情况出现。</p>
+<p>你可以在 <a href="https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewiso">这里</a> 检查官方 Windows 预览版本镜像，出现 Windows 11 选项后根据个人需求下载，选择保留数据或全新安装。</p>
+<h1 id="有什么新功能">有什么新功能</h1>
+<h2 id="首个预览版简单体验">首个预览版简单体验</h2>
+<p><img src="https://blog.gd1214b.icu/post-images/1629552058513.gif" alt="" loading="lazy"><br>
+首先是更现代更好看的设置界面，除了新图标，设置背景还采用了 云母石 的材质，把原本单调的背景变得更加生动。而且相比于旧版空旷的设置界面，新的设置界面信息密度明显更高；还有常驻于侧边栏的一级设置，方便用户快速回到上级菜单或是跳转到其他设置中。最后，新的设置对可以点击的地方做了箭头指示，相比旧版更加清晰明了。当然控制面板目前还在。</p>
+<p><img src="https://blog.gd1214b.icu/post-images/1629552068879.png" alt="" loading="lazy"><br>
+<img src="https://blog.gd1214b.icu/post-images/1629552078661.png" alt="" loading="lazy"><br>
+接下来就是日常中用得多的文件管理器也焕然一新，不仅把老旧的 Ribbon 组件给全部砍掉了，还用上了云母石材质和新的图标设计，显得更加简约简约现代。此外，系统级右键菜单也得到了改进全新的设计，变得更加直观明了；当然目前新右键菜单的功能并不算完善，如果想要访问旧版菜单可以使用新版菜单下的「显示更多选项」。<br>
+<img src="https://blog.gd1214b.icu/post-images/1629552094011.png" alt="" loading="lazy"><br>
+再者就是一些细节上的更新了，比方说通知中心、日期时间面板、快捷操作面板和输入法的重构，让整体可读性和易用性变得更好了。系统默认的终端也变成了更现代的 Windows Terminal；AutoHDR 也对部分游戏启用了，打开支持的游戏时会有启用通知。<br>
+<img src="https://blog.gd1214b.icu/post-images/1629552106012.png" alt="" loading="lazy"><br>
+最后，Windows 11 中的音效也有不小的改进，总得来说就是更加悦耳了，大家可以去网上找找有关视频。</p>
+<h2 id="这些旧功能被砍掉了">这些旧功能被砍掉了</h2>
+<p>Windows 11 砍掉了不少来自 Window 10 的特性，下面我们一起来梳理下这些被砍掉的「新」功能。<br>
+<img src="https://blog.gd1214b.icu/post-images/1629552134904.png" alt="" loading="lazy"><br>
+首先是，Windows 10 刚推出时被赋予重任的语音助手 Cortana 终于不预装在系统里了，不仅是首次配置向导中不会被突如其来的语音吓到，任务栏上也不会出现用不到的图标了。喜欢 Cortana 的小伙伴依然即可从 Windows 11 的应用商店下载到它。<br>
+<img src="https://blog.gd1214b.icu/post-images/1629552153188.png" alt="" loading="lazy"><br>
+其次，IE 在 Windows 11 中正式被禁用，这意味着长达 25 年的浏览器正式下岗了。微软建议由 IE 使用需求的用户用 Microsoft Edge 的 IE 模式替代。不过话又说回来，目前不少政府的系统已经面向 Chrome 类浏览器开发了，大部分使用 IE 的场景都是为了用网银系统，希望国内的银行可以赶紧跟进。<br>
+<img src="https://blog.gd1214b.icu/post-images/1629552163333.png" alt="" loading="lazy"><br>
+再者 Windows 10 的时间轴功能也被砍了。时间线是 18 年 4 月份引入的功能，它能帮你记录你在什么时间在电脑上做了什么，方便你回溯操作。然而实际体验真的差到不行，操作界面不仅卡顿，而且大部分软件还不支持时间线的功能，甚至是第一方应用窗口截图都是空白的。现在在 Windows 11 里这个功能被彻底砍掉了。</p>
+<p>最后由于 Windows 11 采用了新的开始菜单和任务栏，所以不少我们熟知的功能也都不见了，比如：动态磁贴、可对开始菜单调整大小、应用程序组等，而且任务栏目前也只能固定在屏幕底部，21H1 中加入的新闻与兴趣也被重新集成到小部件里了；此外平板模式也从 Windows 11 里移除了，新功能将体现在键盘的连接和分离状态中。<br>
+<img src="https://blog.gd1214b.icu/post-images/1629552176523.gif" alt="" loading="lazy"><br>
+其他被砍掉的功能可以看 <a href="https://www.microsoft.com/zh-cn/windows/windows-11-specifications#primaryR4">这里</a>。总的来说 Windows 11 砍掉了不少 Windows 10 的特性，但是更早以前系统的组件却还保留着，让人不禁怀疑 Windows 11 是不是到头来什么都没有更新。</p>
+<h1 id="其他">其他</h1>
+<p>如果你在更新后遇到了部分应用内文字乱码、游戏无法启动等问题，不妨检查一下「时间 &amp; 语言 &gt; 语言 &amp; 区域」设置中的「管理语言设置」选项，确保其中「非 Unicode 程序的语言」为 中文(简体, 中国)。这个操作对部分应用和游戏有效（比如《英雄联盟》）但不保证能够解决所有问题。<br>
+<img src="https://blog.gd1214b.icu/post-images/1629552244549.png" alt="" loading="lazy"><br>
+除此之外，目前 Windows 11 Dev 频道的预览体验版本还有着诸多其他问题，如多账户用户在升级后无法启动设置界面、搜索界面偶尔无法正常加载图标等等。你可以在微软官方 <a href="https://blogs.windows.com/windows-insider/2021/06/28/announcing-the-first-insider-preview-for-windows-11/">博客</a> 的末尾查看这些问题，再决定是否升级。</p>
 ]]></content>
     </entry>
     <entry>
@@ -2897,212 +2998,6 @@ DNSSEC 的只签名，不加密主要是因为 DNSSEC 是 DNS 的一个子集，
 <p>[7] 树结构的基本性质 https://en.wikipedia.org/wiki/Tree_structure https://en.wikipedia.org/wiki/Tree_(graph_theory)。</p>
 <p>[8] Lev Manovich, The Language of New Media, p.78, 2001, MIT Press.</p>
 <p>[9] Evgeny Morozov, The Death of the Cyberflâneur, http://www.nytimes.com/2012/02/05/opinion/sunday/the-death-of-the-cyberflaneur.html</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[利用GitHub Actions 监控网站- Upptime]]></title>
-        <id>https://blog.gd1214b.icu/post/G9dquz6bG/</id>
-        <link href="https://blog.gd1214b.icu/post/G9dquz6bG/">
-        </link>
-        <updated>2021-06-20T05:52:12.000Z</updated>
-        <content type="html"><![CDATA[<p>前阵子在网络上看到一个很酷的开源项目： <a href="https://github.com/upptime/upptime">Upptime</a></p>
-<p>每隔一段时间用GitHub Actions 看网站有没有挂掉,若挂掉就用GitHub Issues 回报异常事件,使用GitHub Pages 产生服务状态的页面.</p>
-<h1 id="github-actions-简介">GitHub Actions 简介</h1>
-<p>GitHub Actions是GitHub上的一个自动化服务，你可以把脚本放到上面，当特定事件发生时，自动执行你的脚本。</p>
-<p>以Upptime来说，预设是每隔五分钟访问你的网站一次（实际上由于GitHub的限制，间隔可能会更长），同时也会记录每次的response time，让你在页面上看历史纪录等等。</p>
-<p>这些动作都写在Actions的脚本中，机器都会自己执行，完全不用动到一根指头。</p>
-<p>介绍完之后，就来开始部署Upptime吧。</p>
-<h1 id="创建github-repo">创建GitHub Repo</h1>
-<ol>
-<li>进入Upptime的<a href="https://github.com/upptime/upptime">repo</a></li>
-<li>点击 <strong>Use this template</strong><br>
-<img src="https://blog.gd1214b.icu/post-images/1624168642287.png" alt="" loading="lazy"></li>
-<li>创建repo<br>
-* 输入repo name<br>
-* 勾选 <strong>Include all branches</strong><br>
-* 点击 <strong>Create repository from temple</strong><br>
-<img src="https://blog.gd1214b.icu/post-images/1624168745412.png" alt="" loading="lazy"><br>
-等一阵子后,就会复制一样的repo到你的帐号下</li>
-</ol>
-<h1 id="设置github-pages">设置GitHub Pages</h1>
-<ol>
-<li>到你的repo，点击 <strong>Settings</strong><br>
-<img src="https://blog.gd1214b.icu/post-images/1624168798869.png" alt="" loading="lazy"></li>
-<li>往下找到GitHub Pages 的<strong>Source</strong></li>
-</ol>
-<ul>
-<li>Branch 设为 <strong>gh-pages</strong></li>
-<li>点击 <strong>Save</strong><br>
-<img src="https://blog.gd1214b.icu/post-images/1624168860771.png" alt="" loading="lazy"></li>
-</ul>
-<h1 id="设置repository-secret">设置Repository Secret</h1>
-<p>为了让Upptime有commit和publish网页的权限，需要设定Personal Access Token</p>
-<ol>
-<li>点击自己的<strong>Profile picture</strong> &gt; <strong>Settings</strong><br>
-<img src="https://blog.gd1214b.icu/post-images/1624168921775.png" alt="" loading="lazy"></li>
-<li>点击左侧的<strong>Developer settings</strong> &gt; <strong>Personal access tokens</strong> &gt; <strong>Generate new token</strong><br>
-<img src="https://blog.gd1214b.icu/post-images/1624168964700.png" alt="" loading="lazy"></li>
-<li>新增token
-<ul>
-<li>Note: <strong>upptime</strong></li>
-<li>Select scopes:勾选<strong>repo</strong>和<strong>workflow</strong></li>
-<li>点击 <strong>Generate token</strong><br>
-<img src="https://blog.gd1214b.icu/post-images/1624169013442.png" alt="" loading="lazy"></li>
-</ul>
-</li>
-<li>复制token<br>
-<img src="https://blog.gd1214b.icu/post-images/1624169029896.png" alt="" loading="lazy"></li>
-<li>返回<strong>repo</strong> &gt;<strong>Settings</strong><br>
-点击左侧<strong>Secrets</strong>&gt; <strong>Add a new secret</strong> &gt; <strong>New repository secret</strong><br>
-<img src="https://blog.gd1214b.icu/post-images/1624169066911.png" alt="" loading="lazy"></li>
-<li>设定repo 的token</li>
-</ol>
-<ul>
-<li>Name: <strong>GH_PAT</strong></li>
-<li>Value: 贴上刚刚复制的 <strong>token</strong></li>
-<li>点击 <strong>Add secret</strong><br>
-<img src="https://blog.gd1214b.icu/post-images/1624169109524.png" alt="" loading="lazy"></li>
-</ul>
-<h1 id="更新yaml文件">更新YAML文件</h1>
-<p>Upptime使用.yml来做“集中式设置”，只要更改这个文件的设置，所有相关代码就会一起修改。</p>
-<ol>
-<li>到你的repo，点击<strong>Code</strong> &gt; <strong>.upptimerc.yml</strong><br>
-<img src="https://blog.gd1214b.icu/post-images/1624169199844.png" alt="" loading="lazy"></li>
-<li>点击铅笔按钮编辑文件</li>
-<li>按照以下模版修改此文件：(方括号内是需要修改的内容，修改完之后请删除方括号)</li>
-</ol>
-<pre><code class="language-yaml">#你的GitHub username 
-owner: 【GitHub username】
-
-#你的GitHub repo name 
-repo: 【repo name】
-
-#加入要监控的网站名称与URL ,可以添加多个网站
-sites: 
-  - name: 【网站名称】
-    url: 【URL】
-
-#没有域名的按照以下模版填写
-status-website: 
-    #cname: demo.upptime.js.org (移除) 
-    baseUrl: /upptime
-
-#有域名的按照以下模版填写
-status-website: 
-    cname: 【你的域名】
-    
-#自定义状态页面的navbar名称与链接
-navbar: 
-    - title: 【名称】
-      href: 【链接】
-</code></pre>
-<h1 id="查看github-actions">查看GitHub Actions</h1>
-<p>设定好.upptimerc.yml后，Actions就会自动开始运行(黄圈在转)。运行成功会显示绿色的勾，运行失败会显示红色的叉。<br>
-<img src="https://blog.gd1214b.icu/post-images/1624169705043.png" alt="" loading="lazy"><br>
-如果发现Actions没运行，或是想要让它马上执行，就点击左侧的<strong>Setup CI</strong>&gt; <strong>Run workflow</strong> &gt; <strong>Run workflow</strong><br>
-<img src="https://blog.gd1214b.icu/post-images/1624169731129.png" alt="" loading="lazy"></p>
-<h1 id="查看status-website">查看Status Website</h1>
-<p>你的状态页面URL是:https://【user_name】.github.io/【repo_name】/<br>
-或是可以到<strong>repo</strong> &gt; <strong>Settings</strong> &gt; <strong>GitHub Pages</strong>查看URL</p>
-<p>点击URL后，我们来到了状态页面，页面分成三个区块。</p>
-<p>Active Incidents 显示目前的异常事件，Past Incidents 显示过去的异常事件，Live Status 可以切换五种response time 图形。<br>
-<img src="https://blog.gd1214b.icu/post-images/1624170045428.png" alt="" loading="lazy"></p>
-<h1 id="进阶操作">进阶操作</h1>
-<h2 id="自定义运行时间">自定义运行时间</h2>
-<p>Upptime有七个Workflows，只要把下面这段粘贴到.upptimerc.yml，就可以自定义Workflow的时间点</p>
-<pre><code class="language-yaml">workflowSchedule: 
-  graphs: &quot;0 0 * * *&quot; 
-  responseTime: &quot;0 23 * * *&quot; 
-  staticSite: &quot;0 1 * * *&quot; 
-  summary: &quot;0 0 * * *&quot; 
-  updateTemplate: &quot;0 0 * * *&quot; 
-  updates: &quot; 0 3 * * *&quot; 
-  uptime: &quot;*/5 * * * *&quot;
-</code></pre>
-<h2 id="自定义状态页面">自定义状态页面</h2>
-<p>Status Website预设是英文的，如果你想要改成其他语言，可以把要修改的部分粘贴到.upptimerc.yml</p>
-<p>例如：</p>
-<pre><code class="language-yaml">i18n:
-  activeIncidents: 活动事件
-  allSystemsOperational: 所有系统都可以正常运行
-  incidentReport: &quot;事件 #$NUMBER 报告 →&quot;
-  activeIncidentSummary: 在 $DATE 打开，有 $POSTS 个帖子
-  incidentTitle: 事件 $NUMBER 的详细信息
-  incidentDetails: 事件详细信息
-  incidentFixed: 已修复
-  incidentOngoing: 正在进行
-  incidentOpenedAt: 开始于
-  incidentClosedAt: 结束于
-  incidentSubscribe: 订阅更新
-  incidentViewOnGitHub: 在 GitHub 上查看
-  incidentCommentSummary: 由 $AUTHOR 在 $DATE 发布
-  incidentBack: ← 返回所有事件
-  pastIncidents: 过去的事件
-  pastIncidentsResolved: $POSTS 个问题在 $MINUTES 分钟内得到解决
-  liveStatus: 实时状态
-  overallUptime: &quot;总体正常运行时间： $UPTIME&quot;
-  overallUptimeTitle: 总体正常运行时间
-  averageResponseTime: &quot;平均响应时间: $TIMEms&quot;
-  averageResponseTimeTitle: 平均响应时间
-  sevelDayResponseTime: 7 天响应时间
-  responseTimeMs: 响应时间（毫秒）
-  ms: 毫秒
-  loading: 加载中
-  navGitHub: GitHub
-  footer: gd1214b保留所有权利。 Copyright © 2021 gd1214b. All Rights Reserved.
-  rateLimitExceededTitle: 超出速率限制
-  rateLimitExceededIntro: 您已超过一小时内可以执行的请求数，因此您必须等待才能再次访问此网站。或者，您可以添加 GitHub 个人访问令牌以继续使用本网站。
-  rateLimitExceededWhatDoesErrorMean: 这个错误是什么意思？本网站使用 GitHub API 访问有关我们网站状态的实时数据。默认情况下，GitHub 允许每个 IP 地址每小时 60 个请求，您已经消耗了这些请求。
-  rateLimitExceededErrorHowCanFix: 我该如何解决？
-  rateLimitExceededErrorFix: 您可以再等一个小时，您的 IP 地址限制将恢复。或者，您可以添加您的 GitHub 个人访问令牌，这将为您提供每小时额外 5,000 个请求。
-  rateLimitExceededGeneratePAT: 了解如何生成个人访问令牌
-  rateLimitExceededHasSet: 您有一个个人访问令牌集。
-  rateLimitExceededRemoveToken: 删除令牌
-  rateLimitExceededGitHubPAT: GitHub 个人访问令牌
-  rateLimitExceededCopyPastePAT: 复制并粘贴您的令牌
-  rateLimitExceededSaveToken: 保存令牌
-  errorTitle: 发生错误
-  errorIntro: 尝试获取最新状态详细信息时出错。
-  errorText: 您可以稍后再试。
-  errorHome: 转到主页
-  pastScheduledMaintenance: 过去的预定维护
-  scheduledMaintenance: 定期维护
-  scheduledMaintenanceSummaryStarted: 从 $DATE 开始，持续 $DURATION 分钟
-  scheduledMaintenanceSummaryStarts: 从 $DATE 开始，持续 $DURATION 分钟
-  startedAt: 开始在
-  startsAt: 开始于
-  duration: 持续时间
-  durationMin: $DURATION 分钟
-  incidentCompleted: 已完成
-  incidentScheduled: 已预定
-  url: &quot;链接&quot;
-  status: &quot;状态&quot;
-  history: &quot;历史&quot;
-  responseTime: &quot;响应时间&quot;
-  uptime: &quot;正常运行时间&quot;
-  up: &quot;🟩 正常运行&quot;
-  degraded: &quot;🟨 运行缓慢&quot;
-  down: &quot;🟥 停机&quot;
-  responseTimeGraphAlt: &quot;响应时间图像&quot;
-  responseTimeDay: &quot;24 小时响应时间&quot;
-  responseTimeWeek: &quot;7 天正常运行时间&quot;
-  responseTimeMonth: &quot;30天的正常运行时间&quot;
-  responseTimeYear: &quot;1年的正常运行时间&quot;
-  uptimeDay: &quot;24 小时正常运行时间&quot;
-  uptimeWeek: &quot;7 天正常运行时间&quot;
-  uptimeMonth: &quot;30天的正常运行时间&quot;
-  uptimeYear: &quot;1年的正常运行时间&quot;
-  liveStatusHtmlComment: &quot;&lt;！ -实时状态- &gt;&quot;
-  degradedPerformance: &quot;🟨 性能降低&quot;
-  completeOutage: &quot;🟥 全部停机&quot;
-  partialOutage: &quot;🟧 部分停机&quot;
-</code></pre>
-<h1 id="参考资料">参考资料</h1>
-<ul>
-<li><a href="https://annkuoq.github.io/blog/2021-01-09-uptime-monitor-and-status-website-service-with-upptime/">AnnKuoQ Blog</a></li>
-<li><a href="https://upptime.js.org/docs/get-started">Getting started | Upptime</a></li>
-<li><a href="https://github.com/upptime/upptime">upptime - GitHub</a></li>
-</ul>
 ]]></content>
     </entry>
 </feed>
